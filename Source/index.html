@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	
+	<title>Ruins Validation</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="stylesheet" href="leaflet.css" />
+	<link rel="stylesheet" href="ruins.css" />
+	<script src="scripts/leaflet.js"></script>
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	
+</head>
+<body>
+
+
+<table id="ruinslist">
+	<tr>
+		<th colspan="3" class="ruinname">
+			Alpha
+		</th>
+		<th>&nbsp;</th>
+		<th colspan="2" class="ruinname">
+			Beta
+		</th>
+	</tr>
+	<tr>
+		<td>
+			<a class="btn ruinbtn" href="#alpha.1">1</a>
+		</td>
+		<td>
+		`	<a class="btn ruinbtn" href="#alpha.1p">1+</a>
+		</td>
+		<td>
+			<a class="btn ruinbtn" href="#alpha.2">2</a>
+		</td>
+		<td>&nbsp;</td>
+		<td>
+			<a class="btn ruinbtn" href="#beta.1">1</a>
+		</td>
+		<td>
+			<a class="btn ruinbtn" href="#beta.2">2</a>
+		</td>
+	</tr>
+</table>
+
+
+<div id="mapid" style="width: 100%; height: 600px;"></div>
+<script>
+	window.ruinMaps = { 
+		'alpha': { 
+			address:'maps/alpha/',
+			layers:{
+				'1':'Alpha 1',
+				'1p':'Alpha 1+',
+				'2':'Alpha 2'
+			}
+		},
+		'beta': {
+			address:'maps/beta/',
+			layers:{
+				'1':'Beta 1',
+				'2':'Beta 2'
+			}
+		}
+	};
+
+	window.map = L.map('mapid', {
+			center: [0,0],
+			zoom: -20,
+			crs: L.CRS.Simple
+		});
+
+	window.mapLayers = null;
+
+	$('.ruinbtn').click(function(e){
+		var ruinid = $(this).attr('href').replace(/#/g,'');
+		var ruincombo = ruinid.split('.')[1];
+		ruinid = ruinid.split('.')[0];
+
+
+		setMap(ruinid,ruincombo);
+	});
+
+
+	function setMap(id,combo){
+		console.log('id:' + id);
+
+		//Clear existing layers
+		window.map.eachLayer(function (layer) {
+			map.removeLayer(layer);
+		});
+
+		var imageBounds = [[0,0], [750,750]];
+		var baseLayers = {};
+		var overlays = {};
+
+		map.fitBounds(imageBounds);
+
+		//Get ruin 
+		var ruinData = window.ruinMaps[id];
+
+		console.log(ruinData.address + 'layout.svg');
+
+		//Get the associated combination
+		var comboName = window.ruinMaps[id].layers[combo];
+
+		console.log(ruinData.address + combo + '.obelisks.svg');
+
+		//Ruin layer
+		var ruinMap = L.imageOverlay(ruinData.address + 'layout.svg', imageBounds, {
+				minZoom: 0,
+				maxZoom: 5,
+				attribution: 'Ruins diagram by Zebarmy',
+				tms: true
+			}).addTo(window.map);
+
+		var obeliskMap = L.imageOverlay(ruinData.address + combo + '.obelisks.svg', imageBounds, {
+				minZoom: 0,
+				maxZoom: 5,
+				tms: true
+			}).addTo(window.map);
+		
+		var numberMap = L.imageOverlay(ruinData.address + combo + '.numbering.svg', imageBounds, {
+				minZoom: 0,
+				maxZoom: 5,
+				tms: true
+			}).addTo(window.map);
+
+		var ruinMaps = L.layerGroup(ruinMap, obeliskMap, numberMap);
+
+		ruinMaps.addTo(window.map);
+
+		//Remove old
+		if(window.mapLayers){
+			window.mapLayers.remove();
+			window.mapLayers = null;
+		}
+
+		window.mapLayers = L.control.layers({'Ruins':ruinMap},{'Obelisks':obeliskMap,'Numbering':numberMap},{collapsed:false,hideSingleBase:true})
+		window.mapLayers.addTo(map);
+
+	}
+
+	setMap('alpha','1');
+
+	
+</script>
+
+
+
+</body>
+</html>
