@@ -17,138 +17,148 @@
 <body>
 
 
-<table id="ruinslist">
-	<tr>
-		<th colspan="3" class="ruinname">
-			Alpha
-		</th>
-		<th>&nbsp;</th>
-		<th colspan="2" class="ruinname">
-			Beta
-		</th>
-	</tr>
-	<tr>
-		<td>
-			<a class="btn ruinbtn" href="#alpha.1">1</a>
-		</td>
-		<td>
-		`	<a class="btn ruinbtn" href="#alpha.1p">1+</a>
-		</td>
-		<td>
-			<a class="btn ruinbtn" href="#alpha.2">2</a>
-		</td>
-		<td>&nbsp;</td>
-		<td>
-			<a class="btn ruinbtn" href="#beta.1">1</a>
-		</td>
-		<td>
-			<a class="btn ruinbtn" href="#beta.2">2</a>
-		</td>
-	</tr>
-</table>
-
-
 <div id="mapid" style="width: 100%; height: 600px;"></div>
 <script>
-	window.ruinMaps = { 
-		'alpha': { 
-			address:'maps/alpha/',
-			layers:{
-				'1':'Alpha 1',
-				'1p':'Alpha 1+',
-				'2':'Alpha 2'
-			}
-		},
-		'beta': {
-			address:'maps/beta/',
-			layers:{
-				'1':'Beta 1',
-				'2':'Beta 2'
-			}
-		}
-	};
-
-	window.map = L.map('mapid', {
+	window.ruins = {
+		map:L.map('mapid', {
 			center: [0,0],
 			zoom: -20,
 			crs: L.CRS.Simple
-		});
+		}),
+		mapControls:null,
+		defaultImageBounds:[[0,0], [750,750]]
+	}
+	
+	
 
-	window.mapLayers = null;
+	window.ruins.map.on('click', onMapClick);
+
+	function onMapClick(e) {
+		/*
+	    popup.setLatLng(e.latlng)
+	        .setContent("You clicked the map at " + e.latlng.toString())
+	        .openOn(mymap);
+	    */
+	    
+	    
+	    document.getElementById('log').value = document.getElementById('log').value + '[' + e.latlng.lat + ',' + e.latlng.lng + ']\n';
+	}
+
+
 
 	$('.ruinbtn').click(function(e){
 		var ruinid = $(this).attr('href').replace(/#/g,'');
 		var ruincombo = ruinid.split('.')[1];
 		ruinid = ruinid.split('.')[0];
 
-
 		setMap(ruinid,ruincombo);
 	});
 
 
 	function setMap(id,combo){
-		console.log('id:' + id);
-
 		//Clear existing layers
-		window.map.eachLayer(function (layer) {
-			map.removeLayer(layer);
+		window.ruins.map.eachLayer(function (layer) {
+			window.ruins.map.removeLayer(layer);
 		});
 
-		var imageBounds = [[0,0], [750,750]];
+		//Remove old map controls
+		if(window.mapControls){
+			window.mapControls.remove();
+			window.mapControls = null;
+		}
+
+		window.ruins.map.fitBounds(window.ruins.defaultImageBounds);
+
+		//Now build layers
 		var baseLayers = {};
 		var overlays = {};
 
-		map.fitBounds(imageBounds);
-
-		//Get ruin 
-		var ruinData = window.ruinMaps[id];
-
-		console.log(ruinData.address + 'layout.svg');
-
-		//Get the associated combination
-		var comboName = window.ruinMaps[id].layers[combo];
-
-		console.log(ruinData.address + combo + '.obelisks.svg');
-
-		//Ruin layer
-		var ruinMap = L.imageOverlay(ruinData.address + 'layout.svg', imageBounds, {
+		//Ruin layout
+		var ruinMapLayer = L.imageOverlay('maps/' + id + '/layout.svg', window.ruins.defaultImageBounds, {
 				minZoom: 0,
 				maxZoom: 5,
 				attribution: 'Ruins diagram by Zebarmy',
-				tms: true
-			}).addTo(window.map);
+				tms: true,
+				autoZIndex: false
+			}).addTo(window.ruins.map);
 
-		var obeliskMap = L.imageOverlay(ruinData.address + combo + '.obelisks.svg', imageBounds, {
+		//Overlays
+		var obeliskMapOverlay = L.imageOverlay('maps/' + id + '/cluster.a.obelisks.svg', window.ruins.defaultImageBounds, {
 				minZoom: 0,
 				maxZoom: 5,
-				tms: true
-			}).addTo(window.map);
+				tms: true,
+				zIndex: 500
+			}).addTo(window.ruins.map);
+
+		var numberMapOverlay = L.imageOverlay('maps/' + id + '/cluster.a.numbers.svg', window.ruins.defaultImageBounds, {
+				minZoom: 0,
+				maxZoom: 5,
+				tms: true,
+				zIndex: 700
+			}).addTo(window.ruins.map);
 		
-		var numberMap = L.imageOverlay(ruinData.address + combo + '.numbering.svg', imageBounds, {
-				minZoom: 0,
-				maxZoom: 5,
-				tms: true
-			}).addTo(window.map);
+	
+		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
+		var obelisksGroupOverlay = L.layerGroup(obeliskMapOverlay);
 
-		var ruinMaps = L.layerGroup(ruinMap, obeliskMap, numberMap);
+		var polygon = addObeliskPoly('a',1,[448.578125,365.9375],0);
+		obelisksGroupOverlay.addLayer(polygon);
+		
+		polygon = addObeliskPoly('a',2,[446.1875,367.765625],180);
+		obelisksGroupOverlay.addLayer(polygon);
 
-		ruinMaps.addTo(window.map);
 
-		//Remove old
-		if(window.mapLayers){
-			window.mapLayers.remove();
-			window.mapLayers = null;
-		}
+		obelisksGroupOverlay.addTo(window.ruins.map);
 
-		window.mapLayers = L.control.layers({'Ruins':ruinMap},{'Obelisks':obeliskMap,'Numbering':numberMap},{collapsed:false,hideSingleBase:true})
-		window.mapLayers.addTo(map);
+		//Controls and overlay options
+		window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{'Obelisks':obelisksGroupOverlay,'Numbering':numberMapOverlay},{collapsed:false,hideSingleBase:true})
 
+		//window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{collapsed:false,hideSingleBase:true})
+		window.ruins.mapControls.addTo(window.ruins.map);
 	}
 
-	setMap('alpha','1');
+	function addObeliskPoly(cluster,number,point,orientation){
+		var p1 = null;
+		var p2 = null;
+		var p3 = null;
+
+		if(orientation == 180){
+			//orient up
+			var p1 = point;
+			
+			var p2 = [p1[0]+2.6, p1[1]-1.5];
+
+			var p3 = [p1[0]+2.6, p1[1]+1.5];
+		}else{
+
+			//orient down
+			var p1 = point;
+			
+			var p2 = [p1[0]-2.6, p1[1]-1.5];
+
+			var p3 = [p1[0]-2.6, p1[1]+1.5];
+		}
+	
+		var polygon = L.polygon([
+		    p1,
+		    p2,
+		    p3
+		], {color: 'blue'});
+
+		polygon.on('click', function(e) {
+			alert('Obelisk ' + cluster + ' ' + number);
+  		});
+
+		return polygon;
+	}
+
+	setMap('alpha','AB');
 
 	
 </script>
+
+
+<textarea id="log" style="width:100%; height:500px; display: none"></textarea>
 
 
 
