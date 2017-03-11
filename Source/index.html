@@ -3,7 +3,7 @@
 <html>
 <head>
 	
-	<title>Ruins Validation</title>
+	<title>Guardian Ancient Ruins</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,19 +19,79 @@
 
 <div id="mapid" style="width: 100%; height: 600px;"></div>
 <script>
-	window.ruins = {
-		map:L.map('mapid', {
-			center: [0,0],
-			zoom: -20,
-			crs: L.CRS.Simple
-		}),
-		mapControls:null,
-		defaultImageBounds:[[0,0], [750,750]]
-	}
-	
-	
+	$( document ).ready(function() {
 
-	window.ruins.map.on('click', onMapClick);
+		window.ruins = {
+			map:L.map('mapid', {
+				center: [0,0],
+				zoom: -20,
+				crs: L.CRS.Simple
+			}),
+			mapControls:null,
+			defaultImageBounds:[[0,0], [750,750]],
+
+			//For tooling only
+			tooling: {
+				capture: false,
+				paths: [],
+				init: function(){
+					this.capture = true;
+
+					$('#obeliskSetPath').click(function(e){
+						console.log(this.paths);
+						var obeliskSet = {
+							id:$('#obeliskNumber').val(),
+							points: ruins.tooling.paths
+						};
+
+						document.getElementById('log').value = document.getElementById('log').value + JSON.stringify(obeliskSet) + ',\n';
+						//reset the array
+						ruins.tooling.paths = [];
+
+						//Increment
+						$('#obeliskNumber').val(1 + Number($('#obeliskNumber').val()));
+
+					})
+					
+
+				},
+				addPoint:function(latlng){
+					//Add an array
+					this.paths.push([latlng.lat,latlng.lng]);
+					//Flag
+					$(obeliskPointFlag).fadeIn(100).fadeOut(100);
+					
+				}
+
+				/*
+				Obelisk Number: <input type="text" id="obeliskNumber" value="1"><BR>
+				Obelisk Number: <input type="button" id="obeliskSetPath" value="Add"><BR>
+				*/
+			}
+
+		}
+
+		$('.ruinbtn').click(function(e){
+			var ruinid = $(this).attr('href').replace(/#/g,'');
+			var ruincombo = ruinid.split('.')[1];
+			ruinid = ruinid.split('.')[0];
+
+			setMap(ruinid,ruincombo);
+		});
+
+
+		window.ruins.map.on('click', onMapClick);
+
+
+		setMap('alpha','AB');
+
+		
+		window.ruins.tooling.init();		
+
+	});
+
+
+
 
 	function onMapClick(e) {
 		/*
@@ -40,19 +100,11 @@
 	        .openOn(mymap);
 	    */
 	    
-	    
-	    document.getElementById('log').value = document.getElementById('log').value + '[' + e.latlng.lat + ',' + e.latlng.lng + ']\n';
+	    if(window.ruins.tooling.capture){
+	    	window.ruins.tooling.addPoint(e.latlng);
+	    }
 	}
 
-
-
-	$('.ruinbtn').click(function(e){
-		var ruinid = $(this).attr('href').replace(/#/g,'');
-		var ruincombo = ruinid.split('.')[1];
-		ruinid = ruinid.split('.')[0];
-
-		setMap(ruinid,ruincombo);
-	});
 
 
 	function setMap(id,combo){
@@ -101,14 +153,32 @@
 		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
 		var obelisksGroupOverlay = L.layerGroup(obeliskMapOverlay);
 
-		var polygon = addObeliskPoly('a',1,[448.578125,365.9375],0);
-		obelisksGroupOverlay.addLayer(polygon);
-		
-		polygon = addObeliskPoly('a',2,[446.1875,367.765625],180);
-		obelisksGroupOverlay.addLayer(polygon);
-
+		//Get the JSON data for the obelisk group
+		/*
+		$.ajax({
+		  dataType: "json",
+		  url: 'http://cann2.sonargaming.com/maps/' + id + '/cluster.a.json',
+		  data: {},
+		  success: function(e){
+		  	alert('have json data');
+		  }
+		});
+		*/
 
 		obelisksGroupOverlay.addTo(window.ruins.map);
+
+		var jqxhr = $.getJSON( 'http://cann2.sonargaming.com/maps/' + id + '/cluster.a.js', function(e) {
+
+			  $.each(e.obelisks, function( index, item ) {
+				  console.log('obelisk item');
+
+				  var polygon = addObeliskPoly('A',item.id,item.points);
+				  obelisksGroupOverlay.addLayer(polygon);
+				});
+
+			})
+		  ;
+
 
 		//Controls and overlay options
 		window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{'Obelisks':obelisksGroupOverlay,'Numbering':numberMapOverlay},{collapsed:false,hideSingleBase:true})
@@ -117,7 +187,18 @@
 		window.ruins.mapControls.addTo(window.ruins.map);
 	}
 
-	function addObeliskPoly(cluster,number,point,orientation){
+	function addObeliskPoly(cluster,number,points){
+	
+		var polygon = L.polygon(points, {color: 'blue'});
+
+		polygon.on('click', function(e) {
+			alert('Obelisk ' + cluster + ' ' + number);
+  		});
+
+		return polygon;
+	}
+
+	function addObeliskPolyZ(cluster,number,point,orientation){
 		var p1 = null;
 		var p2 = null;
 		var p3 = null;
@@ -150,16 +231,22 @@
   		});
 
 		return polygon;
-	}
-
-	setMap('alpha','AB');
-
-	
+	}	
 </script>
 
+<!--
+	<div id="tooling">
+		Obelisk Number: <input type="text" id="obeliskNumber" value="1"><BR>
+		Obelisk Number: <input type="button" id="obeliskSetPath" value="Add">
+		<div id="obeliskPointFlag" style="display:none">
+			Point Captured
+		</div>
 
-<textarea id="log" style="width:100%; height:500px; display: none"></textarea>
-
+		<BR>
+		<HR>
+		<textarea id="log" style="width:100%; height:400px; "></textarea>
+	</div>
+-->
 
 
 </body>
