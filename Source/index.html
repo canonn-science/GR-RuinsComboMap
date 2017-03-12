@@ -38,7 +38,6 @@
 					this.capture = true;
 
 					$('#obeliskSetPath').click(function(e){
-						console.log(this.paths);
 						var obeliskSet = {
 							id:$('#obeliskNumber').val(),
 							points: ruins.tooling.paths
@@ -86,7 +85,7 @@
 		setMap('alpha','AB');
 
 		
-		window.ruins.tooling.init();		
+		//window.ruins.tooling.init();		
 
 	});
 
@@ -154,23 +153,11 @@
 		var obelisksGroupOverlay = L.layerGroup(obeliskMapOverlay);
 
 		//Get the JSON data for the obelisk group
-		/*
-		$.ajax({
-		  dataType: "json",
-		  url: 'http://cann2.sonargaming.com/maps/' + id + '/cluster.a.json',
-		  data: {},
-		  success: function(e){
-		  	alert('have json data');
-		  }
-		});
-		*/
-
 		obelisksGroupOverlay.addTo(window.ruins.map);
 
 		var jqxhr = $.getJSON( 'http://cann2.sonargaming.com/maps/' + id + '/cluster.a.js', function(e) {
 
 			  $.each(e.obelisks, function( index, item ) {
-				  console.log('obelisk item');
 
 				  var polygon = addObeliskPoly('A',item.id,item.points);
 				  obelisksGroupOverlay.addLayer(polygon);
