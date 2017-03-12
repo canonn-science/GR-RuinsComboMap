@@ -14,7 +14,7 @@
    width="2895"
    version="1.1"
    id="svg18325"
-   sodipodi:docname="cluster.a.numbers.svg"
+   sodipodi:docname="cluster.a.obelisks.svg"
    inkscape:version="0.91 r13725">
   <metadata
      id="metadata18331">
@@ -24,7 +24,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -216,9 +216,9 @@
      inkscape:window-height="1017"
      id="namedview18327"
      showgrid="false"
-     inkscape:zoom="0.35355339"
-     inkscape:cx="1121.1302"
-     inkscape:cy="1045.6475"
+     inkscape:zoom="0.125"
+     inkscape:cx="-1344.6345"
+     inkscape:cy="301.67814"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -229,7 +229,9 @@
   <g
      inkscape:groupmode="layer"
      id="layer51"
-     inkscape:label="SharedObjects">
+     inkscape:label="SharedObjects"
+     sodipodi:insensitive="true"
+     style="opacity:0">
     <g
        id="g30866"
        transform="translate(1505.0407,-979.42323)"
@@ -242,7 +244,8 @@
     </g>
     <g
        id="g30375"
-       transform="translate(2089.6312,-1863.4994)">
+       transform="translate(2089.6312,-1863.4994)"
+       style="">
       <circle
          style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#c80000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30182-1-9"
@@ -263,7 +266,8 @@
     </g>
     <g
        id="g30370"
-       transform="translate(2098.2312,-1853.2994)">
+       transform="translate(2098.2312,-1853.2994)"
+       style="">
       <circle
          style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#00c800;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30182-1"
@@ -332,21 +336,6 @@
          style="fill:#999999;fill-opacity:1" />
     </g>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Masking Layer"
-     style="display:inline"
-     sodipodi:insensitive="true">
-    <rect
-       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect6373"
-       width="156"
-       height="122"
-       x="2714"
-       y="23" />
-  </g>
- 
 <g
      inkscape:groupmode="layer"
      id="layer55"

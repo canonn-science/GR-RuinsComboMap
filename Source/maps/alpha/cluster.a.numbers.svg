@@ -229,7 +229,7 @@
   <g
      inkscape:groupmode="layer"
      id="layer51"
-     inkscape:label="SharedObjects">
+     inkscape:label="SharedObjects" style="opacity:0">
     
     <g
        id="g30375"
@@ -274,20 +274,7 @@
          inkscape:connector-curvature="0" />
     </g>
   </g>
-  <g
-     inkscape:groupmode="layer"
-     id="layer1"
-     inkscape:label="Masking Layer"
-     style="display:inline"
-     sodipodi:insensitive="true">
-    <rect
-       style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="rect6373"
-       width="156"
-       height="122"
-       x="2714"
-       y="23" />
-  </g>
+  
   <g
      inkscape:groupmode="layer"
      id="layer19"
