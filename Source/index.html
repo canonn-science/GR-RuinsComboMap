@@ -82,7 +82,7 @@
 		window.ruins.map.on('click', onMapClick);
 
 
-		setMap('alpha','AB');
+		setMap('alpha','abcdefghijklmnopq');
 
 		
 		//window.ruins.tooling.init();		
@@ -124,6 +124,12 @@
 		var baseLayers = {};
 		var overlays = {};
 
+		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
+		var obelisksGroupOverlay = L.layerGroup();
+
+		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
+		var obelisksNumberOverlay = L.layerGroup();
+
 		//Ruin layout
 		var ruinMapLayer = L.imageOverlay('maps/' + id + '/layout.svg', window.ruins.defaultImageBounds, {
 				minZoom: 0,
@@ -133,28 +139,63 @@
 				autoZIndex: false
 			}).addTo(window.ruins.map);
 
+		//Add overlays
+		obelisksGroupOverlay.addTo(window.ruins.map);
+		obelisksNumberOverlay.addTo(window.ruins.map);
+
 		//Overlays
-		var obeliskMapOverlay = L.imageOverlay('maps/' + id + '/cluster.a.obelisks.svg', window.ruins.defaultImageBounds, {
+		/*
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'a');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'b');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'c');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'d');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'e');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'f');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'g');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'h');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'i');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'j');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'k');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'l');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'m');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'n');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'o');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'p');
+		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'q');
+		*/
+
+		//Controls and overlay options
+		window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{'Obelisks':obelisksGroupOverlay,'Numbering':obelisksNumberOverlay},{collapsed:false,hideSingleBase:true})
+
+		//window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{collapsed:false,hideSingleBase:true})
+		window.ruins.mapControls.addTo(window.ruins.map);
+	}
+
+	function addCluster(obeliskLayer,numberLayer,id,cluster){
+		//Overlays
+		var obeliskMapOverlay = L.imageOverlay('maps/' + id + '/cluster.' + cluster + '.obelisks.svg', window.ruins.defaultImageBounds, {
 				minZoom: 0,
 				maxZoom: 5,
 				tms: true,
 				zIndex: 500
 			}).addTo(window.ruins.map);
 
-		var numberMapOverlay = L.imageOverlay('maps/' + id + '/cluster.a.numbers.svg', window.ruins.defaultImageBounds, {
+		//Add to overlay
+		obeliskLayer.addLayer(obeliskMapOverlay);
+
+		var numberMapOverlay = L.imageOverlay('maps/' + id + '/cluster.' + cluster + '.numbers.svg', window.ruins.defaultImageBounds, {
 				minZoom: 0,
 				maxZoom: 5,
 				tms: true,
 				zIndex: 700
 			}).addTo(window.ruins.map);
+
+		//Add to overlay
+		numberLayer.addLayer(numberMapOverlay);
 		
-	
-		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
-		var obelisksGroupOverlay = L.layerGroup(obeliskMapOverlay);
 
+		/*
 		//Get the JSON data for the obelisk group
-		obelisksGroupOverlay.addTo(window.ruins.map);
-
 		var jqxhr = $.getJSON( 'http://cann2.sonargaming.com/maps/' + id + '/cluster.a.js', function(e) {
 
 			  $.each(e.obelisks, function( index, item ) {
@@ -163,15 +204,9 @@
 				  obelisksGroupOverlay.addLayer(polygon);
 				});
 
-			})
-		  ;
+			});
+		*/
 
-
-		//Controls and overlay options
-		window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{'Obelisks':obelisksGroupOverlay,'Numbering':numberMapOverlay},{collapsed:false,hideSingleBase:true})
-
-		//window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{collapsed:false,hideSingleBase:true})
-		window.ruins.mapControls.addTo(window.ruins.map);
 	}
 
 	function addObeliskPoly(cluster,number,points){
