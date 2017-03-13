@@ -10,6 +10,8 @@
 
 	<link rel="stylesheet" href="leaflet.css" />
 	<link rel="stylesheet" href="ruins.css" />
+
+	<script>L_PREFER_CANVAS = true;</script>
 	<script src="scripts/leaflet.js"></script>
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	
@@ -23,12 +25,12 @@
 
 		window.ruins = {
 			map:L.map('mapid', {
-				center: [0,0],
-				zoom: -20,
+				center: [-81,95],
+				zoom: 0,
 				crs: L.CRS.Simple
 			}),
 			mapControls:null,
-			defaultImageBounds:[[0,0], [750,750]],
+			defaultImageBounds:[[0,0], [100,100]],
 
 			//For tooling only
 			tooling: {
@@ -98,6 +100,10 @@
 	        .setContent("You clicked the map at " + e.latlng.toString())
 	        .openOn(mymap);
 	    */
+
+
+	    alert(e.latlng);
+
 	    
 	    if(window.ruins.tooling.capture){
 	    	window.ruins.tooling.addPoint(e.latlng);
@@ -118,7 +124,7 @@
 			window.mapControls = null;
 		}
 
-		window.ruins.map.fitBounds(window.ruins.defaultImageBounds);
+		//window.ruins.map.fitBounds(window.ruins.defaultImageBounds);
 
 		//Now build layers
 		var baseLayers = {};
@@ -131,9 +137,10 @@
 		var obelisksNumberOverlay = L.layerGroup();
 
 		//Ruin layout
-		var ruinMapLayer = L.imageOverlay('maps/' + id + '/layout.svg', window.ruins.defaultImageBounds, {
-				minZoom: 0,
-				maxZoom: 5,
+		
+		var ruinMapLayer = L.tileLayer('maps/' + id + '/layout.tiles/{z}/{x}/{y}.png', {
+				minZoom: 2,
+				maxZoom: 6,
 				attribution: 'Ruins diagram by Zebarmy',
 				tms: true,
 				autoZIndex: false
@@ -144,8 +151,10 @@
 		obelisksNumberOverlay.addTo(window.ruins.map);
 
 		//Overlays
-		
 		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'a');
+
+
+		
 		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'b');		
 		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'c');
 
@@ -168,6 +177,9 @@
 		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'q');
 		
 		
+		//Zoom
+		//map.fitBounds(ruinMapLayer.getBounds());
+
 
 		//Controls and overlay options
 		window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{'Obelisks':obelisksGroupOverlay,'Numbering':obelisksNumberOverlay},{collapsed:false,hideSingleBase:true})
@@ -179,7 +191,7 @@
 	function addCluster(obeliskLayer,numberLayer,id,cluster){
 
 		//Overlays
-		var obeliskMapOverlay = L.imageOverlay('maps/' + id + '/cluster.' + cluster + '.obelisks.svg', window.ruins.defaultImageBounds, {
+		var obeliskMapOverlay = L.tileLayer('maps/' + id + '/cluster.' + cluster + '.obelisks.tiles/{z}/{x}/{y}.png', {
 				minZoom: 0,
 				maxZoom: 5,
 				tms: true,
@@ -188,10 +200,10 @@
 
 		//Add to overlay
 		obeliskLayer.addLayer(obeliskMapOverlay);
+
+
 		
-		
-		
-		var numberMapOverlay = L.imageOverlay('maps/' + id + '/cluster.' + cluster + '.numbers.svg', window.ruins.defaultImageBounds, {
+		var numberMapOverlay = L.tileLayer('maps/' + id + '/cluster.' + cluster + '.numbers.tiles/{z}/{x}/{y}.png', {
 				minZoom: 0,
 				maxZoom: 5,
 				tms: true,
@@ -200,23 +212,18 @@
 
 		//Add to overlay
 		numberLayer.addLayer(numberMapOverlay);
-		
-		
-		
-		
-
-		/*
+	
 		//Get the JSON data for the obelisk group
-		var jqxhr = $.getJSON( 'http://cann2.sonargaming.com/maps/' + id + '/cluster.a.js', function(e) {
+		var jqxhr = $.getJSON( 'http://eliteresearchtools.000webhostapp.com/maps/' + id + '/cluster.' + cluster + '.js', function(e) {
 
 			  $.each(e.obelisks, function( index, item ) {
 
 				  var polygon = addObeliskPoly('A',item.id,item.points);
-				  obelisksGroupOverlay.addLayer(polygon);
+				  obeliskLayer.addLayer(polygon);
 				});
 
 			});
-		*/
+		
 
 	}
 
