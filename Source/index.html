@@ -3,7 +3,7 @@
 <html>
 <head>
 	
-	<title>Guardian Ancient Ruins</title>
+	<title>Guardian Ancient Ruins 2</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,108 +11,48 @@
 	<link rel="stylesheet" href="leaflet.css" />
 	<link rel="stylesheet" href="ruins.css" />
 
-	<script>L_PREFER_CANVAS = true;</script>
-	<script src="scripts/leaflet.js"></script>
 	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/svg-pan-zoom.js"></script>
 	
 </head>
 <body>
 
 
-<div id="mapid" style="width: 100%; height: 600px;"></div>
+<div id="ruin-display" style="width: 100%; height: 600px; border:1px solid black">
+	<object id="ruin-svg" type="image/svg+xml" data="/maps/alpha/alpha.svg" style="width:100%; height: 100%" class="svgRuinMap">
+	  Alien Ruin
+	</object>
+</div>
 <script>
 	$( document ).ready(function() {
-
 		window.ruins = {
-			map:L.map('mapid', {
-				center: [-81,95],
-				zoom: 0,
-				crs: L.CRS.Simple
-			}),
-			mapControls:null,
-			defaultImageBounds:[[0,0], [100,100]],
-
-			//For tooling only
-			tooling: {
-				capture: false,
-				paths: [],
-				init: function(){
-					this.capture = true;
-
-					$('#obeliskSetPath').click(function(e){
-						var obeliskSet = {
-							id:$('#obeliskNumber').val(),
-							points: ruins.tooling.paths
-						};
-
-						document.getElementById('log').value = document.getElementById('log').value + JSON.stringify(obeliskSet) + ',\n';
-						//reset the array
-						ruins.tooling.paths = [];
-
-						//Increment
-						$('#obeliskNumber').val(1 + Number($('#obeliskNumber').val()));
-
-					})
-					
-
-				},
-				addPoint:function(latlng){
-					//Add an array
-					this.paths.push([latlng.lat,latlng.lng]);
-					//Flag
-					$(obeliskPointFlag).fadeIn(100).fadeOut(100);
-					
-				}
-
-				/*
-				Obelisk Number: <input type="text" id="obeliskNumber" value="1"><BR>
-				Obelisk Number: <input type="button" id="obeliskSetPath" value="Add"><BR>
-				*/
+			panZoomControl: null,
+			mapReady: function(){
+				this.panZoomControl = svgPanZoom('#ruin-svg', {
+					zoomEnabled: true,
+					controlIconsEnabled: true,
+					fit: true,
+					center: true,
+					minZoom: 0.1
+				});
 			}
-
 		}
 
-		$('.ruinbtn').click(function(e){
-			var ruinid = $(this).attr('href').replace(/#/g,'');
-			var ruincombo = ruinid.split('.')[1];
-			ruinid = ruinid.split('.')[0];
+		//Wait for the svg to load to process
+		$('#ruin-svg')[0].addEventListener('load', function() {
+		    window.ruins.mapReady();  
+		}, true);
 
-			setMap(ruinid,ruincombo);
-		});
-
-
-		window.ruins.map.on('click', onMapClick);
-
-
-		setMap('alpha','abcdefghijklmnopq');
-
-		
-		//window.ruins.tooling.init();		
+		//setMap('alpha','abcdefghijklmnopq');
 
 	});
 
-
-
-
-	function onMapClick(e) {
-		/*
-	    popup.setLatLng(e.latlng)
-	        .setContent("You clicked the map at " + e.latlng.toString())
-	        .openOn(mymap);
-	    */
-
-
-	    alert(e.latlng);
-
-	    
-	    if(window.ruins.tooling.capture){
-	    	window.ruins.tooling.addPoint(e.latlng);
-	    }
+	function setMap(id,combo){
+		alert('setting map');
 	}
 
+	function setMapZ(id,combo){
 
-
-	function setMap(id,combo){
 		//Clear existing layers
 		window.ruins.map.eachLayer(function (layer) {
 			window.ruins.map.removeLayer(layer);
