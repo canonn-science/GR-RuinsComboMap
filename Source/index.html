@@ -12,9 +12,8 @@
 
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/jquery.panzoom.js"></script>
-	
-	
 </head>
+
 <body>
 
     <section id="focal">
@@ -25,23 +24,20 @@
 			<button class="reset">Reset</button>
 		</div>      
       <div class="parent" style="touch-action: none;">
-        <div class="panzoom" id="ruin-map" width="100px" height="100px">
+        <div class="panzoom" id="ruin-map">
 			Loading
 
         </div>
       </div>
       <script>
-      	document.addEventListener('gesturestart', function(e){
-      		e.preventDefault();
-      	})
+
 		$( document ).ready(function() {
 		  
 		  
-	      	function loadMap(){
-	      		$.get("maps/alpha/alpha.svg", function(data) {
+	      	function loadMap(mapType){
+	      		$.get("maps/" + mapType + ".svg", function(data) {
 		  			$('#ruin-map').empty().append(data.documentElement);
 		  			mapReady();
-			
 				});
 	      	}
 
@@ -85,30 +81,19 @@
 	          		alert('clicked on ' + e.target.id);
 	          	})
 
-	          	//set pointer style on inactive elements
-	          	/*
-	          	var groups='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-	          	for (var i = 0, len = groups.length; i < len; i++) {
-				  console.log(groups[i]);
-				}
-				*/
-
-	          	
-
-
-		          $panzoom.parent().on('mousewheel.focal', function( e ) {
-		            e.preventDefault();
-		            var delta = e.delta || e.originalEvent.wheelDelta;
-		            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
-		            $panzoom.panzoom('zoom', zoomOut, {
-		              increment: 0.1,
-		              animate: false,
-		              focal: e
-		            });
-		          });
+	          $panzoom.parent().on('mousewheel.focal', function( e ) {
+	            e.preventDefault();
+	            var delta = e.delta || e.originalEvent.wheelDelta;
+	            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+	            $panzoom.panzoom('zoom', zoomOut, {
+	              increment: 0.1,
+	              animate: false,
+	              focal: e
+	            });
+	          });
 	      	}
 	        
-	        loadMap();
+	        loadMap('alpha');
 
 	        /*
 	        function testLog(data){
