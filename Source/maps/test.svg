@@ -58,20 +58,24 @@
        width="400"
        height="380"
        x="28.571428"
-       y="15.219348"/>
+       y="15.219348"
+	   onclick="alert('rect 1');"/>
+	   
     <rect
        style="opacity:1;fill:#ff2a2a;fill-opacity:1;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1;pointer-events:none"
        id="r2"
        width="454.28571"
        height="431.42856"
        x="225.71428"
-       y="229.50507" />
+       y="229.50507" 
+	   onclick="alert('rect 2');"/>
     <rect
        style="opacity:1;fill:#aa8800;fill-opacity:1;stroke:#ff0000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:6, 1;stroke-dashoffset:0;stroke-opacity:1"
        id="r3"
        width="417.14285"
        height="354.28571"
        x="62.857143"
-       y="540.93365" />
+       y="540.93365" 
+	   onclick="alert('rect 3');"/>
   </g>
 </svg>

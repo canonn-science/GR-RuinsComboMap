@@ -6,7 +6,7 @@
 	<title>Guardian Ancient Ruins 2</title>
 
 	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
 	<link rel="stylesheet" href="ruins.css" />
 
@@ -24,13 +24,16 @@
 			<input type="range" class="zoom-range">
 			<button class="reset">Reset</button>
 		</div>      
-      <div class="parent">
-        <div class="panzoom" id="ruin-map">
+      <div class="parent" style="touch-action: none;">
+        <div class="panzoom" id="ruin-map" width="100px" height="100px">
 			Loading
 
         </div>
       </div>
       <script>
+      	document.addEventListener('gesturestart', function(e){
+      		e.preventDefault();
+      	})
 		$( document ).ready(function() {
 		  
 		  
@@ -48,8 +51,9 @@
 	          var $panzoom = $section.find('.panzoom').panzoom({
 					cursor: "-webkit-grab",
 					minScale: 0.4,
-					maxScale: 20,
-					increment: 0.5,
+					maxScale: 50,
+					increment: 5,
+					duration: 10,
 					$zoomIn: $(".zoom-in"),
 					$zoomOut: $(".zoom-out"),
 					$zoomRange: $(".zoom-range"),
