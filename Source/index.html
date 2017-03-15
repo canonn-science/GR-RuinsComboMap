@@ -8,226 +8,116 @@
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="leaflet.css" />
 	<link rel="stylesheet" href="ruins.css" />
 
 	<script src="scripts/jquery-3.1.1.min.js"></script>
-	<script src="scripts/svg-pan-zoom.js"></script>
+	<script src="scripts/jquery.panzoom.js"></script>
+	
 	
 </head>
 <body>
 
+    <section id="focal">
+		<div class="buttons">
+			<button class="zoom-in">Zoom In</button>
+			<button class="zoom-out">Zoom Out</button>
+			<input type="range" class="zoom-range">
+			<button class="reset">Reset</button>
+		</div>      
+      <div class="parent">
+        <div class="panzoom" id="ruin-map">
+			Loading
 
-<div id="ruin-display" style="width: 100%; height: 600px; border:1px solid black">
-	<object id="ruin-svg" type="image/svg+xml" data="/maps/alpha/alpha.svg" style="width:100%; height: 100%" class="svgRuinMap">
-	  Alien Ruin
-	</object>
-</div>
-<script>
-	$( document ).ready(function() {
-		window.ruins = {
-			panZoomControl: null,
-			mapReady: function(){
-				this.panZoomControl = svgPanZoom('#ruin-svg', {
-					zoomEnabled: true,
-					controlIconsEnabled: true,
-					fit: true,
-					center: true,
-					minZoom: 0.1
+        </div>
+      </div>
+      <script>
+		$( document ).ready(function() {
+		  
+		  
+	      	function loadMap(){
+	      		$.get("maps/alpha/alpha.svg", function(data) {
+		  			$('#ruin-map').empty().append(data.documentElement);
+		  			mapReady();
+			
 				});
-			}
-		}
+	      	}
 
-		//Wait for the svg to load to process
-		$('#ruin-svg')[0].addEventListener('load', function() {
-		    window.ruins.mapReady();  
-		}, true);
-
-		//setMap('alpha','abcdefghijklmnopq');
-
-	});
-
-	function setMap(id,combo){
-		alert('setting map');
-	}
-
-	function setMapZ(id,combo){
-
-		//Clear existing layers
-		window.ruins.map.eachLayer(function (layer) {
-			window.ruins.map.removeLayer(layer);
-		});
-
-		//Remove old map controls
-		if(window.mapControls){
-			window.mapControls.remove();
-			window.mapControls = null;
-		}
-
-		//window.ruins.map.fitBounds(window.ruins.defaultImageBounds);
-
-		//Now build layers
-		var baseLayers = {};
-		var overlays = {};
-
-		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
-		var obelisksGroupOverlay = L.layerGroup();
-
-		//Add obelisks (ultimately to come from a JSON file associated with the grouping)
-		var obelisksNumberOverlay = L.layerGroup();
-
-		//Ruin layout
-		
-		var ruinMapLayer = L.tileLayer('maps/' + id + '/layout.tiles/{z}/{x}/{y}.png', {
-				minZoom: 2,
-				maxZoom: 6,
-				attribution: 'Ruins diagram by Zebarmy',
-				tms: true,
-				autoZIndex: false
-			}).addTo(window.ruins.map);
-
-		//Add overlays
-		obelisksGroupOverlay.addTo(window.ruins.map);
-		obelisksNumberOverlay.addTo(window.ruins.map);
-
-		//Overlays
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'a');
-
-
-		
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'b');		
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'c');
-
-		
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'d');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'e');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'f');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'g');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'h');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'i');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'j');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'k');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'l');
-		
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'m');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'n');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'o');
-		
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'p');
-		addCluster(obelisksGroupOverlay,obelisksNumberOverlay,id,'q');
-		
-		
-		//Zoom
-		//map.fitBounds(ruinMapLayer.getBounds());
-
-
-		//Controls and overlay options
-		window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{'Obelisks':obelisksGroupOverlay,'Numbering':obelisksNumberOverlay},{collapsed:false,hideSingleBase:true})
-
-		//window.ruins.mapControls = L.control.layers({'Ruins':ruinMapLayer},{collapsed:false,hideSingleBase:true})
-		window.ruins.mapControls.addTo(window.ruins.map);
-	}
-
-	function addCluster(obeliskLayer,numberLayer,id,cluster){
-
-		//Overlays
-		var obeliskMapOverlay = L.tileLayer('maps/' + id + '/cluster.' + cluster + '.obelisks.tiles/{z}/{x}/{y}.png', {
-				minZoom: 0,
-				maxZoom: 5,
-				tms: true,
-				zIndex: 500
-			}).addTo(window.ruins.map);
-
-		//Add to overlay
-		obeliskLayer.addLayer(obeliskMapOverlay);
-
-
-		
-		var numberMapOverlay = L.tileLayer('maps/' + id + '/cluster.' + cluster + '.numbers.tiles/{z}/{x}/{y}.png', {
-				minZoom: 0,
-				maxZoom: 5,
-				tms: true,
-				zIndex: 700
-			}).addTo(window.ruins.map);
-
-		//Add to overlay
-		numberLayer.addLayer(numberMapOverlay);
-	
-		//Get the JSON data for the obelisk group
-		var jqxhr = $.getJSON( 'http://eliteresearchtools.000webhostapp.com/maps/' + id + '/cluster.' + cluster + '.js', function(e) {
-
-			  $.each(e.obelisks, function( index, item ) {
-
-				  var polygon = addObeliskPoly('A',item.id,item.points);
-				  obeliskLayer.addLayer(polygon);
+	      	function mapReady(){
+	      	  var registerTouch = 0;
+	 		  var $section = $('#focal');
+	          var $panzoom = $section.find('.panzoom').panzoom({
+					cursor: "-webkit-grab",
+					minScale: 0.4,
+					maxScale: 20,
+					increment: 0.5,
+					$zoomIn: $(".zoom-in"),
+					$zoomOut: $(".zoom-out"),
+					$zoomRange: $(".zoom-range"),
+					$reset: $(".reset"),
+					$set: $('.panzoom')
 				});
 
-			});
-		
+	          	$('.alphah').on('mousedown touchstart',function(e){
+	          		registerTouch = 1;
+	          		//testLog('alphah ts');
+	          	});
 
-	}
+	          	$('.alphah').on('touchmove',function(e){
+	          		registerTouch = 0;
+	          		//testLog('alphah tm');
+	          	})
 
-	function addObeliskPoly(cluster,number,points){
-	
-		var polygon = L.polygon(points, {color: 'blue'});
+	          
+	          	$('.alphah').on('touchend',function(e){
+	          		if(registerTouch == 0){
+	          			e.preventDefault();
+	          			return;
+	          		}
+	          		registerTouch = 0;
+	          		alert('clicked on ' + e.target.id);
+	          	})
 
-		polygon.on('click', function(e) {
-			alert('Obelisk ' + cluster + ' ' + number);
-  		});
+	          	$('.alphah').on('click',function(e){
+	          		alert('clicked on ' + e.target.id);
+	          	})
 
-		return polygon;
-	}
+	          	//set pointer style on inactive elements
+	          	/*
+	          	var groups='ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	          	for (var i = 0, len = groups.length; i < len; i++) {
+				  console.log(groups[i]);
+				}
+				*/
 
-	function addObeliskPolyZ(cluster,number,point,orientation){
-		var p1 = null;
-		var p2 = null;
-		var p3 = null;
+	          	
 
-		if(orientation == 180){
-			//orient up
-			var p1 = point;
-			
-			var p2 = [p1[0]+2.6, p1[1]-1.5];
 
-			var p3 = [p1[0]+2.6, p1[1]+1.5];
-		}else{
+		          $panzoom.parent().on('mousewheel.focal', function( e ) {
+		            e.preventDefault();
+		            var delta = e.delta || e.originalEvent.wheelDelta;
+		            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+		            $panzoom.panzoom('zoom', zoomOut, {
+		              increment: 0.1,
+		              animate: false,
+		              focal: e
+		            });
+		          });
+	      	}
+	        
+	        loadMap();
 
-			//orient down
-			var p1 = point;
-			
-			var p2 = [p1[0]-2.6, p1[1]-1.5];
+	        /*
+	        function testLog(data){
+	        	$('#templog').val($('#templog').val() + '\n' + data);
+	        }
+	        */
+	      });    
+      </script>
+    </section>
 
-			var p3 = [p1[0]-2.6, p1[1]+1.5];
-		}
-	
-		var polygon = L.polygon([
-		    p1,
-		    p2,
-		    p3
-		], {color: 'blue'});
-
-		polygon.on('click', function(e) {
-			alert('Obelisk ' + cluster + ' ' + number);
-  		});
-
-		return polygon;
-	}	
-</script>
-
-<!--
-	<div id="tooling">
-		Obelisk Number: <input type="text" id="obeliskNumber" value="1"><BR>
-		Obelisk Number: <input type="button" id="obeliskSetPath" value="Add">
-		<div id="obeliskPointFlag" style="display:none">
-			Point Captured
-		</div>
-
-		<BR>
-		<HR>
-		<textarea id="log" style="width:100%; height:400px; "></textarea>
-	</div>
--->
-
+    <!--
+    <textarea id="templog" style="height:500px; width:100%"></textarea>
+	-->
 
 </body>
 </html>
