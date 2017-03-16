@@ -17,6 +17,7 @@
 <body>
 
     <section id="focal">
+
 		<div class="buttons">
 			<button class="zoom-in">Zoom In</button>
 			<button class="zoom-out">Zoom Out</button>
@@ -55,6 +56,16 @@
 						  animate: false,
 						  focal: e
 						});
+					});		
+
+					//Mouse doublie click zoom
+					panZoomComp.parent().on('dblclick', function( e ) {
+						e.preventDefault();
+						panZoomComp.panzoom('zoom', null, {
+						  increment: 10,
+						  animate: true,
+						  focal: e
+						});
 					});					
 
 					//Touch specific event handling
@@ -79,16 +90,14 @@
 
 		          	//Pointer to visualize that the item can be "clicked"
 		          	$('.ruin-obelisk').css( 'cursor', 'pointer' );
-
-
 				}
 
 				this.setPanZoom = function(panZoomElement){
 					panZoomComp = panZoomElement.panzoom({
 						cursor: "-webkit-grab",
-						minScale: 0.4,
+						minScale: 1,
 						maxScale: 50,
-						increment: 0.1,
+						increment: 1,
 						duration: 10,
 						$zoomIn: options.zoomIn,
 						$zoomOut: options.zoomOut,
@@ -113,77 +122,6 @@
 		  		return this;
 		  	}();
 		  	
-
-
-	      	function loadMap(mapType){
-	      		$.get("maps/" + mapType + ".svg", function(data) {
-		  			$('#ruin-map').empty().append(data.documentElement);
-		  			mapReady();
-				});
-	      	}
-
-	      	function mapReady(){
-	      	  var registerTouch = 0;
-	 		  var $section = $('#focal');
-	          var $panzoom = $section.find('.panzoom').panzoom({
-					cursor: "-webkit-grab",
-					minScale: 0.4,
-					maxScale: 50,
-					increment: 5,
-					duration: 10,
-					$zoomIn: $(".zoom-in"),
-					$zoomOut: $(".zoom-out"),
-					$zoomRange: $(".zoom-range"),
-					$reset: $(".reset"),
-					$set: $('.panzoom')
-				});
-
-	          	$('.ruin-obelisk').on('mousedown touchstart',function(e){
-	          		registerTouch = 1;
-	          		//testLog('alphah ts');
-	          	});
-
-	          	$('.ruin-obelisk').on('touchmove',function(e){
-	          		registerTouch = 0;
-	          		//testLog('alphah tm');
-	          	})
-	          
-	          	$('.ruin-obelisk').on('touchend',function(e){
-	          		if(registerTouch == 0){
-	          			e.preventDefault();
-	          			return;
-	          		}
-	          		registerTouch = 0;
-	          		alert('clicked on ' + e.target.id);
-	          	});          
-
-	          $panzoom.parent().on('mousewheel.focal', function( e ) {
-	            e.preventDefault();
-	            var delta = e.delta || e.originalEvent.wheelDelta;
-	            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
-	            $panzoom.panzoom('zoom', zoomOut, {
-	              increment: 0.1,
-	              animate: false,
-	              focal: e
-	            });
-	          });
-
-          	$('.ruin-obelisk').on('click',function(e){
-          		alert('clicked on ' + e.target.id);
-          	})
-
-          	$('.alphah').on('click',function(e){
-          		alert('clicked on ' + e.target.id);
-          	})
-
-
-	          //Set classes for those that are "active" so our css filters will only apply to them
-	          //TODO
-	          $('.ruin-inactive').css('pointer-events','none');
-	          //$('.ruin-inactive').css('display','none');
-	      	}
-	        
-	        //loadMap('alpha');
 
 	        /*
 	        function testLog(data){
