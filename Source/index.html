@@ -23,7 +23,7 @@
 			<input type="range" class="zoom-range">
 			<button class="reset">Reset</button>
 		</div>      
-      <div class="parent" style="touch-action: none;">
+      <div class="parent">
         <div class="panzoom" id="ruin-map">
 			Loading
 
@@ -32,8 +32,89 @@
       <script>
 
 		$( document ).ready(function() {
-		  
-		  
+		  	window.ruins = function(){
+				this.options = {
+					panzoom:$(".panzoom"),
+					zoomIn: $(".zoom-in"),
+					zoomOut: $(".zoom-out"),
+					zoomRange: $(".zoom-range"),
+					reset: $(".reset")
+				}
+
+				this.panZoomComp = null;
+
+				this.prepSVG = function(){
+					var registerTouch = 0;
+					//Mouse wheel zoom
+					panZoomComp.parent().on('mousewheel.focal', function( e ) {
+						e.preventDefault();
+						var delta = e.delta || e.originalEvent.wheelDelta;
+						var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+						panZoomComp.panzoom('zoom', zoomOut, {
+						  increment: 0.1,
+						  animate: false,
+						  focal: e
+						});
+					});					
+
+					//Touch specific event handling
+		          	$('.ruin-obelisk').on('mousedown touchstart',function(e){
+		          		registerTouch = 1;
+		          	});
+		          	$('.ruin-obelisk').on('touchmove',function(e){
+		          		registerTouch = 0;
+		          	})	          
+		          	$('.ruin-obelisk').on('touchend',function(e){
+		          		if(registerTouch == 0){
+		          			e.preventDefault();
+		          			return;
+		          		}
+		          		registerTouch = 0;
+		          	});
+
+		          	//Click handlers
+		          	$('.ruin-obelisk').on('click',function(e){
+		          		alert('clicked on ' + e.target.id);
+		          	});
+
+		          	//Pointer to visualize that the item can be "clicked"
+		          	$('.ruin-obelisk').css( 'cursor', 'pointer' );
+
+
+				}
+
+				this.setPanZoom = function(panZoomElement){
+					panZoomComp = panZoomElement.panzoom({
+						cursor: "-webkit-grab",
+						minScale: 0.4,
+						maxScale: 50,
+						increment: 0.1,
+						duration: 10,
+						$zoomIn: options.zoomIn,
+						$zoomOut: options.zoomOut,
+						$zoomRange: options.zoomRange,
+						$reset: options.reset,
+						$set: panZoomElement
+					});
+				}
+
+				this.changeRuinType = function(typeName,data){
+
+					$.get("maps/" + typeName + ".svg", function(data) {
+						//Empty and then set the data
+						$('#ruin-map').empty().append(data.documentElement);
+
+						setPanZoom(options.panzoom);
+						prepSVG();
+
+					});
+				}
+
+		  		return this;
+		  	}();
+		  	
+
+
 	      	function loadMap(mapType){
 	      		$.get("maps/" + mapType + ".svg", function(data) {
 		  			$('#ruin-map').empty().append(data.documentElement);
@@ -57,29 +138,24 @@
 					$set: $('.panzoom')
 				});
 
-	          	$('.alphah').on('mousedown touchstart',function(e){
+	          	$('.ruin-obelisk').on('mousedown touchstart',function(e){
 	          		registerTouch = 1;
 	          		//testLog('alphah ts');
 	          	});
 
-	          	$('.alphah').on('touchmove',function(e){
+	          	$('.ruin-obelisk').on('touchmove',function(e){
 	          		registerTouch = 0;
 	          		//testLog('alphah tm');
 	          	})
-
 	          
-	          	$('.alphah').on('touchend',function(e){
+	          	$('.ruin-obelisk').on('touchend',function(e){
 	          		if(registerTouch == 0){
 	          			e.preventDefault();
 	          			return;
 	          		}
 	          		registerTouch = 0;
 	          		alert('clicked on ' + e.target.id);
-	          	})
-
-	          	$('.alphah').on('click',function(e){
-	          		alert('clicked on ' + e.target.id);
-	          	})
+	          	});          
 
 	          $panzoom.parent().on('mousewheel.focal', function( e ) {
 	            e.preventDefault();
@@ -91,16 +167,35 @@
 	              focal: e
 	            });
 	          });
+
+          	$('.ruin-obelisk').on('click',function(e){
+          		alert('clicked on ' + e.target.id);
+          	})
+
+          	$('.alphah').on('click',function(e){
+          		alert('clicked on ' + e.target.id);
+          	})
+
+
+	          //Set classes for those that are "active" so our css filters will only apply to them
+	          //TODO
+	          $('.ruin-inactive').css('pointer-events','none');
+	          //$('.ruin-inactive').css('display','none');
 	      	}
 	        
-	        loadMap('alpha');
+	        //loadMap('alpha');
 
 	        /*
 	        function testLog(data){
 	        	$('#templog').val($('#templog').val() + '\n' + data);
 	        }
 	        */
+
+	        window.ruins.changeRuinType('alpha');
 	      });    
+
+		
+
       </script>
     </section>
 

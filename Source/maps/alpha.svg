@@ -231,7 +231,7 @@
      class="ruin-inactive"
      id="layer2"
      inkscape:label="Structure"
-     style="display:inline"
+     style="display:inline; pointer-events:none"
      sodipodi:insensitive="true">
     <path
        style="fill:#336699;stroke-width:0.35278001"
@@ -324,16 +324,7 @@
          id="path30212-6-9"
          inkscape:connector-curvature="0" />
     </g>
-    <g
-       id="g30866"
-       transform="translate(1505.0407,-979.42323)"
-       style="fill:#000000;fill-opacity:1">
-      <path
-         inkscape:connector-curvature="0"
-         id="path30864"
-         d="m 1294.2829,1050.4571 c 0.3371,-0.6977 0.9876,-1.2255 1.1523,-2.0092 0.099,-0.6081 0.9754,-0.4624 0.91,-1.075 0.1288,-0.6274 0.6311,-1.0293 0.7597,-1.6739 0.2464,-0.6353 0.6419,-1.1747 1.2611,-1.4659 0.013,-0.5277 0.063,-1.1094 0.5255,-1.5149 0.479,-0.4819 0.5895,-1.2057 1.0601,-1.6755 0.4458,-0.1716 0.6983,0.5083 0.8691,0.8408 0.1785,0.4535 0.347,0.9165 0.6584,1.299 0.3627,0.348 0.1403,0.9606 0.3143,1.2541 0.5447,0.094 0.7805,0.492 0.8585,0.993 0.2672,0.5646 0.6557,1.0654 0.9551,1.609 0.2221,0.4191 -0.2944,1.1373 0.5284,1.1549 0.3854,0.2355 0.4307,0.7914 0.7138,1.1476 0.2012,0.4038 0.4516,0.8124 0.5237,1.2584 -0.2166,0.7233 -1.1818,0.5356 -1.77,0.5853 -0.5998,0.1 -1.232,0.019 -1.6286,-0.4353 -0.4492,0.083 -0.7511,0.5029 -1.2591,0.3532 -0.5136,-0.01 -1.0283,-0.043 -1.5332,-0.1409 -0.5204,0.2103 -0.9662,-0.2033 -1.3539,-0.3666 -0.3811,0.2868 -0.7426,0.5403 -1.2409,0.3545 -0.5954,-0.082 -1.1983,-0.2572 -1.7991,-0.1148 -0.2262,0.01 -0.5207,-0.1071 -0.5052,-0.3778 z m 5.7413,-9.5375 c 0.1057,0.016 -0.1514,0 0,0 z m 3.98,10.3114 c 0.2324,0 -0.182,0.013 0,0 z"
-         style="fill:#000000;fill-opacity:1;stroke-width:0.0114788" />
-    </g>
+    
     <rect
        style="opacity:1;fill:#999999;fill-opacity:1;stroke:none;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        id="rect5755"
@@ -348,7 +339,7 @@
      id="layer52"
      inkscape:label="Pylons"
      sodipodi:insensitive="true"
-     style="display:inline">
+     style="display:inline; pointer-events:none">
     <use
        style="display:inline"
        x="0"
@@ -678,8 +669,28 @@
      inkscape:groupmode="layer"
      class="ruin-inactive"
      id="layer1"
+     inkscape:label="Shared Objects"
+     style="display:inline; pointer-events:none"
+     sodipodi:insensitive="true">
+   
+      <g
+         id="g30866"
+         transform="translate(1505.0407,-979.42323)"
+         style="fill:#000000;fill-opacity:1">
+        <path
+           inkscape:connector-curvature="0"
+           id="path30864"
+           d="m 1294.2829,1050.4571 c 0.3371,-0.6977 0.9876,-1.2255 1.1523,-2.0092 0.099,-0.6081 0.9754,-0.4624 0.91,-1.075 0.1288,-0.6274 0.6311,-1.0293 0.7597,-1.6739 0.2464,-0.6353 0.6419,-1.1747 1.2611,-1.4659 0.013,-0.5277 0.063,-1.1094 0.5255,-1.5149 0.479,-0.4819 0.5895,-1.2057 1.0601,-1.6755 0.4458,-0.1716 0.6983,0.5083 0.8691,0.8408 0.1785,0.4535 0.347,0.9165 0.6584,1.299 0.3627,0.348 0.1403,0.9606 0.3143,1.2541 0.5447,0.094 0.7805,0.492 0.8585,0.993 0.2672,0.5646 0.6557,1.0654 0.9551,1.609 0.2221,0.4191 -0.2944,1.1373 0.5284,1.1549 0.3854,0.2355 0.4307,0.7914 0.7138,1.1476 0.2012,0.4038 0.4516,0.8124 0.5237,1.2584 -0.2166,0.7233 -1.1818,0.5356 -1.77,0.5853 -0.5998,0.1 -1.232,0.019 -1.6286,-0.4353 -0.4492,0.083 -0.7511,0.5029 -1.2591,0.3532 -0.5136,-0.01 -1.0283,-0.043 -1.5332,-0.1409 -0.5204,0.2103 -0.9662,-0.2033 -1.3539,-0.3666 -0.3811,0.2868 -0.7426,0.5403 -1.2409,0.3545 -0.5954,-0.082 -1.1983,-0.2572 -1.7991,-0.1148 -0.2262,0.01 -0.5207,-0.1071 -0.5052,-0.3778 z m 5.7413,-9.5375 c 0.1057,0.016 -0.1514,0 0,0 z m 3.98,10.3114 c 0.2324,0 -0.182,0.013 0,0 z"
+           style="fill:#000000;fill-opacity:1;stroke-width:0.0114788" />
+      </g>    
+
+  </g>  
+  <g
+     inkscape:groupmode="layer"
+     class="ruin-inactive"
+     id="layer1"
      inkscape:label="Masking Layer"
-     style="display:inline"
+     style="display:inline; pointer-events:none"
      sodipodi:insensitive="true">
     <rect
        style="display:inline;opacity:1;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -691,7 +702,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-a"
+     class="ruin-inactive ruin-layer-numbering ruin-group-a"
      id="layer19"
      inkscape:label="GrpA Boundary"
      style="display:inline"
@@ -707,7 +718,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-a"
+     class="ruin-layer-obelisk ruin-group-a"
      id="layer3"
      inkscape:label="GrpA"
      style="display:inline"
@@ -806,15 +817,18 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30868"
+       id="obelisk-alpha-a-1"
+       class="ruin-obelisk"
        transform="translate(-1392.432,841.81886)"
        width="100%"
-       height="100%" />
+       height="100%"
+        />
     <use
        height="100%"
        width="100%"
        transform="rotate(180,2112.4308,486.772)"
-       id="use30871"
+       id="obelisk-alpha-a-2"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -823,7 +837,8 @@
        height="100%"
        width="100%"
        transform="translate(-1323.0037,814.7146)"
-       id="use30873"
+       id="obelisk-alpha-a-3"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -833,7 +848,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30875"
+       id="obelisk-alpha-a-4"
+       class="ruin-obelisk"
        transform="rotate(180,2147.1448,473.2199)"
        width="100%"
        height="100%" />
@@ -842,7 +858,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30877"
+       id="obelisk-alpha-a-5"
+       class="ruin-obelisk"
        transform="rotate(63,1581.233,-388.98009)"
        width="100%"
        height="100%" />
@@ -850,7 +867,8 @@
        height="100%"
        width="100%"
        transform="rotate(-117,2529.9186,818.02242)"
-       id="use30879"
+       id="obelisk-alpha-a-6"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -859,7 +877,8 @@
        height="100%"
        width="100%"
        transform="rotate(69,1650.5243,-230.76697)"
-       id="use30881"
+       id="obelisk-alpha-a-7"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -869,7 +888,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30883"
+       id="obelisk-alpha-a-8"
+       class="ruin-obelisk"
        transform="rotate(-111,2604.7787,861.81798)"
        width="100%"
        height="100%" />
@@ -878,7 +898,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30885"
+       id="obelisk-alpha-a-9"
+       class="ruin-obelisk"
        transform="rotate(111,1976.1622,280.30112)"
        width="100%"
        height="100%" />
@@ -886,7 +907,8 @@
        height="100%"
        width="100%"
        transform="rotate(-69,3120.6571,1277.1349)"
-       id="use30887"
+       id="obelisk-alpha-a-10"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -895,7 +917,8 @@
        height="100%"
        width="100%"
        transform="rotate(124,2037.2642,389.59056)"
-       id="use30889"
+       id="obelisk-alpha-a-11"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -905,7 +928,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30891"
+       id="obelisk-alpha-a-12"
+       class="ruin-obelisk"
        transform="rotate(-56,3417.4903,1516.6218)"
        width="100%"
        height="100%" />
@@ -914,7 +938,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30893"
+       id="obelisk-alpha-a-13"
+       class="ruin-obelisk"
        transform="rotate(169,2239.5819,675.49816)"
        width="100%"
        height="100%" />
@@ -922,7 +947,8 @@
        height="100%"
        width="100%"
        transform="rotate(-11,9139.9561,5975.822)"
-       id="use30895"
+       id="obelisk-alpha-a-14"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -931,7 +957,8 @@
        height="100%"
        width="100%"
        transform="rotate(172,2226.7389,709.82658)"
-       id="use30897"
+       id="obelisk-alpha-a-15"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -941,7 +968,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30899"
+       id="obelisk-alpha-a-16"
+       class="ruin-obelisk"
        transform="rotate(-8,12017.762,8387.5242)"
        width="100%"
        height="100%" />
@@ -950,7 +978,8 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30901"
+       id="obelisk-alpha-a-17"
+       class="ruin-obelisk"
        transform="rotate(-124,2507.2066,1121.74)"
        width="100%"
        height="100%" />
@@ -958,7 +987,8 @@
        height="100%"
        width="100%"
        transform="rotate(56,822.82899,-501.06312)"
-       id="use30903"
+       id="obelisk-alpha-a-18"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -967,7 +997,8 @@
        height="100%"
        width="100%"
        transform="rotate(-122,2480.0975,1136.7256)"
-       id="use30905"
+       id="obelisk-alpha-a-19"
+       class="ruin-obelisk"
        xlink:href="#g30866"
        y="0"
        x="0"
@@ -977,14 +1008,15 @@
        x="0"
        y="0"
        xlink:href="#g30866"
-       id="use30907"
+       id="obelisk-alpha-a-20"
+       class="ruin-obelisk"
        transform="rotate(58,876.75749,-526.85516)"
        width="100%"
        height="100%" />
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-a"
+     class="ruin-inactive ruin-layer-numbering ruin-group-a"
      id="layer20"
      inkscape:label="GrpA Numbering"
      style="display:inline"
@@ -1383,7 +1415,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-b"
+     class="ruin-inactive ruin-layer-numbering ruin-group-b"
      id="layer21"
      inkscape:label="GrpB Boundary"
      style="display:inline"
@@ -1398,7 +1430,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-b"
+     class="ruin-layer-obelisk ruin-group-b"
      id="layer4"
      inkscape:label="GrpB"
      style="display:inline"
@@ -1804,7 +1836,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-b"
+     class="ruin-inactive ruin-layer-numbering ruin-group-b"
      id="layer22"
      inkscape:label="GrpB Numbering"
      style="display:inline"
@@ -2223,7 +2255,7 @@
      inkscape:groupmode="layer"
      id="layer38"
      inkscape:label="GrpC Boundary"
-     class="ruin-inactive ruin-numbering ruin-group-c"
+     class="ruin-inactive ruin-layer-numbering ruin-group-c"
      sodipodi:insensitive="true"
      style="display:inline">
     <path
@@ -2237,7 +2269,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-c"
+     class="ruin-layer-obelisk ruin-group-c"
      id="layer5"
      inkscape:label="GrpC"
      style="display:inline"
@@ -2515,7 +2547,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-c"
+     class="ruin-inactive ruin-layer-numbering ruin-group-c"
      id="layer40"
      inkscape:label="GrpC Numbering"
      sodipodi:insensitive="true"
@@ -2799,7 +2831,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-d"
+     class="ruin-inactive ruin-layer-numbering ruin-group-d"
      id="layer35"
      inkscape:label="GrpD Boundary"
      style="display:inline"
@@ -2815,7 +2847,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-d"
+     class="ruin-layer-obelisk ruin-group-d"
      id="layer6"
      inkscape:label="GrpD"
      style="display:inline"
@@ -3093,7 +3125,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-d"
+     class="ruin-inactive ruin-layer-numbering ruin-group-d"
      id="layer41"
      inkscape:label="GrpD Numbering"
      style="display:inline"
@@ -3377,7 +3409,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-e"
+     class="ruin-inactive ruin-layer-numbering ruin-group-e"
      id="layer27"
      inkscape:label="GrpE Boundary"
      sodipodi:insensitive="true"
@@ -3393,7 +3425,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-e"
+     class="ruin-layer-obelisk ruin-group-e"
      id="layer7"
      inkscape:label="GrpE"
      style="display:inline"
@@ -3527,7 +3559,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-e"
+     class="ruin-inactive ruin-layer-numbering ruin-group-e"
      id="layer28"
      inkscape:label="GrpE Numbering"
      sodipodi:insensitive="true"
@@ -3735,7 +3767,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-f"
+     class="ruin-inactive ruin-layer-numbering ruin-group-f"
      id="layer31"
      inkscape:label="GrpF Boundary"
      style="display:inline"
@@ -3751,7 +3783,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-f"
+     class="ruin-layer-obelisk ruin-group-f"
      id="layer8"
      inkscape:label="GrpF"
      style="display:inline"
@@ -4065,7 +4097,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-f"
+     class="ruin-inactive ruin-layer-numbering ruin-group-f"
      id="layer42"
      inkscape:label="GrpF Numbering"
      sodipodi:insensitive="true"
@@ -4501,7 +4533,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-g"
+     class="ruin-inactive ruin-layer-numbering ruin-group-g"
      id="layer37"
      inkscape:label="GrpG Boundary"
      sodipodi:insensitive="true"
@@ -4517,7 +4549,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-g"
+     class="ruin-layer-obelisk ruin-group-g"
      id="layer9"
      inkscape:label="GrpG"
      sodipodi:insensitive="true"
@@ -4570,7 +4602,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-g"
+     class="ruin-inactive ruin-layer-numbering ruin-group-g"
      id="layer43"
      inkscape:label="GrpG Numbering"
      sodipodi:insensitive="true"
@@ -4664,7 +4696,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-h"
+     class="ruin-inactive ruin-layer-numbering ruin-group-h"
      id="layer25"
      inkscape:label="GrpH Boundary"
      sodipodi:insensitive="true"
@@ -4680,7 +4712,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-h"
+     class="ruin-layer-obelisk ruin-group-h"
      id="layer10"
      inkscape:label="GrpH"
      style="display:inline"
@@ -4769,7 +4801,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-h"
+     class="ruin-inactive ruin-layer-numbering ruin-group-h"
      id="layer26"
      inkscape:label="GrpH Numbering"
      sodipodi:insensitive="true"
@@ -4920,7 +4952,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-i"
+     class="ruin-inactive ruin-layer-numbering ruin-group-i"
      id="layer32"
      inkscape:label="GrpI Boundary"
      sodipodi:insensitive="true"
@@ -4936,7 +4968,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-i"
+     class="ruin-layer-obelisk ruin-group-i"
      id="layer11"
      inkscape:label="GrpI"
      sodipodi:insensitive="true"
@@ -5232,7 +5264,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-i"
+     class="ruin-inactive ruin-layer-numbering ruin-group-i"
      id="layer44"
      inkscape:label="GrpI Numbering"
      sodipodi:insensitive="true"
@@ -5630,7 +5662,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-j"
+     class="ruin-inactive ruin-layer-numbering ruin-group-j"
      id="layer34"
      inkscape:label="GrpJ Boundary"
      sodipodi:insensitive="true"
@@ -5646,7 +5678,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-j"
+     class="ruin-layer-obelisk ruin-group-j"
      id="layer12"
      inkscape:label="GrpJ"
      sodipodi:insensitive="true"
@@ -5753,7 +5785,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-j"
+     class="ruin-inactive ruin-layer-numbering ruin-group-j"
      id="layer45"
      inkscape:label="GrpJ Numbering"
      sodipodi:insensitive="true"
@@ -5923,7 +5955,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-k"
+     class="ruin-inactive ruin-layer-numbering ruin-group-k"
      id="layer33"
      inkscape:label="GrpK Boundary"
      style="display:inline"
@@ -5939,7 +5971,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-k"
+     class="ruin-layer-obelisk ruin-group-k"
      id="layer13"
      inkscape:label="GrpK"
      style="display:inline"
@@ -6253,7 +6285,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-k"
+     class="ruin-inactive ruin-layer-numbering ruin-group-k"
      id="layer46"
      inkscape:label="GrpK Numbering"
      sodipodi:insensitive="true"
@@ -6689,7 +6721,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-l"
+     class="ruin-inactive ruin-layer-numbering ruin-group-l"
      id="layer30"
      inkscape:label="GrpL Boundary"
      sodipodi:insensitive="true"
@@ -6705,7 +6737,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-l"
+     class="ruin-layer-obelisk ruin-group-l"
      id="layer14"
      inkscape:label="GrpL"
      sodipodi:insensitive="true"
@@ -6839,7 +6871,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-l"
+     class="ruin-inactive ruin-layer-numbering ruin-group-l"
      id="layer47"
      inkscape:label="GrpL Numbering"
      sodipodi:insensitive="true"
@@ -7047,7 +7079,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-m"
+     class="ruin-inactive ruin-layer-numbering ruin-group-m"
      id="layer36"
      inkscape:label="GrpM Boundary"
      style="display:inline"
@@ -7063,7 +7095,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-m"
+     class="ruin-layer-obelisk ruin-group-m"
      id="layer15"
      inkscape:label="GrpM"
      style="display:inline"
@@ -7440,7 +7472,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-m"
+     class="ruin-inactive ruin-layer-numbering ruin-group-m"
      id="layer48"
      inkscape:label="GrpM Numbering"
      style="display:inline"
@@ -7914,7 +7946,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-n"
+     class="ruin-inactive ruin-layer-numbering ruin-group-n"
      id="layer29"
      inkscape:label="GrpN Boundary"
      sodipodi:insensitive="true"
@@ -7930,7 +7962,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-n"
+     class="ruin-layer-obelisk ruin-group-n"
      id="layer16"
      inkscape:label="GrpN"
      sodipodi:insensitive="true"
@@ -8064,7 +8096,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-n"
+     class="ruin-inactive ruin-layer-numbering ruin-group-n"
      id="layer49"
      inkscape:label="GrpN Numbering"
      sodipodi:insensitive="true"
@@ -8272,7 +8304,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-o"
+     class="ruin-inactive ruin-layer-numbering ruin-group-o"
      id="layer23"
      inkscape:label="GrpO Boundary"
      style="display:inline"
@@ -8288,7 +8320,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-o"
+     class="ruin-layer-obelisk ruin-group-o"
      id="layer17"
      inkscape:label="GrpO"
      style="display:inline"
@@ -8620,7 +8652,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-o"
+     class="ruin-inactive ruin-layer-numbering ruin-group-o"
      id="layer24"
      inkscape:label="GrpO Numbering"
      style="display:inline"
@@ -9018,7 +9050,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-p"
+     class="ruin-inactive ruin-layer-numbering ruin-group-p"
      id="layer39"
      inkscape:label="GrpP Boundary"
      sodipodi:insensitive="true"
@@ -9034,7 +9066,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-p"
+     class="ruin-layer-obelisk ruin-group-p"
      id="layer18"
      inkscape:label="GrpP"
      sodipodi:insensitive="true"
@@ -9240,7 +9272,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-p"
+     class="ruin-inactive ruin-layer-numbering ruin-group-p"
      id="layer50"
      inkscape:label="GrpP Numbering"
      sodipodi:insensitive="true"
@@ -9505,7 +9537,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-q"
+     class="ruin-inactive ruin-layer-numbering ruin-group-q"
      id="layer54"
      inkscape:label="GrpQ Boundary"
      sodipodi:insensitive="true">
@@ -9520,7 +9552,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-obelisks ruin-group-q"
+     class="ruin-layer-obelisk ruin-group-q"
      id="layer55"
      inkscape:label="GrpQ"
      sodipodi:insensitive="true">
@@ -10004,7 +10036,7 @@
   </g>
   <g
      inkscape:groupmode="layer"
-     class="ruin-inactive ruin-numbering ruin-group-q"
+     class="ruin-inactive ruin-layer-numbering ruin-group-q"
      id="layer56"
      inkscape:label="GrpQ Numbering"
      style="display:inline"
