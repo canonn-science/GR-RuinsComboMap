@@ -1,4 +1,4 @@
 # RuinsComboMap
 
 ## Attribution
-SVG navigation uses [SVG Pan Zoom](https://github.com/ariutta/svg-pan-zoom)
+SVG navigation uses [JQuery Pan Zoom](https://github.com/timmywil/jquery.panzoom)
