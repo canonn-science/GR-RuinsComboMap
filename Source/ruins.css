@@ -56,6 +56,6 @@ section { text-align: center; margin: 50px 0; }
   height: 100%;
 }
 
-.ruin-inactive { pointer-events:none; }
+.ruin-inactive { pointer-events:none; display:none; }
 div.panzoom svg { max-width:100%; }
 div.panzoom svg { max-height:400px; }

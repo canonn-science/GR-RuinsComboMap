@@ -44,6 +44,10 @@
 
 				this.panZoomComp = null;
 
+				this.itemInteractionSelect = function(e){
+					alert('clicked/touched on ' + e.target.id);
+				}
+
 				this.prepSVG = function(){
 					var registerTouch = 0;
 					//Mouse wheel zoom
@@ -81,15 +85,19 @@
 		          			return;
 		          		}
 		          		registerTouch = 0;
+		          		itemInteractionSelect(e);
 		          	});
 
 		          	//Click handlers
 		          	$('.ruin-obelisk').on('click',function(e){
-		          		alert('clicked on ' + e.target.id);
+		          		itemInteractionSelect(e);
 		          	});
 
 		          	//Pointer to visualize that the item can be "clicked"
 		          	$('.ruin-obelisk').css( 'cursor', 'pointer' );
+
+		          	//Ensure that non interactive items don't interefere
+		          	$('.ruin-inactive').css('pointer-events','none');
 				}
 
 				this.setPanZoom = function(panZoomElement){
