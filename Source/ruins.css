@@ -59,3 +59,23 @@ section { text-align: center; margin: 50px 0; }
 .ruin-inactive { pointer-events:none; }
 div.panzoom svg { max-width:100%; }
 div.panzoom svg { max-height:800px; }
+
+#ruin_obelisk_data{
+  padding:2em;
+  width:50%;
+  height:50%;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display:none;
+  margin:1em;
+  position:relative;
+}
+
+.ruin_obelisk_data_close{
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  height:50px;
+  width:70px;
+  background-color: #B0E0E6;
+}

@@ -12,25 +12,9 @@
 
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/jquery.panzoom.js"></script>
-	<script src="scripts/jquery.popupoverlay.js"></script>
 </head>
 
 <body>
-
-	<!-- Pop up -->
-	<div id="ruin_obelisk_data">
-
-		<h1 id="ruin_obelisk_data_obelisk">Obelisk</h1>
-		<HR>
-		Object 1: <span id="ruin_obelisk_data_object1">object 1</span><BR>
-		Object 2: <span id="ruin_obelisk_data_object2">object 2</span><BR>
-		<HR>
-		Scan: <span id="ruin_obelisk_data_scan">scan</span><BR>
-
-		<button class="ruin_obelisk_data_close">Close</button>
-
-	</div>
-
 
     <section id="focal">
 
@@ -59,37 +43,18 @@
 				}
 
 				this.panZoomComp = null;
-				this.helper = {
-					leadingZero : function(num) {
-						if(num < 10){
-							return '0' + num;
-						}
-						return num;
-					}
-				}
-				this.obeliskSelected = function(type,group,number){
-					$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + helper.leadingZero(number));
-
-					$('#ruin_obelisk_data_object1').text('Thing 1');
-					$('#ruin_obelisk_data_object2').text('Thing 2');
-					$('#ruin_obelisk_data_scan').text('CAT 77');
-
-					$('#ruin_obelisk_data').popup('show');
-				}
 
 				this.itemInteractionSelect = function(e){
-					//Get the components
-					var clicked = e.target.id.split('-');
+					//alert('clicked/touched on ' + e.target.id);
+					var sect = $('#section_name').val();
+					var num = $('#section_number').val();
 
-					//obelisk-alpha-b-20
-					if(clicked.length >= 4){
-						if('obelisk' === clicked[0]){
-							this.obeliskSelected(clicked[1],clicked[2],clicked[3]);
-						}
-						
-					}
+					var newID = 'obelisk-alpha-' + sect + '-' + num;
 
+					window.ruins.testLog(e.target.id + '=' + newID);
 
+					num++;
+					$('#section_number').val(num);
 				}
 
 				this.prepSVG = function(){
@@ -171,18 +136,13 @@
 					});
 				}
 
-				/*
 				this.testLog = function(data){
 		        	$('#templog').val($('#templog').val() + '\n' + data);
 		        }
-		        */
 
 		  		return this;
 		  	}();
-
-	        
-	        //Set our popup element
-	        $('#ruin_obelisk_data').popup();
+        
 
 	        window.ruins.changeRuinType('alpha');
 	      });    
@@ -194,9 +154,13 @@
       </script>
     </section>
 
-    <!--
+    <div>
+    	<input type="text" id="section_name" value="a"></BR>
+    	<input type="text" id="section_number" value="1"></BR>
+    </div>
+
+    
     <textarea id="templog" style="height:500px; width:100%"></textarea>
-	-->
 	
 
 </body>
