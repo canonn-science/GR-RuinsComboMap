@@ -45,7 +45,8 @@
 				this.panZoomComp = null;
 
 				this.itemInteractionSelect = function(e){
-					alert('clicked/touched on ' + e.target.id);
+					//alert('clicked/touched on ' + e.target.id);
+					window.prompt("sometext",e.target.id);
 				}
 
 				this.prepSVG = function(){
@@ -127,27 +128,30 @@
 					});
 				}
 
+				this.testLog = function(data){
+		        	$('#templog').val($('#templog').val() + '\n' + data);
+		        }
+
 		  		return this;
 		  	}();
-		  	
 
-	        /*
-	        function testLog(data){
-	        	$('#templog').val($('#templog').val() + '\n' + data);
-	        }
-	        */
+	        
+	        
+	        
 
 	        window.ruins.changeRuinType('alpha');
 	      });    
 
 		
 
+		
+
       </script>
     </section>
 
-    <!--
+    
     <textarea id="templog" style="height:500px; width:100%"></textarea>
-	-->
+	
 
 </body>
 </html>
