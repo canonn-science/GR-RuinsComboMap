@@ -12,7 +12,9 @@
 
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/jquery.panzoom.js"></script>
+	<script src="scripts/guardian.ruins.js"></script>
 	<script src="scripts/jquery.popupoverlay.js"></script>
+
 
 	
 </head>
@@ -28,128 +30,29 @@
 	      <script>
 
 			$( document ).ready(function() {
-			  	window.ruins = function(){
-					this.options = {
-						panzoom:$(".panzoom"),
-						zoomIn: $("#zoom-in"),
-						zoomOut: $("#zoom-out"),
-						//zoomRange: $(".zoom-range"),
-						reset: $("#zoom-reset")
-					}
-
-					this.panZoomComp = null;
-					this.helper = {
-						leadingZero : function(num) {
-							if(num < 10){
-								return '0' + num;
-							}
-							return num;
-						}
-					}
-					this.obeliskSelected = function(type,group,number){
-						$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + helper.leadingZero(number));
+			  	window.ruins = Guardian.getRuin({
+			  		panzoom:$(".panzoom"), 
+			  		zoomIn: $("#zoom-in"), 
+			  		zoomOut: $("#zoom-out"), 
+			  		reset: $("#zoom-reset"),
+			  		onMapReady: function(type){
+			  			alert('map is ready');
+			  		},
+			  		onObeliskSelected: function(type,group,number){
+			  			$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + number);
 
 						$('#ruin_obelisk_data_object1').text('Thing 1');
 						$('#ruin_obelisk_data_object2').text('Thing 2');
 						$('#ruin_obelisk_data_scan').text('CAT 77');
 
 						$('#ruin_obelisk_data').popup('show');
-					}
-
-					this.itemInteractionSelect = function(e){
-						//Get the components
-						var clicked = e.target.id.split('-');
-
-						//obelisk-alpha-b-20
-						if(clicked.length >= 4){
-							if('obelisk' === clicked[0]){
-								this.obeliskSelected(clicked[1],clicked[2],clicked[3]);
-							}
-							
-						}
+			  		}
+			  	});
 
 
-					}
+			  	window.ruins.setRuinType('alpha');
 
-					this.prepSVG = function(){
-						var registerTouch = 0;
-						//Mouse wheel zoom
-						panZoomComp.parent().on('mousewheel.focal', function( e ) {
-							e.preventDefault();
-							var delta = e.delta || e.originalEvent.wheelDelta;
-							var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
-							panZoomComp.panzoom('zoom', zoomOut, {
-							  increment: 0.1,
-							  animate: false,
-							  focal: e
-							});
-						});		
-
-
-						//Touch specific event handling
-			          	$('.ruin-obelisk').on('mousedown touchstart',function(e){
-			          		registerTouch = 1;
-			          	});
-			          	$('.ruin-obelisk').on('touchmove',function(e){
-			          		registerTouch = 0;
-			          	})	          
-			          	$('.ruin-obelisk').on('touchend',function(e){
-			          		if(registerTouch == 0){
-			          			e.preventDefault();
-			          			return;
-			          		}
-			          		registerTouch = 0;
-			          		itemInteractionSelect(e);
-			          	});
-
-			          	//Click handlers
-			          	$('.ruin-obelisk').on('click',function(e){
-			          		itemInteractionSelect(e);
-			          	});
-
-			          	//Pointer to visualize that the item can be "clicked"
-			          	$('.ruin-obelisk').css( 'cursor', 'pointer' );
-
-			          	//Ensure that non interactive items don't interefere
-			          	$('.ruin-inactive').css('pointer-events','none');
-					}
-
-					this.setPanZoom = function(panZoomElement){
-						panZoomComp = panZoomElement.panzoom({
-							cursor: "-webkit-grab",
-							minScale: 1,
-							maxScale: 50,
-							increment: 1,
-							duration: 10,
-							$zoomIn: options.zoomIn,
-							$zoomOut: options.zoomOut,
-							$zoomRange: options.zoomRange,
-							$reset: options.reset,
-							$set: panZoomElement
-						});
-					}
-
-					this.changeRuinType = function(typeName,data){
-
-						$.get("maps/" + typeName + ".svg", function(data) {
-							//Empty and then set the data
-							$('#ruin-map').empty().append(data.documentElement);
-
-							setPanZoom(options.panzoom);
-							prepSVG();
-
-						});
-					}
-
-					/*
-					this.testLog = function(data){
-			        	$('#templog').val($('#templog').val() + '\n' + data);
-			        }
-			        */
-
-			  		return this;
-			  	}();
-
+			  	
 		        
 		        //Set our popup element
 		        $('#ruin_obelisk_data').popup();
@@ -169,7 +72,6 @@
 					}
 		        })
 
-		        window.ruins.changeRuinType('alpha');
 
 		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
 		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
@@ -223,10 +125,6 @@
 		        		ruinInfo.ruin.groups[groupId] = testAlphaObelisks[groupId]
 					});
 
-
-		        	//testAlphaObelisks
-		        	
-		        	console.log(ruinInfo);
 		        })
 		        
 		        $('#info_bar').click();		        
