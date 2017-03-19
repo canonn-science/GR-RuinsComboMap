@@ -175,6 +175,25 @@ div.panzoom svg {
   margin-right:1em;
 }
 
+#obelisks{
+  border-collapse: collapse;
+  border:2px solid #E0C6B0;
+}
+
+#obelisks th{
+  background-color: #E0C6B0;
+  padding:1em;
+}
+
+#obelisks td{
+  background-color: #ffffff;
+  padding:.5em;
+  padding-left:1em;
+  padding-right:1em;
+}
+
+
+
 .hidden{
   display:none;
 }

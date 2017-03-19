@@ -12,7 +12,53 @@ my.getRuin = function (setOptions) {
 	var newRuin = function(){
 		this.options = setOpt;
 		this.panZoomComp = null;
+		this.typeData = {
+			'none':'',
+			'alpha':'abcdefghijklmnopqrstuvwxyz'
+		}
+		this.ruinData = {
+			type: 'none',
+			groups: {}
+		}
 		this.ruinType = 'none';
+
+		this.types = function(){
+
+			this.addType = function(typeName,groups){
+				ruinData.typeData[typeName]=groups;
+			}
+
+			return this;
+		}();
+
+		this.groups = function(){
+
+			this.addGroup = function(designation,obelisks){
+				console.log('adding group ' + designation);
+				ruinData.groups[designation]=obelisks;
+			}
+
+			this.hideAll = function(){
+				var groupList = typeData[ruinData.type];
+
+				console.log('group list for hiding:' + ruinData.type);
+
+				for (var i = 0, len = groupList.length; i < len; i++) {
+	        		designation = groupList[i].toLowerCase();
+	        		$('.ruin-group-' + designation).hide();
+				};
+			}
+
+			this.showAll = function(){
+				//Show those that have been added
+				$.each( ruins.ruinData.groups , function( designation, value ) {
+				  $('.ruin-group-' + designation).show();
+				});
+
+			}
+
+			return this;
+		}();
 
 		this.itemInteractionSelect = function(e){
 			//Get the components
@@ -86,8 +132,10 @@ my.getRuin = function (setOptions) {
 		}
 
 		this.setRuinType = function(typeName,data){
-			ruinType = typeName;
-			$.get("maps/" + ruinType + ".svg", function(data) {
+
+			ruinData.type = typeName;
+
+			$.get("maps/" + ruinData.type + ".svg", function(data) {
 				//Empty and then set the data
 				options.panzoom.empty().append(data.documentElement);
 
@@ -95,7 +143,7 @@ my.getRuin = function (setOptions) {
 				prepSVG();
 
 				//And note that the map is ready
-				options.onMapReady(typeName);
+				options.onMapReady(ruinData.type);
 
 			});
 		}

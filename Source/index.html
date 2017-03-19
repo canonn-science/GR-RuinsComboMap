@@ -36,7 +36,8 @@
 			  		zoomOut: $("#zoom-out"), 
 			  		reset: $("#zoom-reset"),
 			  		onMapReady: function(type){
-			  			alert('map is ready');
+			  			//Hide all by default
+			  			//window.ruins.groups.hideAll();
 			  		},
 			  		onObeliskSelected: function(type,group,number){
 			  			$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + number);
@@ -52,25 +53,31 @@
 
 			  	window.ruins.setRuinType('alpha');
 
-			  	
-		        
 		        //Set our popup element
 		        $('#ruin_obelisk_data').popup();
 
 		        //Bind our more control
 		        $('#info_bar').on('click',function(e){
 		        	if($('#info').hasClass('down')) {
-			        	$('#info').addClass('up');
-						$('#info').removeClass('down'); 
-						//Change chevron
-						$('#info_bar .chevron').html('&#x25BE');
+			        	showInfoBar();
 					}else{
-						$('#info').addClass('down');
-						$('#info').removeClass('up'); 
-						//Change chevron
-						$('#info_bar .chevron').html('&#x25B4');
+						hideInfoBar();
 					}
-		        })
+		        });
+
+		        function showInfoBar(){
+		        	$('#info').addClass('up');
+					$('#info').removeClass('down'); 
+					//Change chevron
+					$('#info_bar .chevron').html('&#x25BE');
+		        }
+
+		        function hideInfoBar(){
+					$('#info').addClass('down');
+					$('#info').removeClass('up'); 
+					//Change chevron
+					$('#info_bar .chevron').html('&#x25B4');
+		        }
 
 
 		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
@@ -118,16 +125,23 @@
 		        	}
 
 		        	//Add test group obelisks
-		        	var groupList=$('#groups').val().split(',');
-		        	$.each(groupList, function( index, groupId ) {
-		        		groupId = groupId.toLowerCase();
+		        	var groups=$('#groups').val();
 
+					for (var i = 0, len = groups.length; i < len; i++) {
+		        		groupId = groups[i].toLowerCase();
 		        		ruinInfo.ruin.groups[groupId] = testAlphaObelisks[groupId]
-					});
+		        		window.ruins.groups.addGroup(groupId,ruinInfo.ruin.groups[groupId]);
+					};
 
+					//Emulate map start
+					window.ruins.groups.hideAll();
+
+					//Show those added
+					window.ruins.groups.showAll();
+
+					hideInfoBar();
 		        })
-		        
-		        $('#info_bar').click();		        
+       
 		      });    
 
 	      </script>
@@ -181,7 +195,7 @@
 
 					        <label for="groups">
 					            <span>Cluster Groups</span>
-					            <input id="groups" name="groups" type="text" class="text-input" value="A,B,C,D,E,F,G"/>
+					            <input id="groups" name="groups" type="text" class="text-input" value="ABHMOPQ"/>
 					        </label>
 
 					    </fieldset>
@@ -195,12 +209,29 @@
 
 				</div>
 				<div class="panel-section">
-					<h3>Panel Section 2</h3>
+					<h3>Scans</h3>
+					<table id="obelisks">
+						<tr>
+							<th>Group/Obelisk</th>
+							<th>Item 1</th>
+							<th>Item 2</th>
+							<th>Result</th>
+						</tr>
+						<tr>
+							<td>A01</td>
+							<td>Thing 1</td>
+							<td>Thing 2</td>
+							<td>Biology 1</td>
+						</tr>
+						<tr>
+							<td>A03</td>
+							<td>Thing 3</td>
+							<td>Thing 4</td>
+							<td>Culture 7</td>
+						</tr>
+					</table>
 				</div>
 
-				<div class="panel-section">
-					<h3>Panel Section 3</h3>
-				</div>
 			</div>
 
 		</div>
