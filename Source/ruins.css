@@ -176,11 +176,13 @@ div.panzoom svg {
 }
 
 #obelisks{
+  width:100%;
   border-collapse: collapse;
   border:2px solid #E0C6B0;
 }
 
 #obelisks th{
+  text-align: left;
   background-color: #E0C6B0;
   padding:1em;
 }

@@ -33,15 +33,16 @@ my.getRuin = function (setOptions) {
 
 		this.groups = function(){
 
+			this.clearGroups = function(designation,obelisks){
+				ruinData.groups = {}
+			}
+
 			this.addGroup = function(designation,obelisks){
-				console.log('adding group ' + designation);
 				ruinData.groups[designation]=obelisks;
 			}
 
 			this.hideAll = function(){
 				var groupList = typeData[ruinData.type];
-
-				console.log('group list for hiding:' + ruinData.type);
 
 				for (var i = 0, len = groupList.length; i < len; i++) {
 	        		designation = groupList[i].toLowerCase();
@@ -73,7 +74,7 @@ my.getRuin = function (setOptions) {
 			}
 		}
 
-		this.prepSVG = function(){
+		this._prepSVG = function(){
 			var registerTouch = 0;
 			//Mouse wheel zoom
 			panZoomComp.parent().on('mousewheel.focal', function( e ) {
@@ -116,7 +117,7 @@ my.getRuin = function (setOptions) {
 	      	$('.ruin-inactive').css('pointer-events','none');
 		}
 
-		this.setPanZoom = function(panZoomElement){
+		this._setPanZoom = function(panZoomElement){
 			panZoomComp = panZoomElement.panzoom({
 				cursor: "-webkit-grab",
 				minScale: 1,
@@ -139,8 +140,8 @@ my.getRuin = function (setOptions) {
 				//Empty and then set the data
 				options.panzoom.empty().append(data.documentElement);
 
-				setPanZoom(options.panzoom);
-				prepSVG();
+				_setPanZoom(options.panzoom);
+				_prepSVG();
 
 				//And note that the map is ready
 				options.onMapReady(ruinData.type);
@@ -148,11 +149,37 @@ my.getRuin = function (setOptions) {
 			});
 		}
 
+		this.__doFocusOnElement = function(elem){
+			//Zoom in
+			panZoomComp.panzoom('zoom',25);
+      		//Get the a rect
+			var cRect = elem.getBoundingClientRect();
+			var vRect = panZoomComp[0].getBoundingClientRect();
+			var scale = panZoomComp.panzoom('getMatrix')[0];
+			
+			//SVG 
+			var newX = ((cRect.left) + ((cRect.width / 2) )) * -1;
+			var newY = ((cRect.top) + ((cRect.height / 2) )) * -1;
+
+			//Adjust for view including element offsets
+			newX += ((vRect.width / 2) / scale);
+			newY += ((vRect.height / 2) / scale);
+
+			//Now pan to the specific location
+			panZoomComp.panzoom('pan',newX,newY,{ relative: true });			
+		}
+
+		this.focusOnObelisk = function(group,number){
+			var matching = $('#obelisk-' + ruinData.type + '-' + group + '-' + number);
+
+			if(matching.length > 0){
+				__doFocusOnElement(matching[0]);
+			}
+
+		}
+
 		return this;
 	}();
-
-	console.log('new ruin');
-	console.log(newRuin);
 
 	return newRuin;
 }

@@ -38,8 +38,12 @@
 			  		onMapReady: function(type){
 			  			//Hide all by default
 			  			//window.ruins.groups.hideAll();
+
+			  			//Emulate finding an obelisk
+						
 			  		},
 			  		onObeliskSelected: function(type,group,number){
+
 			  			$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + number);
 
 						$('#ruin_obelisk_data_object1').text('Thing 1');
@@ -49,7 +53,6 @@
 						$('#ruin_obelisk_data').popup('show');
 			  		}
 			  	});
-
 
 			  	window.ruins.setRuinType('alpha');
 
@@ -124,6 +127,8 @@
 		        		}
 		        	}
 
+		        	//Clear existing gropus
+		        	window.ruins.groups.clearGroups();
 		        	//Add test group obelisks
 		        	var groups=$('#groups').val();
 
@@ -139,9 +144,28 @@
 					//Show those added
 					window.ruins.groups.showAll();
 
+					//And close
 					hideInfoBar();
-		        })
+		        });
+
+				//Test handle obelisk items
+				$('.obelisk-selection').css( 'cursor', 'pointer' );
+				$('.obelisk-selection').on('click',function(e){
+					//Get the obelisk and identify the data from the id
+					var obData = e.target.parentElement.id.split('-');
+
+					//Hide
+					hideInfoBar();
+
+					//Focus on the obelisk
+					window.ruins.focusOnObelisk(obData[1],obData[2]);
+				});
        
+       			//Stop host div from blocking bottom div during testing
+				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
+
+				
+
 		      });    
 
 	      </script>
@@ -217,18 +241,25 @@
 							<th>Item 2</th>
 							<th>Result</th>
 						</tr>
-						<tr>
-							<td>A01</td>
-							<td>Thing 1</td>
-							<td>Thing 2</td>
-							<td>Biology 1</td>
+						<tr id="focus-a-1" class="obelisk-selection">
+							<td>A01</td><td>Thing 1</td><td>Thing 2</td><td>Biology 1</td>
 						</tr>
-						<tr>
-							<td>A03</td>
-							<td>Thing 3</td>
-							<td>Thing 4</td>
-							<td>Culture 7</td>
+						<tr id="focus-a-3" class="obelisk-selection">
+							<td>A03</td><td>Thing 3</td><td>Thing 4</td><td>Culture 1</td>
 						</tr>
+						<tr id="focus-a-5" class="obelisk-selection">
+							<td>A05</td><td>Thing 3</td><td>Thing 4</td><td>Culture 2</td>
+						</tr>
+						<tr id="focus-d-8" class="obelisk-selection">
+							<td>D08</td><td>Thing 3</td><td>Thing 4</td><td>Culture 3</td>
+						</tr>
+						<tr id="focus-n-7" class="obelisk-selection">
+							<td>N07</td><td>Thing 3</td><td>Thing 4</td><td>Biology 4</td>
+						</tr>
+						<tr id="focus-i-19" class="obelisk-selection">
+							<td>I19</td><td>Thing 3</td><td>Thing 4</td><td>Culture 5</td>
+						</tr>
+
 					</table>
 				</div>
 
