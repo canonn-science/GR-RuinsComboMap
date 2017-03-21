@@ -40,16 +40,8 @@
 			  			//Emulate finding an obelisk
 						
 			  		},
-			  		onObeliskSelected: function(type,group,number){
-
-			  			$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + number);
-
-						$('#ruin_obelisk_data_object1').text('Thing 1');
-						$('#ruin_obelisk_data_object2').text('Thing 2');
-						$('#ruin_obelisk_data_scan').text('CAT 77');
-
-						$('#ruin_obelisk_data').popup('show');
-			  		}
+			  		onObeliskSelected: onMapSelection,
+			  		onNumberSelected: onMapSelection
 			  	});
 
 			  	window.ruins.setRuinType('alpha');
@@ -65,6 +57,16 @@
 						hideInfoBar();
 					}
 		        });
+
+		        function onMapSelection(type,group,number){
+		  			$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + number);
+
+					$('#ruin_obelisk_data_object1').text('Thing 1');
+					$('#ruin_obelisk_data_object2').text('Thing 2');
+					$('#ruin_obelisk_data_scan').text('CAT 77');
+
+					$('#ruin_obelisk_data').popup('show');
+		  		}
 
 		        function showInfoBar(){
 		        	$('#info').addClass('up');

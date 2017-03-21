@@ -3,11 +3,9 @@ my.getRuin = function (setOptions) {
 	var setOpt = { }
 
 	setOpt.panzoom = setOptions.panzoom || null;
-	setOpt.zoomIn = setOptions.zoomIn || null;
-	setOpt.zoomOut = setOptions.zoomOut || null;
-	setOpt.reset = setOptions.reset || null;
 	setOpt.onMapReady = setOptions.onMapReady || function onMapReady(type){ };
 	setOpt.onObeliskSelected = setOptions.onObeliskSelected || function onObeliskSelected(type,group,number){}
+	setOpt.onNumberSelected = setOptions.onNumberSelected || function onNumberSelected(type,group,number){}
 
 	var newRuin = function(){
 		this.options = setOpt;
@@ -61,17 +59,34 @@ my.getRuin = function (setOptions) {
 			return this;
 		}();
 
-		this.itemInteractionSelect = function(e){
+		this.__obeliskSelect = function(e){
 			//Get the components
 			var clicked = e.target.id.split('-');
 
-			//obelisk-alpha-b-20
+			//Fire
 			if(clicked.length >= 4){
 				if('obelisk' === clicked[0]){
-					options.onObeliskSelected(clicked[1],clicked[2],clicked[3]);
+					options.onObeliskSelected(ruinData.type,clicked[2],clicked[3]);
 				}
 				
 			}
+		}
+
+		this.__numberSelect = function(e){
+			//Get the components
+			var clicked = $(e.target);
+
+			//Get the number
+			var labelNum = parseInt(clicked.text());
+
+			//Get the id of it's parent group
+			var parentId = $(clicked).closest('g').attr('id');
+
+			//And the piece
+			var groupDesignation = parentId.split('-')[2];
+
+			//Fire
+			options.onNumberSelected(ruinData.type,groupDesignation,labelNum);
 		}
 
 		this.__getCoordinates = function(){
@@ -85,16 +100,16 @@ my.getRuin = function (setOptions) {
 
 		this.zoomIn = function(){
 			var coords = __getCoordinates();
-			panZoomComp.panzoom('zoom',false,{focal: coords});
+			panZoomComp.panzoom('zoom',false,{focal: coords, animate:true});
 		}
 
 		this.zoomOut = function(){
 			var coords = __getCoordinates();
-			panZoomComp.panzoom('zoom',true,{focal: coords});
+			panZoomComp.panzoom('zoom',true,{focal: coords, animate:true});
 		}
 
 		this.zoomReset = function(){
-			panZoomComp.panzoom('resetZoom');
+			panZoomComp.panzoom('reset');			
 		}
 
 		this._prepSVG = function(){
@@ -125,16 +140,23 @@ my.getRuin = function (setOptions) {
 	      			return;
 	      		}
 	      		registerTouch = 0;
-	      		itemInteractionSelect(e);
+	      		__obeliskSelect(e);
 	      	});
 
 	      	//Click handlers
 	      	$('.ruin-obelisk').on('click',function(e){
-	      		itemInteractionSelect(e);
+	      		__obeliskSelect(e);
+	      	});
+
+	      	$('.ruin-number').on('click',function(e){
+	      		__numberSelect(e);
 	      	});
 
 	      	//Pointer to visualize that the item can be "clicked"
 	      	$('.ruin-obelisk').css( 'cursor', 'pointer' );
+	      	$('.ruin-number').css( 'cursor', 'pointer' );
+
+	      	
 
 	      	//Ensure that non interactive items don't interefere
 	      	$('.ruin-inactive').css('pointer-events','none');
