@@ -74,6 +74,29 @@ my.getRuin = function (setOptions) {
 			}
 		}
 
+		this.__getCoordinates = function(){
+			var coords = {
+				clientX: (panZoomComp.parent().width() / 2),
+				clientY: (panZoomComp.parent().height() / 2)
+			}
+
+			return coords;
+		}
+
+		this.zoomIn = function(){
+			var coords = __getCoordinates();
+			panZoomComp.panzoom('zoom',false,{focal: coords});
+		}
+
+		this.zoomOut = function(){
+			var coords = __getCoordinates();
+			panZoomComp.panzoom('zoom',true,{focal: coords});
+		}
+
+		this.zoomReset = function(){
+			panZoomComp.panzoom('resetZoom');
+		}
+
 		this._prepSVG = function(){
 			var registerTouch = 0;
 			//Mouse wheel zoom
@@ -124,6 +147,7 @@ my.getRuin = function (setOptions) {
 				maxScale: 50,
 				increment: 1,
 				duration: 10,
+				transition: true,
 				$zoomIn: options.zoomIn,
 				$zoomOut: options.zoomOut,
 				$zoomRange: options.zoomRange,
@@ -151,7 +175,7 @@ my.getRuin = function (setOptions) {
 
 		this.__doFocusOnElement = function(elem){
 			//Zoom in
-			panZoomComp.panzoom('zoom',25);
+			panZoomComp.panzoom('zoom',10);
       		//Get the a rect
 			var cRect = elem.getBoundingClientRect();
 			var vRect = panZoomComp[0].getBoundingClientRect();

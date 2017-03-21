@@ -23,7 +23,7 @@
 	<div id="main">
 	    <section id="map">
 	      <div class="parent">
-	        <div class="panzoom" id="ruin-map">
+	        <div class="panzoom noselect" id="ruin-map">
 				Loading
 	        </div>
 	      </div>
@@ -32,9 +32,7 @@
 			$( document ).ready(function() {
 			  	window.ruins = Guardian.getRuin({
 			  		panzoom:$(".panzoom"), 
-			  		zoomIn: $("#zoom-in"), 
-			  		zoomOut: $("#zoom-out"), 
-			  		reset: $("#zoom-reset"),
+			  		
 			  		onMapReady: function(type){
 			  			//Hide all by default
 			  			//window.ruins.groups.hideAll();
@@ -164,6 +162,18 @@
        			//Stop host div from blocking bottom div during testing
 				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
 
+				//Handle the zoom controls manually 
+				$("#zoom-in").on('click', function(){
+					window.ruins.zoomIn();
+				});
+
+				$("#zoom-out").on('click', function(){
+					window.ruins.zoomOut();
+				});
+
+				$("#zoom-reset").on('click', function(){
+					window.ruins.zoomReset();
+				});
 				
 
 		      });    
@@ -171,7 +181,7 @@
 	      </script>
 	    </section>
 
-		<section id="mapcontrols">
+		<section id="mapcontrols" class="noselect">
 			<div id="zoom-in" class="button" title="Zoom In">&nbsp;</div>
 
 			<div id="zoom-out" class="button" title="Zoom Out">&nbsp;</div>
