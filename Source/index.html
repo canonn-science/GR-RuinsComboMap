@@ -30,6 +30,15 @@
 	      <script>
 
 			$( document ).ready(function() {
+				window.textMapping = {
+					artifacts:{
+						'orb':'Orb',
+						'casket':'Casket',
+						'tablet':'Tablet',
+						'totem':'Totem',
+						'relic':'Relic'
+					}
+				}
 			  	window.ruins = Guardian.getRuin({
 			  		panzoom:$(".panzoom"), 
 			  		
@@ -38,6 +47,8 @@
 			  			//window.ruins.groups.hideAll();
 
 			  			//Emulate finding an obelisk
+
+
 						
 			  		},
 			  		onObeliskSelected: onMapSelection,
@@ -59,13 +70,24 @@
 		        });
 
 		        function onMapSelection(type,group,number){
-		  			$('#ruin_obelisk_data_obelisk').text(group.toUpperCase() + number);
+		        	showScanData(group.toUpperCase() + number,'orb','casket','Culture 12');				
+		  		}
 
-					$('#ruin_obelisk_data_object1').text('Thing 1');
-					$('#ruin_obelisk_data_object2').text('Thing 2');
-					$('#ruin_obelisk_data_scan').text('CAT 77');
+		  		function showScanData(obelisk,object1,object2,data){
+		  			//Display
+		  			var objectOneDisplay = window.textMapping.artifacts[object1] || 'None';
+		  			var objectTwoDisplay = window.textMapping.artifacts[object2] || 'None';
 
-					$('#ruin_obelisk_data').popup('show');
+					//Testing
+		  			$('#scan_obelisk').text(obelisk);
+					$('#scan_object1').text(objectOneDisplay);
+					$('#scan_object1icon').removeClass().addClass('object ' + object1);
+
+					$('#scan_object2').text(objectTwoDisplay);
+					$('#scan_object2icon').removeClass().addClass('object ' + object2);
+
+					$('#scan_result').text(data);
+					$('#ruin_obelisk_data').popup('show');		
 		  		}
 
 		        function showInfoBar(){
@@ -146,6 +168,7 @@
 
 					//And close
 					hideInfoBar();
+
 		        });
 
 				//Test handle obelisk items
@@ -176,7 +199,7 @@
 				$("#zoom-reset").on('click', function(){
 					window.ruins.zoomReset();
 				});
-				
+
 
 		      });    
 
@@ -254,7 +277,7 @@
 							<th>Result</th>
 						</tr>
 						<tr id="focus-a-1" class="obelisk-selection">
-							<td>A01</td><td>Thing 1</td><td>Thing 2</td><td>Biology 1</td>
+							<td>A01</td><td>Urn</td><td>Casket</td><td>Biology 1</td>
 						</tr>
 						<tr id="focus-a-3" class="obelisk-selection">
 							<td>A03</td><td>Thing 3</td><td>Thing 4</td><td>Culture 1</td>
@@ -288,16 +311,21 @@
 
 	<!-- Pop up -->
 	<div id="ruin_obelisk_data">
+		<div class="obelisk">
+			<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
+		</div>
 
-		<h1 id="ruin_obelisk_data_obelisk">Obelisk</h1>
-		<HR>
-		Object 1: <span id="ruin_obelisk_data_object1">object 1</span><BR>
-		Object 2: <span id="ruin_obelisk_data_object2">object 2</span><BR>
-		<HR>
-		Scan: <span id="ruin_obelisk_data_scan">scan</span><BR>
+		<div id="scan_data_panel">	
+			<div class="object" id="scan_object1icon">
+				<div class="object1" id="scan_object1">Obelisk 1</div>
+			</div>
+			<div class="object" id="scan_object2icon">
+				<div class="object2" id="scan_object2">Obelisk 2</div>
+			</div>			
+		</div>
 
-		<button class="ruin_obelisk_data_close button">Close</button>
-	</div>	
+		<div class="ruin_obelisk_data_close">&nbsp;</div>
+	</div>
 
 	
 

@@ -115,23 +115,6 @@ div.panzoom svg {
     width:100%;
 }
 
-#ruin_obelisk_data{
-  padding:2em;
-  width:25%;
-  height:25%;
-  background-color: #FFCAAB;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-  display:none;
-  margin:1em;
-  position:relative;
-}
-
-.ruin_obelisk_data_close{
-  position: absolute;
-  bottom: 1em;
-  right: 1em;
-}
-
 
 #info{
   width:100%;
@@ -215,7 +198,6 @@ div.panzoom svg {
 }
 
 
-
 .hidden{
   display:none;
 }
@@ -228,4 +210,84 @@ div.panzoom svg {
 .slide-down
 {
     bottom: -475px !important;
+}
+
+
+#ruin_obelisk_data{
+  border: 1px solid #FFCAAB;
+  background-color: #FFFFFF;
+  box-shadow: 0 0 10px rgba(0,0,0,0.9);
+  display:none;
+  position:relative; 
+}
+
+#ruin_obelisk_data .obelisk{
+  min-height: 32px;
+  font-weight:bold;
+  font-size:150%;
+  text-align: center;
+  padding:0;
+  width:100%;
+  background-color: #FFCAAB;
+}
+
+#ruin_obelisk_data .object div{
+  position: absolute;
+  bottom:0;
+  width:100%;
+  margin:0;
+  text-align: center;
+  font-weight: bold;
+  font-size:125%;
+}
+
+#scan_data_panel div{
+  float: left;
+  vertical-align: top;
+  border:1px solid red;
+}
+
+#ruin_obelisk_data .object{
+  height:100px;
+  width:100px;
+  position:relative;
+  margin:1em;
+  padding:0;
+  border:1px solid #FFCAAB;
+
+}
+
+#ruin_obelisk_data .object div{
+  width:100%;
+  text-align: center;
+  font-weight: bold;
+  font-size:125%;
+  background-color: #FFCAAB;
+}
+
+.ruin_obelisk_data_close{
+  background-image:url('images/close.png');
+  height:32px;
+  width:32px;
+  position:absolute;
+  top:0;
+  right:0;
+  cursor: pointer
+}
+
+ .ruin_obelisk_data_close:hover{
+  -webkit-filter: brightness(125%); 
+  filter: brightness(125%);
+ } 
+
+.ruin_obelisk_data_close:active{
+  -webkit-filter: brightness(85%); 
+  filter: brightness(85%);
+ } 
+
+
+#scan_data_panel .orb{
+  background-image:url('images/ruin_orb.png');
+  background-repeat: no-repeat;
+  background-position: center top;
 }
