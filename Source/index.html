@@ -3,7 +3,7 @@
 <html>
 <head>
 	
-	<title>Guardian Ancient Ruins 2</title>
+	<title>Guardian Ancient Ruins</title>
 
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -22,14 +22,23 @@
 <body>
 	<div id="main">
 		<section id="systems">
+			<div id="system_heading">
+				<h1>Guardian Ancient Ruins</h1>
+
+				<div id="return_to_map">
+					<div>Return to Map</div>
+				</div>
+			</div>
+
 			<table id="ruin-list">
 				<tr>
-					<th>System</th>
-					<th>Type</th>
-					<th>Body</th>
-					<th>Coordinates</th>
+					<th width="20%">System/Body</th>
+					<th width="20%">Type</th>
+					<th colspan="2">Coordinates</th>
 				</tr>
 			</table>
+			
+			
 		</section>
 	    <section id="map" style="display:none">
 	      <div class="parent">
@@ -60,11 +69,9 @@
 			  		onMapReady: function(type){
 			  			//Hide all by default
 			  			//window.ruins.groups.hideAll();
-			  			//Show map
-						$('#map').show();
 
-						//Hide system panel
-						$('#systems').hide();						
+			  			showMap();
+						
 						
 			  		},
 			  		onObeliskSelected: onMapSelection,
@@ -112,11 +119,28 @@
 				});
 
 				$("#ruin-select").on('click', function(){
-					$('#map').hide();
-					$('#systems').show();
+					//Enable navigation back
+					$('#return_to_map').show();
+					//Show listing
+					showSystems();
 				});
 
 
+	      	}
+
+
+
+	      	function showMap(){
+	  			//Scroll up
+	  			$(window).scrollTop(0);	      		
+
+				$('#systems').hide();
+				$('#map').show();      		
+	      	}
+
+	      	function showSystems(){
+				$('#map').hide();
+				$('#systems').show();      		
 	      	}
 
 
@@ -160,14 +184,10 @@
 	        }
 
 	        function ruinSelected(ruinId,type){
-
 	        	//Start by loading the map type
 				window.ruins.setRuinType(type);
 			
 	        }
-
-
-
 
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
@@ -175,49 +195,100 @@
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 
 	        function getRuinList(){
-		        $.getJSON("mock/systemoverview.json", function(systemList) {
-					//Empty and then set the data
+	        	//Clear any prior
+	        	$('#ruin-list').find("tr:gt(0)").remove();
+
+		        $.get("https://canonnapi.sonargaming.com/api/v1/maps/systemoverview", function(systemList) {
 					$.each(systemList,function(index,system){
-		        		$.each(system.ruins,function(rindex,ruin){
-							        			
+						//System heading
+						var bandClass = '';
+						if(1 == (index % 2)){
+							bandClass='band';
+						}
+
+						var systemId = $('<div/>').text(system.systemId).html();
+
 						$('#ruin-list').append([
-						'<tr id="' + $('<div/>').text(ruin.ruinId + '-' + ruin.ruinTypeName).html() + '"">',
-						    '<td>' + $('<div/>').text(system.systemName).html() + '</td>',
-						    '<td>' + $('<div/>').text(ruin.ruinTypeName).html() + '</td>',
-						    '<td>' + $('<div/>').text(ruin.bodyName).html() + '</td>',
-						    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
+						'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
+						    '<td><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
+							'<td colspan="3"> &nbsp; </td>',
 						'</tr>'
-						].join(''));
+						].join(''));						
+
+
+		        		$.each(system.ruins,function(rindex,ruin){
+							var ruinId = $('<div/>').text(ruin.ruinId).html();
+							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
+
+							bandClass = '';
+							if(1 == (rindex % 2)){
+								bandClass='ruinband';
+							}
+							
+
+							$('#ruin-list').append([
+							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="' + ruinType + '-' + ruinId + '"">',
+							    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
+								'<td>' + 'GS' + ruin.ruinId + '</td>',						    
+							    '<td>' + ruinType + '</td>',
+							    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
+							'</tr>'
+							].join(''));
 
 	        		});
 	        	});
-				});
-				
-
-
-				return;
-
-
-	        	var systemData = '[{"systemId":23,"systemName":"COL 173 SECTOR AP-Q B21-2","ruins":[{"ruinId":58,"bodyName":"A 8","ruinTypeName":"Beta","coordinates":[-33.1039,-32.2718]},{"ruinId":59,"bodyName":"B 4","ruinTypeName":"Gamma","coordinates":[13.3300,-61.5500]},{"ruinId":60,"bodyName":"B 4","ruinTypeName":"Alpha","coordinates":[19.0100,-100.9600]},{"ruinId":61,"bodyName":"B 4","ruinTypeName":"Beta","coordinates":[-35.3193,-73.9108]}]},{"systemId":11,"systemName":"COL 173 SECTOR AV-N B23-5","ruins":[{"ruinId":18,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[42.8343,-175.6545]},{"ruinId":19,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[33.2757,-175.5038]},{"ruinId":20,"bodyName":"A 2","ruinTypeName":"Gamma","coordinates":[-18.7380,-135.5687]}]},{"systemId":15,"systemName":"COL 173 SECTOR CG-M B24-8","ruins":[{"ruinId":30,"bodyName":"A 4","ruinTypeName":"Gamma","coordinates":[-42.7780,130.3500]},{"ruinId":31,"bodyName":"A 4","ruinTypeName":"Gamma","coordinates":[-15.8330,-172.5550]},{"ruinId":32,"bodyName":"A 5","ruinTypeName":"Gamma","coordinates":[19.0369,155.2710]}]}]';
-
-	        	var systemList = JSON.parse(systemData);
-
-	        	
-	        	
+				});	        	
 	        }
 
 	        function prepSelectionUI(){
+	        	//Map Listing
+	        	$('#return_to_map').on('click',function(e){
+	        		//Show the map
+	        		showMap();	
+	        	})
+	        	
+
+	        	//Added to the table since the elements are dynamically added
 			  	$('#ruin-list').on('click',function(e){
 			  		var clicked = $(e.target);
-			  		var row = clicked.closest('tr');
+			  		var row = $(clicked.closest('tr'));
 
-			  		if(row[0].id){
-				  		var idType=row[0].id.split('-');
-				  		
-				  		if(2 === idType.length){
-							ruinSelected(idType[0] , idType[1].toLowerCase());
-				  		}	
+			  		if(row.hasClass('ruin_list_system')){
+			  			//Display all ruins in the given system
+			  			if(row[0].id){
+			  				//Get the system ID
+			  				var idSystem = row[0].id.split('-');
+			  					
+			  				if(2 === idSystem.length){
+				  				if(row.hasClass('expanded')){
+				  					//collapse
+									row.addClass('collapsed');
+									row.removeClass('expanded');
+									//Hide all items that are "children" of this
+			  						$('.ruin_system_' + idSystem[1]).hide();
+				  				}else{
+				  					//expand
+				  					row.addClass('expanded');
+				  					row.removeClass('collapsed');
+				  					//Show all items that are "children" of this
+			  						$('.ruin_system_' + idSystem[1]).show();
+				  				}
+
+			  					
+			  				}
+			  			}
+
+			  		}else if(row.hasClass('ruin_list_ruin')){
+			  			//Display ruin
+				  		if(row[0].id){
+					  		var idType=row[0].id.split('-');
+					  		
+					  		if(2 === idType.length){
+								ruinSelected(idType[1] , idType[0].toLowerCase());
+					  		}	
+				  		}			  			
 			  		}
+
 			  		
 			  	});
 			  }
@@ -230,14 +301,8 @@
 			  	//Load system
 			  	getRuinList();
 
-
-
-
 				//Stop host div from blocking bottom div during testing
 				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
-
-
-
 
 
 		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
