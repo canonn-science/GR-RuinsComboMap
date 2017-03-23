@@ -32,7 +32,7 @@ button {
 
  #mapcontrols {
   width:50px;
-  height:70%;
+  height:100%;
   position:absolute;
   left:1em;
   top:1em;
@@ -77,6 +77,11 @@ button {
   bottom:0;
  }
 
+#ruin-select{
+  background-image:url('images/system-list.png');
+  margin-bottom:4em !important;
+}
+
 #zoom-in{
   background-image:url('images/zoom-in.png');
 }
@@ -88,6 +93,7 @@ button {
 #zoom-reset{
   background-image:url('images/zoom-reset.png');
 } 
+
 
 
 .cover {
@@ -197,7 +203,6 @@ div.panzoom svg {
   padding-right:1em;
 }
 
-
 .hidden{
   display:none;
 }
@@ -291,3 +296,35 @@ div.panzoom svg {
   background-repeat: no-repeat;
   background-position: center top;
 }
+
+#scan_data_panel .relic{
+  background-image:url('images/ruin_relic.png');
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+/* system selection */
+
+#systems table{
+  width:100%;
+  border-collapse: collapse;
+  border:2px solid #E0C6B0;
+}
+
+
+#systems th{
+  text-align: left;
+  background-color: #E0C6B0;
+  padding:1em;
+}
+
+#systems td{
+  padding:.5em;
+  padding-left:1em;
+  padding-right:1em;
+  cursor: pointer;
+}
+
+
+#systems tr:nth-child(even) {background: #FFF}
+#systems tr:nth-child(odd) {background: #F7D4B6}

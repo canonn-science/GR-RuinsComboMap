@@ -21,41 +21,55 @@
 
 <body>
 	<div id="main">
-	    <section id="map">
+		<section id="systems">
+			<table id="ruin-list">
+				<tr>
+					<th>System</th>
+					<th>Type</th>
+					<th>Body</th>
+					<th>Coordinates</th>
+				</tr>
+			</table>
+		</section>
+	    <section id="map" style="display:none">
 	      <div class="parent">
 	        <div class="panzoom noselect" id="ruin-map">
-				Loading
+				&nbsp;
 	        </div>
 	      </div>
 	      <script>
-
-			$( document ).ready(function() {
-				window.textMapping = {
-					artifacts:{
-						'orb':'Orb',
-						'casket':'Casket',
-						'tablet':'Tablet',
-						'totem':'Totem',
-						'relic':'Relic'
-					}
+			window.textMapping = {
+				artifacts:{
+					'orb':'Orb',
+					'casket':'Casket',
+					'tablet':'Tablet',
+					'totem':'Totem',
+					'relic':'Relic'
 				}
+			}
+
+
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+
+	      	function prepMapUI(){
 			  	window.ruins = Guardian.getRuin({
 			  		panzoom:$(".panzoom"), 
 			  		
 			  		onMapReady: function(type){
 			  			//Hide all by default
 			  			//window.ruins.groups.hideAll();
+			  			//Show map
+						$('#map').show();
 
-			  			//Emulate finding an obelisk
-
-
+						//Hide system panel
+						$('#systems').hide();						
 						
 			  		},
 			  		onObeliskSelected: onMapSelection,
 			  		onNumberSelected: onMapSelection
 			  	});
-
-			  	window.ruins.setRuinType('alpha');
 
 		        //Set our popup element
 		        $('#ruin_obelisk_data').popup();
@@ -69,40 +83,161 @@
 					}
 		        });
 
-		        function onMapSelection(type,group,number){
-		        	showScanData(group.toUpperCase() + number,'orb','casket','Culture 12');				
-		  		}
 
-		  		function showScanData(obelisk,object1,object2,data){
-		  			//Display
-		  			var objectOneDisplay = window.textMapping.artifacts[object1] || 'None';
-		  			var objectTwoDisplay = window.textMapping.artifacts[object2] || 'None';
+				//Test handle obelisk items
+				$('.obelisk-selection').css( 'cursor', 'pointer' );
+				$('.obelisk-selection').on('click',function(e){
+					//Get the obelisk and identify the data from the id
+					var obData = e.target.parentElement.id.split('-');
 
-					//Testing
-		  			$('#scan_obelisk').text(obelisk);
-					$('#scan_object1').text(objectOneDisplay);
-					$('#scan_object1icon').removeClass().addClass('object ' + object1);
+					//Hide
+					hideInfoBar();
 
-					$('#scan_object2').text(objectTwoDisplay);
-					$('#scan_object2icon').removeClass().addClass('object ' + object2);
+					//Focus on the obelisk
+					window.ruins.focusOnObelisk(obData[1],obData[2]);
+				});
+       
 
-					$('#scan_result').text(data);
-					$('#ruin_obelisk_data').popup('show');		
-		  		}
+				//Handle the zoom controls manually 
+				$("#zoom-in").on('click', function(){
+					window.ruins.zoomIn();
+				});
 
-		        function showInfoBar(){
-		        	$('#info').addClass('up');
-					$('#info').removeClass('down'); 
-					//Change chevron
-					$('#info_bar .chevron').html('&#x25BE');
-		        }
+				$("#zoom-out").on('click', function(){
+					window.ruins.zoomOut();
+				});
 
-		        function hideInfoBar(){
-					$('#info').addClass('down');
-					$('#info').removeClass('up'); 
-					//Change chevron
-					$('#info_bar .chevron').html('&#x25B4');
-		        }
+				$("#zoom-reset").on('click', function(){
+					window.ruins.zoomReset();
+				});
+
+				$("#ruin-select").on('click', function(){
+					$('#map').hide();
+					$('#systems').show();
+				});
+
+
+	      	}
+
+
+	        function onMapSelection(type,group,number){
+	        	var numDisplay = number;
+	        	if(numDisplay < 9){
+	        		numDisplay = '0' + numDisplay;
+	        	}
+	        	showScanData(group.toUpperCase() + numDisplay,'orb','relic','Culture 12');				
+	  		}
+
+	  		function showScanData(obelisk,object1,object2,data){
+	  			//Display
+	  			var objectOneDisplay = window.textMapping.artifacts[object1] || 'None';
+	  			var objectTwoDisplay = window.textMapping.artifacts[object2] || 'None';
+
+				//Testing
+	  			$('#scan_obelisk').text(obelisk);
+				$('#scan_object1').text(objectOneDisplay);
+				$('#scan_object1icon').removeClass().addClass('object ' + object1);
+
+				$('#scan_object2').text(objectTwoDisplay);
+				$('#scan_object2icon').removeClass().addClass('object ' + object2);
+
+				$('#scan_result').text(data);
+				$('#ruin_obelisk_data').popup('show');		
+	  		}
+
+	        function showInfoBar(){
+	        	$('#info').addClass('up');
+				$('#info').removeClass('down'); 
+				//Change chevron
+				$('#info_bar .chevron').html('&#x25BE');
+	        }
+
+	        function hideInfoBar(){
+				$('#info').addClass('down');
+				$('#info').removeClass('up'); 
+				//Change chevron
+				$('#info_bar .chevron').html('&#x25B4');
+	        }
+
+	        function ruinSelected(ruinId,type){
+
+	        	//Start by loading the map type
+				window.ruins.setRuinType(type);
+			
+	        }
+
+
+
+
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+
+	        function getRuinList(){
+		        $.getJSON("mock/systemoverview.json", function(systemList) {
+					//Empty and then set the data
+					$.each(systemList,function(index,system){
+		        		$.each(system.ruins,function(rindex,ruin){
+							        			
+						$('#ruin-list').append([
+						'<tr id="' + $('<div/>').text(ruin.ruinId + '-' + ruin.ruinTypeName).html() + '"">',
+						    '<td>' + $('<div/>').text(system.systemName).html() + '</td>',
+						    '<td>' + $('<div/>').text(ruin.ruinTypeName).html() + '</td>',
+						    '<td>' + $('<div/>').text(ruin.bodyName).html() + '</td>',
+						    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
+						'</tr>'
+						].join(''));
+
+	        		});
+	        	});
+				});
+				
+
+
+				return;
+
+
+	        	var systemData = '[{"systemId":23,"systemName":"COL 173 SECTOR AP-Q B21-2","ruins":[{"ruinId":58,"bodyName":"A 8","ruinTypeName":"Beta","coordinates":[-33.1039,-32.2718]},{"ruinId":59,"bodyName":"B 4","ruinTypeName":"Gamma","coordinates":[13.3300,-61.5500]},{"ruinId":60,"bodyName":"B 4","ruinTypeName":"Alpha","coordinates":[19.0100,-100.9600]},{"ruinId":61,"bodyName":"B 4","ruinTypeName":"Beta","coordinates":[-35.3193,-73.9108]}]},{"systemId":11,"systemName":"COL 173 SECTOR AV-N B23-5","ruins":[{"ruinId":18,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[42.8343,-175.6545]},{"ruinId":19,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[33.2757,-175.5038]},{"ruinId":20,"bodyName":"A 2","ruinTypeName":"Gamma","coordinates":[-18.7380,-135.5687]}]},{"systemId":15,"systemName":"COL 173 SECTOR CG-M B24-8","ruins":[{"ruinId":30,"bodyName":"A 4","ruinTypeName":"Gamma","coordinates":[-42.7780,130.3500]},{"ruinId":31,"bodyName":"A 4","ruinTypeName":"Gamma","coordinates":[-15.8330,-172.5550]},{"ruinId":32,"bodyName":"A 5","ruinTypeName":"Gamma","coordinates":[19.0369,155.2710]}]}]';
+
+	        	var systemList = JSON.parse(systemData);
+
+	        	
+	        	
+	        }
+
+	        function prepSelectionUI(){
+			  	$('#ruin-list').on('click',function(e){
+			  		var clicked = $(e.target);
+			  		var row = clicked.closest('tr');
+
+			  		if(row[0].id){
+				  		var idType=row[0].id.split('-');
+				  		
+				  		if(2 === idType.length){
+							ruinSelected(idType[0] , idType[1].toLowerCase());
+				  		}	
+			  		}
+			  		
+			  	});
+			  }
+
+			$( document ).ready(function() {
+				//Prep the UI's
+			  	prepSelectionUI();
+			  	prepMapUI();
+
+			  	//Load system
+			  	getRuinList();
+
+
+
+
+				//Stop host div from blocking bottom div during testing
+				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
+
+
+
 
 
 		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
@@ -135,8 +270,6 @@
 		        		'q':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:0,12:0,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:0,21:1,22:1,23:1,24:1,25:1,26:1,27:1,28:1,29:1 }
 		        	}
 
-
-
 		        	var ruinInfo = {
 		        		system:{
 		        			name: $('#system_name').val(),
@@ -168,51 +301,29 @@
 
 					//And close
 					hideInfoBar();
-
 		        });
 
-				//Test handle obelisk items
-				$('.obelisk-selection').css( 'cursor', 'pointer' );
-				$('.obelisk-selection').on('click',function(e){
-					//Get the obelisk and identify the data from the id
-					var obData = e.target.parentElement.id.split('-');
-
-					//Hide
-					hideInfoBar();
-
-					//Focus on the obelisk
-					window.ruins.focusOnObelisk(obData[1],obData[2]);
-				});
-       
-       			//Stop host div from blocking bottom div during testing
-				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
-
-				//Handle the zoom controls manually 
-				$("#zoom-in").on('click', function(){
-					window.ruins.zoomIn();
-				});
-
-				$("#zoom-out").on('click', function(){
-					window.ruins.zoomOut();
-				});
-
-				$("#zoom-reset").on('click', function(){
-					window.ruins.zoomReset();
-				});
 
 
 		      });    
 
+			
+			
+
 	      </script>
-	    </section>
 
-		<section id="mapcontrols" class="noselect">
-			<div id="zoom-in" class="button" title="Zoom In">&nbsp;</div>
+			<div id="mapcontrols" class="noselect">
+				<div id="ruin-select" class="button" title="Ruin Selection">&nbsp;</div>
 
-			<div id="zoom-out" class="button" title="Zoom Out">&nbsp;</div>
+				<div id="zoom-in" class="button" title="Zoom In">&nbsp;</div>
 
-			<div id="zoom-reset" class="button" title="Reset Zoom">&nbsp;</div>
-		</section>    
+				<div id="zoom-out" class="button" title="Zoom Out">&nbsp;</div>
+
+				<div id="zoom-reset" class="button" title="Reset Zoom">&nbsp;</div>
+
+				
+			</div> 
+
 
 		<div id="info" class="down">
 			<h2 id="info_bar">
@@ -300,31 +411,31 @@
 
 			</div>
 
-		</div>
+		</div>	
 
 
-	    <!--
-	    <textarea id="templog" style="height:500px; width:100%"></textarea>
-		-->
-
-	</div>
-
-	<!-- Pop up -->
-	<div id="ruin_obelisk_data">
-		<div class="obelisk">
-			<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
-		</div>
-
-		<div id="scan_data_panel">	
-			<div class="object" id="scan_object1icon">
-				<div class="object1" id="scan_object1">Obelisk 1</div>
+		<!-- Pop up -->
+		<div id="ruin_obelisk_data">
+			<div class="obelisk">
+				<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
 			</div>
-			<div class="object" id="scan_object2icon">
-				<div class="object2" id="scan_object2">Obelisk 2</div>
-			</div>			
+
+			<div id="scan_data_panel">	
+				<div class="object" id="scan_object1icon">
+					<div class="object1" id="scan_object1">Obelisk 1</div>
+				</div>
+				<div class="object" id="scan_object2icon">
+					<div class="object2" id="scan_object2">Obelisk 2</div>
+				</div>			
+			</div>
+
+			<div class="ruin_obelisk_data_close">&nbsp;</div>
 		</div>
 
-		<div class="ruin_obelisk_data_close">&nbsp;</div>
+    </section>
+
+
+
 	</div>
 
 	
