@@ -22,23 +22,21 @@
 <body>
 	<div id="main">
 		<section id="systems">
-			<div id="system_heading">
+			<div id="system_heading">			
 				<h1>Guardian Ancient Ruins</h1>
-
 				<div id="return_to_map">
 					<div>Return to Map</div>
 				</div>
+				
 			</div>
-
 			<table id="ruin-list">
 				<tr>
 					<th width="20%">System/Body</th>
-					<th width="20%">Type</th>
-					<th colspan="2">Coordinates</th>
+					<th>Ruin</th>
+					<th>Type</th>
+					<th>Coordinates</th>
 				</tr>
 			</table>
-			
-			
 		</section>
 	    <section id="map" style="display:none">
 	      <div class="parent">
@@ -67,12 +65,18 @@
 			  		panzoom:$(".panzoom"), 
 			  		
 			  		onMapReady: function(type){
+			  			//Hide notice
+			  			hideNotice();
+
 			  			//Hide all by default
 			  			//window.ruins.groups.hideAll();
 
 			  			showMap();
 						
 						
+			  		},
+			  		onMapFailed: function(failure){
+			  			showNotice('Map problem encountered: ' + failure.statusText,false);						
 			  		},
 			  		onObeliskSelected: onMapSelection,
 			  		onNumberSelected: onMapSelection
@@ -185,6 +189,7 @@
 
 	        function ruinSelected(ruinId,type){
 	        	//Start by loading the map type
+	        	showNotice('Opening Ruin Map',true);
 				window.ruins.setRuinType(type);
 			
 	        }
@@ -195,10 +200,16 @@
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 
 	        function getRuinList(){
-	        	//Clear any prior
-	        	$('#ruin-list').find("tr:gt(0)").remove();
 
-		        $.get("https://canonnapi.sonargaming.com/api/v1/maps/systemoverview", function(systemList) {
+	        	//Clear everything
+        		$('#ruin-list').find("tr:gt(0)").remove();
+
+        		//Show status
+        		showNotice('Getting Ruin List',true);
+
+				$.get("https://canonnapi.sonargaming.com/api/v1/maps/systemoverview").done(function(systemList) {
+		        	hideNotice();
+
 					$.each(systemList,function(index,system){
 						//System heading
 						var bandClass = '';
@@ -210,8 +221,7 @@
 
 						$('#ruin-list').append([
 						'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
-						    '<td><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
-							'<td colspan="3"> &nbsp; </td>',
+						    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
 						'</tr>'
 						].join(''));						
 
@@ -237,7 +247,11 @@
 
 	        		});
 	        	});
-				});	        	
+				})
+				.fail(function(failure){
+					showNotice('Problem encountered: ' + failure.statusText,false);
+				});
+    	
 	        }
 
 	        function prepSelectionUI(){
@@ -293,10 +307,32 @@
 			  	});
 			  }
 
+			function showNotice(noticeText,loading){
+				if(loading){
+					$('#notice').addClass('loading');
+				}else{
+					$('#notice').removeClass('loading');
+				}
+				$('#notice').text(noticeText,true).show();
+
+
+			}
+
+			function hideNotice(noticeText){
+				$('#notice').fadeOut();
+			}
+
+			
+
 			$( document ).ready(function() {
 				//Prep the UI's
 			  	prepSelectionUI();
 			  	prepMapUI();
+
+			  	//Shared
+			  	$('#notice').on('click',function(e){
+			  		$('#notice').hide();
+			  	})
 
 			  	//Load system
 			  	getRuinList();
@@ -369,6 +405,8 @@
 		        });
 
 
+				
+
 
 		      });    
 
@@ -377,7 +415,12 @@
 
 	      </script>
 
+
+
 			<div id="mapcontrols" class="noselect">
+		    	<div class="canonn_logo">
+		    		&nbsp;
+		    	</div>				
 				<div id="ruin-select" class="button" title="Ruin Selection">&nbsp;</div>
 
 				<div id="zoom-in" class="button" title="Zoom In">&nbsp;</div>
@@ -390,118 +433,122 @@
 			</div> 
 
 
-		<div id="info" class="down">
-			<h2 id="info_bar">
-					<span class="chevron">&#x25B4</span> Information <span class="chevron">&#x25B4</span>
-			</h2>
-			<div class="panel">
-				<div class="panel-section">
-					<h3>Direct Test Only</h3>
-					<form id="testing" action="#" method="post" onsubmit="return false;">
+			<div id="info" class="down">
+				<h2 id="info_bar">
+						<span class="chevron">&#x25B4</span> Information <span class="chevron">&#x25B4</span>
+				</h2>
+				<div class="panel">
+					<div class="panel-section">
+						<h3>Direct Test Only</h3>
+						<form id="testing" action="#" method="post" onsubmit="return false;">
 
-					    <fieldset>
-					        <label for="system_name">
-					            <span>System Name</span>
-					            <input id="system_name" name="system_name" type="text" class="text-input" value="IC 2391 SECTOR ZE-A D101"/>
-					        </label>
+						    <fieldset>
+						        <label for="system_name">
+						            <span>System Name</span>
+						            <input id="system_name" name="system_name" type="text" class="text-input" value="IC 2391 SECTOR ZE-A D101"/>
+						        </label>
 
-					        <label for="body_name">
-					            <span>Body</span>
-					            <input id="body_name" name="body_name" type="text" class="text-input" value="C 3" />
-					        </label>
+						        <label for="body_name">
+						            <span>Body</span>
+						            <input id="body_name" name="body_name" type="text" class="text-input" value="C 3" />
+						        </label>
 
-					        <label for="coordinates">
-					            <span>Coordinates</span>
-					            <input id="coordinates" name="coordinates" type="text" class="text-input" value="29.42, -59.54"/>
-					        </label>
-					    </fieldset>
+						        <label for="coordinates">
+						            <span>Coordinates</span>
+						            <input id="coordinates" name="coordinates" type="text" class="text-input" value="29.42, -59.54"/>
+						        </label>
+						    </fieldset>
 
-					    <fieldset>
-					    	<label for="ruin_type">
-					            <span>Ruin Type</span>
-					            <select id="ruin_type" name="ruin_type">
-					            	<option value="alpha">Alpha</option>
-					            	<!--
-					            	<option value="beta">Beta</option>
-					            	<option value="gamma">Gamma</option>
-					            	-->
-					            </select>
-					        </label>
+						    <fieldset>
+						    	<label for="ruin_type">
+						            <span>Ruin Type</span>
+						            <select id="ruin_type" name="ruin_type">
+						            	<option value="alpha">Alpha</option>
+						            	<!--
+						            	<option value="beta">Beta</option>
+						            	<option value="gamma">Gamma</option>
+						            	-->
+						            </select>
+						        </label>
 
-					        <label for="groups">
-					            <span>Cluster Groups</span>
-					            <input id="groups" name="groups" type="text" class="text-input" value="ABHMOPQ"/>
-					        </label>
+						        <label for="groups">
+						            <span>Cluster Groups</span>
+						            <input id="groups" name="groups" type="text" class="text-input" value="ABHMOPQ"/>
+						        </label>
 
-					    </fieldset>
+						    </fieldset>
 
-					    <fieldset>
-					        <input type="button" id="set_test_data" value="Test">
-					    </fieldset>
+						    <fieldset>
+						        <input type="button" id="set_test_data" value="Test">
+						    </fieldset>
 
-					    
-					</form>
+						    
+						</form>
+
+					</div>
+					<div class="panel-section">
+						<h3>Scans</h3>
+						<table id="obelisks">
+							<tr>
+								<th>Group/Obelisk</th>
+								<th>Item 1</th>
+								<th>Item 2</th>
+								<th>Result</th>
+							</tr>
+							<tr id="focus-a-1" class="obelisk-selection">
+								<td>A01</td><td>Urn</td><td>Casket</td><td>Biology 1</td>
+							</tr>
+							<tr id="focus-a-3" class="obelisk-selection">
+								<td>A03</td><td>Thing 3</td><td>Thing 4</td><td>Culture 1</td>
+							</tr>
+							<tr id="focus-a-5" class="obelisk-selection">
+								<td>A05</td><td>Thing 3</td><td>Thing 4</td><td>Culture 2</td>
+							</tr>
+							<tr id="focus-d-8" class="obelisk-selection">
+								<td>D08</td><td>Thing 3</td><td>Thing 4</td><td>Culture 3</td>
+							</tr>
+							<tr id="focus-n-7" class="obelisk-selection">
+								<td>N07</td><td>Thing 3</td><td>Thing 4</td><td>Biology 4</td>
+							</tr>
+							<tr id="focus-i-19" class="obelisk-selection">
+								<td>I19</td><td>Thing 3</td><td>Thing 4</td><td>Culture 5</td>
+							</tr>
+
+						</table>
+					</div>
 
 				</div>
-				<div class="panel-section">
-					<h3>Scans</h3>
-					<table id="obelisks">
-						<tr>
-							<th>Group/Obelisk</th>
-							<th>Item 1</th>
-							<th>Item 2</th>
-							<th>Result</th>
-						</tr>
-						<tr id="focus-a-1" class="obelisk-selection">
-							<td>A01</td><td>Urn</td><td>Casket</td><td>Biology 1</td>
-						</tr>
-						<tr id="focus-a-3" class="obelisk-selection">
-							<td>A03</td><td>Thing 3</td><td>Thing 4</td><td>Culture 1</td>
-						</tr>
-						<tr id="focus-a-5" class="obelisk-selection">
-							<td>A05</td><td>Thing 3</td><td>Thing 4</td><td>Culture 2</td>
-						</tr>
-						<tr id="focus-d-8" class="obelisk-selection">
-							<td>D08</td><td>Thing 3</td><td>Thing 4</td><td>Culture 3</td>
-						</tr>
-						<tr id="focus-n-7" class="obelisk-selection">
-							<td>N07</td><td>Thing 3</td><td>Thing 4</td><td>Biology 4</td>
-						</tr>
-						<tr id="focus-i-19" class="obelisk-selection">
-							<td>I19</td><td>Thing 3</td><td>Thing 4</td><td>Culture 5</td>
-						</tr>
 
-					</table>
+			</div>	
+
+
+			<!-- Pop up -->
+			<div id="ruin_obelisk_data">
+				<div class="obelisk">
+					<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
 				</div>
 
-			</div>
-
-		</div>	
-
-
-		<!-- Pop up -->
-		<div id="ruin_obelisk_data">
-			<div class="obelisk">
-				<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
-			</div>
-
-			<div id="scan_data_panel">	
-				<div class="object" id="scan_object1icon">
-					<div class="object1" id="scan_object1">Obelisk 1</div>
+				<div id="scan_data_panel">	
+					<div class="object" id="scan_object1icon">
+						<div class="object1" id="scan_object1">Obelisk 1</div>
+					</div>
+					<div class="object" id="scan_object2icon">
+						<div class="object2" id="scan_object2">Obelisk 2</div>
+					</div>			
 				</div>
-				<div class="object" id="scan_object2icon">
-					<div class="object2" id="scan_object2">Obelisk 2</div>
-				</div>			
+
+				<div class="ruin_obelisk_data_close">&nbsp;</div>
 			</div>
 
-			<div class="ruin_obelisk_data_close">&nbsp;</div>
-		</div>
+	    </section>
 
-    </section>
-
+	<div id="notice" style="display:none">
+		Notice Panel
+	</div>
 
 
 	</div>
+
 
 	
 

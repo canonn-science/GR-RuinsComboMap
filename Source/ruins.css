@@ -305,8 +305,7 @@ div.panzoom svg {
 
 /* system selection */
 #ruin-list{
-  margin-left:5vw;
-  margin-right:5vw;
+  width:100%;
   border-collapse: collapse;
   border:2px solid #E0C6B0;
 }
@@ -322,7 +321,6 @@ div.panzoom svg {
 #ruin-list td{
   padding:.5em;
   padding-left:1em;
-  padding-right:1em;
   cursor: pointer;
 }
 
@@ -400,22 +398,36 @@ tr.collapsed .expand_status {
 }
 
 #system_heading{
+  background-image: url(images/canonn_logo.png);
+  background-repeat: no-repeat;
+  background-position: center right;
   position:relative;
-  height:5em;
+  height:100px;
 }
 
+.canonn_logo{
+  background-image: url(images/canonn_logo_small.png);
+  background-repeat: no-repeat;
+  background-position: center right;
+  height:50px;
+  width:125px;
+  pointer-events:none;
+  margin-bottom:1em;
+}
+
+
 #system_heading h1{
+
   margin:0;
   padding:0;
 }
 
 
 #systems{
-  border:1px solid red;
-  width:90%;
+  width:auto;
   margin:0;
-  padding-left:5vw;
-  padding-right:5vw;
+  padding-left:1vw;
+  padding-right:1vw;
 }
 
 #return_to_map{
@@ -426,8 +438,8 @@ tr.collapsed .expand_status {
   background-position: right;
   background-repeat: no-repeat;
   position:absolute;
-  right:5vw;
-  bottom:0;
+  right:0;
+  bottom:1vh;
   cursor:pointer;
   display:none;
 }
@@ -440,4 +452,32 @@ tr.collapsed .expand_status {
   margin-top:auto;
   margin-bottom:auto;  
   display:inline-block;
+}
+
+#notice{
+  height:3em;
+  width:400px;
+
+  display: flex;
+  align-items: center;
+
+  background-color:#FCF3EB;
+  border:1px solid #CBAE95;
+
+  margin: auto;
+  padding:.5em;
+  padding-left:3em;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  -webkit-box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
+  -moz-box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
+  box-shadow: 10px 10px 19px 1px rgba(0,0,0,0.41);
+
+  cursor:pointer;
+}
+
+#notice.loading{
+  background-image:url(images/loading.gif);
+  background-position: 1em center;
+  background-repeat:no-repeat;
 }

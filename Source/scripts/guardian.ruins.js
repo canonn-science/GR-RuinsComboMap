@@ -4,6 +4,7 @@ my.getRuin = function (setOptions) {
 
 	setOpt.panzoom = setOptions.panzoom || null;
 	setOpt.onMapReady = setOptions.onMapReady || function onMapReady(type){ };
+	setOpt.onMapFailed = setOptions.onMapFailed || function onMapFailed(status){ };
 	setOpt.onObeliskSelected = setOptions.onObeliskSelected || function onObeliskSelected(type,group,number){}
 	setOpt.onNumberSelected = setOptions.onNumberSelected || function onNumberSelected(type,group,number){}
 
@@ -182,7 +183,7 @@ my.getRuin = function (setOptions) {
 
 			ruinData.type = typeName;
 
-			$.get("maps/" + ruinData.type + ".svg", function(data) {
+			$.get("maps/" + ruinData.type + ".svg").done(function(data){
 				//Empty and then set the data
 				options.panzoom.empty().append(data.documentElement);
 
@@ -192,7 +193,12 @@ my.getRuin = function (setOptions) {
 				//And note that the map is ready
 				options.onMapReady(ruinData.type);
 
+			}).fail(function(failure){
+				options.onMapFailed(failure);
 			});
+
+			
+
 		}
 
 		this.__doFocusOnElement = function(elem){
