@@ -12,8 +12,7 @@ my.getRuin = function (setOptions) {
 		this.options = setOpt;
 		this.panZoomComp = null;
 		this.typeData = {
-			'none':'',
-			'alpha':'abcdefghijklmnopqrstuvwxyz'
+			'none':{}
 		}
 		this.ruinData = {
 			type: 'none',
@@ -24,7 +23,7 @@ my.getRuin = function (setOptions) {
 		this.types = function(){
 
 			this.addType = function(typeName,groups){
-				ruinData.typeData[typeName]=groups;
+				typeData[typeName]=groups;
 			}
 
 			return this;
@@ -43,10 +42,10 @@ my.getRuin = function (setOptions) {
 			this.hideAllForType = function(){
 				var groupList = typeData[ruinData.type];
 
-				for (var i = 0, len = groupList.length; i < len; i++) {
-	        		designation = groupList[i].toLowerCase();
-	        		$('.ruin-group-' + designation).hide();
-				};
+				$.each(groupList,function(designation,obelisks){
+					$('.ruin-group-' + designation.toLowerCase()).hide();
+				});
+
 			}
 
 			this.showAll = function(){
@@ -69,7 +68,7 @@ my.getRuin = function (setOptions) {
 				if('obelisk' === clicked[0]){
 					options.onObeliskSelected(ruinData.type,clicked[2],clicked[3]);
 				}
-				
+
 			}
 		}
 
@@ -110,7 +109,7 @@ my.getRuin = function (setOptions) {
 		}
 
 		this.zoomReset = function(){
-			panZoomComp.panzoom('reset');			
+			panZoomComp.panzoom('reset');
 		}
 
 		this._prepSVG = function(){
@@ -125,7 +124,7 @@ my.getRuin = function (setOptions) {
 				  animate: false,
 				  focal: e
 				});
-			});		
+			});
 
 
 			//Touch specific event handling
@@ -134,7 +133,7 @@ my.getRuin = function (setOptions) {
 	      	});
 	      	$('.ruin-obelisk').on('touchmove',function(e){
 	      		registerTouch = 0;
-	      	})	          
+	      	})
 	      	$('.ruin-obelisk').on('touchend',function(e){
 	      		if(registerTouch == 0){
 	      			e.preventDefault();
@@ -157,7 +156,7 @@ my.getRuin = function (setOptions) {
 	      	$('.ruin-obelisk').css( 'cursor', 'pointer' );
 	      	$('.ruin-number').css( 'cursor', 'pointer' );
 
-	      	
+
 
 	      	//Ensure that non interactive items don't interefere
 	      	$('.ruin-inactive').css('pointer-events','none');
@@ -197,7 +196,7 @@ my.getRuin = function (setOptions) {
 				options.onMapFailed(failure);
 			});
 
-			
+
 
 		}
 
@@ -208,8 +207,8 @@ my.getRuin = function (setOptions) {
 			var cRect = elem.getBoundingClientRect();
 			var vRect = panZoomComp[0].getBoundingClientRect();
 			var scale = panZoomComp.panzoom('getMatrix')[0];
-			
-			//SVG 
+
+			//SVG
 			var newX = ((cRect.left) + ((cRect.width / 2) )) * -1;
 			var newY = ((cRect.top) + ((cRect.height / 2) )) * -1;
 
@@ -218,7 +217,7 @@ my.getRuin = function (setOptions) {
 			newY += ((vRect.height / 2) / scale);
 
 			//Now pan to the specific location
-			panZoomComp.panzoom('pan',newX,newY,{ relative: true });			
+			panZoomComp.panzoom('pan',newX,newY,{ relative: true });
 		}
 
 		this.focusOnObelisk = function(group,number){

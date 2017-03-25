@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+
 	<title>Guardian Ancient Ruins</title>
 
 	<meta charset="utf-8" />
@@ -16,18 +16,18 @@
 	<script src="scripts/jquery.popupoverlay.js"></script>
 
 
-	
+
 </head>
 
 <body>
 	<div id="main">
 		<section id="systems">
-			<div id="system_heading">			
+			<div id="system_heading">
 				<h1>Guardian Ancient Ruins</h1>
 				<div id="return_to_map">
 					<div>Return to Map</div>
 				</div>
-				
+
 			</div>
 			<table id="ruin-list">
 				<tr>
@@ -49,19 +49,19 @@
 					&nbsp;
 				</div>
 			</div>
-			
+
 
 			<div id="mapcontrols" class="noselect">
 				<div id="return_to_systems">
 					<div>Select Ruin</div>
-				</div>		
+				</div>
 
 				<div id="zoom-in" class="button first" title="Zoom In">&nbsp;</div>
 
 				<div id="zoom-out" class="button" title="Zoom Out">&nbsp;</div>
 
 				<div id="zoom-reset" class="button" title="Reset Zoom">&nbsp;</div>
-			</div> 
+			</div>
 
 
 			<div id="info" class="down">
@@ -113,7 +113,7 @@
 						        <input type="button" id="set_test_data" value="Test">
 						    </fieldset>
 
-						    
+
 						</form>
 
 					</div>
@@ -150,7 +150,7 @@
 
 				</div>
 
-			</div>	
+			</div>
 
 
 			<!-- Pop up -->
@@ -159,13 +159,13 @@
 					<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
 				</div>
 
-				<div id="scan_data_panel">	
+				<div id="scan_data_panel">
 					<div class="object" id="scan_object1icon">
 						<div class="object1" id="scan_object1">Obelisk 1</div>
 					</div>
 					<div class="object" id="scan_object2icon">
 						<div class="object2" id="scan_object2">Obelisk 2</div>
-					</div>			
+					</div>
 				</div>
 
 				<div class="ruin_obelisk_data_close">&nbsp;</div>
@@ -181,16 +181,6 @@
 	</div>
 
 	      <script>
-			window.textMapping = {
-				artifacts:{
-					'orb':'Orb',
-					'casket':'Casket',
-					'tablet':'Tablet',
-					'totem':'Totem',
-					'relic':'Relic'
-				}
-			}
-
 			window.systems = {};
 
 
@@ -200,8 +190,8 @@
 
 	      	function prepMapUI(){
 			  	window.ruins = Guardian.getRuin({
-			  		panzoom:$(".panzoom"), 
-			  		
+			  		panzoom:$(".panzoom"),
+
 			  		onMapReady: function(type){
 			  			//Hide notice
 			  			hideNotice();
@@ -220,17 +210,23 @@
 						//Now show those we've added
 						window.ruins.groups.showAll();
 
+						//Reset the zoom
+						window.ruins.zoomReset();
+
 						//And present
 			  			showMap();
-						
-						
+
+
 			  		},
 			  		onMapFailed: function(failure){
-			  			showNotice('Map problem encountered: ' + failure.statusText,false);						
+			  			showNotice('Map problem encountered: ' + failure.statusText,false);
 			  		},
 			  		onObeliskSelected: onMapSelection,
 			  		onNumberSelected: onMapSelection
 			  	});
+
+			  	//Get our site scans and store it
+			  	getSiteScans();
 
 		        //Set our popup element
 		        $('#ruin_obelisk_data').popup();
@@ -257,9 +253,9 @@
 					//Focus on the obelisk
 					window.ruins.focusOnObelisk(obData[1],obData[2]);
 				});
-       
 
-				//Handle the zoom controls manually 
+
+				//Handle the zoom controls manually
 				$("#zoom-in").on('click', function(){
 					window.ruins.zoomIn();
 				});
@@ -286,53 +282,60 @@
 
 	      	function showMap(){
 	  			//Scroll up
-	  			$(window).scrollTop(0);	      		
+	  			$(window).scrollTop(0);
 
 				$('#systems').hide();
-				$('#map').show();      		
+				$('#map').show();
 	      	}
 
 	      	function showSystems(){
 				$('#map').hide();
-				$('#systems').show();      		
+				$('#systems').show();
 	      	}
 
 
 	        function onMapSelection(type,group,number){
+
+	        	//Get the scan details for the given obelisk set
+	        	var scanData = window.ruins.typeData[type][group][number];
+
 	        	var numDisplay = number;
 	        	if(numDisplay < 9){
 	        		numDisplay = '0' + numDisplay;
 	        	}
-	        	showScanData(group.toUpperCase() + numDisplay,'orb','relic','Culture 12');				
+
+	        	if(scanData){
+	        		showScanData(group.toUpperCase() + numDisplay,scanData.items[0],scanData.items[1],scanData.scan);
+	        	}
 	  		}
 
 	  		function showScanData(obelisk,object1,object2,data){
 	  			//Display
-	  			var objectOneDisplay = window.textMapping.artifacts[object1] || 'None';
-	  			var objectTwoDisplay = window.textMapping.artifacts[object2] || 'None';
+	  			var object1 = object1 || 'None';
+	  			var object2 = object2 || 'None';
 
 				//Testing
 	  			$('#scan_obelisk').text(obelisk);
-				$('#scan_object1').text(objectOneDisplay);
-				$('#scan_object1icon').removeClass().addClass('object ' + object1);
+				$('#scan_object1').text(object1);
+				$('#scan_object1icon').css('background-image','url("images/ruin_' + object1.toLowerCase() + '.png")');
 
-				$('#scan_object2').text(objectTwoDisplay);
-				$('#scan_object2icon').removeClass().addClass('object ' + object2);
+				$('#scan_object2').text(object2);
+				$('#scan_object2icon').css('background-image','url("images/ruin_' + object2.toLowerCase() + '.png")');
 
 				$('#scan_result').text(data);
-				$('#ruin_obelisk_data').popup('show');		
+				$('#ruin_obelisk_data').popup('show');
 	  		}
 
 	        function showInfoBar(){
 	        	$('#info').addClass('up');
-				$('#info').removeClass('down'); 
+				$('#info').removeClass('down');
 				//Change chevron
 				$('#info_bar .chevron').html('&#x25BE');
 	        }
 
 	        function hideInfoBar(){
 				$('#info').addClass('down');
-				$('#info').removeClass('up'); 
+				$('#info').removeClass('up');
 				//Change chevron
 				$('#info_bar .chevron').html('&#x25B4');
 	        }
@@ -340,31 +343,50 @@
 	        function ruinSelected(systemId, ruinId,type){
 	        	//Start by loading the map type
 	        	showNotice('Getting Ruin Info',true);
-	        	console.log('checking');
-				$.get("mock/ruininfo.json").done(function(ruinInfo) {
-					//Store ruin data in currentRuin;
-					window.currentRuin = ruinInfo;
+				$.get("mock/ruininfo.json",{format: "json"}).done(function(ruinInfo) {
+						//Store ruin data in currentRuin;
+						window.currentRuin = ruinInfo;
 
-		  			//Update map header info
-		  			$('#map_heading h1').text([
-		  				window.systems[systemId].systemName,
-		  				window.currentRuin.bodyName,
-		  				window.currentRuin.coordinates.join(', ')
-		  			].join(' | '));
+			  			//Update map header info
+			  			$('#map_heading h1').text([
+			  				window.systems[systemId].systemName,
+			  				window.currentRuin.bodyName,
+			  				window.currentRuin.coordinates.join(', ')
+			  			].join(' | '));
 
-					//And show
-					showNotice('Opening Ruin Map',true);
-					window.ruins.setRuinType(type);
-				})
-				.fail(function(failure){
-					showNotice('Problem encountered: ' + failure.statusText,false);
-				});
+						//And show
+						showNotice('Opening Ruin Map',true);
+						window.ruins.setRuinType(type);
+					})
+					.fail(function(d, textStatus, error){
+						showNotice("Getting Ruin Info failed: " + error ,false);
+					});
 	        }
 
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	function getSiteScans(){
+		  		//Show status
+        		showNotice('Getting Scan Listing',true);
+
+
+				$.get("mock/site_scans.json",{ format: "json"}).done(function(scanList) {
+		        	hideNotice();
+
+		        	//Add our data
+		        	$.each(scanList,function(type,groups){
+		        		window.ruins.addType(type,groups);
+		        	});
+				})
+				.fail(function(d, textStatus, error){
+					console.log(error);
+					showNotice("Getting Site Scans failed: " + error ,false);
+				});
+
+		  	}
+
 
 	        function getRuinList(){
 
@@ -379,11 +401,11 @@
 
 		        	//Clear existing
 		        	window.systems = {};
-		        	
+
 
 					$.each(systemList,function(index,system){
 						//Cache system & ruin info
-						window.systems[system.systemId]=system; 
+						window.systems[system.systemId]=system;
 
 						//System heading
 						var bandClass = '';
@@ -397,11 +419,11 @@
 						'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
 						    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
 						'</tr>'
-						].join(''));						
+						].join(''));
 
 
 		        		$.each(system.ruins,function(rindex,ruin){
-		        			//Add the ruin to the associated Ruins and 
+		        			//Add the ruin to the associated Ruins and
 							var ruinId = $('<div/>').text(ruin.ruinId).html();
 							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
 
@@ -409,33 +431,33 @@
 							if(1 == (rindex % 2)){
 								bandClass='ruinband';
 							}
-							
+
 
 							$('#ruin-list').append([
 							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + systemId + '-' + ruinType + '-' + ruinId + '"">',
 							    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
-								'<td>' + 'GS' + ruin.ruinId + '</td>',						    
+								'<td>' + 'GS' + ruin.ruinId + '</td>',
 							    '<td>' + ruinType + '</td>',
 							    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
 							'</tr>'
 							].join(''));
 
-	        		});
-	        	});
+		        		});
+		        	});
 				})
-				.fail(function(failure){
-					showNotice('Problem encountered: ' + failure.statusText,false);
+				.fail(function(d, textStatus, error){
+					showNotice("Getting Ruin List failed: " + error ,false);
 				});
-    	
+
 	        }
 
 	        function prepSelectionUI(){
 	        	//Map Listing
 	        	$('#return_to_map').on('click',function(e){
 	        		//Show the map
-	        		showMap();	
+	        		showMap();
 	        	})
-	        	
+
 
 	        	//Added to the table since the elements are dynamically added
 			  	$('#ruin-list').on('click',function(e){
@@ -447,7 +469,7 @@
 			  			if(row[0].id){
 			  				//Get the system ID
 			  				var idSystem = row[0].id.split('-');
-			  					
+
 			  				if(2 === idSystem.length){
 				  				if(row.hasClass('expanded')){
 				  					//collapse
@@ -463,7 +485,7 @@
 			  						$('.ruin_system_' + idSystem[1]).show();
 				  				}
 
-			  					
+
 			  				}
 			  			}
 
@@ -471,14 +493,14 @@
 			  			//Display ruin
 				  		if(row[0].id){
 					  		var idType=row[0].id.split('-');
-					  		
+
 					  		if(4 === idType.length){
 								ruinSelected(idType[1], idType[3], idType[2].toLowerCase());
-					  		}	
-				  		}			  			
+					  		}
+				  		}
 			  		}
 
-			  		
+
 			  	});
 			  }
 
@@ -497,7 +519,7 @@
 				$('#notice').fadeOut();
 			}
 
-			
+
 
 			$( document ).ready(function() {
 				//Prep the UI's
@@ -516,12 +538,12 @@
 				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
 
 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
 		        //set_test_data
 
 		        $('#set_test_data').on('click',function(e){
@@ -583,7 +605,7 @@
 
 	      </script>
 
-	
+
 
 </body>
 </html>
