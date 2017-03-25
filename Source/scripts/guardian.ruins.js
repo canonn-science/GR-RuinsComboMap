@@ -148,6 +148,22 @@ my.getRuin = function (setOptions) {
 	      		__obeliskSelect(e);
 	      	});
 
+
+	      	$('.ruin-number').on('mousedown touchstart',function(e){
+	      		registerTouch = 1;
+	      	});
+	      	$('.ruin-number').on('touchmove',function(e){
+	      		registerTouch = 0;
+	      	})
+	      	$('.ruin-number').on('touchend',function(e){
+	      		if(registerTouch == 0){
+	      			e.preventDefault();
+	      			return;
+	      		}
+	      		registerTouch = 0;
+	      		__numberSelect(e);
+	      	});
+
 	      	$('.ruin-number').on('click',function(e){
 	      		__numberSelect(e);
 	      	});
