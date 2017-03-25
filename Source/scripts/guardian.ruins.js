@@ -40,7 +40,7 @@ my.getRuin = function (setOptions) {
 				ruinData.groups[designation]=obelisks;
 			}
 
-			this.hideAll = function(){
+			this.hideAllForType = function(){
 				var groupList = typeData[ruinData.type];
 
 				for (var i = 0, len = groupList.length; i < len; i++) {

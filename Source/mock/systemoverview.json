@@ -1,1 +1,679 @@
-[{"systemId":23,"systemName":"COL 173 SECTOR AP-Q B21-2","ruins":[{"ruinId":58,"bodyName":"A 8","ruinTypeName":"Beta","coordinates":[-33.1039,-32.2718]},{"ruinId":59,"bodyName":"B 4","ruinTypeName":"Gamma","coordinates":[13.3300,-61.5500]},{"ruinId":60,"bodyName":"B 4","ruinTypeName":"Alpha","coordinates":[19.0100,-100.9600]},{"ruinId":61,"bodyName":"B 4","ruinTypeName":"Beta","coordinates":[-35.3193,-73.9108]}]},{"systemId":11,"systemName":"COL 173 SECTOR AV-N B23-5","ruins":[{"ruinId":18,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[42.8343,-175.6545]},{"ruinId":19,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[33.2757,-175.5038]},{"ruinId":20,"bodyName":"A 2","ruinTypeName":"Gamma","coordinates":[-18.7380,-135.5687]}]},{"systemId":15,"systemName":"COL 173 SECTOR CG-M B24-8","ruins":[{"ruinId":30,"bodyName":"A 4","ruinTypeName":"Gamma","coordinates":[-42.7780,130.3500]},{"ruinId":31,"bodyName":"A 4","ruinTypeName":"Gamma","coordinates":[-15.8330,-172.5550]},{"ruinId":32,"bodyName":"A 5","ruinTypeName":"Gamma","coordinates":[19.0369,155.2710]}]},{"systemId":27,"systemName":"COL 173 SECTOR DH-K B25-2","ruins":[{"ruinId":73,"bodyName":"A 5","ruinTypeName":"Alpha","coordinates":[10.1834,69.4547]},{"ruinId":74,"bodyName":"A 5","ruinTypeName":"Beta","coordinates":[25.5372,115.6490]},{"ruinId":75,"bodyName":"A 7","ruinTypeName":"Beta","coordinates":[48.7466,179.7078]}]},{"systemId":34,"systemName":"COL 173 SECTOR EC-L D8-54","ruins":[{"ruinId":96,"bodyName":"1 C","ruinTypeName":"Beta","coordinates":[52.4700,39.8400]},{"ruinId":97,"bodyName":"1 C","ruinTypeName":"Alpha","coordinates":[-14.1000,42.5400]},{"ruinId":98,"bodyName":"1 C","ruinTypeName":"Alpha","coordinates":[-2.7700,-39.3600]}]},{"systemId":35,"systemName":"COL 173 SECTOR FC-L D8-28","ruins":[{"ruinId":99,"bodyName":"14 C","ruinTypeName":"Beta","coordinates":[-54.5807,17.0799]},{"ruinId":100,"bodyName":"14 C","ruinTypeName":"Beta","coordinates":[-21.6772,4.0535]},{"ruinId":101,"bodyName":"14 C","ruinTypeName":"Alpha","coordinates":[-41.8041,-43.9197]}]},{"systemId":33,"systemName":"COL 173 SECTOR KN-J B25-5","ruins":[{"ruinId":93,"bodyName":"C 3","ruinTypeName":"Gamma","coordinates":[47.4754,32.6829]},{"ruinId":94,"bodyName":"C 3","ruinTypeName":"Beta","coordinates":[8.5207,72.4930]},{"ruinId":95,"bodyName":"C 3","ruinTypeName":"Beta","coordinates":[-18.6814,61.8930]}]},{"systemId":6,"systemName":"COL 173 SECTOR KY-Q D5-47","ruins":[{"ruinId":6,"bodyName":"8 C","ruinTypeName":"Beta","coordinates":[16.2701,18.1282]},{"ruinId":7,"bodyName":"8 C","ruinTypeName":"Alpha","coordinates":[46.0700,-171.3300]},{"ruinId":12,"bodyName":"9 A","ruinTypeName":"Alpha","coordinates":[-15.0842,-102.9397]},{"ruinId":14,"bodyName":"9 A","ruinTypeName":"Gamma","coordinates":[-37.5256,84.2501]},{"ruinId":21,"bodyName":"9 D","ruinTypeName":"Beta","coordinates":[-10.8195,-89.8905]}]},{"systemId":12,"systemName":"COL 173 SECTOR LY-Q D5-13","ruins":[{"ruinId":23,"bodyName":"AB 9 A","ruinTypeName":"Alpha","coordinates":[65.9181,-128.5455]},{"ruinId":24,"bodyName":"AB 9 A","ruinTypeName":"Beta","coordinates":[71.3187,-112.4353]},{"ruinId":26,"bodyName":"AB 9 A","ruinTypeName":"Beta","coordinates":[39.7396,48.2240]},{"ruinId":27,"bodyName":"AB 9 B","ruinTypeName":"Gamma","coordinates":[21.9117,154.1760]}]},{"systemId":14,"systemName":"COL 173 SECTOR LY-Q D5-59","ruins":[{"ruinId":29,"bodyName":"8 A","ruinTypeName":"Alpha","coordinates":[-20.3200,-133.6400]},{"ruinId":33,"bodyName":"8 A","ruinTypeName":"Beta","coordinates":[1.5200,-116.6500]},{"ruinId":34,"bodyName":"8 A","ruinTypeName":"Gamma","coordinates":[-5.0000,-175.2100]},{"ruinId":35,"bodyName":"8 B","ruinTypeName":"Alpha","coordinates":[-6.3400,130.6700]}]},{"systemId":24,"systemName":"COL 173 SECTOR OE-P D6-11","ruins":[{"ruinId":65,"bodyName":"B 3","ruinTypeName":"Alpha","coordinates":[44.5700,-20.0600]},{"ruinId":66,"bodyName":"B 3","ruinTypeName":"Alpha","coordinates":[-30.5000,-13.6000]},{"ruinId":67,"bodyName":"B 3","ruinTypeName":"Beta","coordinates":[2.0000,-10.6700]},{"ruinId":68,"bodyName":"B 3","ruinTypeName":"Beta","coordinates":[-35.8122,10.4804]},{"ruinId":69,"bodyName":"B 3","ruinTypeName":"Gamma","coordinates":[-49.6706,-69.6161]},{"ruinId":62,"bodyName":"C 2","ruinTypeName":"Gamma","coordinates":[2.4000,132.0500]},{"ruinId":63,"bodyName":"C 2","ruinTypeName":"Alpha","coordinates":[-18.9000,105.0700]}]},{"systemId":37,"systemName":"COL 173 SECTOR OG-Z C15-35","ruins":[{"ruinId":104,"bodyName":"B 1","ruinTypeName":"Alpha","coordinates":[-49.9900,-129.9900]},{"ruinId":105,"bodyName":"B 1","ruinTypeName":"Gamma","coordinates":[-5.8800,-119.6600]},{"ruinId":106,"bodyName":"B 1","ruinTypeName":"Alpha","coordinates":[-15.4300,-175.0800]}]},{"systemId":16,"systemName":"COL 173 SECTOR OT-Q D5-18","ruins":[{"ruinId":36,"bodyName":"D 2","ruinTypeName":"Gamma","coordinates":[-20.9600,82.6100]},{"ruinId":37,"bodyName":"D 2","ruinTypeName":"Alpha","coordinates":[-3.8000,84.5200]},{"ruinId":38,"bodyName":"D 2","ruinTypeName":"Alpha","coordinates":[-31.6400,150.7600]}]},{"systemId":30,"systemName":"COL 173 SECTOR PV-B C14-1","ruins":[{"ruinId":82,"bodyName":"D 2","ruinTypeName":"Gamma","coordinates":[-46.2479,-114.4967]},{"ruinId":83,"bodyName":"D 2","ruinTypeName":"Gamma","coordinates":[-15.0791,-130.6873]},{"ruinId":84,"bodyName":"D 2","ruinTypeName":"Gamma","coordinates":[29.1155,-91.8998]}]},{"systemId":29,"systemName":"COL 173 SECTOR UU-O D6-42","ruins":[{"ruinId":79,"bodyName":"A 1 C","ruinTypeName":"Beta","coordinates":[-12.0051,-99.3617]},{"ruinId":80,"bodyName":"A 1 C","ruinTypeName":"Gamma","coordinates":[19.2700,-96.1461]},{"ruinId":81,"bodyName":"A 1 C","ruinTypeName":"Gamma","coordinates":[10.1154,-21.0965]}]},{"systemId":26,"systemName":"COL 173 SECTOR WF-N D7-52","ruins":[{"ruinId":70,"bodyName":"B 2","ruinTypeName":"Beta","coordinates":[21.3466,68.6129]},{"ruinId":71,"bodyName":"B 2","ruinTypeName":"Gamma","coordinates":[21.3906,68.6436]},{"ruinId":72,"bodyName":"B 2","ruinTypeName":"Gamma","coordinates":[21.1877,70.8749]}]},{"systemId":28,"systemName":"COL 173 SECTOR WN-B B29-1","ruins":[{"ruinId":76,"bodyName":"D 1","ruinTypeName":"Gamma","coordinates":[-21.2500,-24.9300]},{"ruinId":77,"bodyName":"D 1","ruinTypeName":"Beta","coordinates":[-17.5000,43.1700]},{"ruinId":78,"bodyName":"D 1","ruinTypeName":"Beta","coordinates":[31.8000,65.4400]}]},{"systemId":13,"systemName":"COL 173 SECTOR XG-J C10-17","ruins":[{"ruinId":28,"bodyName":"A 2","ruinTypeName":"Beta","coordinates":[-17.0000,44.2400]},{"ruinId":39,"bodyName":"B 4","ruinTypeName":"Beta","coordinates":[15.9200,23.8100]},{"ruinId":40,"bodyName":"B 4","ruinTypeName":"Beta","coordinates":[-77.1000,127.4500]}]},{"systemId":36,"systemName":"COL 173 SECTOR YV-M D7-23","ruins":[{"ruinId":102,"bodyName":"A 7 A","ruinTypeName":"Beta","coordinates":[-49.0267,5.4129]},{"ruinId":103,"bodyName":"A 7 A","ruinTypeName":"Alpha","coordinates":[-28.4965,-72.4370]}]},{"systemId":7,"systemName":"HIP 39768","ruins":[{"ruinId":8,"bodyName":"A 14 F","ruinTypeName":"Beta","coordinates":[7.0924,170.2272]},{"ruinId":25,"bodyName":"A 14 F","ruinTypeName":"Beta","coordinates":[-0.0129,-149.4705]}]},{"systemId":19,"systemName":"IC 2391 SECTOR FL-X B1-7","ruins":[{"ruinId":47,"bodyName":"A 2","ruinTypeName":"Alpha","coordinates":[9.2000,-130.0600]}]},{"systemId":2,"systemName":"IC 2391 SECTOR GW-V B2-4","ruins":[{"ruinId":2,"bodyName":"B 1","ruinTypeName":"Beta","coordinates":[-29.1664,-30.5041]}]},{"systemId":3,"systemName":"IC 2391 SECTOR ZE-A D101","ruins":[{"ruinId":3,"bodyName":"C 3","ruinTypeName":"Alpha","coordinates":[29.4200,-59.5400]}]},{"systemId":25,"systemName":"SKAUDAI AM-B D14-138","ruins":[{"ruinId":92,"bodyName":"AB 7 A","ruinTypeName":"Gamma","coordinates":[-37.8226,10.4979]}]},{"systemId":17,"systemName":"SYNUEFE CE-R C21-6","ruins":[{"ruinId":41,"bodyName":"C 1","ruinTypeName":"Beta","coordinates":[-27.2200,-7.3600]},{"ruinId":42,"bodyName":"C 1","ruinTypeName":"Alpha","coordinates":[-27.1500,-7.2900]},{"ruinId":43,"bodyName":"C 1","ruinTypeName":"Alpha","coordinates":[-18.2300,0.2700]}]},{"systemId":10,"systemName":"SYNUEFE LY-I B42-2","ruins":[{"ruinId":15,"bodyName":"C 2","ruinTypeName":"Gamma","coordinates":[-10.0700,114.5000]},{"ruinId":16,"bodyName":"C 2","ruinTypeName":"Gamma","coordinates":[-37.3100,106.4200]},{"ruinId":17,"bodyName":"C 2","ruinTypeName":"Beta","coordinates":[9.0200,48.7700]}]},{"systemId":9,"systemName":"SYNUEFE NL-N C23-4","ruins":[{"ruinId":13,"bodyName":"B 3","ruinTypeName":"Alpha","coordinates":[-30.5400,-24.2000]},{"ruinId":22,"bodyName":"B 3","ruinTypeName":"Alpha","coordinates":[0.6600,-36.9200]},{"ruinId":64,"bodyName":"B 3","ruinTypeName":"Gamma","coordinates":[48.1800,-48.3600]}]},{"systemId":8,"systemName":"SYNUEFE TP-F B44-0","ruins":[{"ruinId":9,"bodyName":"C D 1","ruinTypeName":"Gamma","coordinates":[59.3300,15.1000]},{"ruinId":10,"bodyName":"C D 1","ruinTypeName":"Beta","coordinates":[31.9600,-99.9700]},{"ruinId":11,"bodyName":"C D 1","ruinTypeName":"Alpha","coordinates":[31.8800,-100.0500]}]},{"systemId":4,"systemName":"SYNUEFE XO-P C22-17","ruins":[{"ruinId":4,"bodyName":"C 1","ruinTypeName":"Beta","coordinates":[19.5300,-141.7600]}]},{"systemId":1,"systemName":"SYNUEFE XR-H D11-102","ruins":[{"ruinId":1,"bodyName":"1 B","ruinTypeName":"Beta","coordinates":[-31.7347,-128.9212]}]},{"systemId":32,"systemName":"SYNUEFE ZL-J D10-109","ruins":[{"ruinId":89,"bodyName":"E 3","ruinTypeName":"Beta","coordinates":[-26.6530,-148.4250]},{"ruinId":90,"bodyName":"E 3","ruinTypeName":"Alpha","coordinates":[-26.7190,-148.3720]},{"ruinId":91,"bodyName":"E 3","ruinTypeName":"Beta","coordinates":[39.9240,-109.1930]}]},{"systemId":5,"systemName":"SYNUEFE ZL-J D10-119","ruins":[{"ruinId":5,"bodyName":"9 B","ruinTypeName":"Alpha","coordinates":[-23.3821,178.9094]}]},{"systemId":18,"systemName":"SYNUEFE ZR-I B43-10","ruins":[{"ruinId":44,"bodyName":"D 2","ruinTypeName":"Alpha","coordinates":[28.8065,-51.8289]},{"ruinId":45,"bodyName":"D 2","ruinTypeName":"Beta","coordinates":[13.8800,-0.5478]},{"ruinId":46,"bodyName":"D 2","ruinTypeName":"Alpha","coordinates":[-32.7100,-34.0391]}]},{"systemId":22,"systemName":"VELA DARK REGION EL-Y D32","ruins":[{"ruinId":55,"bodyName":"B 1","ruinTypeName":"Alpha","coordinates":[41.1500,129.2600]},{"ruinId":56,"bodyName":"B 1","ruinTypeName":"Beta","coordinates":[10.4600,130.2400]},{"ruinId":57,"bodyName":"B 1","ruinTypeName":"Gamma","coordinates":[7.9000,-86.4600]}]},{"systemId":31,"systemName":"VELA DARK REGION HB-X C1-28","ruins":[{"ruinId":85,"bodyName":"E 2","ruinTypeName":"Gamma","coordinates":[-4.5000,-176.3000]},{"ruinId":86,"bodyName":"E 2","ruinTypeName":"Alpha","coordinates":[11.3000,-154.2000]},{"ruinId":87,"bodyName":"E 3","ruinTypeName":"Gamma","coordinates":[16.0000,-176.1000]},{"ruinId":88,"bodyName":"E 3","ruinTypeName":"Alpha","coordinates":[-28.9000,163.1600]}]},{"systemId":21,"systemName":"VELA DARK REGION KR-W C1-24","ruins":[{"ruinId":52,"bodyName":"7 A","ruinTypeName":"Alpha","coordinates":[-18.4224,65.5005]},{"ruinId":54,"bodyName":"7 A","ruinTypeName":"Alpha","coordinates":[-17.0825,-54.7755]},{"ruinId":49,"bodyName":"7 C","ruinTypeName":"Beta","coordinates":[-22.4296,126.9466]}]},{"systemId":20,"systemName":"VELA DARK REGION RC-V B2-5","ruins":[{"ruinId":48,"bodyName":"C 3","ruinTypeName":"Alpha","coordinates":[-31.4700,-44.5200]},{"ruinId":50,"bodyName":"C 3","ruinTypeName":"Alpha","coordinates":[-19.5500,-1.9400]},{"ruinId":51,"bodyName":"C 3","ruinTypeName":"Alpha","coordinates":[-36.7800,20.0200]},{"ruinId":53,"bodyName":"C 4","ruinTypeName":"Beta","coordinates":[36.8100,132.8800]}]}]
+[{
+    "systemId": 23,
+    "systemName": "COL 173 SECTOR AP-Q B21-2",
+    "ruins": [{
+        "ruinId": 58,
+        "bodyName": "A 8",
+        "ruinTypeName": "Beta",
+        "coordinates": [-33.1039, -32.2718]
+    }, {
+        "ruinId": 59,
+        "bodyName": "B 4",
+        "ruinTypeName": "Gamma",
+        "coordinates": [13.3300, -61.5500]
+    }, {
+        "ruinId": 60,
+        "bodyName": "B 4",
+        "ruinTypeName": "Alpha",
+        "coordinates": [19.0100, -100.9600]
+    }, {
+        "ruinId": 61,
+        "bodyName": "B 4",
+        "ruinTypeName": "Beta",
+        "coordinates": [-35.3193, -73.9108]
+    }]
+}, {
+    "systemId": 11,
+    "systemName": "COL 173 SECTOR AV-N B23-5",
+    "ruins": [{
+        "ruinId": 18,
+        "bodyName": "A 2",
+        "ruinTypeName": "Beta",
+        "coordinates": [42.8343, -175.6545]
+    }, {
+        "ruinId": 19,
+        "bodyName": "A 2",
+        "ruinTypeName": "Beta",
+        "coordinates": [33.2757, -175.5038]
+    }, {
+        "ruinId": 20,
+        "bodyName": "A 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-18.7380, -135.5687]
+    }]
+}, {
+    "systemId": 15,
+    "systemName": "COL 173 SECTOR CG-M B24-8",
+    "ruins": [{
+        "ruinId": 30,
+        "bodyName": "A 4",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-42.7780, 130.3500]
+    }, {
+        "ruinId": 31,
+        "bodyName": "A 4",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-15.8330, -172.5550]
+    }, {
+        "ruinId": 32,
+        "bodyName": "A 5",
+        "ruinTypeName": "Gamma",
+        "coordinates": [19.0369, 155.2710]
+    }]
+}, {
+    "systemId": 27,
+    "systemName": "COL 173 SECTOR DH-K B25-2",
+    "ruins": [{
+        "ruinId": 73,
+        "bodyName": "A 5",
+        "ruinTypeName": "Alpha",
+        "coordinates": [10.1834, 69.4547]
+    }, {
+        "ruinId": 74,
+        "bodyName": "A 5",
+        "ruinTypeName": "Beta",
+        "coordinates": [25.5372, 115.6490]
+    }, {
+        "ruinId": 75,
+        "bodyName": "A 7",
+        "ruinTypeName": "Beta",
+        "coordinates": [48.7466, 179.7078]
+    }]
+}, {
+    "systemId": 34,
+    "systemName": "COL 173 SECTOR EC-L D8-54",
+    "ruins": [{
+        "ruinId": 96,
+        "bodyName": "1 C",
+        "ruinTypeName": "Beta",
+        "coordinates": [52.4700, 39.8400]
+    }, {
+        "ruinId": 97,
+        "bodyName": "1 C",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-14.1000, 42.5400]
+    }, {
+        "ruinId": 98,
+        "bodyName": "1 C",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-2.7700, -39.3600]
+    }]
+}, {
+    "systemId": 35,
+    "systemName": "COL 173 SECTOR FC-L D8-28",
+    "ruins": [{
+        "ruinId": 99,
+        "bodyName": "14 C",
+        "ruinTypeName": "Beta",
+        "coordinates": [-54.5807, 17.0799]
+    }, {
+        "ruinId": 100,
+        "bodyName": "14 C",
+        "ruinTypeName": "Beta",
+        "coordinates": [-21.6772, 4.0535]
+    }, {
+        "ruinId": 101,
+        "bodyName": "14 C",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-41.8041, -43.9197]
+    }]
+}, {
+    "systemId": 33,
+    "systemName": "COL 173 SECTOR KN-J B25-5",
+    "ruins": [{
+        "ruinId": 93,
+        "bodyName": "C 3",
+        "ruinTypeName": "Gamma",
+        "coordinates": [47.4754, 32.6829]
+    }, {
+        "ruinId": 94,
+        "bodyName": "C 3",
+        "ruinTypeName": "Beta",
+        "coordinates": [8.5207, 72.4930]
+    }, {
+        "ruinId": 95,
+        "bodyName": "C 3",
+        "ruinTypeName": "Beta",
+        "coordinates": [-18.6814, 61.8930]
+    }]
+}, {
+    "systemId": 6,
+    "systemName": "COL 173 SECTOR KY-Q D5-47",
+    "ruins": [{
+        "ruinId": 6,
+        "bodyName": "8 C",
+        "ruinTypeName": "Beta",
+        "coordinates": [16.2701, 18.1282]
+    }, {
+        "ruinId": 7,
+        "bodyName": "8 C",
+        "ruinTypeName": "Alpha",
+        "coordinates": [46.0700, -171.3300]
+    }, {
+        "ruinId": 12,
+        "bodyName": "9 A",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-15.0842, -102.9397]
+    }, {
+        "ruinId": 14,
+        "bodyName": "9 A",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-37.5256, 84.2501]
+    }, {
+        "ruinId": 21,
+        "bodyName": "9 D",
+        "ruinTypeName": "Beta",
+        "coordinates": [-10.8195, -89.8905]
+    }]
+}, {
+    "systemId": 12,
+    "systemName": "COL 173 SECTOR LY-Q D5-13",
+    "ruins": [{
+        "ruinId": 23,
+        "bodyName": "AB 9 A",
+        "ruinTypeName": "Alpha",
+        "coordinates": [65.9181, -128.5455]
+    }, {
+        "ruinId": 24,
+        "bodyName": "AB 9 A",
+        "ruinTypeName": "Beta",
+        "coordinates": [71.3187, -112.4353]
+    }, {
+        "ruinId": 26,
+        "bodyName": "AB 9 A",
+        "ruinTypeName": "Beta",
+        "coordinates": [39.7396, 48.2240]
+    }, {
+        "ruinId": 27,
+        "bodyName": "AB 9 B",
+        "ruinTypeName": "Gamma",
+        "coordinates": [21.9117, 154.1760]
+    }]
+}, {
+    "systemId": 14,
+    "systemName": "COL 173 SECTOR LY-Q D5-59",
+    "ruins": [{
+        "ruinId": 29,
+        "bodyName": "8 A",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-20.3200, -133.6400]
+    }, {
+        "ruinId": 33,
+        "bodyName": "8 A",
+        "ruinTypeName": "Beta",
+        "coordinates": [1.5200, -116.6500]
+    }, {
+        "ruinId": 34,
+        "bodyName": "8 A",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-5.0000, -175.2100]
+    }, {
+        "ruinId": 35,
+        "bodyName": "8 B",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-6.3400, 130.6700]
+    }]
+}, {
+    "systemId": 24,
+    "systemName": "COL 173 SECTOR OE-P D6-11",
+    "ruins": [{
+        "ruinId": 65,
+        "bodyName": "B 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [44.5700, -20.0600]
+    }, {
+        "ruinId": 66,
+        "bodyName": "B 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-30.5000, -13.6000]
+    }, {
+        "ruinId": 67,
+        "bodyName": "B 3",
+        "ruinTypeName": "Beta",
+        "coordinates": [2.0000, -10.6700]
+    }, {
+        "ruinId": 68,
+        "bodyName": "B 3",
+        "ruinTypeName": "Beta",
+        "coordinates": [-35.8122, 10.4804]
+    }, {
+        "ruinId": 69,
+        "bodyName": "B 3",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-49.6706, -69.6161]
+    }, {
+        "ruinId": 62,
+        "bodyName": "C 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [2.4000, 132.0500]
+    }, {
+        "ruinId": 63,
+        "bodyName": "C 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-18.9000, 105.0700]
+    }]
+}, {
+    "systemId": 37,
+    "systemName": "COL 173 SECTOR OG-Z C15-35",
+    "ruins": [{
+        "ruinId": 104,
+        "bodyName": "B 1",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-49.9900, -129.9900]
+    }, {
+        "ruinId": 105,
+        "bodyName": "B 1",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-5.8800, -119.6600]
+    }, {
+        "ruinId": 106,
+        "bodyName": "B 1",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-15.4300, -175.0800]
+    }]
+}, {
+    "systemId": 16,
+    "systemName": "COL 173 SECTOR OT-Q D5-18",
+    "ruins": [{
+        "ruinId": 36,
+        "bodyName": "D 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-20.9600, 82.6100]
+    }, {
+        "ruinId": 37,
+        "bodyName": "D 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-3.8000, 84.5200]
+    }, {
+        "ruinId": 38,
+        "bodyName": "D 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-31.6400, 150.7600]
+    }]
+}, {
+    "systemId": 30,
+    "systemName": "COL 173 SECTOR PV-B C14-1",
+    "ruins": [{
+        "ruinId": 82,
+        "bodyName": "D 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-46.2479, -114.4967]
+    }, {
+        "ruinId": 83,
+        "bodyName": "D 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-15.0791, -130.6873]
+    }, {
+        "ruinId": 84,
+        "bodyName": "D 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [29.1155, -91.8998]
+    }]
+}, {
+    "systemId": 29,
+    "systemName": "COL 173 SECTOR UU-O D6-42",
+    "ruins": [{
+        "ruinId": 79,
+        "bodyName": "A 1 C",
+        "ruinTypeName": "Beta",
+        "coordinates": [-12.0051, -99.3617]
+    }, {
+        "ruinId": 80,
+        "bodyName": "A 1 C",
+        "ruinTypeName": "Gamma",
+        "coordinates": [19.2700, -96.1461]
+    }, {
+        "ruinId": 81,
+        "bodyName": "A 1 C",
+        "ruinTypeName": "Gamma",
+        "coordinates": [10.1154, -21.0965]
+    }]
+}, {
+    "systemId": 26,
+    "systemName": "COL 173 SECTOR WF-N D7-52",
+    "ruins": [{
+        "ruinId": 70,
+        "bodyName": "B 2",
+        "ruinTypeName": "Beta",
+        "coordinates": [21.3466, 68.6129]
+    }, {
+        "ruinId": 71,
+        "bodyName": "B 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [21.3906, 68.6436]
+    }, {
+        "ruinId": 72,
+        "bodyName": "B 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [21.1877, 70.8749]
+    }]
+}, {
+    "systemId": 28,
+    "systemName": "COL 173 SECTOR WN-B B29-1",
+    "ruins": [{
+        "ruinId": 76,
+        "bodyName": "D 1",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-21.2500, -24.9300]
+    }, {
+        "ruinId": 77,
+        "bodyName": "D 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [-17.5000, 43.1700]
+    }, {
+        "ruinId": 78,
+        "bodyName": "D 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [31.8000, 65.4400]
+    }]
+}, {
+    "systemId": 13,
+    "systemName": "COL 173 SECTOR XG-J C10-17",
+    "ruins": [{
+        "ruinId": 28,
+        "bodyName": "A 2",
+        "ruinTypeName": "Beta",
+        "coordinates": [-17.0000, 44.2400]
+    }, {
+        "ruinId": 39,
+        "bodyName": "B 4",
+        "ruinTypeName": "Beta",
+        "coordinates": [15.9200, 23.8100]
+    }, {
+        "ruinId": 40,
+        "bodyName": "B 4",
+        "ruinTypeName": "Beta",
+        "coordinates": [-77.1000, 127.4500]
+    }]
+}, {
+    "systemId": 36,
+    "systemName": "COL 173 SECTOR YV-M D7-23",
+    "ruins": [{
+        "ruinId": 102,
+        "bodyName": "A 7 A",
+        "ruinTypeName": "Beta",
+        "coordinates": [-49.0267, 5.4129]
+    }, {
+        "ruinId": 103,
+        "bodyName": "A 7 A",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-28.4965, -72.4370]
+    }]
+}, {
+    "systemId": 7,
+    "systemName": "HIP 39768",
+    "ruins": [{
+        "ruinId": 8,
+        "bodyName": "A 14 F",
+        "ruinTypeName": "Beta",
+        "coordinates": [7.0924, 170.2272]
+    }, {
+        "ruinId": 25,
+        "bodyName": "A 14 F",
+        "ruinTypeName": "Beta",
+        "coordinates": [-0.0129, -149.4705]
+    }]
+}, {
+    "systemId": 19,
+    "systemName": "IC 2391 SECTOR FL-X B1-7",
+    "ruins": [{
+        "ruinId": 47,
+        "bodyName": "A 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [9.2000, -130.0600]
+    }]
+}, {
+    "systemId": 2,
+    "systemName": "IC 2391 SECTOR GW-V B2-4",
+    "ruins": [{
+        "ruinId": 2,
+        "bodyName": "B 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [-29.1664, -30.5041]
+    }]
+}, {
+    "systemId": 3,
+    "systemName": "IC 2391 SECTOR ZE-A D101",
+    "ruins": [{
+        "ruinId": 3,
+        "bodyName": "C 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [29.4200, -59.5400]
+    }]
+}, {
+    "systemId": 25,
+    "systemName": "SKAUDAI AM-B D14-138",
+    "ruins": [{
+        "ruinId": 92,
+        "bodyName": "AB 7 A",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-37.8226, 10.4979]
+    }]
+}, {
+    "systemId": 17,
+    "systemName": "SYNUEFE CE-R C21-6",
+    "ruins": [{
+        "ruinId": 41,
+        "bodyName": "C 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [-27.2200, -7.3600]
+    }, {
+        "ruinId": 42,
+        "bodyName": "C 1",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-27.1500, -7.2900]
+    }, {
+        "ruinId": 43,
+        "bodyName": "C 1",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-18.2300, 0.2700]
+    }]
+}, {
+    "systemId": 10,
+    "systemName": "SYNUEFE LY-I B42-2",
+    "ruins": [{
+        "ruinId": 15,
+        "bodyName": "C 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-10.0700, 114.5000]
+    }, {
+        "ruinId": 16,
+        "bodyName": "C 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-37.3100, 106.4200]
+    }, {
+        "ruinId": 17,
+        "bodyName": "C 2",
+        "ruinTypeName": "Beta",
+        "coordinates": [9.0200, 48.7700]
+    }]
+}, {
+    "systemId": 9,
+    "systemName": "SYNUEFE NL-N C23-4",
+    "ruins": [{
+        "ruinId": 13,
+        "bodyName": "B 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-30.5400, -24.2000]
+    }, {
+        "ruinId": 22,
+        "bodyName": "B 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [0.6600, -36.9200]
+    }, {
+        "ruinId": 64,
+        "bodyName": "B 3",
+        "ruinTypeName": "Gamma",
+        "coordinates": [48.1800, -48.3600]
+    }]
+}, {
+    "systemId": 8,
+    "systemName": "SYNUEFE TP-F B44-0",
+    "ruins": [{
+        "ruinId": 9,
+        "bodyName": "C D 1",
+        "ruinTypeName": "Gamma",
+        "coordinates": [59.3300, 15.1000]
+    }, {
+        "ruinId": 10,
+        "bodyName": "C D 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [31.9600, -99.9700]
+    }, {
+        "ruinId": 11,
+        "bodyName": "C D 1",
+        "ruinTypeName": "Alpha",
+        "coordinates": [31.8800, -100.0500]
+    }]
+}, {
+    "systemId": 4,
+    "systemName": "SYNUEFE XO-P C22-17",
+    "ruins": [{
+        "ruinId": 4,
+        "bodyName": "C 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [19.5300, -141.7600]
+    }]
+}, {
+    "systemId": 1,
+    "systemName": "SYNUEFE XR-H D11-102",
+    "ruins": [{
+        "ruinId": 1,
+        "bodyName": "1 B",
+        "ruinTypeName": "Beta",
+        "coordinates": [-31.7347, -128.9212]
+    }]
+}, {
+    "systemId": 32,
+    "systemName": "SYNUEFE ZL-J D10-109",
+    "ruins": [{
+        "ruinId": 89,
+        "bodyName": "E 3",
+        "ruinTypeName": "Beta",
+        "coordinates": [-26.6530, -148.4250]
+    }, {
+        "ruinId": 90,
+        "bodyName": "E 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-26.7190, -148.3720]
+    }, {
+        "ruinId": 91,
+        "bodyName": "E 3",
+        "ruinTypeName": "Beta",
+        "coordinates": [39.9240, -109.1930]
+    }]
+}, {
+    "systemId": 5,
+    "systemName": "SYNUEFE ZL-J D10-119",
+    "ruins": [{
+        "ruinId": 5,
+        "bodyName": "9 B",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-23.3821, 178.9094]
+    }]
+}, {
+    "systemId": 18,
+    "systemName": "SYNUEFE ZR-I B43-10",
+    "ruins": [{
+        "ruinId": 44,
+        "bodyName": "D 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [28.8065, -51.8289]
+    }, {
+        "ruinId": 45,
+        "bodyName": "D 2",
+        "ruinTypeName": "Beta",
+        "coordinates": [13.8800, -0.5478]
+    }, {
+        "ruinId": 46,
+        "bodyName": "D 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-32.7100, -34.0391]
+    }]
+}, {
+    "systemId": 22,
+    "systemName": "VELA DARK REGION EL-Y D32",
+    "ruins": [{
+        "ruinId": 55,
+        "bodyName": "B 1",
+        "ruinTypeName": "Alpha",
+        "coordinates": [41.1500, 129.2600]
+    }, {
+        "ruinId": 56,
+        "bodyName": "B 1",
+        "ruinTypeName": "Beta",
+        "coordinates": [10.4600, 130.2400]
+    }, {
+        "ruinId": 57,
+        "bodyName": "B 1",
+        "ruinTypeName": "Gamma",
+        "coordinates": [7.9000, -86.4600]
+    }]
+}, {
+    "systemId": 31,
+    "systemName": "VELA DARK REGION HB-X C1-28",
+    "ruins": [{
+        "ruinId": 85,
+        "bodyName": "E 2",
+        "ruinTypeName": "Gamma",
+        "coordinates": [-4.5000, -176.3000]
+    }, {
+        "ruinId": 86,
+        "bodyName": "E 2",
+        "ruinTypeName": "Alpha",
+        "coordinates": [11.3000, -154.2000]
+    }, {
+        "ruinId": 87,
+        "bodyName": "E 3",
+        "ruinTypeName": "Gamma",
+        "coordinates": [16.0000, -176.1000]
+    }, {
+        "ruinId": 88,
+        "bodyName": "E 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-28.9000, 163.1600]
+    }]
+}, {
+    "systemId": 21,
+    "systemName": "VELA DARK REGION KR-W C1-24",
+    "ruins": [{
+        "ruinId": 52,
+        "bodyName": "7 A",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-18.4224, 65.5005]
+    }, {
+        "ruinId": 54,
+        "bodyName": "7 A",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-17.0825, -54.7755]
+    }, {
+        "ruinId": 49,
+        "bodyName": "7 C",
+        "ruinTypeName": "Beta",
+        "coordinates": [-22.4296, 126.9466]
+    }]
+}, {
+    "systemId": 20,
+    "systemName": "VELA DARK REGION RC-V B2-5",
+    "ruins": [{
+        "ruinId": 48,
+        "bodyName": "C 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-31.4700, -44.5200]
+    }, {
+        "ruinId": 50,
+        "bodyName": "C 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-19.5500, -1.9400]
+    }, {
+        "ruinId": 51,
+        "bodyName": "C 3",
+        "ruinTypeName": "Alpha",
+        "coordinates": [-36.7800, 20.0200]
+    }, {
+        "ruinId": 53,
+        "bodyName": "C 4",
+        "ruinTypeName": "Beta",
+        "coordinates": [36.8100, 132.8800]
+    }]
+}]

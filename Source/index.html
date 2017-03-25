@@ -38,398 +38,29 @@
 				</tr>
 			</table>
 		</section>
+
 	    <section id="map" style="display:none">
-	      <div class="parent">
-	        <div class="panzoom noselect" id="ruin-map">
-				&nbsp;
-	        </div>
-	      </div>
-	      <script>
-			window.textMapping = {
-				artifacts:{
-					'orb':'Orb',
-					'casket':'Casket',
-					'tablet':'Tablet',
-					'totem':'Totem',
-					'relic':'Relic'
-				}
-			}
+	    	<div id="map_heading">
+	    		<h1>System | Body | Coords</h1>
+	    	</div>
 
-
-		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
-		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
-		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
-
-	      	function prepMapUI(){
-			  	window.ruins = Guardian.getRuin({
-			  		panzoom:$(".panzoom"), 
-			  		
-			  		onMapReady: function(type){
-			  			//Hide notice
-			  			hideNotice();
-
-			  			//Hide all by default
-			  			//window.ruins.groups.hideAll();
-
-			  			showMap();
-						
-						
-			  		},
-			  		onMapFailed: function(failure){
-			  			showNotice('Map problem encountered: ' + failure.statusText,false);						
-			  		},
-			  		onObeliskSelected: onMapSelection,
-			  		onNumberSelected: onMapSelection
-			  	});
-
-		        //Set our popup element
-		        $('#ruin_obelisk_data').popup();
-
-		        //Bind our more control
-		        $('#info_bar').on('click',function(e){
-		        	if($('#info').hasClass('down')) {
-			        	showInfoBar();
-					}else{
-						hideInfoBar();
-					}
-		        });
-
-
-				//Test handle obelisk items
-				$('.obelisk-selection').css( 'cursor', 'pointer' );
-				$('.obelisk-selection').on('click',function(e){
-					//Get the obelisk and identify the data from the id
-					var obData = e.target.parentElement.id.split('-');
-
-					//Hide
-					hideInfoBar();
-
-					//Focus on the obelisk
-					window.ruins.focusOnObelisk(obData[1],obData[2]);
-				});
-       
-
-				//Handle the zoom controls manually 
-				$("#zoom-in").on('click', function(){
-					window.ruins.zoomIn();
-				});
-
-				$("#zoom-out").on('click', function(){
-					window.ruins.zoomOut();
-				});
-
-				$("#zoom-reset").on('click', function(){
-					window.ruins.zoomReset();
-				});
-
-				$("#ruin-select").on('click', function(){
-					//Enable navigation back
-					$('#return_to_map').show();
-					//Show listing
-					showSystems();
-				});
-
-
-	      	}
-
-
-
-	      	function showMap(){
-	  			//Scroll up
-	  			$(window).scrollTop(0);	      		
-
-				$('#systems').hide();
-				$('#map').show();      		
-	      	}
-
-	      	function showSystems(){
-				$('#map').hide();
-				$('#systems').show();      		
-	      	}
-
-
-	        function onMapSelection(type,group,number){
-	        	var numDisplay = number;
-	        	if(numDisplay < 9){
-	        		numDisplay = '0' + numDisplay;
-	        	}
-	        	showScanData(group.toUpperCase() + numDisplay,'orb','relic','Culture 12');				
-	  		}
-
-	  		function showScanData(obelisk,object1,object2,data){
-	  			//Display
-	  			var objectOneDisplay = window.textMapping.artifacts[object1] || 'None';
-	  			var objectTwoDisplay = window.textMapping.artifacts[object2] || 'None';
-
-				//Testing
-	  			$('#scan_obelisk').text(obelisk);
-				$('#scan_object1').text(objectOneDisplay);
-				$('#scan_object1icon').removeClass().addClass('object ' + object1);
-
-				$('#scan_object2').text(objectTwoDisplay);
-				$('#scan_object2icon').removeClass().addClass('object ' + object2);
-
-				$('#scan_result').text(data);
-				$('#ruin_obelisk_data').popup('show');		
-	  		}
-
-	        function showInfoBar(){
-	        	$('#info').addClass('up');
-				$('#info').removeClass('down'); 
-				//Change chevron
-				$('#info_bar .chevron').html('&#x25BE');
-	        }
-
-	        function hideInfoBar(){
-				$('#info').addClass('down');
-				$('#info').removeClass('up'); 
-				//Change chevron
-				$('#info_bar .chevron').html('&#x25B4');
-	        }
-
-	        function ruinSelected(ruinId,type){
-	        	//Start by loading the map type
-	        	showNotice('Opening Ruin Map',true);
-				window.ruins.setRuinType(type);
+	    	<div class="parent">
+				<div class="panzoom noselect" id="ruin-map">
+					&nbsp;
+				</div>
+			</div>
 			
-	        }
-
-		  	/* Selection Selection Selection Selection Selection Selection Selection */
-		  	/* Selection Selection Selection Selection Selection Selection Selection */
-		  	/* Selection Selection Selection Selection Selection Selection Selection */
-		  	/* Selection Selection Selection Selection Selection Selection Selection */
-
-	        function getRuinList(){
-
-	        	//Clear everything
-        		$('#ruin-list').find("tr:gt(0)").remove();
-
-        		//Show status
-        		showNotice('Getting Ruin List',true);
-
-				$.get("https://canonnapi.sonargaming.com/api/v1/maps/systemoverview").done(function(systemList) {
-		        	hideNotice();
-
-					$.each(systemList,function(index,system){
-						//System heading
-						var bandClass = '';
-						if(1 == (index % 2)){
-							bandClass='band';
-						}
-
-						var systemId = $('<div/>').text(system.systemId).html();
-
-						$('#ruin-list').append([
-						'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
-						    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
-						'</tr>'
-						].join(''));						
-
-
-		        		$.each(system.ruins,function(rindex,ruin){
-							var ruinId = $('<div/>').text(ruin.ruinId).html();
-							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
-
-							bandClass = '';
-							if(1 == (rindex % 2)){
-								bandClass='ruinband';
-							}
-							
-
-							$('#ruin-list').append([
-							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="' + ruinType + '-' + ruinId + '"">',
-							    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
-								'<td>' + 'GS' + ruin.ruinId + '</td>',						    
-							    '<td>' + ruinType + '</td>',
-							    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
-							'</tr>'
-							].join(''));
-
-	        		});
-	        	});
-				})
-				.fail(function(failure){
-					showNotice('Problem encountered: ' + failure.statusText,false);
-				});
-    	
-	        }
-
-	        function prepSelectionUI(){
-	        	//Map Listing
-	        	$('#return_to_map').on('click',function(e){
-	        		//Show the map
-	        		showMap();	
-	        	})
-	        	
-
-	        	//Added to the table since the elements are dynamically added
-			  	$('#ruin-list').on('click',function(e){
-			  		var clicked = $(e.target);
-			  		var row = $(clicked.closest('tr'));
-
-			  		if(row.hasClass('ruin_list_system')){
-			  			//Display all ruins in the given system
-			  			if(row[0].id){
-			  				//Get the system ID
-			  				var idSystem = row[0].id.split('-');
-			  					
-			  				if(2 === idSystem.length){
-				  				if(row.hasClass('expanded')){
-				  					//collapse
-									row.addClass('collapsed');
-									row.removeClass('expanded');
-									//Hide all items that are "children" of this
-			  						$('.ruin_system_' + idSystem[1]).hide();
-				  				}else{
-				  					//expand
-				  					row.addClass('expanded');
-				  					row.removeClass('collapsed');
-				  					//Show all items that are "children" of this
-			  						$('.ruin_system_' + idSystem[1]).show();
-				  				}
-
-			  					
-			  				}
-			  			}
-
-			  		}else if(row.hasClass('ruin_list_ruin')){
-			  			//Display ruin
-				  		if(row[0].id){
-					  		var idType=row[0].id.split('-');
-					  		
-					  		if(2 === idType.length){
-								ruinSelected(idType[1] , idType[0].toLowerCase());
-					  		}	
-				  		}			  			
-			  		}
-
-			  		
-			  	});
-			  }
-
-			function showNotice(noticeText,loading){
-				if(loading){
-					$('#notice').addClass('loading');
-				}else{
-					$('#notice').removeClass('loading');
-				}
-				$('#notice').text(noticeText,true).show();
-
-
-			}
-
-			function hideNotice(noticeText){
-				$('#notice').fadeOut();
-			}
-
-			
-
-			$( document ).ready(function() {
-				//Prep the UI's
-			  	prepSelectionUI();
-			  	prepMapUI();
-
-			  	//Shared
-			  	$('#notice').on('click',function(e){
-			  		$('#notice').hide();
-			  	})
-
-			  	//Load system
-			  	getRuinList();
-
-				//Stop host div from blocking bottom div during testing
-				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
-
-
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
-		        //set_test_data
-
-		        $('#set_test_data').on('click',function(e){
-		        	var testAlphaObelisks = {
-
-		        		'a':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1 },
-		        		'b':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0,9:1,10:0,11:0,12:1,13:0,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1 },
-		        		'c':{ 1:1,2:1,3:1,4:1,5:0,6:1,7:1,8:1,9:0,10:0,11:1,12:1,13:1,14:0 },
-		        		'd':{ 1:1,2:1,3:1,4:1,5:0,6:1,7:1,8:1,9:0,10:0,11:1,12:1,13:1,14:0 },
-		        		'e':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
-		        		'f':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1,22:1 },
-		        		'g':{ 1:1,2:1,3:1,4:0 },
-		        		'h':{ 1:0,2:0,3:1,4:1,5:1,6:0,7:0 },
-		        		'i':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1 },
-		        		'j':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0 },
-		        		'k':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1,22:1 },
-		        		'l':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
-		        		'm':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0,9:1,10:1,11:1,12:1,13:1,14:1,15:0,16:0,17:1,18:1,19:1,20:1,21:1,22:1,23:0,24:1 },
-		        		'n':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
-		        		'o':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:0,14:0,15:1,16:1,17:1,18:1,19:1,20:1 },
-		        		'p':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1 },
-		        		'q':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:0,12:0,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:0,21:1,22:1,23:1,24:1,25:1,26:1,27:1,28:1,29:1 }
-		        	}
-
-		        	var ruinInfo = {
-		        		system:{
-		        			name: $('#system_name').val(),
-		        			body: $('#body_name').val(),
-		        			coords: $('#coordinates').val()
-		        		},
-		        		ruin:{
-		        			type:$('#ruin_type').val(),
-		        			groups: {}
-		        		}
-		        	}
-
-		        	//Clear existing gropus
-		        	window.ruins.groups.clearGroups();
-		        	//Add test group obelisks
-		        	var groups=$('#groups').val();
-
-					for (var i = 0, len = groups.length; i < len; i++) {
-		        		groupId = groups[i].toLowerCase();
-		        		ruinInfo.ruin.groups[groupId] = testAlphaObelisks[groupId]
-		        		window.ruins.groups.addGroup(groupId,ruinInfo.ruin.groups[groupId]);
-					};
-
-					//Emulate map start
-					window.ruins.groups.hideAll();
-
-					//Show those added
-					window.ruins.groups.showAll();
-
-					//And close
-					hideInfoBar();
-		        });
-
-
-				
-
-
-		      });    
-
-			
-			
-
-	      </script>
-
-
 
 			<div id="mapcontrols" class="noselect">
-		    	<div class="canonn_logo">
-		    		&nbsp;
-		    	</div>				
-				<div id="ruin-select" class="button" title="Ruin Selection">&nbsp;</div>
+				<div id="return_to_systems">
+					<div>Select Ruin</div>
+				</div>		
 
-				<div id="zoom-in" class="button" title="Zoom In">&nbsp;</div>
+				<div id="zoom-in" class="button first" title="Zoom In">&nbsp;</div>
 
 				<div id="zoom-out" class="button" title="Zoom Out">&nbsp;</div>
 
 				<div id="zoom-reset" class="button" title="Reset Zoom">&nbsp;</div>
-
-				
 			</div> 
 
 
@@ -549,6 +180,408 @@
 
 	</div>
 
+	      <script>
+			window.textMapping = {
+				artifacts:{
+					'orb':'Orb',
+					'casket':'Casket',
+					'tablet':'Tablet',
+					'totem':'Totem',
+					'relic':'Relic'
+				}
+			}
+
+			window.systems = {};
+
+
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+
+	      	function prepMapUI(){
+			  	window.ruins = Guardian.getRuin({
+			  		panzoom:$(".panzoom"), 
+			  		
+			  		onMapReady: function(type){
+			  			//Hide notice
+			  			hideNotice();
+
+			  			//Clear existing gropus
+			        	window.ruins.groups.clearGroups();
+
+			  			//Add those that exist in the current ruin
+			  			$.each(window.currentRuin.obelisks,function(group,obeliskData){
+			  				window.ruins.groups.addGroup(group,obeliskData);
+			  			})
+
+			  			//Hide all groups for the given type
+						window.ruins.groups.hideAllForType();
+
+						//Now show those we've added
+						window.ruins.groups.showAll();
+
+						//And present
+			  			showMap();
+						
+						
+			  		},
+			  		onMapFailed: function(failure){
+			  			showNotice('Map problem encountered: ' + failure.statusText,false);						
+			  		},
+			  		onObeliskSelected: onMapSelection,
+			  		onNumberSelected: onMapSelection
+			  	});
+
+		        //Set our popup element
+		        $('#ruin_obelisk_data').popup();
+
+		        //Bind our more control
+		        $('#info_bar').on('click',function(e){
+		        	if($('#info').hasClass('down')) {
+			        	showInfoBar();
+					}else{
+						hideInfoBar();
+					}
+		        });
+
+
+				//Test handle obelisk items
+				$('.obelisk-selection').css( 'cursor', 'pointer' );
+				$('.obelisk-selection').on('click',function(e){
+					//Get the obelisk and identify the data from the id
+					var obData = e.target.parentElement.id.split('-');
+
+					//Hide
+					hideInfoBar();
+
+					//Focus on the obelisk
+					window.ruins.focusOnObelisk(obData[1],obData[2]);
+				});
+       
+
+				//Handle the zoom controls manually 
+				$("#zoom-in").on('click', function(){
+					window.ruins.zoomIn();
+				});
+
+				$("#zoom-out").on('click', function(){
+					window.ruins.zoomOut();
+				});
+
+				$("#zoom-reset").on('click', function(){
+					window.ruins.zoomReset();
+				});
+
+				$("#return_to_systems").on('click', function(){
+					//Enable navigation back
+					$('#return_to_map').show();
+					//Show listing
+					showSystems();
+				});
+
+
+	      	}
+
+
+
+	      	function showMap(){
+	  			//Scroll up
+	  			$(window).scrollTop(0);	      		
+
+				$('#systems').hide();
+				$('#map').show();      		
+	      	}
+
+	      	function showSystems(){
+				$('#map').hide();
+				$('#systems').show();      		
+	      	}
+
+
+	        function onMapSelection(type,group,number){
+	        	var numDisplay = number;
+	        	if(numDisplay < 9){
+	        		numDisplay = '0' + numDisplay;
+	        	}
+	        	showScanData(group.toUpperCase() + numDisplay,'orb','relic','Culture 12');				
+	  		}
+
+	  		function showScanData(obelisk,object1,object2,data){
+	  			//Display
+	  			var objectOneDisplay = window.textMapping.artifacts[object1] || 'None';
+	  			var objectTwoDisplay = window.textMapping.artifacts[object2] || 'None';
+
+				//Testing
+	  			$('#scan_obelisk').text(obelisk);
+				$('#scan_object1').text(objectOneDisplay);
+				$('#scan_object1icon').removeClass().addClass('object ' + object1);
+
+				$('#scan_object2').text(objectTwoDisplay);
+				$('#scan_object2icon').removeClass().addClass('object ' + object2);
+
+				$('#scan_result').text(data);
+				$('#ruin_obelisk_data').popup('show');		
+	  		}
+
+	        function showInfoBar(){
+	        	$('#info').addClass('up');
+				$('#info').removeClass('down'); 
+				//Change chevron
+				$('#info_bar .chevron').html('&#x25BE');
+	        }
+
+	        function hideInfoBar(){
+				$('#info').addClass('down');
+				$('#info').removeClass('up'); 
+				//Change chevron
+				$('#info_bar .chevron').html('&#x25B4');
+	        }
+
+	        function ruinSelected(systemId, ruinId,type){
+	        	//Start by loading the map type
+	        	showNotice('Getting Ruin Info',true);
+	        	console.log('checking');
+				$.get("mock/ruininfo.json").done(function(ruinInfo) {
+					//Store ruin data in currentRuin;
+					window.currentRuin = ruinInfo;
+
+		  			//Update map header info
+		  			$('#map_heading h1').text([
+		  				window.systems[systemId].systemName,
+		  				window.currentRuin.bodyName,
+		  				window.currentRuin.coordinates.join(', ')
+		  			].join(' | '));
+
+					//And show
+					showNotice('Opening Ruin Map',true);
+					window.ruins.setRuinType(type);
+				})
+				.fail(function(failure){
+					showNotice('Problem encountered: ' + failure.statusText,false);
+				});
+	        }
+
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+		  	/* Selection Selection Selection Selection Selection Selection Selection */
+
+	        function getRuinList(){
+
+	        	//Clear everything
+        		$('#ruin-list').find("tr:gt(0)").remove();
+
+        		//Show status
+        		showNotice('Getting Ruin List',true);
+
+				$.get("https://canonnapi.sonargaming.com/api/v1/maps/systemoverview").done(function(systemList) {
+		        	hideNotice();
+
+		        	//Clear existing
+		        	window.systems = {};
+		        	
+
+					$.each(systemList,function(index,system){
+						//Cache system & ruin info
+						window.systems[system.systemId]=system; 
+
+						//System heading
+						var bandClass = '';
+						if(1 == (index % 2)){
+							bandClass='band';
+						}
+
+						var systemId = $('<div/>').text(system.systemId).html();
+
+						$('#ruin-list').append([
+						'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
+						    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
+						'</tr>'
+						].join(''));						
+
+
+		        		$.each(system.ruins,function(rindex,ruin){
+		        			//Add the ruin to the associated Ruins and 
+							var ruinId = $('<div/>').text(ruin.ruinId).html();
+							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
+
+							bandClass = '';
+							if(1 == (rindex % 2)){
+								bandClass='ruinband';
+							}
+							
+
+							$('#ruin-list').append([
+							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + systemId + '-' + ruinType + '-' + ruinId + '"">',
+							    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
+								'<td>' + 'GS' + ruin.ruinId + '</td>',						    
+							    '<td>' + ruinType + '</td>',
+							    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
+							'</tr>'
+							].join(''));
+
+	        		});
+	        	});
+				})
+				.fail(function(failure){
+					showNotice('Problem encountered: ' + failure.statusText,false);
+				});
+    	
+	        }
+
+	        function prepSelectionUI(){
+	        	//Map Listing
+	        	$('#return_to_map').on('click',function(e){
+	        		//Show the map
+	        		showMap();	
+	        	})
+	        	
+
+	        	//Added to the table since the elements are dynamically added
+			  	$('#ruin-list').on('click',function(e){
+			  		var clicked = $(e.target);
+			  		var row = $(clicked.closest('tr'));
+
+			  		if(row.hasClass('ruin_list_system')){
+			  			//Display all ruins in the given system
+			  			if(row[0].id){
+			  				//Get the system ID
+			  				var idSystem = row[0].id.split('-');
+			  					
+			  				if(2 === idSystem.length){
+				  				if(row.hasClass('expanded')){
+				  					//collapse
+									row.addClass('collapsed');
+									row.removeClass('expanded');
+									//Hide all items that are "children" of this
+			  						$('.ruin_system_' + idSystem[1]).hide();
+				  				}else{
+				  					//expand
+				  					row.addClass('expanded');
+				  					row.removeClass('collapsed');
+				  					//Show all items that are "children" of this
+			  						$('.ruin_system_' + idSystem[1]).show();
+				  				}
+
+			  					
+			  				}
+			  			}
+
+			  		}else if(row.hasClass('ruin_list_ruin')){
+			  			//Display ruin
+				  		if(row[0].id){
+					  		var idType=row[0].id.split('-');
+					  		
+					  		if(4 === idType.length){
+								ruinSelected(idType[1], idType[3], idType[2].toLowerCase());
+					  		}	
+				  		}			  			
+			  		}
+
+			  		
+			  	});
+			  }
+
+			function showNotice(noticeText,loading){
+				if(loading){
+					$('#notice').addClass('loading');
+				}else{
+					$('#notice').removeClass('loading');
+				}
+				$('#notice').text(noticeText,true).show();
+
+
+			}
+
+			function hideNotice(noticeText){
+				$('#notice').fadeOut();
+			}
+
+			
+
+			$( document ).ready(function() {
+				//Prep the UI's
+			  	prepSelectionUI();
+			  	prepMapUI();
+
+			  	//Shared
+			  	$('#notice').on('click',function(e){
+			  		$('#notice').hide();
+			  	})
+
+			  	//Load system
+			  	getRuinList();
+
+				//Stop host div from blocking bottom div during testing
+				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
+
+
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING 
+		        //set_test_data
+
+		        $('#set_test_data').on('click',function(e){
+		        	var testAlphaObelisks = {
+
+		        		'a':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1 },
+		        		'b':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0,9:1,10:0,11:0,12:1,13:0,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1 },
+		        		'c':{ 1:1,2:1,3:1,4:1,5:0,6:1,7:1,8:1,9:0,10:0,11:1,12:1,13:1,14:0 },
+		        		'd':{ 1:1,2:1,3:1,4:1,5:0,6:1,7:1,8:1,9:0,10:0,11:1,12:1,13:1,14:0 },
+		        		'e':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
+		        		'f':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1,22:1 },
+		        		'g':{ 1:1,2:1,3:1,4:0 },
+		        		'h':{ 1:0,2:0,3:1,4:1,5:1,6:0,7:0 },
+		        		'i':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1 },
+		        		'j':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0 },
+		        		'k':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1,22:1 },
+		        		'l':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
+		        		'm':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0,9:1,10:1,11:1,12:1,13:1,14:1,15:0,16:0,17:1,18:1,19:1,20:1,21:1,22:1,23:0,24:1 },
+		        		'n':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
+		        		'o':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:0,14:0,15:1,16:1,17:1,18:1,19:1,20:1 },
+		        		'p':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1 },
+		        		'q':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:0,12:0,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:0,21:1,22:1,23:1,24:1,25:1,26:1,27:1,28:1,29:1 }
+		        	}
+
+		        	var ruinInfo = {
+		        		system:{
+		        			name: $('#system_name').val(),
+		        			body: $('#body_name').val(),
+		        			coords: $('#coordinates').val()
+		        		},
+		        		ruin:{
+		        			type:$('#ruin_type').val(),
+		        			groups: {}
+		        		}
+		        	}
+
+		        	//Clear existing gropus
+		        	window.ruins.groups.clearGroups();
+		        	//Add test group obelisks
+		        	var groups=$('#groups').val();
+
+					for (var i = 0, len = groups.length; i < len; i++) {
+		        		groupId = groups[i].toLowerCase();
+		        		ruinInfo.ruin.groups[groupId] = testAlphaObelisks[groupId]
+		        		window.ruins.groups.addGroup(groupId,ruinInfo.ruin.groups[groupId]);
+					};
+
+					//Emulate map start
+					window.ruins.groups.hideAllForType();
+
+					//Show those added
+					window.ruins.groups.showAll();
+
+					//And close
+					hideInfoBar();
+		        });
+
+		      });   //document ready
+
+	      </script>
 
 	
 
