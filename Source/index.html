@@ -295,8 +295,11 @@
 
 
 	        function onMapSelection(type,group,number){
-
 	        	//Get the scan details for the given obelisk set
+	        	if(!window.ruins.typeData[type]){return;}
+	        	if(!window.ruins.typeData[type][group]){return;}
+	        	if(!window.ruins.typeData[type][group][number]){return;}
+
 	        	var scanData = window.ruins.typeData[type][group][number];
 
 	        	var numDisplay = number;
@@ -340,10 +343,20 @@
 				$('#info_bar .chevron').html('&#x25B4');
 	        }
 
-	        function ruinSelected(systemId, ruinId,type){
+	        function ruinSelected(systemId,
+	        	ruinId,type){
 	        	//Start by loading the map type
 	        	showNotice('Getting Ruin Info',true);
-				$.get("mock/ruininfo.json",{format: "json"}).done(function(ruinInfo) {
+
+	        	//var ruinRequest = 'https://canonnapi.sonargaming.com/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
+	        	var ruinRequest = 'mock/ruininfo.json';
+
+	        	//http://canonnapi.sonargaming.com/api/v1/maps/ruininfo/{ruinId}
+	        	//mock/ruininfo.json
+				$.get(ruinRequest).done(function(ruinInfo) {
+						//Add obelisks if missing
+						ruinInfo.obelisks = ruinInfo.obelisks || {};
+
 						//Store ruin data in currentRuin;
 						window.currentRuin = ruinInfo;
 
@@ -371,8 +384,9 @@
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
 
+        		//http://api2.sonargaming.com:8000/api/v1/maps/scandata
 
-				$.get("mock/site_scans.json",{ format: "json"}).done(function(scanList) {
+				$.get("https://canonnapi.sonargaming.com/api/v1/maps/scandata",{ format: "json"}).done(function(scanList) {
 		        	hideNotice();
 
 		        	//Add our data

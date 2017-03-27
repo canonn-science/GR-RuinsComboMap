@@ -40,11 +40,20 @@ my.getRuin = function (setOptions) {
 			}
 
 			this.hideAllForType = function(){
+				/*
 				var groupList = typeData[ruinData.type];
 
 				$.each(groupList,function(designation,obelisks){
 					$('.ruin-group-' + designation.toLowerCase()).hide();
 				});
+				*/
+
+				//Loop through the alphabet until we can confirm that the api contains all scan groups
+				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+			    $.each(alphabet, function(letter) {
+			        $('.ruin-group-' + alphabet[letter]).hide();
+
+			    });
 
 			}
 
