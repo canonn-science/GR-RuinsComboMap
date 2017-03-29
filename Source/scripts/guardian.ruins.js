@@ -52,7 +52,6 @@ my.getRuin = function (setOptions) {
 				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 			    $.each(alphabet, function(letter) {
 			        $('.ruin-group-' + alphabet[letter]).hide();
-
 			    });
 
 			}
@@ -62,7 +61,6 @@ my.getRuin = function (setOptions) {
 				$.each( ruins.ruinData.groups , function( designation, value ) {
 				  $('.ruin-group-' + designation).show();
 				});
-
 			}
 
 			return this;

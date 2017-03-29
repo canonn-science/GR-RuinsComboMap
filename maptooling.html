@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+
 	<title>Guardian Ancient Ruins 2</title>
 
 	<meta charset="utf-8" />
@@ -23,7 +23,7 @@
 			<button class="zoom-out">Zoom Out</button>
 			<input type="range" class="zoom-range">
 			<button class="reset">Reset</button>
-		</div>      
+		</div>
       <div class="parent">
         <div class="panzoom" id="ruin-map">
 			Loading
@@ -69,7 +69,7 @@
 						  animate: false,
 						  focal: e
 						});
-					});		
+					});
 
 					//Mouse doublie click zoom
 					panZoomComp.parent().on('dblclick', function( e ) {
@@ -79,7 +79,7 @@
 						  animate: true,
 						  focal: e
 						});
-					});					
+					});
 
 					//Touch specific event handling
 		          	$('.ruin-obelisk').on('mousedown touchstart',function(e){
@@ -87,7 +87,7 @@
 		          	});
 		          	$('.ruin-obelisk').on('touchmove',function(e){
 		          		registerTouch = 0;
-		          	})	          
+		          	})
 		          	$('.ruin-obelisk').on('touchend',function(e){
 		          		if(registerTouch == 0){
 		          			e.preventDefault();
@@ -107,6 +107,13 @@
 
 		          	//Ensure that non interactive items don't interefere
 		          	$('.ruin-inactive').css('pointer-events','none');
+
+		          	//Hide number
+		          	var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+				    $.each(alphabet, function(letter) {
+				        $('#ruin-number-' + alphabet[letter]).css('pointer-events','none');
+				    });
+
 				}
 
 				this.setPanZoom = function(panZoomElement){
@@ -142,14 +149,14 @@
 
 		  		return this;
 		  	}();
-        
 
-	        window.ruins.changeRuinType('alpha');
-	      });    
 
-		
+	        window.ruins.changeRuinType('beta');
+	      });
 
-		
+
+
+
 
       </script>
     </section>
@@ -159,9 +166,9 @@
     	<input type="text" id="section_number" value="1"></BR>
     </div>
 
-    
+
     <textarea id="templog" style="height:500px; width:100%"></textarea>
-	
+
 
 </body>
 </html>
