@@ -296,6 +296,8 @@
 
 	        function onMapSelection(type,group,number){
 	        	//Get the scan details for the given obelisk set
+	        	console.log('Select:' + [type,group,number].join('-')); //testing
+
 	        	if(!window.ruins.typeData[type]){return;}
 	        	if(!window.ruins.typeData[type][group]){return;}
 	        	if(!window.ruins.typeData[type][group][number]){return;}
