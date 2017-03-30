@@ -75,7 +75,7 @@ my.getRuin = function (setOptions) {
 							disableObelisk(group,o);
 						}
 					}
-				})
+				});
 
 
 			}

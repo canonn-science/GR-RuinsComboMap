@@ -70,54 +70,6 @@
 				</h2>
 				<div class="panel">
 					<div class="panel-section">
-						<h3>Direct Test Only</h3>
-						<form id="testing" action="#" method="post" onsubmit="return false;">
-
-						    <fieldset>
-						        <label for="system_name">
-						            <span>System Name</span>
-						            <input id="system_name" name="system_name" type="text" class="text-input" value="IC 2391 SECTOR ZE-A D101"/>
-						        </label>
-
-						        <label for="body_name">
-						            <span>Body</span>
-						            <input id="body_name" name="body_name" type="text" class="text-input" value="C 3" />
-						        </label>
-
-						        <label for="coordinates">
-						            <span>Coordinates</span>
-						            <input id="coordinates" name="coordinates" type="text" class="text-input" value="29.42, -59.54"/>
-						        </label>
-						    </fieldset>
-
-						    <fieldset>
-						    	<label for="ruin_type">
-						            <span>Ruin Type</span>
-						            <select id="ruin_type" name="ruin_type">
-						            	<option value="alpha">Alpha</option>
-						            	<!--
-						            	<option value="beta">Beta</option>
-						            	<option value="gamma">Gamma</option>
-						            	-->
-						            </select>
-						        </label>
-
-						        <label for="groups">
-						            <span>Cluster Groups</span>
-						            <input id="groups" name="groups" type="text" class="text-input" value="ABHMOPQ"/>
-						        </label>
-
-						    </fieldset>
-
-						    <fieldset>
-						        <input type="button" id="set_test_data" value="Test">
-						    </fieldset>
-
-
-						</form>
-
-					</div>
-					<div class="panel-section">
 						<h3>Scans</h3>
 						<table id="obelisks">
 							<tr>
@@ -561,71 +513,6 @@
 				//Stop host div from blocking bottom div during testing
 				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
 
-
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
-		        //TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING TESTING
-		        //set_test_data
-
-		        $('#set_test_data').on('click',function(e){
-		        	var testAlphaObelisks = {
-
-		        		'a':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1 },
-		        		'b':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0,9:1,10:0,11:0,12:1,13:0,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1 },
-		        		'c':{ 1:1,2:1,3:1,4:1,5:0,6:1,7:1,8:1,9:0,10:0,11:1,12:1,13:1,14:0 },
-		        		'd':{ 1:1,2:1,3:1,4:1,5:0,6:1,7:1,8:1,9:0,10:0,11:1,12:1,13:1,14:0 },
-		        		'e':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
-		        		'f':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1,22:1 },
-		        		'g':{ 1:1,2:1,3:1,4:0 },
-		        		'h':{ 1:0,2:0,3:1,4:1,5:1,6:0,7:0 },
-		        		'i':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1 },
-		        		'j':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0 },
-		        		'k':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:1,21:1,22:1 },
-		        		'l':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
-		        		'm':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:0,9:1,10:1,11:1,12:1,13:1,14:1,15:0,16:0,17:1,18:1,19:1,20:1,21:1,22:1,23:0,24:1 },
-		        		'n':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:0 },
-		        		'o':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:0,14:0,15:1,16:1,17:1,18:1,19:1,20:1 },
-		        		'p':{ 1:1,2:1,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:1,12:1,13:1 },
-		        		'q':{ 1:1,2:0,3:1,4:1,5:1,6:1,7:1,8:1,9:1,10:1,11:0,12:0,13:1,14:1,15:1,16:1,17:1,18:1,19:1,20:0,21:1,22:1,23:1,24:1,25:1,26:1,27:1,28:1,29:1 }
-		        	}
-
-		        	var ruinInfo = {
-		        		system:{
-		        			name: $('#system_name').val(),
-		        			body: $('#body_name').val(),
-		        			coords: $('#coordinates').val()
-		        		},
-		        		ruin:{
-		        			type:$('#ruin_type').val(),
-		        			groups: {}
-		        		}
-		        	}
-
-		        	//Clear existing gropus
-		        	window.ruins.groups.clearGroups();
-		        	//Add test group obelisks
-		        	var groups=$('#groups').val();
-
-					for (var i = 0, len = groups.length; i < len; i++) {
-		        		groupId = groups[i].toLowerCase();
-		        		ruinInfo.ruin.groups[groupId] = testAlphaObelisks[groupId]
-		        		window.ruins.groups.addGroup(groupId,ruinInfo.ruin.groups[groupId]);
-					};
-
-					//Emulate map start
-					window.ruins.groups.hideAllForType();
-
-					//Show those added
-					window.ruins.groups.showAll();
-
-
-
-					//And close
-					hideInfoBar();
-		        });
 
 		      });   //document ready
 
