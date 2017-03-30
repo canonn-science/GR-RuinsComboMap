@@ -66,6 +66,8 @@ my.getRuin = function (setOptions) {
 			return this;
 		}();
 
+
+
 		this.__obeliskSelect = function(e){
 			//Get the components
 			var clicked = e.target.id.split('-');
@@ -251,6 +253,14 @@ my.getRuin = function (setOptions) {
 			}
 
 		}
+
+		this.disableObelisk = function(group,number){
+			//Obelisk
+			$('#obelisk-' + ruinData.type + '-' + group + '-' + number).css('pointer-events','none').css('opacity',.5);
+
+			//Disable the associated number
+			$('#ruin-number-' + group + ' .ruin-number-' + number).css('pointer-events','none').css('opacity',.5);
+      	}
 
 		return this;
 	}();

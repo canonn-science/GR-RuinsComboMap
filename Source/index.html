@@ -210,19 +210,14 @@
 						//Now show those we've added
 						window.ruins.groups.showAll();
 
-						//Visually identify those that don't have a match
-						//Loop through the alphabet until we can confirm that the api contains all scan groups
-						/*
-						var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-						$.each(alphabet, function(group) {
-							for(var o = 1; o<60; o++){
-								if( (! window.ruins.typeData[type][group]) || (!window.ruins.typeData[type][group][o])){
-									$('#obelisk-' + type + '-' + group + '-' + o).hide();
+						//Disable obelisks that are "broken"
+						$.each(window.currentRuin.obelisks,function(group,obeliskData){
+							$.each(obeliskData,function(number,data){
+								if(0 === data){
+									window.ruins.disableObelisk(group,number);
 								}
-
-							}
-						});
-						*/
+						    });
+						})
 
 						//Reset the zoom
 						window.ruins.zoomReset();
@@ -306,7 +301,6 @@
 				$('#map').hide();
 				$('#systems').show();
 	      	}
-
 
 	        function onMapSelection(type,group,number){
 	        	//Get the scan details for the given obelisk set
