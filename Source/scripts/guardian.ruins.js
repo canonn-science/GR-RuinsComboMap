@@ -50,8 +50,8 @@ my.getRuin = function (setOptions) {
 
 				//Loop through the alphabet until we can confirm that the api contains all scan groups
 				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-			    $.each(alphabet, function(letter) {
-			        $('.ruin-group-' + alphabet[letter]).hide();
+			    $.each(alphabet, function(index,letter) {
+			        $('.ruin-group-' + letter).hide();
 			    });
 
 			}
@@ -61,6 +61,23 @@ my.getRuin = function (setOptions) {
 				$.each( ruins.ruinData.groups , function( designation, value ) {
 				  $('.ruin-group-' + designation).show();
 				});
+
+
+
+				//Disable those that don't have scan data
+				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+			    $.each(alphabet, function(index,group) {
+			    	var scanData = ruins.typeData[ruinData.type][group];
+					for(var o = 1; o < 100; o++){
+						//Missing scan data?
+						if( (! scanData) || (!scanData[o]) ){
+							//Disable this obelisk
+							disableObelisk(group,o);
+						}
+					}
+				})
+
+
 			}
 
 			return this;
@@ -180,8 +197,6 @@ my.getRuin = function (setOptions) {
 	      	//Pointer to visualize that the item can be "clicked"
 	      	$('.ruin-obelisk').css( 'cursor', 'pointer' );
 	      	$('.ruin-number').css( 'cursor', 'pointer' );
-
-
 
 	      	//Ensure that non interactive items don't interefere
 	      	$('.ruin-inactive').css('pointer-events','none');
