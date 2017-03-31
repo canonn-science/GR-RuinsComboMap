@@ -13,10 +13,6 @@
 	<script src="scripts/jquery-3.1.1.min.js"></script>
 	<script src="scripts/jquery.panzoom.js"></script>
 	<script src="scripts/guardian.ruins.js"></script>
-	<script src="scripts/jquery.popupoverlay.js"></script>
-
-
-
 </head>
 
 <body>
@@ -105,27 +101,50 @@
 			</div>
 
 
-			<!-- Pop up -->
-			<div id="ruin_obelisk_data">
-				<div class="obelisk">
-					<div>
-						<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
-					</div>
-				</div>
-
-				<div id="scan_data_panel">
-					<div class="object" id="scan_object1icon">
-						<div class="object1" id="scan_object1">Obelisk 1</div>
-					</div>
-					<div class="object" id="scan_object2icon">
-						<div class="object2" id="scan_object2">Obelisk 2</div>
-					</div>
-				</div>
-
-				<div class="ruin_obelisk_data_close">&nbsp;</div>
-			</div>
-
 	    </section>
+
+	<!-- Pop up -->
+	<div id="ruin_obelisk_data" style="display:none">
+		<div class="obelisk">
+			<div>
+				<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
+			</div>
+		</div>
+
+		<div id="scan_data_panel">
+			<div class="object" id="scan_object1icon">
+				<div class="object1" id="scan_object1">Obelisk 1</div>
+			</div>
+			<div class="object" id="scan_object2icon">
+				<div class="object2" id="scan_object2">Obelisk 2</div>
+			</div>
+		</div>
+
+		<div id="ruin_obelisk_data_close">&nbsp;</div>
+	</div>
+
+	<!--
+	<div id="ruin_obelisk_data" style="">
+		<div class="obelisk">
+			<div>
+				<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
+			</div>
+		</div>
+
+		<div id="scan_data_panel">
+			<div class="object" id="scan_object1icon">
+				<div class="object1" id="scan_object1">Obelisk 1</div>
+			</div>
+			<div class="object" id="scan_object2icon">
+				<div class="object2" id="scan_object2">Obelisk 2</div>
+			</div>
+		</div>
+
+		<div class="ruin_obelisk_data_close">&nbsp;</div>
+	</div>
+	-->
+
+	<!-- Notice Panel -->
 
 	<div id="notice" style="display:none">
 		Notice Panel
@@ -191,8 +210,27 @@
 			  	//Get our site scans and store it
 			  	getSiteScans();
 
-		        //Set our popup element
-		        $('#ruin_obelisk_data').popup();
+		        //Scan Data menu
+		        $('#ruin_obelisk_data_close').on('click',function(e){
+		        	//Hide the popup
+		        	$('#ruin_obelisk_data').hide();
+		        });
+
+		        //Handle closing if clicked outside
+		        $(document).on('click',function(event) {
+		        	var clickedItem = $(event.target);
+		        	//Ignore if this is a number or obelisk.  Those we expect to trigger this event or change the scan displayed
+		        	if(clickedItem.hasClass('ruin-number') || clickedItem.hasClass('ruin-obelisk')){
+		        		return;
+		        	}
+
+					if( !(clickedItem.id == "ruin_obelisk_data" || clickedItem.parents("#ruin_obelisk_data").length) ){
+						if($('#ruin_obelisk_data').css('display') === 'block' ){
+							$('#ruin_obelisk_data').hide();
+						}
+					}
+				})
+
 
 		        //Bind our more control
 		        $('#info_bar').on('click',function(e){
@@ -256,7 +294,7 @@
 				$('#systems').show();
 	      	}
 
-	        function onMapSelection(type,group,number){
+	        function onMapSelection(e,type,group,number){
 	        	//Get the scan details for the given obelisk set
 	        	console.log('Select:' + [type,group,number].join('-')); //testing
 
@@ -290,7 +328,7 @@
 				$('#scan_object2icon').css('background-image','url("images/maps/ruin_' + object2.toLowerCase() + '.png")');
 
 				$('#scan_result').text(data);
-				$('#ruin_obelisk_data').popup('show');
+				$('#ruin_obelisk_data').show();
 	  		}
 
 	        function showInfoBar(){

@@ -5,8 +5,8 @@ my.getRuin = function (setOptions) {
 	setOpt.panzoom = setOptions.panzoom || null;
 	setOpt.onMapReady = setOptions.onMapReady || function onMapReady(type){ };
 	setOpt.onMapFailed = setOptions.onMapFailed || function onMapFailed(status){ };
-	setOpt.onObeliskSelected = setOptions.onObeliskSelected || function onObeliskSelected(type,group,number){}
-	setOpt.onNumberSelected = setOptions.onNumberSelected || function onNumberSelected(type,group,number){}
+	setOpt.onObeliskSelected = setOptions.onObeliskSelected || function onObeliskSelected(e,type,group,number){}
+	setOpt.onNumberSelected = setOptions.onNumberSelected || function onNumberSelected(e,type,group,number){}
 
 	var newRuin = function(){
 		this.options = setOpt;
@@ -92,7 +92,7 @@ my.getRuin = function (setOptions) {
 			//Fire
 			if(clicked.length >= 4){
 				if('obelisk' === clicked[0]){
-					options.onObeliskSelected(ruinData.type,clicked[2],clicked[3]);
+					options.onObeliskSelected(e,ruinData.type,clicked[2],clicked[3]);
 				}
 
 			}
@@ -112,7 +112,7 @@ my.getRuin = function (setOptions) {
 			var groupDesignation = parentId.split('-')[2];
 
 			//Fire
-			options.onNumberSelected(ruinData.type,groupDesignation,labelNum);
+			options.onNumberSelected(e,ruinData.type,groupDesignation,labelNum);
 		}
 
 		this.__getCoordinates = function(){
