@@ -67,32 +67,13 @@
 				<div class="panel">
 					<div class="panel-section">
 						<h3>Scans</h3>
-						<table id="obelisks">
+						<table id="scan-list">
 							<tr>
 								<th>Group/Obelisk</th>
 								<th>Item 1</th>
 								<th>Item 2</th>
 								<th>Result</th>
 							</tr>
-							<tr id="focus-a-1" class="obelisk-selection">
-								<td>A01</td><td>Urn</td><td>Casket</td><td>Biology 1</td>
-							</tr>
-							<tr id="focus-a-3" class="obelisk-selection">
-								<td>A03</td><td>Thing 3</td><td>Thing 4</td><td>Culture 1</td>
-							</tr>
-							<tr id="focus-a-5" class="obelisk-selection">
-								<td>A05</td><td>Thing 3</td><td>Thing 4</td><td>Culture 2</td>
-							</tr>
-							<tr id="focus-d-8" class="obelisk-selection">
-								<td>D08</td><td>Thing 3</td><td>Thing 4</td><td>Culture 3</td>
-							</tr>
-							<tr id="focus-n-7" class="obelisk-selection">
-								<td>N07</td><td>Thing 3</td><td>Thing 4</td><td>Biology 4</td>
-							</tr>
-							<tr id="focus-i-19" class="obelisk-selection">
-								<td>I19</td><td>Thing 3</td><td>Thing 4</td><td>Culture 5</td>
-							</tr>
-
 						</table>
 					</div>
 
@@ -166,8 +147,6 @@
 			  		panzoom:$(".panzoom"),
 
 			  		onMapReady: function(type){
-			  			//Hide notice
-			  			hideNotice();
 
 			  			//Clear existing gropus
 			        	window.ruins.groups.clearGroups();
@@ -191,6 +170,25 @@
 								}
 						    });
 						})
+
+						//Clear info panel listing
+						clearScanList();
+
+						//Get scan data and show
+						var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+					    $.each(alphabet, function(index,group) {
+					    	var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
+					    	if(scanData){
+								for(var o = 1; o < 100; o++){
+									if( scanData[o] ){
+										addScanListItem(group, o, scanData[o].items[0], scanData[o].items[1], scanData[o].scan);
+									}
+								}
+					    	}
+						});
+
+			  			//Hide notice
+			  			hideNotice();
 
 						//Reset the zoom
 						window.ruins.zoomReset();
@@ -231,6 +229,23 @@
 					}
 				})
 
+				function clearScanList(){
+		        	//Clear everything
+	        		$('#scan-list').find("tr:gt(0)").remove();
+		        }
+
+		        function addScanListItem(group,number,item1,item2,scan){
+					var numDisplay = padNumber(number);
+
+					$('#scan-list').append([
+					'<tr class="obelisk-selection" id="focus-' + group + '-' + number + '">',
+					    '<td>' + $('<div/>').text(group.toUpperCase() + numDisplay).html() + '</td>',
+					    '<td>' + $('<div/>').text(item1).html() + '</td>',
+					    '<td>' + $('<div/>').text((item2 || ' ')).html() + '</td>',
+					    '<td>' + $('<div/>').text(scan).html() + '</td>',
+					'</tr>'
+					].join(''));
+		        }
 
 		        //Bind our more control
 		        $('#info_bar').on('click',function(e){
@@ -242,19 +257,27 @@
 		        });
 
 
-				//Test handle obelisk items
-				$('.obelisk-selection').css( 'cursor', 'pointer' );
-				$('.obelisk-selection').on('click',function(e){
-					//Get the obelisk and identify the data from the id
-					var obData = e.target.parentElement.id.split('-');
+				//Added to the table since the elements are dynamically added
+			  	$('#scan-list').on('click',function(e){
+			  		var clicked = $(e.target);
+			  		var row = $(clicked.closest('tr'));
 
-					//Hide
-					hideInfoBar();
+			  		if(row.hasClass('obelisk-selection')){
+			  			//Display all ruins in the given system
+			  			if(row[0].id){
+			  				//Get the system ID
+			  				var obData = row[0].id.split('-');
 
-					//Focus on the obelisk
-					window.ruins.focusOnObelisk(obData[1],obData[2]);
-				});
+			  				if(3 === obData.length){
+								//Hide
+								hideInfoBar();
 
+								//Focus on the obelisk
+								window.ruins.focusOnObelisk(obData[1],obData[2]);
+			  				}
+			  			}
+			  		}
+			  	});
 
 				//Handle the zoom controls manually
 				$("#zoom-in").on('click', function(){
@@ -304,10 +327,7 @@
 
 	        	var scanData = window.ruins.typeData[type][group][number];
 
-	        	var numDisplay = number;
-	        	if(numDisplay < 9){
-	        		numDisplay = '0' + numDisplay;
-	        	}
+	        	var numDisplay = padNumber(number);
 
 	        	if(scanData){
 	        		showScanData(group.toUpperCase() + numDisplay,scanData.items[0],scanData.items[1],scanData.scan);
@@ -345,8 +365,17 @@
 				$('#info_bar .chevron').html('&#x25B4');
 	        }
 
-	        function ruinSelected(systemId,
-	        	ruinId,type){
+	        function padNumber(number){
+				var numDisplay = number;
+
+				if(numDisplay < 9){
+					numDisplay = '0' + numDisplay;
+				}
+
+				return numDisplay;
+	        }
+
+	        function ruinSelected(systemId,ruinId,type){
 	        	//Start by loading the map type
 	        	showNotice('Getting Ruin Info',true);
 
@@ -397,7 +426,6 @@
 		        	});
 				})
 				.fail(function(d, textStatus, error){
-					console.log(error);
 					showNotice("Getting Site Scans failed: " + error ,false);
 				});
 
@@ -518,7 +546,7 @@
 
 
 			  	});
-			  }
+			 }
 
 			function showNotice(noticeText,loading){
 				if(loading){

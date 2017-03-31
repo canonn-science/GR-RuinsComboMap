@@ -216,39 +216,38 @@ div.panzoom svg {
   margin-right:1em;
 }
 
-#obelisks{
+#scan-list{
   width:100%;
   border-collapse: collapse;
   border:2px solid #E0C6B0;
 }
 
-#obelisks th{
+#scan-list th{
   text-align: left;
   background-color: #E0C6B0;
   padding:1em;
 }
 
-#obelisks td{
-  background-color: #ffffff;
+#scan-list td{
   padding:.5em;
   padding-left:1em;
   padding-right:1em;
+  cursor: pointer;
 }
+
+
+#scan-list tr:hover {
+  -webkit-box-shadow:inset 0px 0px 0px 1px #00D5FF;
+  -moz-box-shadow:inset 0px 0px 0px 1px #00D5FF;
+  box-shadow:inset 0px 0px 0px 1px #00D5FF;
+}
+
+#scan-list tr {background: #FFF}
+#scan-list tr:nth-child(2n) {background: #F7D4B6}
 
 .hidden{
   display:none;
 }
-
-.slide-up
-{
-    bottom: 0px !important;
-}
-
-.slide-down
-{
-    bottom: -475px !important;
-}
-
 
 #ruin_obelisk_data{
   width:275px;
