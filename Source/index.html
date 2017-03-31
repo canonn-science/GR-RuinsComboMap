@@ -136,6 +136,9 @@
 
 	      <script>
 			window.systems = {};
+			window.ruinsUI = {
+				scanListIndex:''
+			}
 
 
 		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
@@ -162,30 +165,25 @@
 						//Now show those we've added
 						window.ruins.groups.showAll();
 
-						//Disable obelisks that are "broken"
-						$.each(window.currentRuin.obelisks,function(group,obeliskData){
-							$.each(obeliskData,function(number,data){
-								if(0 === data){
-									window.ruins.disableObelisk(group,number);
-								}
-						    });
-						})
-
 						//Clear info panel listing
 						clearScanList();
 
-						//Get scan data and show
-						var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-					    $.each(alphabet, function(index,group) {
-					    	var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
-					    	if(scanData){
-								for(var o = 1; o < 100; o++){
-									if( scanData[o] ){
-										addScanListItem(group, o, scanData[o].items[0], scanData[o].items[1], scanData[o].scan);
+						//Disable obelisks that are "broken/inactive" and add scan list items
+						$.each(window.currentRuin.obelisks,function(group,obeliskData){
+							//Get the scan data for the given group
+							var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
+
+							//Now for those that are inactive... we disable.  Otherwise if there's a scan we add it
+							$.each(obeliskData,function(number,data){
+								if(0 === data){
+									window.ruins.disableObelisk(group,number);
+								}else{
+									if( scanData && scanData[number] ){
+										addScanListItem(group, number, scanData[number].items[0], scanData[number].items[1], scanData[number].scan);
 									}
 								}
-					    	}
-						});
+						    });
+						})
 
 			  			//Hide notice
 			  			hideNotice();
@@ -211,7 +209,7 @@
 		        //Scan Data menu
 		        $('#ruin_obelisk_data_close').on('click',function(e){
 		        	//Hide the popup
-		        	$('#ruin_obelisk_data').hide();
+		        	hideScanData();
 		        });
 
 		        //Handle closing if clicked outside
@@ -224,12 +222,22 @@
 
 					if( !(clickedItem.id == "ruin_obelisk_data" || clickedItem.parents("#ruin_obelisk_data").length) ){
 						if($('#ruin_obelisk_data').css('display') === 'block' ){
-							$('#ruin_obelisk_data').hide();
+							hideScanData();
 						}
 					}
 				})
 
+		        //Handle escape key
+				$(document).keyup(function(e) {
+					if (e.keyCode === 27) {
+						//Hide any dialogs
+						hideInfoBar();
+						hideScanData();
+					}
+				});
+
 				function clearScanList(){
+					window.ruinsUI.scanListIndex='';
 		        	//Clear everything
 	        		$('#scan-list').find("tr:gt(0)").remove();
 		        }
@@ -237,14 +245,27 @@
 		        function addScanListItem(group,number,item1,item2,scan){
 					var numDisplay = padNumber(number);
 
+					//New item?
+					if(window.ruinsUI.scanListIndex !== group){
+						//New group entry
+						$('#scan-list').append([
+							'<tr class="obelisk-group">',
+							    '<td colspan="4">' + $('<div/>').text(group.toUpperCase()).html() + '</td>',
+							'</tr>'
+							].join(''));
+					}
+
 					$('#scan-list').append([
-					'<tr class="obelisk-selection" id="focus-' + group + '-' + number + '">',
-					    '<td>' + $('<div/>').text(group.toUpperCase() + numDisplay).html() + '</td>',
-					    '<td>' + $('<div/>').text(item1).html() + '</td>',
-					    '<td>' + $('<div/>').text((item2 || ' ')).html() + '</td>',
-					    '<td>' + $('<div/>').text(scan).html() + '</td>',
-					'</tr>'
-					].join(''));
+						'<tr class="obelisk-selection" id="focus-' + group + '-' + number + '">',
+						    '<td>' + $('<div/>').text(group.toUpperCase() + numDisplay).html() + '</td>',
+						    '<td>' + $('<div/>').text(item1).html() + '</td>',
+						    '<td>' + $('<div/>').text((item2 || ' ')).html() + '</td>',
+						    '<td>' + $('<div/>').text(scan).html() + '</td>',
+						'</tr>'
+						].join(''));
+
+					//Update
+					window.ruinsUI.scanListIndex=group;
 		        }
 
 		        //Bind our more control
@@ -334,6 +355,10 @@
 	        	}
 	  		}
 
+			function hideScanData(){
+				$('#ruin_obelisk_data').hide();
+			}
+
 	  		function showScanData(obelisk,object1,object2,data){
 	  			//Display
 	  			var object1 = object1 || 'None';
@@ -414,8 +439,6 @@
 		  	function getSiteScans(){
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
-
-        		//http://api2.sonargaming.com:8000/api/v1/maps/scandata
 
 				$.get("https://canonnapi.sonargaming.com/api/v1/maps/scandata",{ format: "json"}).done(function(scanList) {
 		        	hideNotice();

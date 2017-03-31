@@ -62,14 +62,10 @@ my.getRuin = function (setOptions) {
 				  $('.ruin-group-' + designation).show();
 				});
 
-				//Disable those that don't have scan data and show those that do
+				//Disable those that don't have scan data
 				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 			    $.each(alphabet, function(index,group) {
 			    	var scanData = ruins.typeData[ruinData.type][group];
-			    	if(scanData){
-						$('.ruin-group-' + group).show();
-			    	}
-
 					for(var o = 1; o < 100; o++){
 						//Missing scan data?
 						if( (! scanData) || (!scanData[o]) ){
