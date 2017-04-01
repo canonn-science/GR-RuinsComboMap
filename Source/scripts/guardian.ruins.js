@@ -7,6 +7,7 @@ my.getRuin = function (setOptions) {
 	setOpt.onMapFailed = setOptions.onMapFailed || function onMapFailed(status){ };
 	setOpt.onObeliskSelected = setOptions.onObeliskSelected || function onObeliskSelected(e,type,group,number){}
 	setOpt.onNumberSelected = setOptions.onNumberSelected || function onNumberSelected(e,type,group,number){}
+	setOpt.onObeliskFocus = setOptions.onObeliskFocus || function onObeliskFocus(e,type,group,number){}
 
 	var newRuin = function(){
 		this.options = setOpt;
@@ -238,7 +239,7 @@ my.getRuin = function (setOptions) {
 
 		}
 
-		this.__doFocusOnElement = function(elem){
+		this.__doFocusOnElement = function(elem,group,number){
 			//Zoom in
 			panZoomComp.panzoom('zoom',10);
       		//Get the a rect
@@ -256,13 +257,19 @@ my.getRuin = function (setOptions) {
 
 			//Now pan to the specific location
 			panZoomComp.panzoom('pan',newX,newY,{ relative: true });
+
+			//And flag the event
+			options.onObeliskFocus(elem,ruinData.type,group,number);
+
+
+
 		}
 
 		this.focusOnObelisk = function(group,number){
 			var matching = $('#obelisk-' + ruinData.type + '-' + group + '-' + number);
 
 			if(matching.length > 0){
-				__doFocusOnElement(matching[0]);
+				__doFocusOnElement(matching[0],group,number);
 			}
 
 		}

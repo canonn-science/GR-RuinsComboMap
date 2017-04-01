@@ -137,7 +137,9 @@
 	      <script>
 			window.systems = {};
 			window.ruinsUI = {
-				scanListIndex:''
+				scanListIndex:'',
+				groupBand:'',
+				itemBand:''
 			}
 
 
@@ -199,6 +201,12 @@
 			  		onMapFailed: function(failure){
 			  			showNotice('Map problem encountered: ' + failure.statusText,false);
 			  		},
+
+					onObeliskFocus: function onObeliskFocus(e,type,group,number){
+						//And "flicker"
+						flashObelisk(e,6);
+					},
+
 			  		onObeliskSelected: onMapSelection,
 			  		onNumberSelected: onMapSelection
 			  	});
@@ -236,8 +244,33 @@
 					}
 				});
 
+				window.flashObelisk = function(obelisk,count){
+					if(count <= 0){
+						//Done
+						$(obelisk).show();
+						return;
+					}
+
+					//Decrement
+					count--;
+
+					if(1 == (count % 2)){
+						$(obelisk).hide();
+					}else{
+						$(obelisk).show();
+					}
+
+					setTimeout(function(){
+						flashObelisk(obelisk,count);
+					}, 100);
+				}
+
+
 				function clearScanList(){
 					window.ruinsUI.scanListIndex='';
+					window.ruinsUI.groupBand='';
+					window.ruinsUI.itemBand='';
+
 		        	//Clear everything
 	        		$('#scan-list').find("tr:gt(0)").remove();
 		        }
@@ -247,16 +280,33 @@
 
 					//New item?
 					if(window.ruinsUI.scanListIndex !== group){
+						//Reset item band
+						window.ruinsUI.itemBand = '';
+
+						//alternate band
+						if('' === window.ruinsUI.groupBand){
+							window.ruinsUI.groupBand='band';
+						}else{
+							window.ruinsUI.groupBand='';
+						}
+
 						//New group entry
 						$('#scan-list').append([
-							'<tr class="obelisk-group">',
-							    '<td colspan="4">' + $('<div/>').text(group.toUpperCase()).html() + '</td>',
+							'<tr id="group-' + group + '" class="obelisk-group groupitem ' + window.ruinsUI.groupBand + '">',
+							    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(group.toUpperCase()).html() + '</td>',
 							'</tr>'
 							].join(''));
 					}
 
+					//alternate band
+					if('' === window.ruinsUI.itemBand){
+						window.ruinsUI.itemBand='scanband';
+					}else{
+						window.ruinsUI.itemBand='';
+					}
+
 					$('#scan-list').append([
-						'<tr class="obelisk-selection" id="focus-' + group + '-' + number + '">',
+						'<tr class="obelisk-selection indented obelisk-scans-' + group + ' ' + window.ruinsUI.itemBand + '" id="focus-' + group + '-' + number + '">',
 						    '<td>' + $('<div/>').text(group.toUpperCase() + numDisplay).html() + '</td>',
 						    '<td>' + $('<div/>').text(item1).html() + '</td>',
 						    '<td>' + $('<div/>').text((item2 || ' ')).html() + '</td>',
@@ -280,10 +330,33 @@
 
 				//Added to the table since the elements are dynamically added
 			  	$('#scan-list').on('click',function(e){
-			  		var clicked = $(e.target);
+					var clicked = $(e.target);
 			  		var row = $(clicked.closest('tr'));
 
-			  		if(row.hasClass('obelisk-selection')){
+			  		if(row.hasClass('groupitem')){
+			  			//Display all ruins in the given system
+			  			if(row[0].id){
+			  				//Get the system ID
+			  				var idGroup = row[0].id.split('-');
+
+			  				if(2 === idGroup.length){
+				  				if(row.hasClass('expanded')){
+				  					//collapse
+									row.addClass('collapsed');
+									row.removeClass('expanded');
+									//Hide all items that are "children" of this
+			  						$('.obelisk-scans-' + idGroup[1]).hide();
+				  				}else{
+				  					//expand
+				  					row.addClass('expanded');
+				  					row.removeClass('collapsed');
+				  					//Show all items that are "children" of this
+			  						$('.obelisk-scans-' + idGroup[1]).show();
+				  				}
+			  				}
+			  			}
+
+			  		}else if(row.hasClass('obelisk-selection')){
 			  			//Display all ruins in the given system
 			  			if(row[0].id){
 			  				//Get the system ID
@@ -298,6 +371,8 @@
 			  				}
 			  			}
 			  		}
+
+
 			  	});
 
 				//Handle the zoom controls manually
@@ -440,7 +515,11 @@
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
 
-				$.get("https://canonnapi.sonargaming.com/api/v1/maps/scandata",{ format: "json"}).done(function(scanList) {
+        		//var scanRequest = "https://canonnapi.sonargaming.com/api/v1/maps/scandata";
+        		//var scanRequest = "https://canonnapi.sonargaming.com/api/v1/maps/scandata";
+        		var scanRequest = "mock/site_scans.json";
+
+				$.get(scanRequest,{ format: "json"}).done(function(scanList) {
 		        	hideNotice();
 
 		        	//Add our data
@@ -463,7 +542,10 @@
         		//Show status
         		showNotice('Getting Ruin List',true);
 
-				$.get("https://canonnapi.sonargaming.com/api/v1/maps/systemoverview").done(function(systemList) {
+        		//var systemList = 'https://canonnapi.sonargaming.com/api/v1/maps/systemoverview';
+        		var systemList = 'mock/systemoverview.json';
+
+				$.get(systemList).done(function(systemList) {
 		        	hideNotice();
 
 		        	//Clear existing

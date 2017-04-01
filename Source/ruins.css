@@ -241,14 +241,36 @@ div.panzoom svg {
   box-shadow:inset 0px 0px 0px 1px #00D5FF;
 }
 
+#scan-list tr.groupitem {
+  background-color:black;
+  color: #FFF;
+  font-weight: bold;
+}
+
+
+#scan-list tr.obelisk-selection{
+  display:none;
+}
+
+#scan-list tr.groupitem.band {
+  background-color:#242424;
+  color: #FFF;
+  font-weight: bold;
+}
+#scan-list tr.scanband {background: #CFD5FF}
+
+/*
 #scan-list tr {background: #FFF}
 #scan-list tr:nth-child(2n) {background: #F7D4B6}
+*/
 
+/*
 #scan-list tr.obelisk-group{
   background-color:black;
   color: #FFF;
   font-weight: bold;
 }
+*/
 
 .hidden{
   display:none;
