@@ -62,7 +62,7 @@
 
 			<div id="info" class="down">
 				<h2 id="info_bar">
-						<span class="chevron">&#x25B4</span> Information <span class="chevron">&#x25B4</span>
+					<span class="chevron">&#x25B4</span> Information <span class="chevron">&#x25B4</span>
 				</h2>
 				<div class="panel">
 					<div class="panel-section">
@@ -76,6 +76,23 @@
 							</tr>
 						</table>
 					</div>
+
+
+					<div id="about">
+						<div class="credit">
+							<a class="elite" href="https://forums.frontier.co.uk/member.php/149570-AdmlAdama" target="_blank">AdmlAdama - Development</a>
+							<span>|</span>
+							<a class="github" title="On GitHub" href="https://github.com/CmdrAdama" target="_blank"></a>
+						</div>
+
+						<div class="credit">
+							<a class="elite" href="https://forums.frontier.co.uk/member.php/18113-Zebarmy" target="_blank">Zebarmy - SVG map</a>
+							<span>|</span>
+							<a class="twitter" title="On Twitter" href="https://twitter.com/zebarmy/" target="_blank"></a>
+						</div>
+
+					</div>
+
 
 				</div>
 
@@ -451,14 +468,14 @@
 				$('#ruin_obelisk_data').show();
 	  		}
 
-	        function showInfoBar(){
+	        window.showInfoBar = function(){
 	        	$('#info').addClass('up');
 				$('#info').removeClass('down');
 				//Change chevron
 				$('#info_bar .chevron').html('&#x25BE');
 	        }
 
-	        function hideInfoBar(){
+	        window.hideInfoBar = function(){
 				$('#info').addClass('down');
 				$('#info').removeClass('up');
 				//Change chevron
@@ -482,8 +499,6 @@
 	        	//var ruinRequest = 'https://canonnapi.sonargaming.com/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
 	        	var ruinRequest = 'mock/ruininfo.json';
 
-	        	//http://canonnapi.sonargaming.com/api/v1/maps/ruininfo/{ruinId}
-	        	//mock/ruininfo.json
 				$.get(ruinRequest).done(function(ruinInfo) {
 						//Add obelisks if missing
 						ruinInfo.obelisks = ruinInfo.obelisks || {};
@@ -515,9 +530,8 @@
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
 
-        		//var scanRequest = "https://canonnapi.sonargaming.com/api/v1/maps/scandata";
-        		//var scanRequest = "https://canonnapi.sonargaming.com/api/v1/maps/scandata";
-        		var scanRequest = "mock/site_scans.json";
+        		var scanRequest = "https://canonnapi.sonargaming.com/api/v1/maps/scandata";
+        		//var scanRequest = "mock/site_scans.json";
 
 				$.get(scanRequest,{ format: "json"}).done(function(scanList) {
 		        	hideNotice();
@@ -542,8 +556,8 @@
         		//Show status
         		showNotice('Getting Ruin List',true);
 
-        		//var systemList = 'https://canonnapi.sonargaming.com/api/v1/maps/systemoverview';
-        		var systemList = 'mock/systemoverview.json';
+        		var systemList = 'https://canonnapi.sonargaming.com/api/v1/maps/systemoverview';
+        		//var systemList = 'mock/systemoverview.json';
 
 				$.get(systemList).done(function(systemList) {
 		        	hideNotice();
@@ -682,9 +696,6 @@
 
 			  	//Load system
 			  	getRuinList();
-
-				//Stop host div from blocking bottom div during testing
-				$('img[alt^="www."]').parent().parent().css('width','25%').css('right',0);
 
 
 		      });   //document ready
