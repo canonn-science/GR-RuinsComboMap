@@ -49,9 +49,11 @@
 					var sect = $('#section_name').val();
 					var num = $('#section_number').val();
 
-					var newID = 'obelisk-alpha-' + sect + '-' + num;
+					var newID = 'obelisk-gamma-' + sect + '-' + num;
 
 					window.ruins.testLog(e.target.id + '=' + newID);
+					$(e.target).css('opacity',.1);
+
 
 					num++;
 					$('#section_number').val(num);
@@ -151,7 +153,7 @@
 		  	}();
 
 
-	        window.ruins.changeRuinType('beta');
+	        window.ruins.changeRuinType('gamma');
 	      });
 
 
