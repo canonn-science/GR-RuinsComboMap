@@ -304,7 +304,7 @@ a.twitter{
 
 #ruin_obelisk_data{
   width:275px;
-  height:175px;
+  height:225px;
   align-items: center;
   margin: auto;
   padding:0;
@@ -334,6 +334,21 @@ a.twitter{
   width:100%;
   float:left;
 }
+
+#scan_result_panel {
+  width:100%;
+  float:left;
+  text-align: center;
+}
+
+#scan_result{
+  color: #000000;
+  font-weight:bold;
+  font-size:125%;
+  background-color: #FFCAAB;
+  padding:1em;
+}
+
 
 
 #ruin_obelisk_data .obelisk div{
