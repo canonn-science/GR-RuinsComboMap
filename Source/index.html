@@ -548,7 +548,7 @@
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
 
-        		var scanRequest = "https://canonnapi.sonargaming.com/api/v1/maps/scandata";
+        		var scanRequest = "https://api.canonn.technology/api/v1/maps/scandata";
         		//var scanRequest = "mock/site_scans.json";
 
 				$.get(scanRequest,{ format: "json"}).done(function(scanList) {
@@ -574,7 +574,7 @@
         		//Show status
         		showNotice('Getting Ruin List',true);
 
-        		var systemList = 'https://canonnapi.sonargaming.com/api/v1/maps/systemoverview';
+        		var systemList = 'https://api.canonn.technology/api/v1/maps/systemoverview';
         		//var systemList = 'mock/systemoverview.json';
 
 				$.get(systemList).done(function(systemList) {
