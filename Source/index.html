@@ -188,6 +188,10 @@
 				itemBand:''
 			}
 
+			window.nav={
+				obelisk:''
+			}
+
 
 		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
 		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
@@ -243,6 +247,25 @@
 
 						//And present
 			  			showMap();
+
+			  			//Now jump to a nav if applicable
+			  			if(window.nav.obelisk.length >= 2){
+			  				//Get the group
+			  				var group = window.nav.obelisk.substring(0,1);
+			  				group = group.toLowerCase();
+
+			  				//Valid group?
+			  				if(window.currentRuin.obelisks[group]){
+			  					//Yes.  Now the number
+			  					var number = parseInt(window.nav.obelisk.substring(1,window.nav.obelisk.length));
+			  					if(!isNaN(number)){
+									window.ruins.focusOnObelisk(group,number);
+			  					}
+			  				}
+
+			  				//Get the number
+			  			}
+
 
 
 			  		},
@@ -744,10 +767,13 @@
 
 			function onRuinListReady(){
 				//Check for navigation
-				var hash = window.location.hash || '';
-				var hash = hash.split('#')[1] || hash;
+				var navData = String(window.location.hash || '').replace('#','').split('-');
+				var ruinId = String(navData[0] || '').replace('GS','');
 
-				var ruinId = parseInt(hash.replace('GS',''));
+				window.nav.obelisk = String(navData[1] || '');
+
+				var ruinId = parseInt(ruinId);
+
 				if(!isNaN(ruinId)){
 					ruinSelected(ruinId);
 				}
