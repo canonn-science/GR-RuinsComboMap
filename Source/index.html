@@ -181,6 +181,7 @@
 
 	      <script>
 			window.systems = {};
+			window.ruinsIndex = {};
 			window.ruinsUI = {
 				scanListIndex:'',
 				groupBand:'',
@@ -451,17 +452,23 @@
 
 				$('#systems').hide();
 				$('#map').show();
+
+				//Change history state
+				if(window.currentRuin.ruinId){
+					window.history.pushState(null, "Ruin " + window.currentRuin.ruinId, "#GS" + window.currentRuin.ruinId);
+				}
 	      	}
 
 	      	function showSystems(){
 				$('#map').hide();
 				$('#systems').show();
+
+				//Change history state
+				window.history.pushState(null, "Ruin List", "#");
 	      	}
 
 	        function onMapSelection(e,type,group,number){
 	        	//Get the scan details for the given obelisk set
-	        	console.log('Select:' + [type,group,number].join('-')); //testing
-
 	        	if(!window.ruins.typeData[type]){return;}
 	        	if(!window.ruins.typeData[type][group]){return;}
 	        	if(!window.ruins.typeData[type][group][number]){return;}
@@ -520,12 +527,24 @@
 				return numDisplay;
 	        }
 
-	        function ruinSelected(systemId,ruinId,type){
+	        function ruinSelected(ruinId){
+	        	//Get the associated system info
+	        	var ruinSystem = window.ruinsIndex[ruinId];
+	        	if(!ruinSystem){
+	        		showNotice('Unable to find Ruin Info for ID ' + ruinId,true);
+	        		return;
+	        	}
+
+	        	var systemId = ruinSystem.systemId;
+	        	var type = ruinSystem.ruinType.toLowerCase();
+
 	        	//Start by loading the map type
 	        	showNotice('Getting Ruin Info',true);
 
-	        	//var ruinRequest = 'https://canonnapi.sonargaming.com/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
-	        	var ruinRequest = 'mock/ruininfo.json';
+	        	var ruinRequest = 'https://api.canonn.technology/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
+	        	//var ruinRequest = 'mock/ruininfo.json';
+
+
 
 				$.get(ruinRequest).done(function(ruinInfo) {
 						//Add obelisks if missing
@@ -592,6 +611,7 @@
 
 		        	//Clear existing
 		        	window.systems = {};
+		        	window.ruinsIndex = {}
 
 
 					$.each(systemList,function(index,system){
@@ -614,6 +634,11 @@
 
 
 		        		$.each(system.ruins,function(rindex,ruin){
+		        			//Add the system mapping
+		        			window.ruinsIndex[ruin.ruinId] = {
+		        				systemId:system.systemId,
+		        				ruinType:ruin.ruinTypeName
+		        			}
 		        			//Add the ruin to the associated Ruins and
 							var ruinId = $('<div/>').text(ruin.ruinId).html();
 							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
@@ -625,7 +650,7 @@
 
 
 							$('#ruin-list').append([
-							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + systemId + '-' + ruinType + '-' + ruinId + '"">',
+							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + ruinId + '"">',
 							    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
 								'<td>' + 'GS' + ruin.ruinId + '</td>',
 							    '<td>' + ruinType + '</td>',
@@ -635,6 +660,8 @@
 
 		        		});
 		        	});
+
+					onRuinListReady();
 				})
 				.fail(function(d, textStatus, error){
 					showNotice("Getting Ruin List failed: " + error ,false);
@@ -685,8 +712,8 @@
 				  		if(row[0].id){
 					  		var idType=row[0].id.split('-');
 
-					  		if(4 === idType.length){
-								ruinSelected(idType[1], idType[3], idType[2].toLowerCase());
+					  		if(2 === idType.length){
+								ruinSelected(idType[1]);
 					  		}
 				  		}
 			  		}
@@ -706,10 +733,22 @@
 
 			}
 
-			function hideNotice(noticeText){
-				$('#notice').fadeOut();
+			function hideNotice(){
+				$('#notice').fadeOut(1000);
 			}
 
+
+			function onRuinListReady(){
+				//Check for navigation
+				var hash = window.location.hash || '';
+				var hash = hash.split('#')[1] || hash;
+
+				var ruinId = parseInt(hash.replace('GS',''));
+				if(!isNaN(ruinId)){
+					ruinSelected(ruinId);
+				}
+
+			}
 
 
 			$( document ).ready(function() {
