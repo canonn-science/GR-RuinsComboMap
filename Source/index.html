@@ -226,8 +226,10 @@
 								if(0 === data){
 									window.ruins.disableObelisk(group,number);
 								}else{
+									//Have scan data as well?
 									if( scanData && scanData[number] ){
 										addScanListItem(group, number, scanData[number].items[0], scanData[number].items[1], scanData[number].scan);
+										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#00d5ff').css('stroke','#00d5ff');
 									}
 								}
 						    });
@@ -469,16 +471,14 @@
 
 	        function onMapSelection(e,type,group,number){
 	        	//Get the scan details for the given obelisk set
-	        	if(!window.ruins.typeData[type]){return;}
-	        	if(!window.ruins.typeData[type][group]){return;}
-	        	if(!window.ruins.typeData[type][group][number]){return;}
-
 	        	var scanData = window.ruins.typeData[type][group][number];
 
 	        	var numDisplay = padNumber(number);
 
 	        	if(scanData){
 	        		showScanData(group.toUpperCase() + numDisplay,scanData.items[0],scanData.items[1],scanData.scan);
+	        	}else{
+	        		showNotice('No scans available for this obelisk',false,1000);
 	        	}
 	  		}
 
@@ -722,7 +722,7 @@
 			  	});
 			 }
 
-			function showNotice(noticeText,loading){
+			function showNotice(noticeText,loading,closeAfter){
 				if(loading){
 					$('#notice').addClass('loading');
 				}else{
@@ -730,7 +730,11 @@
 				}
 				$('#notice').text(noticeText,true).show();
 
-
+				if(closeAfter){
+					setTimeout(function(){
+						$('#notice').fadeOut(300);
+					},closeAfter);
+				}
 			}
 
 			function hideNotice(){

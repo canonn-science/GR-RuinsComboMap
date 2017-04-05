@@ -63,18 +63,7 @@ my.getRuin = function (setOptions) {
 				  $('.ruin-group-' + designation).show();
 				});
 
-				//Disable those that don't have scan data
-				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
-			    $.each(alphabet, function(index,group) {
-			    	var scanData = ruins.typeData[ruinData.type][group];
-					for(var o = 1; o < 100; o++){
-						//Missing scan data?
-						if( (! scanData) || (!scanData[o]) ){
-							//Disable this obelisk
-							disableObelisk(group,o);
-						}
-					}
-				});
+
 
 
 			}

@@ -64,6 +64,59 @@ button {
   margin-top:3em;
  }
 
+  #mapcontrols #view-more{
+  margin-top:0;
+  position:absolute;
+  left:0;
+  bottom:0;
+ }
+
+
+ #mapoptions {
+  width:100px;
+  height:300px;
+  position:absolute;
+  right:0;
+  top:100px;
+  padding:1em;
+  margin:0;
+  border:1px solid red;
+ }
+
+ #mapoptions div.button{
+  width:32px;
+  height:32px;
+  left:0;
+  padding:0;
+  margin:0;
+  margin-bottom:1em;
+  cursor:pointer;
+ }
+
+
+ #mapoptions div.button:hover{
+  -webkit-filter: brightness(125%);
+  filter: brightness(125%);
+ }
+
+#mapoptions div.button:active{
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+ }
+
+ #mapoptions div.first{
+  margin-top:3em;
+ }
+
+  #mapoptions #view-more{
+  margin-top:0;
+  position:absolute;
+  left:0;
+  bottom:0;
+ }
+
+
+
 #return_to_systems{
   padding:.5em;
   padding-left:2em;
@@ -100,12 +153,7 @@ button {
                                   supported by Chrome and Opera */
 }
 
- #mapcontrols #view-more{
-  margin-top:0;
-  position:absolute;
-  left:0;
-  bottom:0;
- }
+
 
 #ruin-select{
   background-image:url('images/system-list.png');
