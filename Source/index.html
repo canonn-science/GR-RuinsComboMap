@@ -645,21 +645,28 @@
 
 					$.each(systemList,function(index,system){
 						//Cache system & ruin info
+
 						window.systems[system.systemId]=system;
 
-						//System heading
-						var bandClass = '';
-						if(1 == (index % 2)){
-							bandClass='band';
-						}
+						var addSite = (system.systemName !== 'Reference map');
 
 						var systemId = $('<div/>').text(system.systemId).html();
 
-						$('#ruin-list').append([
-						'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
-						    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
-						'</tr>'
-						].join(''));
+
+						//System heading
+						var bandClass = '';
+
+						if(addSite){
+							if(1 == (index % 2)){
+								bandClass='band';
+							}
+
+							$('#ruin-list').append([
+							'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
+							    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
+							'</tr>'
+							].join(''));
+						}
 
 
 		        		$.each(system.ruins,function(rindex,ruin){
@@ -672,22 +679,29 @@
 							var ruinId = $('<div/>').text(ruin.ruinId).html();
 							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
 
-							bandClass = '';
-							if(1 == (rindex % 2)){
-								bandClass='ruinband';
+							if(addSite){
+
+
+								bandClass = '';
+								if(1 == (rindex % 2)){
+									bandClass='ruinband';
+								}
+
+
+								$('#ruin-list').append([
+								'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + ruinId + '"">',
+								    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
+									'<td>' + 'GS' + ruin.ruinId + '</td>',
+								    '<td>' + ruinType + '</td>',
+								    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
+								'</tr>'
+								].join(''));
 							}
 
-
-							$('#ruin-list').append([
-							'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + ruinId + '"">',
-							    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
-								'<td>' + 'GS' + ruin.ruinId + '</td>',
-							    '<td>' + ruinType + '</td>',
-							    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
-							'</tr>'
-							].join(''));
-
 		        		});
+
+
+
 		        	});
 
 					onRuinListReady();
@@ -773,6 +787,10 @@
 
 
 			function onRuinListReady(){
+				processNavPath();
+			}
+
+			function processNavPath(){
 				//Check for navigation
 				var navData = String(window.location.hash || '').replace('#','').split('-');
 				var ruinId = String(navData[0] || '').replace('GS','');
@@ -803,6 +821,10 @@
 
 
 		      });   //document ready
+
+			$(window).on('hashchange', function() {
+			  processNavPath();
+			});
 
 	      </script>
 
