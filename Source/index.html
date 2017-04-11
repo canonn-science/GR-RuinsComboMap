@@ -40,7 +40,7 @@
 
 	    <section id="map" style="display:none">
 	    	<div id="map_heading">
-	    		<h1>System | Body | Coords</h1>
+	    		<h1>System | Body | Coords (Type)</h1>
 	    	</div>
 
 	    	<div class="parent">
@@ -592,7 +592,7 @@
 			  				window.systems[systemId].systemName,
 			  				window.currentRuin.bodyName,
 			  				window.currentRuin.coordinates.join(', ')
-			  			].join(' | '));
+			  			].join(' | ') + ' (' + window.currentRuin.ruinTypeName + ')');
 
 						//And show
 						showNotice('Opening Ruin Map',true);
@@ -653,7 +653,7 @@
 
 						window.systems[system.systemId]=system;
 
-						var addSite = (system.systemName !== 'Reference map');
+						var addSite = true;
 
 						var systemId = $('<div/>').text(system.systemId).html();
 
