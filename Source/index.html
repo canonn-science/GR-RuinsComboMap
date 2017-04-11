@@ -25,6 +25,9 @@
 				</div>
 
 			</div>
+			<label for="ruin-filter" value="Filter">
+				Filter Systems: <input type="text" name="ruin-filter" id="ruin-filter" autofocus >
+			</label>
 			<table id="ruin-list">
 				<tr>
 					<th width="20%">System/Body</th>
@@ -189,7 +192,9 @@
 			}
 
 			window.nav={
-				obelisk:''
+				obelisk:'',
+				filter:''
+
 			}
 
 
@@ -663,7 +668,7 @@
 
 							$('#ruin-list').append([
 							'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
-							    '<td colspan="4"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
+							    '<td colspan="4" class="ruin_list_system_name"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
 							'</tr>'
 							].join(''));
 						}
@@ -760,9 +765,41 @@
 					  		}
 				  		}
 			  		}
-
-
 			  	});
+
+				//Filter handling
+				$('#ruin-filter').on('keyup',function(e){
+					var inputVal = $(e.target).val();
+					inputVal = inputVal.toUpperCase();
+
+					//Change?
+					if(window.nav.filter !== inputVal){
+						//Yes
+						window.nav.filter = inputVal;
+
+						//Enumerate the systems
+						$.each($('#ruin-list').find("tr.ruin_list_system"),function(group,row){
+							//Get the system name
+							row = $(row);
+							var systemName = row.find('.ruin_list_system_name').text();
+
+							if(window.nav.filter === '' || systemName.indexOf(window.nav.filter) !== -1){
+								row.show();
+							}else{
+								row.hide();
+							}
+
+
+
+			  			})
+
+
+					}
+
+
+
+				})
+
 			 }
 
 			function showNotice(noticeText,loading,closeAfter){

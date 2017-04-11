@@ -469,12 +469,14 @@ a.twitter{
   background-color: #FFCAAB;
 }
 
-/*
-
-
-
-
- */
+#systems label{
+  padding:1em;
+  display: inline-block;
+  min-width:15em;
+  margin-right:1em;
+  background-color: #E0C6B0;
+  font-weight:bold;
+}
 
 /* system selection */
 #ruin-list{
