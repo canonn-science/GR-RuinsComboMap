@@ -239,8 +239,14 @@
 						    });
 						})
 
-			  			//Hide notice
-			  			hideNotice();
+						if($.isEmptyObject(window.currentRuin.obelisks)){
+							//Update notice
+							showNotice('No scan data currently available for this ruin',false);
+						}else{
+							//Hide notice
+			  				hideNotice();
+						}
+
 
 						//Reset the zoom
 						window.ruins.zoomReset();
@@ -755,13 +761,14 @@
 
 				if(closeAfter){
 					setTimeout(function(){
-						$('#notice').fadeOut(300);
+						hideNotice();
 					},closeAfter);
 				}
 			}
 
 			function hideNotice(){
-				$('#notice').fadeOut(1000);
+				//Don't hide the notice if there's a delayed notice that will do so
+				$('#notice').fadeOut(200);
 			}
 
 
