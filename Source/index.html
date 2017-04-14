@@ -60,6 +60,10 @@
 				<div id="zoom-out" class="button" title="Zoom Out">&nbsp;</div>
 
 				<div id="zoom-reset" class="button" title="Reset Zoom">&nbsp;</div>
+
+				<div id="test-groups" style="background-color: white; display:none">
+
+				</div>
 			</div>
 
 
@@ -194,7 +198,10 @@
 			window.nav={
 				obelisk:'',
 				filter:''
+			}
 
+			window.ui = {
+				enableTesting: false
 			}
 
 
@@ -203,6 +210,7 @@
 		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
 
 	      	function prepMapUI(){
+
 			  	window.ruins = Guardian.getRuin({
 			  		panzoom:$(".panzoom"),
 
@@ -277,6 +285,42 @@
 			  				//Get the number
 			  			}
 
+
+
+						/* Map Testing only */
+						if(window.ui.enableTesting){
+							//Remove existing
+							$('#test-groups').empty();
+							var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+						    $.each(alphabet, function(index,letter) {
+								$('#test-groups').append([
+									'<label for="test-group-' + letter + '">',
+										'<input type="checkbox" class="test-letter-group" id="test-group-' + letter + '" value="' + letter + '" checked>' + letter.toUpperCase(),
+									'</label><BR/>'
+									].join(''));
+
+								//Show it
+								$('.ruin-group-' + letter).show();
+						    });
+
+						    //Handle being clicked
+						    $('.test-letter-group').on('click',function(e){
+						    	var clickedElement = $(e.target);
+						    	//Show it
+						    	if(e.target.checked){
+						    		$('.ruin-group-' + clickedElement.val()).show();
+
+						    	}else{
+						    		$('.ruin-group-' + clickedElement.val()).hide();
+
+						    	}
+
+						    });
+
+
+						    $('#test-groups').show();
+
+						}
 
 
 			  		},
@@ -480,6 +524,11 @@
 					//Show listing
 					showSystems();
 				});
+
+
+
+
+
 
 
 	      	}
