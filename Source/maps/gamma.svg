@@ -1477,7 +1477,7 @@
          x="3150.9087"
          id="tspan6466"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1488,7 +1488,7 @@
          id="tspan6470"
          x="3167.3088"
          y="359.0087"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text6476"
        y="343.00873"
@@ -1499,7 +1499,7 @@
          x="3186.1089"
          id="tspan6474"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text6480"
        y="326.88239"
@@ -1510,7 +1510,7 @@
          x="3207.6021"
          id="tspan6478"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1521,7 +1521,7 @@
          id="tspan6482"
          x="3228.6018"
          y="309.88242"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text6488"
        y="295.48239"
@@ -1532,7 +1532,7 @@
          x="3247.4016"
          id="tspan6486"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1543,7 +1543,7 @@
          id="tspan6490"
          x="3269.002"
          y="277.6824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text6496"
        y="259.88239"
@@ -1554,7 +1554,7 @@
          x="3289.2017"
          id="tspan6494"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1565,7 +1565,7 @@
          id="tspan6498"
          x="3308.0017"
          y="244.08237"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text6504"
        y="405.48236"
@@ -1576,7 +1576,7 @@
          x="3175.002"
          id="tspan6502"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1587,7 +1587,7 @@
          id="tspan6506"
          x="3195.002"
          y="388.28238"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text6512"
        y="374.28235"
@@ -1598,7 +1598,7 @@
          x="3211.0017"
          id="tspan6510"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1609,7 +1609,7 @@
          id="tspan6514"
          x="3233.2017"
          y="356.28235"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text6520"
        y="340.68237"
@@ -1620,7 +1620,7 @@
          x="3252.2017"
          id="tspan6518"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1631,7 +1631,7 @@
          id="tspan6522"
          x="3272.4019"
          y="323.68237"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        id="text6528"
        y="306.28238"
@@ -1642,7 +1642,7 @@
          x="3292.6018"
          id="tspan6526"
          sodipodi:role="line"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1653,7 +1653,7 @@
          id="tspan6530"
          x="3312.2017"
          y="292.08234"
-         class="ruin-number">17</tspan></text>
+         class="ruin-number ruin-number-17">17</tspan></text>
     <text
        id="text6536"
        y="273.48239"
@@ -1664,7 +1664,7 @@
          x="3334.2017"
          id="tspan6534"
          sodipodi:role="line"
-         class="ruin-number">18</tspan></text>
+         class="ruin-number ruin-number-18">18</tspan></text>
     <text
        id="text6540"
        y="418.88239"
@@ -1675,7 +1675,7 @@
          x="3219.6021"
          id="tspan6538"
          sodipodi:role="line"
-         class="ruin-number">20</tspan></text>
+         class="ruin-number ruin-number-20">20</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1686,7 +1686,7 @@
          id="tspan6542"
          x="3238.4019"
          y="403.48236"
-         class="ruin-number">21</tspan></text>
+         class="ruin-number ruin-number-21">21</tspan></text>
     <text
        id="text6548"
        y="387.0824"
@@ -1697,7 +1697,7 @@
          x="3254.6018"
          id="tspan6546"
          sodipodi:role="line"
-         class="ruin-number">22</tspan></text>
+         class="ruin-number ruin-number-22">22</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1708,7 +1708,7 @@
          id="tspan6550"
          x="3276.802"
          y="369.88239"
-         class="ruin-number">23</tspan></text>
+         class="ruin-number ruin-number-23">23</tspan></text>
     <text
        id="text6556"
        y="353.48236"
@@ -1719,7 +1719,7 @@
          x="3296.4019"
          id="tspan6554"
          sodipodi:role="line"
-         class="ruin-number">24</tspan></text>
+         class="ruin-number ruin-number-24">24</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1730,7 +1730,7 @@
          id="tspan6558"
          x="3317.002"
          y="338.0824"
-         class="ruin-number">25</tspan></text>
+         class="ruin-number ruin-number-25">25</tspan></text>
     <text
        id="text6564"
        y="321.28235"
@@ -1741,7 +1741,7 @@
          x="3337.2017"
          id="tspan6562"
          sodipodi:role="line"
-         class="ruin-number">26</tspan></text>
+         class="ruin-number ruin-number-26">26</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1752,7 +1752,7 @@
          id="tspan6566"
          x="3356.002"
          y="303.48239"
-         class="ruin-number">27</tspan></text>
+         class="ruin-number ruin-number-27">27</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1763,7 +1763,7 @@
          id="tspan6570"
          x="3195.6021"
          y="435.68237"
-         class="ruin-number">19</tspan></text>
+         class="ruin-number ruin-number-19">19</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -2522,7 +2522,7 @@
          x="3059.3088"
          id="tspan6790"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2533,7 +2533,7 @@
          id="tspan6794"
          x="3042.9087"
          y="920.00873"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text6800"
        y="937.20874"
@@ -2544,7 +2544,7 @@
          x="3026.9089"
          id="tspan6798"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text6804"
        y="955.68237"
@@ -2555,7 +2555,7 @@
          x="3006.002"
          id="tspan6802"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2566,7 +2566,7 @@
          id="tspan6806"
          x="2986.0017"
          y="973.88239"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text6812"
        y="990.28241"
@@ -2577,7 +2577,7 @@
          x="2968.6016"
          id="tspan6810"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2588,7 +2588,7 @@
          id="tspan6814"
          x="2948.4019"
          y="1008.6824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text6820"
        y="1026.2823"
@@ -2599,7 +2599,7 @@
          x="2928.8015"
          id="tspan6818"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2610,7 +2610,7 @@
          id="tspan6822"
          x="2910.8018"
          y="1042.6824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text6828"
        y="874.48236"
@@ -2621,7 +2621,7 @@
          x="3032.4019"
          id="tspan6826"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2632,7 +2632,7 @@
          id="tspan6830"
          x="3014.2019"
          y="892.88239"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text6836"
        y="907.68237"
@@ -2643,7 +2643,7 @@
          x="2997.8018"
          id="tspan6834"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2654,7 +2654,7 @@
          id="tspan6838"
          x="2977.8018"
          y="926.88232"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text6844"
        y="943.68237"
@@ -2665,7 +2665,7 @@
          x="2959.8018"
          id="tspan6842"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2676,7 +2676,7 @@
          id="tspan6846"
          x="2940.2019"
          y="962.68237"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        id="text6852"
        y="980.88239"
@@ -2687,7 +2687,7 @@
          x="2921.6018"
          id="tspan6850"
          sodipodi:role="line"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2698,7 +2698,7 @@
          id="tspan6854"
          x="2902.8018"
          y="997.88232"
-         class="ruin-number">17</tspan></text>
+         class="ruin-number ruin-number-17">17</tspan></text>
     <text
        id="text6860"
        y="1017.2824"
@@ -2709,7 +2709,7 @@
          x="2883.6018"
          id="tspan6858"
          sodipodi:role="line"
-         class="ruin-number">18</tspan></text>
+         class="ruin-number ruin-number-18">18</tspan></text>
     <text
        id="text6864"
        y="863.68237"
@@ -2720,7 +2720,7 @@
          x="2988.802"
          id="tspan6862"
          sodipodi:role="line"
-         class="ruin-number">20</tspan></text>
+         class="ruin-number ruin-number-20">20</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2731,7 +2731,7 @@
          id="tspan6866"
          x="2972.2019"
          y="879.88239"
-         class="ruin-number">21</tspan></text>
+         class="ruin-number ruin-number-21">21</tspan></text>
     <text
        id="text6872"
        y="897.0824"
@@ -2742,7 +2742,7 @@
          x="2955.2019"
          id="tspan6870"
          sodipodi:role="line"
-         class="ruin-number">22</tspan></text>
+         class="ruin-number ruin-number-22">22</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2753,7 +2753,7 @@
          id="tspan6874"
          x="2935.4021"
          y="915.88239"
-         class="ruin-number">23</tspan></text>
+         class="ruin-number ruin-number-23">23</tspan></text>
     <text
        id="text6880"
        y="932.68237"
@@ -2764,7 +2764,7 @@
          x="2916.8018"
          id="tspan6878"
          sodipodi:role="line"
-         class="ruin-number">24</tspan></text>
+         class="ruin-number ruin-number-24">24</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2775,7 +2775,7 @@
          id="tspan6882"
          x="2896.4019"
          y="951.68237"
-         class="ruin-number">25</tspan></text>
+         class="ruin-number ruin-number-25">25</tspan></text>
     <text
        id="text6888"
        y="969.88232"
@@ -2786,7 +2786,7 @@
          x="2877.6018"
          id="tspan6886"
          sodipodi:role="line"
-         class="ruin-number">26</tspan></text>
+         class="ruin-number ruin-number-26">26</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2797,7 +2797,7 @@
          id="tspan6890"
          x="2861.002"
          y="988.0824"
-         class="ruin-number">27</tspan></text>
+         class="ruin-number ruin-number-27">27</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -2808,7 +2808,7 @@
          id="tspan6894"
          x="3009.4021"
          y="845.48236"
-         class="ruin-number">19</tspan></text>
+         class="ruin-number ruin-number-19">19</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -3327,7 +3327,7 @@
          id="tspan7966"
          x="2280.1086"
          y="440.40875"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        id="text7972"
        y="478.40866"
@@ -3338,7 +3338,7 @@
          x="2318.7087"
          id="tspan7970"
          sodipodi:role="line"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3349,7 +3349,7 @@
          id="tspan7974"
          x="2356.3088"
          y="516.20868"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3360,7 +3360,7 @@
          id="tspan7978"
          x="2388.2019"
          y="555.08234"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        id="text7984"
        y="595.08234"
@@ -3371,7 +3371,7 @@
          x="2421.0017"
          id="tspan7982"
          sodipodi:role="line"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3382,7 +3382,7 @@
          id="tspan7986"
          x="2254.2017"
          y="456.28232"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        id="text7992"
        y="482.28241"
@@ -3393,7 +3393,7 @@
          x="2273.8018"
          id="tspan7990"
          sodipodi:role="line"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3404,7 +3404,7 @@
          id="tspan7994"
          x="2310.8015"
          y="521.48242"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        id="text8000"
        y="559.88239"
@@ -3415,7 +3415,7 @@
          x="2342.8018"
          id="tspan7998"
          sodipodi:role="line"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3426,7 +3426,7 @@
          id="tspan8002"
          x="2379.2019"
          y="601.08234"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        id="text8008"
        y="454.68237"
@@ -3437,7 +3437,7 @@
          x="2203.4019"
          id="tspan8006"
          sodipodi:role="line"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3448,7 +3448,7 @@
          id="tspan8010"
          x="2229.8018"
          y="489.68231"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        id="text8016"
        y="526.68237"
@@ -3459,7 +3459,7 @@
          x="2268.6018"
          id="tspan8014"
          sodipodi:role="line"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -3470,7 +3470,7 @@
          id="tspan8018"
          x="2300.6016"
          y="564.48236"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        id="text8024"
        y="604.48236"
@@ -3481,7 +3481,7 @@
          x="2335.4019"
          id="tspan8022"
          sodipodi:role="line"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -4012,7 +4012,7 @@
          x="2647.7087"
          id="tspan8368"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4023,7 +4023,7 @@
          id="tspan8372"
          x="2709.9087"
          y="1146.2086"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text8378"
        y="1153.6086"
@@ -4034,7 +4034,7 @@
          x="2736.3088"
          id="tspan8376"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text8382"
        y="1168.0823"
@@ -4045,7 +4045,7 @@
          x="2797.4019"
          id="tspan8380"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4056,7 +4056,7 @@
          id="tspan8384"
          x="2824.6018"
          y="1175.2823"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text8390"
        y="1185.6824"
@@ -4067,7 +4067,7 @@
          x="2693.2017"
          id="tspan8388"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4078,7 +4078,7 @@
          id="tspan8392"
          x="2751.002"
          y="1201.0824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text8398"
        y="1206.4824"
@@ -4089,7 +4089,7 @@
          x="2781.6016"
          id="tspan8396"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4100,7 +4100,7 @@
          id="tspan8400"
          x="2838.2017"
          y="1217.8823"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text8406"
        y="1224.4824"
@@ -4111,7 +4111,7 @@
          x="2861.8018"
          id="tspan8404"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4122,7 +4122,7 @@
          id="tspan8408"
          x="2635.002"
          y="1200.8823"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text8414"
        y="1251.6823"
@@ -4133,7 +4133,7 @@
          x="2689.4019"
          id="tspan8412"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4144,7 +4144,7 @@
          id="tspan8416"
          x="2713.4016"
          y="1256.8823"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text8422"
        y="1271.6824"
@@ -4155,7 +4155,7 @@
          x="2774.8018"
          id="tspan8420"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4166,7 +4166,7 @@
          id="tspan8424"
          x="2804.2019"
          y="1278.8823"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        id="text8430"
        y="1253.4823"
@@ -4177,7 +4177,7 @@
          x="2851.8018"
          id="tspan8428"
          sodipodi:role="line"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -4464,7 +4464,7 @@
          x="3427.3088"
          id="tspan8308"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4475,7 +4475,7 @@
          id="tspan8312"
          x="3457.9087"
          y="1672.8087"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text8318"
        y="1714.0088"
@@ -4486,7 +4486,7 @@
          x="3459.9089"
          id="tspan8316"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text8322"
        y="1630.0823"
@@ -4497,7 +4497,7 @@
          x="3399.4019"
          id="tspan8320"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4508,7 +4508,7 @@
          id="tspan8324"
          x="3407.0017"
          y="1677.8822"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text8330"
        y="1670.2823"
@@ -4519,7 +4519,7 @@
          x="3384.0017"
          id="tspan8328"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4530,7 +4530,7 @@
          id="tspan8332"
          x="3392.002"
          y="1718.2825"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text8338"
        y="1632.0825"
@@ -4541,7 +4541,7 @@
          x="3337.8015"
          id="tspan8336"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -4552,7 +4552,7 @@
          id="tspan8340"
          x="3333.8018"
          y="1675.6824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text8346"
        y="1723.4824"
@@ -4563,7 +4563,7 @@
          x="3353.2019"
          id="tspan8344"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -5048,7 +5048,7 @@
          x="1845.5088"
          id="tspan7876"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5059,7 +5059,7 @@
          id="tspan7880"
          x="1872.9087"
          y="705.20862"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7886"
        y="740.80865"
@@ -5070,7 +5070,7 @@
          x="1908.7087"
          id="tspan7884"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7890"
        y="780.08234"
@@ -5081,7 +5081,7 @@
          x="1938.0018"
          id="tspan7888"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5092,7 +5092,7 @@
          id="tspan7892"
          x="1951.0018"
          y="851.28235"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7898"
        y="668.28235"
@@ -5103,7 +5103,7 @@
          x="1768.2018"
          id="tspan7896"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5114,7 +5114,7 @@
          id="tspan7900"
          x="1812.8018"
          y="741.48242"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7906"
        y="779.0824"
@@ -5125,7 +5125,7 @@
          x="1845.6017"
          id="tspan7904"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5136,7 +5136,7 @@
          id="tspan7908"
          x="1877.4017"
          y="817.28235"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text7914"
        y="854.68237"
@@ -5147,7 +5147,7 @@
          x="1910.4017"
          id="tspan7912"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5158,7 +5158,7 @@
          id="tspan7916"
          x="1733.4017"
          y="674.68237"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text7922"
        y="746.28229"
@@ -5169,7 +5169,7 @@
          x="1773.4019"
          id="tspan7920"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5180,7 +5180,7 @@
          id="tspan7924"
          x="1807.6017"
          y="782.88232"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text7930"
        y="820.0824"
@@ -5191,7 +5191,7 @@
          x="1837.8018"
          id="tspan7928"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5202,7 +5202,7 @@
          id="tspan7932"
          x="1868.0018"
          y="858.28235"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -5637,7 +5637,7 @@
          id="tspan8056"
          x="2344.7087"
          y="1646.2087"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        id="text8062"
        y="1615.0087"
@@ -5648,7 +5648,7 @@
          x="2385.3088"
          id="tspan8060"
          sodipodi:role="line"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5659,7 +5659,7 @@
          id="tspan8064"
          x="2425.5088"
          y="1572.4088"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5670,7 +5670,7 @@
          id="tspan8068"
          x="2463.4019"
          y="1537.2823"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        id="text8074"
        y="1502.4823"
@@ -5681,7 +5681,7 @@
          x="2502.4019"
          id="tspan8072"
          sodipodi:role="line"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5692,7 +5692,7 @@
          id="tspan8076"
          x="2389.2017"
          y="1660.2823"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        id="text8082"
        y="1620.6825"
@@ -5703,7 +5703,7 @@
          x="2428.8018"
          id="tspan8080"
          sodipodi:role="line"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5714,7 +5714,7 @@
          id="tspan8084"
          x="2469.2017"
          y="1585.4825"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        id="text8090"
        y="1545.4824"
@@ -5725,7 +5725,7 @@
          x="2508.4016"
          id="tspan8088"
          sodipodi:role="line"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5736,7 +5736,7 @@
          id="tspan8092"
          x="2352.4019"
          y="1737.0824"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        id="text8098"
        y="1701.8823"
@@ -5747,7 +5747,7 @@
          x="2398.2019"
          id="tspan8096"
          sodipodi:role="line"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5758,7 +5758,7 @@
          id="tspan8100"
          x="2433.6018"
          y="1664.6824"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        id="text8106"
        y="1626.8822"
@@ -5769,7 +5769,7 @@
          x="2474.0017"
          id="tspan8104"
          sodipodi:role="line"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -5780,7 +5780,7 @@
          id="tspan8108"
          x="2513.6016"
          y="1594.2823"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -7292,7 +7292,7 @@
          x="977.30872"
          id="tspan7312"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7303,7 +7303,7 @@
          id="tspan7316"
          x="997.50873"
          y="322.80872"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7322"
        y="341.80872"
@@ -7314,7 +7314,7 @@
          x="1014.5088"
          id="tspan7320"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7326"
        y="360.68237"
@@ -7325,7 +7325,7 @@
          x="1030.2018"
          id="tspan7324"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7336,7 +7336,7 @@
          id="tspan7328"
          x="1046.2018"
          y="380.88239"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7334"
        y="402.68237"
@@ -7347,7 +7347,7 @@
          x="1065.4017"
          id="tspan7332"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7358,7 +7358,7 @@
          id="tspan7336"
          x="1082.0017"
          y="422.0824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7342"
        y="442.88239"
@@ -7369,7 +7369,7 @@
          x="1099.4017"
          id="tspan7340"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7380,7 +7380,7 @@
          id="tspan7344"
          x="1118.0017"
          y="463.28238"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text7350"
        y="482.88239"
@@ -7391,7 +7391,7 @@
          x="1133.6017"
          id="tspan7348"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7402,7 +7402,7 @@
          id="tspan7352"
          x="1150.6017"
          y="501.88239"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text7358"
        y="522.08234"
@@ -7413,7 +7413,7 @@
          x="1169.4019"
          id="tspan7356"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7424,7 +7424,7 @@
          id="tspan7360"
          x="1187.2017"
          y="543.48236"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text7366"
        y="562.48236"
@@ -7435,7 +7435,7 @@
          x="1203.2018"
          id="tspan7364"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7446,7 +7446,7 @@
          id="tspan7368"
          x="1219.2018"
          y="583.88239"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        id="text7374"
        y="602.68237"
@@ -7457,7 +7457,7 @@
          x="1235.2018"
          id="tspan7372"
          sodipodi:role="line"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7468,7 +7468,7 @@
          id="tspan7376"
          x="1253.0018"
          y="623.28235"
-         class="ruin-number">17</tspan></text>
+         class="ruin-number ruin-number-17">17</tspan></text>
     <text
        id="text7382"
        y="642.88239"
@@ -7479,7 +7479,7 @@
          x="1268.8019"
          id="tspan7380"
          sodipodi:role="line"
-         class="ruin-number">18</tspan></text>
+         class="ruin-number ruin-number-18">18</tspan></text>
     <text
        id="text7386"
        y="682.48236"
@@ -7490,7 +7490,7 @@
          x="1302.6019"
          id="tspan7384"
          sodipodi:role="line"
-         class="ruin-number">20</tspan></text>
+         class="ruin-number ruin-number-20">20</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7501,7 +7501,7 @@
          id="tspan7388"
          x="967.802"
          y="343.48236"
-         class="ruin-number">21</tspan></text>
+         class="ruin-number ruin-number-21">21</tspan></text>
     <text
        id="text7394"
        y="361.88242"
@@ -7512,7 +7512,7 @@
          x="982.60187"
          id="tspan7392"
          sodipodi:role="line"
-         class="ruin-number">22</tspan></text>
+         class="ruin-number ruin-number-22">22</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7523,7 +7523,7 @@
          id="tspan7396"
          x="1001.2019"
          y="384.68237"
-         class="ruin-number">23</tspan></text>
+         class="ruin-number ruin-number-23">23</tspan></text>
     <text
        id="text7402"
        y="403.88235"
@@ -7534,7 +7534,7 @@
          x="1018.0019"
          id="tspan7400"
          sodipodi:role="line"
-         class="ruin-number">24</tspan></text>
+         class="ruin-number ruin-number-24">24</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7545,7 +7545,7 @@
          id="tspan7404"
          x="1035.002"
          y="426.0824"
-         class="ruin-number">25</tspan></text>
+         class="ruin-number ruin-number-25">25</tspan></text>
     <text
        id="text7410"
        y="444.68234"
@@ -7556,7 +7556,7 @@
          x="1051.4019"
          id="tspan7408"
          sodipodi:role="line"
-         class="ruin-number">26</tspan></text>
+         class="ruin-number ruin-number-26">26</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7567,7 +7567,7 @@
          id="tspan7412"
          x="1069.4019"
          y="463.88239"
-         class="ruin-number">27</tspan></text>
+         class="ruin-number ruin-number-27">27</tspan></text>
     <text
        id="text7418"
        y="484.28235"
@@ -7578,7 +7578,7 @@
          x="1088.0018"
          id="tspan7416"
          sodipodi:role="line"
-         class="ruin-number">28</tspan></text>
+         class="ruin-number ruin-number-28">28</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7589,7 +7589,7 @@
          id="tspan7420"
          x="1106.002"
          y="505.28235"
-         class="ruin-number">29</tspan></text>
+         class="ruin-number ruin-number-29">29</tspan></text>
     <text
        id="text7426"
        y="524.68237"
@@ -7600,7 +7600,7 @@
          x="1120.2018"
          id="tspan7424"
          sodipodi:role="line"
-         class="ruin-number">30</tspan></text>
+         class="ruin-number ruin-number-30">30</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7611,7 +7611,7 @@
          id="tspan7428"
          x="1139.0018"
          y="544.88232"
-         class="ruin-number">31</tspan></text>
+         class="ruin-number ruin-number-31">31</tspan></text>
     <text
        id="text7434"
        y="566.08234"
@@ -7622,7 +7622,7 @@
          x="1157.8018"
          id="tspan7432"
          sodipodi:role="line"
-         class="ruin-number">32</tspan></text>
+         class="ruin-number ruin-number-32">32</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7633,7 +7633,7 @@
          id="tspan7436"
          x="1172.6018"
          y="585.28235"
-         class="ruin-number">33</tspan></text>
+         class="ruin-number ruin-number-33">33</tspan></text>
     <text
        id="text7442"
        y="605.88232"
@@ -7644,7 +7644,7 @@
          x="1188.8018"
          id="tspan7440"
          sodipodi:role="line"
-         class="ruin-number">34</tspan></text>
+         class="ruin-number ruin-number-34">34</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7655,7 +7655,7 @@
          id="tspan7444"
          x="1206.0018"
          y="624.88232"
-         class="ruin-number">35</tspan></text>
+         class="ruin-number ruin-number-35">35</tspan></text>
     <text
        id="text7450"
        y="644.88239"
@@ -7666,7 +7666,7 @@
          x="1222.6018"
          id="tspan7448"
          sodipodi:role="line"
-         class="ruin-number">36</tspan></text>
+         class="ruin-number ruin-number-36">36</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7677,7 +7677,7 @@
          id="tspan7452"
          x="1274.0018"
          y="707.68237"
-         class="ruin-number">39</tspan></text>
+         class="ruin-number ruin-number-39">39</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7688,7 +7688,7 @@
          id="tspan7456"
          x="971.40167"
          y="407.68228"
-         class="ruin-number">41</tspan></text>
+         class="ruin-number ruin-number-41">41</tspan></text>
     <text
        id="text7462"
        y="426.88229"
@@ -7699,7 +7699,7 @@
          x="988.20178"
          id="tspan7460"
          sodipodi:role="line"
-         class="ruin-number">42</tspan></text>
+         class="ruin-number ruin-number-42">42</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7710,7 +7710,7 @@
          id="tspan7464"
          x="1004.2017"
          y="447.4823"
-         class="ruin-number">43</tspan></text>
+         class="ruin-number ruin-number-43">43</tspan></text>
     <text
        id="text7470"
        y="467.48233"
@@ -7721,7 +7721,7 @@
          x="1020.4017"
          id="tspan7468"
          sodipodi:role="line"
-         class="ruin-number">44</tspan></text>
+         class="ruin-number ruin-number-44">44</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7732,7 +7732,7 @@
          id="tspan7472"
          x="1039.0017"
          y="487.88232"
-         class="ruin-number">45</tspan></text>
+         class="ruin-number ruin-number-45">45</tspan></text>
     <text
        id="text7478"
        y="509.08234"
@@ -7743,7 +7743,7 @@
          x="1058.4017"
          id="tspan7476"
          sodipodi:role="line"
-         class="ruin-number">46</tspan></text>
+         class="ruin-number ruin-number-46">46</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7754,7 +7754,7 @@
          id="tspan7480"
          x="1072.6017"
          y="527.88232"
-         class="ruin-number">47</tspan></text>
+         class="ruin-number ruin-number-47">47</tspan></text>
     <text
        id="text7486"
        y="548.08228"
@@ -7765,7 +7765,7 @@
          x="1090.0017"
          id="tspan7484"
          sodipodi:role="line"
-         class="ruin-number">48</tspan></text>
+         class="ruin-number ruin-number-48">48</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7776,7 +7776,7 @@
          id="tspan7488"
          x="1110.2017"
          y="568.68219"
-         class="ruin-number">49</tspan></text>
+         class="ruin-number ruin-number-49">49</tspan></text>
     <text
        id="text7494"
        y="589.68225"
@@ -7787,7 +7787,7 @@
          x="1124.2017"
          id="tspan7492"
          sodipodi:role="line"
-         class="ruin-number">50</tspan></text>
+         class="ruin-number ruin-number-50">50</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7798,7 +7798,7 @@
          id="tspan7496"
          x="1144.0017"
          y="609.4823"
-         class="ruin-number">51</tspan></text>
+         class="ruin-number ruin-number-51">51</tspan></text>
     <text
        id="text7502"
        y="630.68231"
@@ -7809,7 +7809,7 @@
          x="1157.8018"
          id="tspan7500"
          sodipodi:role="line"
-         class="ruin-number">52</tspan></text>
+         class="ruin-number ruin-number-52">52</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7820,7 +7820,7 @@
          id="tspan7504"
          x="1173.2018"
          y="648.88232"
-         class="ruin-number">53</tspan></text>
+         class="ruin-number ruin-number-53">53</tspan></text>
     <text
        id="text7510"
        y="669.4823"
@@ -7831,7 +7831,7 @@
          x="1190.6018"
          id="tspan7508"
          sodipodi:role="line"
-         class="ruin-number">54</tspan></text>
+         class="ruin-number ruin-number-54">54</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7842,7 +7842,7 @@
          id="tspan7512"
          x="1208.0017"
          y="689.4823"
-         class="ruin-number">55</tspan></text>
+         class="ruin-number ruin-number-55">55</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7853,7 +7853,7 @@
          id="tspan7516"
          x="1286.002"
          y="662.88239"
-         class="ruin-number">19</tspan></text>
+         class="ruin-number ruin-number-19">19</tspan></text>
     <text
        id="text7522"
        y="386.68228"
@@ -7864,7 +7864,7 @@
          x="954.00189"
          id="tspan7520"
          sodipodi:role="line"
-         class="ruin-number">40</tspan></text>
+         class="ruin-number ruin-number-40">40</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7875,7 +7875,7 @@
          id="tspan7524"
          x="1239.8018"
          y="666.08234"
-         class="ruin-number">37</tspan></text>
+         class="ruin-number ruin-number-37">37</tspan></text>
     <text
        id="text7530"
        y="688.68237"
@@ -7886,7 +7886,7 @@
          x="1257.2018"
          id="tspan7528"
          sodipodi:role="line"
-         class="ruin-number">38</tspan></text>
+         class="ruin-number ruin-number-38">38</tspan></text>
     <text
        id="text8466"
        y="712.08228"
@@ -7897,7 +7897,7 @@
          x="1227.8018"
          id="tspan8464"
          sodipodi:role="line"
-         class="ruin-number">56</tspan></text>
+         class="ruin-number ruin-number-56">56</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -7908,7 +7908,7 @@
          id="tspan8468"
          x="1245.2018"
          y="735.08228"
-         class="ruin-number">57</tspan></text>
+         class="ruin-number ruin-number-57">57</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -8410,7 +8410,7 @@
          x="880.30872"
          id="tspan7042"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8421,7 +8421,7 @@
          id="tspan7046"
          x="900.70874"
          y="1147.2086"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7052"
        y="1129.6088"
@@ -8432,7 +8432,7 @@
          x="923.90875"
          id="tspan7050"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7056"
        y="1112.0823"
@@ -8443,7 +8443,7 @@
          x="945.20184"
          id="tspan7054"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8454,7 +8454,7 @@
          id="tspan7058"
          x="966.60181"
          y="1093.4824"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7064"
        y="1076.2823"
@@ -8465,7 +8465,7 @@
          x="988.20178"
          id="tspan7062"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8476,7 +8476,7 @@
          id="tspan7066"
          x="903.60175"
          y="1194.6824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7072"
        y="1179.6824"
@@ -8487,7 +8487,7 @@
          x="924.60168"
          id="tspan7070"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8498,7 +8498,7 @@
          id="tspan7074"
          x="947.8017"
          y="1160.6824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text7080"
        y="1142.0824"
@@ -8509,7 +8509,7 @@
          x="968.20172"
          id="tspan7078"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8520,7 +8520,7 @@
          id="tspan7082"
          x="991.20172"
          y="1125.2823"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text7088"
        y="1106.2825"
@@ -8531,7 +8531,7 @@
          x="1013.2018"
          id="tspan7086"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8542,7 +8542,7 @@
          id="tspan7090"
          x="928.20172"
          y="1229.2823"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text7096"
        y="1209.0824"
@@ -8553,7 +8553,7 @@
          x="950.60181"
          id="tspan7094"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8564,7 +8564,7 @@
          id="tspan7098"
          x="975.20178"
          y="1190.8823"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        id="text7104"
        y="1177.0823"
@@ -8575,7 +8575,7 @@
          x="994.00183"
          id="tspan7102"
          sodipodi:role="line"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8586,7 +8586,7 @@
          id="tspan7106"
          x="1018.4019"
          y="1156.6823"
-         class="ruin-number">17</tspan></text>
+         class="ruin-number ruin-number-17">17</tspan></text>
     <text
        id="text7112"
        y="1136.8823"
@@ -8597,7 +8597,7 @@
          x="1039.6019"
          id="tspan7110"
          sodipodi:role="line"
-         class="ruin-number">18</tspan></text>
+         class="ruin-number ruin-number-18">18</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -8898,7 +8898,7 @@
          x="1727.3087"
          id="tspan7738"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8909,7 +8909,7 @@
          id="tspan7742"
          x="1743.5088"
          y="1243.0087"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7748"
        y="1267.6086"
@@ -8920,7 +8920,7 @@
          x="1765.7087"
          id="tspan7746"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7752"
        y="1317.8823"
@@ -8931,7 +8931,7 @@
          x="1808.6018"
          id="tspan7750"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8942,7 +8942,7 @@
          id="tspan7754"
          x="1827.4019"
          y="1337.6824"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7760"
        y="1293.0823"
@@ -8953,7 +8953,7 @@
          x="1690.2018"
          id="tspan7758"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8964,7 +8964,7 @@
          id="tspan7762"
          x="1712.8018"
          y="1314.6824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7768"
        y="1365.2823"
@@ -8975,7 +8975,7 @@
          x="1755.4017"
          id="tspan7766"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -8986,7 +8986,7 @@
          id="tspan7770"
          x="1774.4017"
          y="1385.0824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -9472,7 +9472,7 @@
          x="759.50873"
          id="tspan6952"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9483,7 +9483,7 @@
          id="tspan6956"
          x="791.50873"
          y="770.60864"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text6962"
        y="810.80878"
@@ -9494,7 +9494,7 @@
          x="828.30878"
          id="tspan6960"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text6966"
        y="852.08234"
@@ -9505,7 +9505,7 @@
          x="863.40186"
          id="tspan6964"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9516,7 +9516,7 @@
          id="tspan6968"
          x="894.00183"
          y="891.28247"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text6974"
        y="727.68231"
@@ -9527,7 +9527,7 @@
          x="707.80176"
          id="tspan6972"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9538,7 +9538,7 @@
          id="tspan6976"
          x="742.60175"
          y="775.0824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text6982"
        y="812.48242"
@@ -9549,7 +9549,7 @@
          x="780.40167"
          id="tspan6980"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9560,7 +9560,7 @@
          id="tspan6984"
          x="813.40173"
          y="856.0824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text6990"
        y="895.28235"
@@ -9571,7 +9571,7 @@
          x="849.80176"
          id="tspan6988"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9582,7 +9582,7 @@
          id="tspan6992"
          x="664.40173"
          y="732.68237"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text6998"
        y="779.68243"
@@ -9593,7 +9593,7 @@
          x="699.40179"
          id="tspan6996"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9604,7 +9604,7 @@
          id="tspan7000"
          x="736.8017"
          y="819.08234"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text7006"
        y="860.48236"
@@ -9615,7 +9615,7 @@
          x="768.20178"
          id="tspan7004"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -9626,7 +9626,7 @@
          id="tspan7008"
          x="803.20178"
          y="899.88239"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -10126,7 +10126,7 @@
          x="1671.5088"
          id="tspan7792"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10137,7 +10137,7 @@
          id="tspan7796"
          x="1721.7087"
          y="1481.2086"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7802"
        y="1522.2087"
@@ -10148,7 +10148,7 @@
          x="1760.9088"
          id="tspan7800"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7806"
        y="1600.4823"
@@ -10159,7 +10159,7 @@
          x="1778.2018"
          id="tspan7804"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10170,7 +10170,7 @@
          id="tspan7808"
          x="1813.0018"
          y="1642.8822"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7814"
        y="1471.8823"
@@ -10181,7 +10181,7 @@
          x="1629.2018"
          id="tspan7812"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10192,7 +10192,7 @@
          id="tspan7816"
          x="1660.0017"
          y="1523.0825"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7822"
        y="1563.6825"
@@ -10203,7 +10203,7 @@
          x="1698.8016"
          id="tspan7820"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10214,7 +10214,7 @@
          id="tspan7824"
          x="1732.2017"
          y="1604.4824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text7830"
        y="1648.6824"
@@ -10225,7 +10225,7 @@
          x="1769.2018"
          id="tspan7828"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10236,7 +10236,7 @@
          id="tspan7832"
          x="1606.6017"
          y="1514.8823"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text7838"
        y="1568.0824"
@@ -10247,7 +10247,7 @@
          x="1655.4019"
          id="tspan7836"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10258,7 +10258,7 @@
          id="tspan7840"
          x="1688.2017"
          y="1609.4822"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text7846"
        y="1652.0824"
@@ -10269,7 +10269,7 @@
          x="1723.8018"
          id="tspan7844"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -10673,7 +10673,7 @@
          x="2667.1086"
          id="tspan8140"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10684,7 +10684,7 @@
          id="tspan8144"
          x="2690.3088"
          y="1891.2086"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text8150"
        y="1888.2087"
@@ -10695,7 +10695,7 @@
          x="2716.509"
          id="tspan8148"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text8154"
        y="1887.0823"
@@ -10706,7 +10706,7 @@
          x="2738.2019"
          id="tspan8152"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10717,7 +10717,7 @@
          id="tspan8156"
          x="2765.0017"
          y="1884.2822"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text8162"
        y="1930.0823"
@@ -10728,7 +10728,7 @@
          x="2670.0017"
          id="tspan8160"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10739,7 +10739,7 @@
          id="tspan8164"
          x="2693.2019"
          y="1928.2825"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text8170"
        y="1925.0825"
@@ -10750,7 +10750,7 @@
          x="2718.2017"
          id="tspan8168"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10761,7 +10761,7 @@
          id="tspan8172"
          x="2742.4016"
          y="1921.2823"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text8178"
        y="1967.8823"
@@ -10772,7 +10772,7 @@
          x="2670.8018"
          id="tspan8176"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10783,7 +10783,7 @@
          id="tspan8180"
          x="2697.2019"
          y="1964.4824"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text8186"
        y="1962.0824"
@@ -10794,7 +10794,7 @@
          x="2721.4019"
          id="tspan8184"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -10805,7 +10805,7 @@
          id="tspan8188"
          x="2743.4016"
          y="1960.0823"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text8194"
        y="1957.2823"
@@ -10816,7 +10816,7 @@
          x="2769.6016"
          id="tspan8192"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -11307,7 +11307,7 @@
          id="tspan8224"
          x="2998.5088"
          y="2122.4087"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        id="text8230"
        y="2135.4087"
@@ -11318,7 +11318,7 @@
          x="3044.5088"
          id="tspan8228"
          sodipodi:role="line"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11329,7 +11329,7 @@
          id="tspan8232"
          x="3089.5088"
          y="2146.4087"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11340,7 +11340,7 @@
          id="tspan8236"
          x="3130.6021"
          y="2154.6824"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        id="text8242"
        y="2151.6821"
@@ -11351,7 +11351,7 @@
          x="2968.2019"
          id="tspan8240"
          sodipodi:role="line"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11362,7 +11362,7 @@
          id="tspan8244"
          x="3016.2017"
          y="2162.8823"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        id="text8250"
        y="2173.2825"
@@ -11373,7 +11373,7 @@
          x="3062.2019"
          id="tspan8248"
          sodipodi:role="line"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11384,7 +11384,7 @@
          id="tspan8252"
          x="3107.8015"
          y="2183.0825"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        id="text8258"
        y="2192.8823"
@@ -11395,7 +11395,7 @@
          x="3134.0017"
          id="tspan8256"
          sodipodi:role="line"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11406,7 +11406,7 @@
          id="tspan8260"
          x="2938.4019"
          y="2178.8823"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        id="text8266"
        y="2190.6824"
@@ -11417,7 +11417,7 @@
          x="2985.8018"
          id="tspan8264"
          sodipodi:role="line"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11428,7 +11428,7 @@
          id="tspan8268"
          x="3028.8018"
          y="2200.2825"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        id="text8274"
        y="2211.4822"
@@ -11439,7 +11439,7 @@
          x="3075.6018"
          id="tspan8272"
          sodipodi:role="line"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11450,7 +11450,7 @@
          id="tspan8276"
          x="3119.6016"
          y="2223.2825"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -11670,7 +11670,7 @@
          x="1334.9087"
          id="tspan7642"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11681,7 +11681,7 @@
          id="tspan7646"
          x="1439.1088"
          y="1000.4087"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7652"
        y="1070.4087"
@@ -11692,7 +11692,7 @@
          x="1369.1088"
          id="tspan7650"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7656"
        y="1041.8823"
@@ -11703,7 +11703,7 @@
          x="1402.8019"
          id="tspan7654"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11714,7 +11714,7 @@
          id="tspan7658"
          x="1414.2018"
          y="1070.2825"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7664"
        y="1041.6824"
@@ -11725,7 +11725,7 @@
          x="1446.8018"
          id="tspan7662"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -11736,7 +11736,7 @@
          id="tspan7666"
          x="1375.0017"
          y="1115.8824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7672"
        y="1051.6824"
@@ -11747,7 +11747,7 @@
          x="1483.2017"
          id="tspan7670"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -12488,7 +12488,7 @@
          id="tspan6628"
          x="3455.7087"
          y="684.20874"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        id="text6634"
        y="701.00873"
@@ -12499,7 +12499,7 @@
          x="3476.9087"
          id="tspan6632"
          sodipodi:role="line"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12510,7 +12510,7 @@
          id="tspan6636"
          x="3494.1089"
          y="718.20874"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12521,7 +12521,7 @@
          id="tspan6640"
          x="3511.2019"
          y="740.68237"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        id="text6646"
        y="760.28241"
@@ -12532,7 +12532,7 @@
          x="3528.2019"
          id="tspan6644"
          sodipodi:role="line"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12543,7 +12543,7 @@
          id="tspan6648"
          x="3544.8018"
          y="778.28241"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        id="text6654"
        y="799.0824"
@@ -12554,7 +12554,7 @@
          x="3562.4019"
          id="tspan6652"
          sodipodi:role="line"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12565,7 +12565,7 @@
          id="tspan6656"
          x="3581.2017"
          y="819.68237"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        id="text6662"
        y="837.48236"
@@ -12576,7 +12576,7 @@
          x="3596.6018"
          id="tspan6660"
          sodipodi:role="line"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12587,7 +12587,7 @@
          id="tspan6664"
          x="3423.8018"
          y="710.0824"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        id="text6670"
        y="729.0824"
@@ -12598,7 +12598,7 @@
          x="3442.2019"
          id="tspan6668"
          sodipodi:role="line"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12609,7 +12609,7 @@
          id="tspan6672"
          x="3462.6018"
          y="745.68237"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        id="text6678"
        y="767.68237"
@@ -12620,7 +12620,7 @@
          x="3481.2017"
          id="tspan6676"
          sodipodi:role="line"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12631,7 +12631,7 @@
          id="tspan6680"
          x="3497.8018"
          y="786.0824"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        id="text6686"
        y="804.88239"
@@ -12642,7 +12642,7 @@
          x="3516.0017"
          id="tspan6684"
          sodipodi:role="line"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12653,7 +12653,7 @@
          id="tspan6688"
          x="3534.0017"
          y="825.28241"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
     <text
        id="text6694"
        y="845.68231"
@@ -12664,7 +12664,7 @@
          x="3549.4019"
          id="tspan6692"
          sodipodi:role="line"
-         class="ruin-number">17</tspan></text>
+         class="ruin-number ruin-number-17">17</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12675,7 +12675,7 @@
          id="tspan6696"
          x="3568.6016"
          y="865.48242"
-         class="ruin-number">18</tspan></text>
+         class="ruin-number ruin-number-18">18</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12686,7 +12686,7 @@
          id="tspan6700"
          x="3393.4021"
          y="773.88239"
-         class="ruin-number">20</tspan></text>
+         class="ruin-number ruin-number-20">20</tspan></text>
     <text
        id="text6706"
        y="793.28235"
@@ -12697,7 +12697,7 @@
          x="3409.002"
          id="tspan6704"
          sodipodi:role="line"
-         class="ruin-number">21</tspan></text>
+         class="ruin-number ruin-number-21">21</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12708,7 +12708,7 @@
          id="tspan6708"
          x="3425.2019"
          y="811.48242"
-         class="ruin-number">22</tspan></text>
+         class="ruin-number ruin-number-22">22</tspan></text>
     <text
        id="text6714"
        y="832.28241"
@@ -12719,7 +12719,7 @@
          x="3443.6021"
          id="tspan6712"
          sodipodi:role="line"
-         class="ruin-number">23</tspan></text>
+         class="ruin-number ruin-number-23">23</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12730,7 +12730,7 @@
          id="tspan6716"
          x="3460.6018"
          y="850.88239"
-         class="ruin-number">24</tspan></text>
+         class="ruin-number ruin-number-24">24</tspan></text>
     <text
        id="text6722"
        y="871.68237"
@@ -12741,7 +12741,7 @@
          x="3477.8018"
          id="tspan6720"
          sodipodi:role="line"
-         class="ruin-number">25</tspan></text>
+         class="ruin-number ruin-number-25">25</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -12752,7 +12752,7 @@
          id="tspan6724"
          x="3494.8018"
          y="890.68237"
-         class="ruin-number">26</tspan></text>
+         class="ruin-number ruin-number-26">26</tspan></text>
     <text
        id="text6730"
        y="909.88239"
@@ -12763,7 +12763,7 @@
          x="3513.6018"
          id="tspan6728"
          sodipodi:role="line"
-         class="ruin-number">27</tspan></text>
+         class="ruin-number ruin-number-27">27</tspan></text>
     <text
        id="text6734"
        y="732.48236"
@@ -12774,7 +12774,7 @@
          x="3393.802"
          id="tspan6732"
          sodipodi:role="line"
-         class="ruin-number">19</tspan></text>
+         class="ruin-number ruin-number-19">19</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -13052,7 +13052,7 @@
          x="2570.1086"
          id="tspan6406"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13063,7 +13063,7 @@
          id="tspan6410"
          x="2546.9087"
          y="-44.991325"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text6416"
        y="-32.191303"
@@ -13074,7 +13074,7 @@
          x="2510.3088"
          id="tspan6414"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text6420"
        y="-108.31765"
@@ -13085,7 +13085,7 @@
          x="2545.002"
          id="tspan6418"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13096,7 +13096,7 @@
          id="tspan6422"
          x="2511.2019"
          y="-80.517624"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text6428"
        y="-108.31765"
@@ -13107,7 +13107,7 @@
          x="2500.2017"
          id="tspan6426"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13118,7 +13118,7 @@
          id="tspan6430"
          x="2466.6018"
          y="-80.317635"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text6436"
        y="-162.31763"
@@ -13129,7 +13129,7 @@
          x="2503.2017"
          id="tspan6434"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13140,7 +13140,7 @@
          id="tspan6438"
          x="2464.0017"
          y="-143.71765"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text6444"
        y="-112.31766"
@@ -13151,7 +13151,7 @@
          x="2440.4019"
          id="tspan6442"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -13885,7 +13885,7 @@
          x="1049.1088"
          id="tspan7150"
          sodipodi:role="line"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13896,7 +13896,7 @@
          id="tspan7154"
          x="1064.9088"
          y="1130.6086"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        id="text7160"
        y="1152.2087"
@@ -13907,7 +13907,7 @@
          x="1084.5088"
          id="tspan7158"
          sodipodi:role="line"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        id="text7164"
        y="1175.0823"
@@ -13918,7 +13918,7 @@
          x="1102.8019"
          id="tspan7162"
          sodipodi:role="line"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13929,7 +13929,7 @@
          id="tspan7166"
          x="1120.2018"
          y="1195.2823"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        id="text7172"
        y="1218.2823"
@@ -13940,7 +13940,7 @@
          x="1137.8018"
          id="tspan7170"
          sodipodi:role="line"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13951,7 +13951,7 @@
          id="tspan7174"
          x="1153.8018"
          y="1238.0824"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        id="text7180"
        y="1258.2823"
@@ -13962,7 +13962,7 @@
          x="1171.6017"
          id="tspan7178"
          sodipodi:role="line"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13973,7 +13973,7 @@
          id="tspan7182"
          x="1187.4017"
          y="1279.6824"
-         class="ruin-number">09</tspan></text>
+         class="ruin-number ruin-number-9">09</tspan></text>
     <text
        id="text7188"
        y="1134.2823"
@@ -13984,7 +13984,7 @@
          x="1015.6017"
          id="tspan7186"
          sodipodi:role="line"
-         class="ruin-number">10</tspan></text>
+         class="ruin-number ruin-number-10">10</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -13995,7 +13995,7 @@
          id="tspan7190"
          x="1033.4017"
          y="1153.0824"
-         class="ruin-number">11</tspan></text>
+         class="ruin-number ruin-number-11">11</tspan></text>
     <text
        id="text7196"
        y="1174.8823"
@@ -14006,7 +14006,7 @@
          x="1050.4019"
          id="tspan7194"
          sodipodi:role="line"
-         class="ruin-number">12</tspan></text>
+         class="ruin-number ruin-number-12">12</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14017,7 +14017,7 @@
          id="tspan7198"
          x="1071.8018"
          y="1198.6824"
-         class="ruin-number">13</tspan></text>
+         class="ruin-number ruin-number-13">13</tspan></text>
     <text
        id="text7204"
        y="1218.0824"
@@ -14028,7 +14028,7 @@
          x="1086.4017"
          id="tspan7202"
          sodipodi:role="line"
-         class="ruin-number">14</tspan></text>
+         class="ruin-number ruin-number-14">14</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14039,7 +14039,7 @@
          id="tspan7206"
          x="1105.0018"
          y="1240.6824"
-         class="ruin-number">15</tspan></text>
+         class="ruin-number ruin-number-15">15</tspan></text>
     <text
        id="text7212"
        y="1260.0823"
@@ -14050,7 +14050,7 @@
          x="1124.0018"
          id="tspan7210"
          sodipodi:role="line"
-         class="ruin-number">16</tspan></text>
+         class="ruin-number ruin-number-16">16</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14061,7 +14061,7 @@
          id="tspan7214"
          x="1138.6019"
          y="1281.6823"
-         class="ruin-number">17</tspan></text>
+         class="ruin-number ruin-number-17">17</tspan></text>
     <text
        id="text7220"
        y="1303.8823"
@@ -14072,7 +14072,7 @@
          x="1157.2019"
          id="tspan7218"
          sodipodi:role="line"
-         class="ruin-number">18</tspan></text>
+         class="ruin-number ruin-number-18">18</tspan></text>
     <text
        id="text7224"
        y="1179.0824"
@@ -14083,7 +14083,7 @@
          x="1002.002"
          id="tspan7222"
          sodipodi:role="line"
-         class="ruin-number">20</tspan></text>
+         class="ruin-number ruin-number-20">20</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14094,7 +14094,7 @@
          id="tspan7226"
          x="1022.402"
          y="1202.0823"
-         class="ruin-number">21</tspan></text>
+         class="ruin-number ruin-number-21">21</tspan></text>
     <text
        id="text7232"
        y="1222.0823"
@@ -14105,7 +14105,7 @@
          x="1037.4019"
          id="tspan7230"
          sodipodi:role="line"
-         class="ruin-number">22</tspan></text>
+         class="ruin-number ruin-number-22">22</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14116,7 +14116,7 @@
          id="tspan7234"
          x="1056.8019"
          y="1244.0823"
-         class="ruin-number">23</tspan></text>
+         class="ruin-number ruin-number-23">23</tspan></text>
     <text
        id="text7240"
        y="1266.2822"
@@ -14127,7 +14127,7 @@
          x="1075.8019"
          id="tspan7238"
          sodipodi:role="line"
-         class="ruin-number">24</tspan></text>
+         class="ruin-number ruin-number-24">24</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14138,7 +14138,7 @@
          id="tspan7242"
          x="1091.202"
          y="1284.0824"
-         class="ruin-number">25</tspan></text>
+         class="ruin-number ruin-number-25">25</tspan></text>
     <text
        id="text7248"
        y="1307.2823"
@@ -14149,7 +14149,7 @@
          x="1112.0018"
          id="tspan7246"
          sodipodi:role="line"
-         class="ruin-number">26</tspan></text>
+         class="ruin-number ruin-number-26">26</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14160,7 +14160,7 @@
          id="tspan7250"
          x="1130.4019"
          y="1327.4824"
-         class="ruin-number">27</tspan></text>
+         class="ruin-number ruin-number-27">27</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14171,7 +14171,7 @@
          id="tspan7254"
          x="983.2019"
          y="1158.2823"
-         class="ruin-number">19</tspan></text>
+         class="ruin-number ruin-number-19">19</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -14400,7 +14400,7 @@
          id="tspan7690"
          x="1619.3087"
          y="1495.4087"
-         class="ruin-number">01</tspan></text>
+         class="ruin-number ruin-number-1">01</tspan></text>
     <text
        id="text7696"
        y="1475.6086"
@@ -14411,7 +14411,7 @@
          x="1638.3087"
          id="tspan7694"
          sodipodi:role="line"
-         class="ruin-number">02</tspan></text>
+         class="ruin-number ruin-number-2">02</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14422,7 +14422,7 @@
          id="tspan7698"
          x="1615.5088"
          y="1554.0088"
-         class="ruin-number">03</tspan></text>
+         class="ruin-number ruin-number-3">03</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14433,7 +14433,7 @@
          id="tspan7702"
          x="1635.0018"
          y="1533.6824"
-         class="ruin-number">04</tspan></text>
+         class="ruin-number ruin-number-4">04</tspan></text>
     <text
        id="text7708"
        y="1503.2825"
@@ -14444,7 +14444,7 @@
          x="1677.6018"
          id="tspan7706"
          sodipodi:role="line"
-         class="ruin-number">05</tspan></text>
+         class="ruin-number ruin-number-5">05</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14455,7 +14455,7 @@
          id="tspan7710"
          x="1696.6018"
          y="1483.0824"
-         class="ruin-number">06</tspan></text>
+         class="ruin-number ruin-number-6">06</tspan></text>
     <text
        id="text7716"
        y="1561.4824"
@@ -14466,7 +14466,7 @@
          x="1675.8018"
          id="tspan7714"
          sodipodi:role="line"
-         class="ruin-number">07</tspan></text>
+         class="ruin-number ruin-number-7">07</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.66666698px;line-height:1.25;font-family:Arial;-inkscape-font-specification:Arial;letter-spacing:0px;word-spacing:0px;display:inline;fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -14477,6 +14477,6 @@
          id="tspan7718"
          x="1694.8016"
          y="1541.4824"
-         class="ruin-number">08</tspan></text>
+         class="ruin-number ruin-number-8">08</tspan></text>
   </g>
 </svg>
