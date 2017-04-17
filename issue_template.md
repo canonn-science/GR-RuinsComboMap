@@ -1,3 +1,6 @@
+## Your CMDR Name: 
+Example: CMDR ChangeMe
+
 ## Which Ruins Site? 
 Example: GS01
 
