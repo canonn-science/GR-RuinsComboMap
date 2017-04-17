@@ -629,9 +629,6 @@
 	        	showNotice('Getting Ruin Info',true);
 
 	        	var ruinRequest = 'https://api.canonn.technology/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
-	        	//var ruinRequest = 'mock/ruininfo.json';
-
-
 
 				$.get(ruinRequest).done(function(ruinInfo) {
 						//Add obelisks if missing
@@ -665,7 +662,6 @@
         		showNotice('Getting Scan Listing',true);
 
         		var scanRequest = "https://api.canonn.technology/api/v1/maps/scandata";
-        		//var scanRequest = "mock/site_scans.json";
 
 				$.get(scanRequest,{ format: "json"}).done(function(scanList) {
 		        	hideNotice();
@@ -691,7 +687,6 @@
         		showNotice('Getting Ruin List',true);
 
         		var systemList = 'https://api.canonn.technology/api/v1/maps/systemoverview';
-        		//var systemList = 'mock/systemoverview.json';
 
 				$.get(systemList).done(function(systemList) {
 		        	hideNotice();
@@ -700,6 +695,11 @@
 		        	window.systems = {};
 		        	window.ruinsIndex = {}
 
+
+	        		//Sort the system list by name
+	        		systemList = systemList.sort(function (a, b) {
+					    return a.systemName.localeCompare( b.systemName );
+					});
 
 					$.each(systemList,function(index,system){
 						//Cache system & ruin info
@@ -725,6 +725,11 @@
 							'</tr>'
 							].join(''));
 						}
+
+						//Sort by ID
+		        		system.ruins = system.ruins.sort(function(a, b) {
+						    return a.ruinId - b.ruinId;
+						});
 
 
 		        		$.each(system.ruins,function(rindex,ruin){
