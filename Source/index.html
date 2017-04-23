@@ -643,7 +643,7 @@
 	        	//Start by loading the map type
 	        	showNotice('Getting Ruin Info',true);
 
-	        	var ruinRequest = 'https://api.canonn.technology/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
+	        	var ruinRequest = 'https://ruins.canonn.technology:8001/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
 
 				$.get(ruinRequest).done(function(ruinInfo) {
 						//Add obelisks if missing
@@ -676,7 +676,7 @@
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
 
-        		var scanRequest = "https://api.canonn.technology/api/v1/maps/scandata";
+        		var scanRequest = "https://ruins.canonn.technology:8001/api/v1/maps/scandata";
 
 				$.get(scanRequest,{ format: "json"}).done(function(scanList) {
 		        	hideNotice();
@@ -701,7 +701,7 @@
         		//Show status
         		showNotice('Getting Ruin List',true);
 
-        		var systemList = 'https://api.canonn.technology/api/v1/maps/systemoverview';
+        		var systemList = 'https://ruins.canonn.technology:8001/api/v1/maps/systemoverview';
 
 				$.get(systemList).done(function(systemList) {
 		        	hideNotice();
