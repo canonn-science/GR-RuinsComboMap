@@ -219,8 +219,12 @@
 			window.ruinsUI = {
 				scanListIndex:'',
 				groupBand:'',
+				systemBand:'',
+				ruinBand:'',
 				itemBand:''
 			}
+
+
 
 			window.settings={
 				'api':'https://api.canonn.technology'
@@ -241,10 +245,81 @@
 				enableTesting: false
 			}
 
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
 
-		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
-		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
-		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
+		  	function collapseSystemRow(systemId){
+		  		var row = $('#system-' + systemId);
+				//collapse
+				row.addClass('collapsed');
+				row.removeClass('expanded');
+				//Hide all items that are "children" of this
+					$('.ruin_system_' + systemId).hide();
+		  	}
+
+		  	function expandSystemRow(systemId){
+		  		var row = $('#system-' + systemId);
+				//expand
+				row.addClass('expanded');
+				row.removeClass('collapsed');
+				//Show all items that are "children" of this
+				$('.ruin_system_' + systemId).show();
+		  	}
+
+
+			function clearRuinList(){
+				window.ruinsUI.systemBand='';
+				window.ruinsUI.ruinBand='';
+
+				//Clear everything
+				$('#ruin-list').find("tr:gt(0)").remove();
+			}
+
+			function addSystemToList(systemInfo){
+				//System heading
+				var bandClass = '';
+				var systemId = $('<div/>').text(systemInfo.systemId).html();
+
+				if(window.ruinsUI.systemBand == ''){
+					window.ruinsUI.systemBand = 'band'
+				}else{
+					window.ruinsUI.systemBand = '';
+				}
+
+
+				var row = $('#ruin-list').append([
+				'<tr class="ruin_list_system ' + window.ruinsUI.systemBand + '" id="system-' + systemId + '">',
+				    '<td colspan="4" class="ruin_list_system_name"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(systemInfo.systemName).html() + '</td>',
+				'</tr>'
+				].join(''));
+		  	}
+
+		  	function addRuinToList(systemInfo, ruinInfo){
+    			//Add the ruin to the associated Ruins and
+    			var systemId = $('<div/>').text(systemInfo.systemId).html();
+				var ruinId = $('<div/>').text(ruinInfo.ruinId).html();
+				var ruinType = $('<div/>').text(ruinInfo.ruinTypeName).html();
+
+				if(window.ruinsUI.ruinBand == ''){
+					window.ruinsUI.ruinBand = 'ruinband'
+				}else{
+					window.ruinsUI.ruinBand = '';
+				}
+
+
+				$('#ruin-list').append([
+				'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + window.ruinsUI.ruinBand + '" id="ruin-' + ruinId + '"">',
+				    '<td class="indented">',
+				     	$('<div/>').text(ruinInfo.bodyName).html(),
+				    '</td>',
+					'<td>' + 'GS' + ruinInfo.ruinId + '</td>',
+				    '<td>' + ruinType + '</td>',
+				    '<td>' + $('<div/>').text(ruinInfo.coordinates.join(',')).html() + '</td>',
+				'</tr>'
+				].join(''));
+
+		  	}
 
 	      	function prepMapUI(){
 
@@ -714,13 +789,44 @@
 
 		  	}
 
+		  	function showSystemList(systemList){
+
+	        	//Clear everything
+	        	clearRuinList();
+
+	        	//Have any items?
+	        	if(systemList.length < 1){
+	        		return false;
+	        	}
+
+        		//Sort the system list by name
+        		systemList = systemList.sort(function (a, b) {
+				    return a.systemName.localeCompare( b.systemName );
+				});
+
+				$.each(systemList,function(index,system){
+					addSystemToList(system);
+
+					window.ruinsUI.ruinBand = '';
+
+					//Sort by ID
+	        		system.ruins = system.ruins.sort(function(a, b) {
+					    return a.ruinId - b.ruinId;
+					});
+
+	        		$.each(system.ruins,function(rindex,ruin){
+	        			addRuinToList(system, ruin);
+	        		});
+
+
+
+	        	});
+		  	}
+
 
 	        function getRuinList(){
 
-	        	//Clear everything
-        		$('#ruin-list').find("tr:gt(0)").remove();
-
-        		//Show status
+	       		//Show status
         		showNotice('Getting Ruin List',true);
 
         		var systemList = window.settings.api + '/api/v1/maps/systemoverview';
@@ -732,42 +838,9 @@
 		        	window.systems = {};
 		        	window.ruinsIndex = {}
 
-
-	        		//Sort the system list by name
-	        		systemList = systemList.sort(function (a, b) {
-					    return a.systemName.localeCompare( b.systemName );
-					});
-
 					$.each(systemList,function(index,system){
 						//Cache system & ruin info
-
 						window.systems[system.systemId]=system;
-
-						var addSite = true;
-
-						var systemId = $('<div/>').text(system.systemId).html();
-
-
-						//System heading
-						var bandClass = '';
-
-						if(addSite){
-							if(1 == (index % 2)){
-								bandClass='band';
-							}
-
-							$('#ruin-list').append([
-							'<tr class="ruin_list_system ' + bandClass + '" id="system-' + systemId + '">',
-							    '<td colspan="4" class="ruin_list_system_name"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(system.systemName).html() + '</td>',
-							'</tr>'
-							].join(''));
-						}
-
-						//Sort by ID
-		        		system.ruins = system.ruins.sort(function(a, b) {
-						    return a.ruinId - b.ruinId;
-						});
-
 
 		        		$.each(system.ruins,function(rindex,ruin){
 		        			//Add the system mapping
@@ -775,34 +848,11 @@
 		        				systemId:system.systemId,
 		        				ruinType:ruin.ruinTypeName
 		        			}
-		        			//Add the ruin to the associated Ruins and
-							var ruinId = $('<div/>').text(ruin.ruinId).html();
-							var ruinType = $('<div/>').text(ruin.ruinTypeName).html();
-
-							if(addSite){
-
-
-								bandClass = '';
-								if(1 == (rindex % 2)){
-									bandClass='ruinband';
-								}
-
-
-								$('#ruin-list').append([
-								'<tr class="ruin_list_ruin ruin_system_' + systemId + ' ruin_' + ruinId + ' ' + bandClass + '" id="ruin-' + ruinId + '"">',
-								    '<td class="indented">' + $('<div/>').text(ruin.bodyName).html() + '</td>',
-									'<td>' + 'GS' + ruin.ruinId + '</td>',
-								    '<td>' + ruinType + '</td>',
-								    '<td>' + $('<div/>').text(ruin.coordinates.join(',')).html() + '</td>',
-								'</tr>'
-								].join(''));
-							}
-
 		        		});
-
-
-
 		        	});
+
+					//Show all items by filtering with "none"
+					filterResults('');
 
 					onRuinListReady();
 				})
@@ -833,20 +883,10 @@
 
 			  				if(2 === idSystem.length){
 				  				if(row.hasClass('expanded')){
-				  					//collapse
-									row.addClass('collapsed');
-									row.removeClass('expanded');
-									//Hide all items that are "children" of this
-			  						$('.ruin_system_' + idSystem[1]).hide();
+				  					collapseSystemRow(idSystem[1]);
 				  				}else{
-				  					//expand
-				  					row.addClass('expanded');
-				  					row.removeClass('collapsed');
-				  					//Show all items that are "children" of this
-			  						$('.ruin_system_' + idSystem[1]).show();
+				  					expandSystemRow(idSystem[1]);
 				  				}
-
-
 			  				}
 			  			}
 
@@ -877,31 +917,76 @@
 				inputVal = inputVal.toUpperCase();
 
 				//Change?
-				if(window.nav.filter !== inputVal){
+				if(window.nav.filter !== inputVal || window.nav.filter == ''){
 					//Yes
 					window.nav.filter = inputVal;
 
-					//Enumerate the systems
-					$.each($('#ruin-list').find("tr.ruin_list_system"),function(group,row){
-						//Get the system name
-						row = $(row);
-						var systemName = row.find('.ruin_list_system_name').text();
+					//Build a system list of matching systems or ruins
+					var matchSystems = []
 
-						if(window.nav.filter === '' || systemName.indexOf(window.nav.filter) !== -1){
-							row.show();
-						}else{
-							row.hide();
+					//All?
+					if(inputVal == ''){
+						//Add all
+						$.each(window.systems,function(index,system){
+							matchSystems[matchSystems.length] = system;
+						});
+
+					}else{
+						$.each(window.systems,function(index,system){
+							//Does the name match?
+							if(system.systemName.indexOf(inputVal) > 0 ){
+								//Yes.  Add it and all ruins
+								matchSystems[matchSystems.length] = system;
+							}else{
+								//Let's search the ruins for a match
+								var matchRuins = [];
+
+								$.each(system.ruins,function(rindex,ruin){
+				        			//Add the system mapping
+				        			var addRuin = false;
+
+				        			//Matching ID?
+				        			if(inputVal == ruin.ruinId){
+				        				addRuin = true;
+				        			}
+
+				        			//Matching GSID?
+				        			if(inputVal == 'GS' + ruin.ruinId){
+				        				addRuin = true;
+				        			}
+
+
+				        			if(addRuin){
+				        				matchRuins[matchRuins.length] = ruin;
+				        			}
+				        		});
+
+				        		//Add this system and matching ruins?
+				        		if(matchRuins.length > 0){
+				        			var useSystem = system;
+				        			useSystem.expandDisplay = true;
+				        			//Replace the ruins to those that match
+				        			useSystem.ruins = matchRuins;
+				        			//Add
+				        			matchSystems[matchSystems.length] = useSystem;
+				        		}
+							}
+			        	});
+					}
+
+		        	showSystemList(matchSystems);
+
+		        	//Expand any flagged for expansion
+		        	$.each(matchSystems,function(index,system){
+						//Expand it automatically?
+						if(system.expandDisplay){
+							expandSystemRow(system.systemId);
 						}
+					});
 
-
-
-		  			})
 
 
 				}
-
-
-
 			}
 
 			function showNotice(noticeText,loading,closeAfter){

@@ -516,6 +516,7 @@ a.twitter{
 }
 
 #ruin-list tr {background: #FFF}
+#ruin-list tr.ruin_list_system {background: #FFF3D3}
 #ruin-list tr.band {background: #F7D4B6}
 #ruin-list tr.ruinband {background: #CFD5FF}
 
