@@ -212,13 +212,15 @@ my.getRuin = function (setOptions) {
 
 			$.get("maps/" + ruinData.type + ".svg").done(function(data){
 				//Empty and then set the data
-				options.panzoom.empty().append(data.documentElement);
+				options.panzoom.empty().append(data.documentElement).ready(function(r){
 
-				_setPanZoom(options.panzoom);
-				_prepSVG();
+					_setPanZoom(options.panzoom);
+					_prepSVG();
 
-				//And note that the map is ready
-				options.onMapReady(ruinData.type);
+					//And note that the map is ready
+					options.onMapReady(ruinData.type);
+
+				});
 
 			}).fail(function(failure){
 				options.onMapFailed(failure);

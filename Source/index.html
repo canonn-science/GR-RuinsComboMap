@@ -653,7 +653,7 @@
 	        	//Start by loading the map type
 	        	showNotice('Getting Ruin Info',true);
 
-	        	var ruinRequest = '/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
+	        	var ruinRequest = window.settings.api + '/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
 
 				$.get(ruinRequest).done(function(ruinInfo) {
 						//Add obelisks if missing
