@@ -176,7 +176,8 @@
 		</div>
 		<div id="scan_result_panel">
 			<div class="scan" id="scan_result">Scan</div>
-			<div class="info">Combination not working for you?  Let us know about it - GSID - OBELISKID</div>
+			<div class="info">Combination not working for you?<BR>
+			<a href="" id="scan_result_link" target="_blank">Let us know about it</a></div>
 		</div>
 
 		<div id="ruin_obelisk_data_close">&nbsp;</div>
@@ -614,7 +615,6 @@
 	  			var object1 = object1 || 'None';
 	  			var object2 = object2 || 'None';
 
-				//Testing
 	  			$('#scan_obelisk').text(obelisk);
 				$('#scan_object1').text(object1);
 				$('#scan_object1icon').css('background-image','url("images/maps/ruin_' + object1.toLowerCase() + '.png")');
@@ -623,6 +623,7 @@
 				$('#scan_object2icon').css('background-image','url("images/maps/ruin_' + object2.toLowerCase() + '.png")');
 
 				$('#scan_result').text(data);
+				$('#scan_result_link').attr('href','https://github.com/canonn-science/RuinsComboMap/issues/new?title=' + encodeURIComponent('Ruins Invalid Data Report - GS' + window.currentRuin.ruinId + ' - ' + obelisk));
 				$('#ruin_obelisk_data').show();
 	  		}
 

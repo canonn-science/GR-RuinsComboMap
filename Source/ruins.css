@@ -395,7 +395,8 @@ a.twitter{
 
 #scan_result_panel .info{
   background-color: #FFCAAB;
-  font-size:5pt;
+  font-size:10pt;
+  font-weight:bold;
 }
 
 
