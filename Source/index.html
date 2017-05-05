@@ -928,15 +928,20 @@
 					if(inputVal == ''){
 						//Add all
 						$.each(window.systems,function(index,system){
-							matchSystems[matchSystems.length] = system;
+							var useSystem = jQuery.extend({}, system);
+							useSystem.expandDisplay = false;
+							matchSystems[matchSystems.length] = useSystem;
 						});
 
 					}else{
 						$.each(window.systems,function(index,system){
+							var useSystem = jQuery.extend({}, system);
+							useSystem.expandDisplay = false;
+
 							//Does the name match?
-							if(system.systemName.indexOf(inputVal) > 0 ){
+							if(useSystem.systemName.indexOf(inputVal) > 0 ){
 								//Yes.  Add it and all ruins
-								matchSystems[matchSystems.length] = system;
+								matchSystems[matchSystems.length] = useSystem;
 							}else{
 								//Let's search the ruins for a match
 								var matchRuins = [];
@@ -960,16 +965,13 @@
 				        				addRuin = true;
 				        			}
 
-
-
 				        			if(addRuin){
-				        				matchRuins[matchRuins.length] = ruin;
+				        				matchRuins[matchRuins.length] = jQuery.extend({}, ruin);
 				        			}
 				        		});
 
 				        		//Add this system and matching ruins?
 				        		if(matchRuins.length > 0){
-				        			var useSystem = system;
 				        			useSystem.expandDisplay = true;
 				        			//Replace the ruins to those that match
 				        			useSystem.ruins = matchRuins;
