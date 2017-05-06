@@ -949,20 +949,22 @@
 								$.each(system.ruins,function(rindex,ruin){
 				        			//Add the system mapping
 				        			var addRuin = false;
-
-				        			//Matching ID?
-				        			if(inputVal == ruin.ruinId){
-				        				addRuin = true;
-				        			}
+				        			var ruinIdLookup = 'GS' + ruin.ruinId;
+				        			var ruinBodyLookup = ruin.bodyName.replace(/ /g,'');
 
 				        			//Matching GSID?
-				        			if(inputVal == 'GS' + ruin.ruinId){
+				        			if(ruinIdLookup.indexOf(inputVal) > -1){
 				        				addRuin = true;
 				        			}
 
 				        			//Matching body?
-				        			if(inputVal == ruin.bodyName){
+				        			if(ruin.bodyName.indexOf(inputVal) > -1){
 				        				addRuin = true;
+				        			}
+
+				        			//body but without spaces such as A2 for A 2
+				        			if(ruinBodyLookup.indexOf(inputVal) > -1){
+										addRuin = true;
 				        			}
 
 				        			if(addRuin){
