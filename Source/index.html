@@ -184,7 +184,7 @@
 
 	<!-- User scan UI -->
 	<img id="activity_checklist_icon" src="images/checklist.png">
-	<div id="activity" class="left">
+	<div id="activity" class="hidden">
 		<div id="activity_list">
 			<table id="activity_selections">
 				<tr>
@@ -739,7 +739,7 @@
 
 		        //Bind our activity list control
 		        $('#activity_checklist_icon').on('click',function(e){
-		        	if($('#activity').hasClass('right')) {
+		        	if($('#activity').hasClass('hidden')) {
 			        	showScanChecklist();
 					}else{
 						hideScanChecklist();
@@ -915,14 +915,14 @@
 	        }
 
 	        window.showScanChecklist = function(){
-	        	$('#activity').addClass('left');
-				$('#activity').removeClass('right');
+	        	$('#activity').addClass('shown');
+				$('#activity').removeClass('hidden');
 	        }
 
 
 	        window.hideScanChecklist = function(){
-	        	$('#activity').addClass('right');
-				$('#activity').removeClass('left');
+	        	$('#activity').addClass('hidden');
+				$('#activity').removeClass('shown');
 	        }
 
 	        function padNumber(number){

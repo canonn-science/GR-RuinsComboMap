@@ -716,7 +716,7 @@ tr.collapsed .expand_status {
 #activity_checklist_icon{
   position:absolute;
   right:0;
-  top:50px;
+  top:5px;
   cursor:pointer;
   width:32px;
   height:32px;
@@ -736,7 +736,7 @@ tr.collapsed .expand_status {
   width:100%;
   position:absolute;
   left:0;
-  top:82px;
+  top:37px;
   right:0;
   margin:0;
   padding:0;
@@ -751,12 +751,12 @@ tr.collapsed .expand_status {
   margin-right:auto;
 }
 
-div#activity.left {
+div#activity.shown {
   position:absolute;
   display:block;
 }
 
-div#activity.right {
+div#activity.hidden {
   position:absolute;
   display:none;
 }
