@@ -226,6 +226,7 @@
 
 
 
+
 			window.settings={
 				'api':'https://api.canonn.technology'
 			}
@@ -243,6 +244,32 @@
 
 			window.ui = {
 				enableTesting: false
+			}
+
+			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
+			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
+			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
+
+			function stringMatchExact(a,b,canIgnoreSpaces){
+				ignoreSpaces = false; //Exact match always checks.  Regardless of what's specified
+				return a == b;
+			}
+
+			function stringMatchContains(a,b,canIgnoreSpaces){
+				canIgnoreSpaces = canIgnoreSpaces || false;
+
+				if(canIgnoreSpaces){
+					//Is there a match if we remove spaces?
+					if(a.replace(/ /g,'').indexOf(b) > -1){
+						//Yes
+						return true;
+					}
+					//No.  Default to regular comparison
+				}
+
+				//Does this contain the value
+				return (a.indexOf(b) > -1);
+
 			}
 
 		  	/* Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping Mapping  */
@@ -859,7 +886,6 @@
 				.fail(function(d, textStatus, error){
 					showNotice("Getting Ruin List failed: " + error ,false);
 				});
-
 	        }
 
 	        function prepSelectionUI(){
@@ -921,6 +947,16 @@
 					//Yes
 					window.nav.filter = inputVal;
 
+					//Default match
+					var compare = stringMatchContains;
+					//Specific?
+					if(inputVal.indexOf("'") > -1 || inputVal.indexOf('"') > -1){
+						//Yes
+						compare = stringMatchExact;
+						//Remove any quotes now that we're done checking for specificity
+						inputVal = inputVal.replace(/['|"]/g,'');
+					}
+
 					//Build a system list of matching systems or ruins
 					var matchSystems = []
 
@@ -939,7 +975,7 @@
 							useSystem.expandDisplay = false;
 
 							//Does the name match?
-							if(useSystem.systemName.indexOf(inputVal) > 0 ){
+							if( compare(useSystem.systemName,inputVal) ){
 								//Yes.  Add it and all ruins
 								matchSystems[matchSystems.length] = useSystem;
 							}else{
@@ -950,21 +986,15 @@
 				        			//Add the system mapping
 				        			var addRuin = false;
 				        			var ruinIdLookup = 'GS' + ruin.ruinId;
-				        			var ruinBodyLookup = ruin.bodyName.replace(/ /g,'');
 
 				        			//Matching GSID?
-				        			if(ruinIdLookup.indexOf(inputVal) > -1){
+				        			if(compare(ruinIdLookup,inputVal)){
 				        				addRuin = true;
 				        			}
 
-				        			//Matching body?
-				        			if(ruin.bodyName.indexOf(inputVal) > -1){
+				        			//Matching body?  Allow removal of spaces so that a2 will match A 2
+				        			if(compare(ruin.bodyName,inputVal,true)){
 				        				addRuin = true;
-				        			}
-
-				        			//body but without spaces such as A2 for A 2
-				        			if(ruinBodyLookup.indexOf(inputVal) > -1){
-										addRuin = true;
 				        			}
 
 				        			if(addRuin){
