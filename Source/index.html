@@ -102,6 +102,7 @@
 									<li>DMehaffy (Infrastructure &amp; Hosting)
 										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/89809-DMehaffy" target="new"></a>
 										<a class="logo github" href="https://github.com/derrickmehaffy" target="new"></a>
+										<a class="logo reddit" href="https://www.reddit.com/user/dmehaffy/" target="new"></a>
 									</li>
 									<li>Nopileos (Development API Front and Backend)
 										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/19716-Phoenix" target="new"></a>
@@ -139,9 +140,7 @@
 
 						</div>
 						<div>
-							<p>Reddit Icon made by <a href="http://www.flaticon.com/authors/plainicon" target="_blank">plainicon</a> from <a href="www.flaticon.com" target="_blank">www.flaticon.com</a></p>
-
-
+							<p>Reddit Icon made by <a href="http://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a> and checklist Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
 
 						</div>
 
@@ -183,26 +182,169 @@
 		<div id="ruin_obelisk_data_close">&nbsp;</div>
 	</div>
 
-	<!--
-	<div id="ruin_obelisk_data" style="">
-		<div class="obelisk">
-			<div>
-				<span id="scan_obelisk">Obelisk</span> - <span class="scan" id="scan_result">Scan</span>
-			</div>
+	<!-- User scan UI -->
+	<img id="activity_checklist_icon" src="images/checklist.png">
+	<div id="activity" class="left">
+		<div id="activity_list">
+			<table id="activity_selections">
+				<tr>
+					<th>Bio</th>
+					<th>Cult</th>
+					<th>Hist</th>
+					<th>Lang</th>
+					<th>Tech</th>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-1">1</td>
+					<td id="activity_scan-culture-1">1</td>
+					<td id="activity_scan-history-1">1</td>
+					<td id="activity_scan-language-1">1</td>
+					<td id="activity_scan-technology-1">1</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-2">2</td>
+					<td id="activity_scan-culture-2">2</td>
+					<td id="activity_scan-history-2">2</td>
+					<td id="activity_scan-language-2">2</td>
+					<td id="activity_scan-technology-2">2</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-3">3</td>
+					<td id="activity_scan-culture-3">3</td>
+					<td id="activity_scan-history-3">3</td>
+					<td id="activity_scan-language-3">3</td>
+					<td id="activity_scan-technology-3">3</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-4">4</td>
+					<td id="activity_scan-culture-4">4</td>
+					<td id="activity_scan-history-4">4</td>
+					<td id="activity_scan-language-4">4</td>
+					<td id="activity_scan-technology-4">4</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-5">5</td>
+					<td id="activity_scan-culture-5">5</td>
+					<td id="activity_scan-history-5">5</td>
+					<td id="activity_scan-language-5">5</td>
+					<td id="activity_scan-technology-5">5</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-6">6</td>
+					<td id="activity_scan-culture-6">6</td>
+					<td id="activity_scan-history-6">6</td>
+					<td id="activity_scan-language-6">6</td>
+					<td id="activity_scan-technology-6">6</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-7">7</td>
+					<td id="activity_scan-culture-7">7</td>
+					<td id="activity_scan-history-7">7</td>
+					<td id="activity_scan-language-7">7</td>
+					<td id="activity_scan-technology-7">7</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-8">8</td>
+					<td id="activity_scan-culture-8">8</td>
+					<td id="activity_scan-history-8">8</td>
+					<td id="activity_scan-language-8">8</td>
+					<td id="activity_scan-technology-8">8</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-9">9</td>
+					<td id="activity_scan-culture-9">9</td>
+					<td id="activity_scan-history-9">9</td>
+					<td id="activity_scan-language-9">9</td>
+					<td id="activity_scan-technology-9">9</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-10">10</td>
+					<td id="activity_scan-culture-10">10</td>
+					<td id="activity_scan-history-10">10</td>
+					<td id="activity_scan-language-10">10</td>
+					<td id="activity_scan-technology-10">10</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-11">11</td>
+					<td id="activity_scan-culture-11">11</td>
+					<td id="activity_scan-history-11">11</td>
+					<td id="activity_scan-language-11">11</td>
+					<td id="activity_scan-technology-11">11</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-12">12</td>
+					<td id="activity_scan-culture-12">12</td>
+					<td id="activity_scan-history-12">12</td>
+					<td id="activity_scan-language-12">12</td>
+					<td id="activity_scan-technology-12">12</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-13">13</td>
+					<td id="activity_scan-culture-13">13</td>
+					<td id="activity_scan-history-13">13</td>
+					<td id="activity_scan-language-13">13</td>
+					<td id="activity_scan-technology-13">13</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-14">14</td>
+					<td id="activity_scan-culture-14">14</td>
+					<td id="activity_scan-history-14">14</td>
+					<td id="activity_scan-language-14">14</td>
+					<td id="activity_scan-technology-14">14</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-15">15</td>
+					<td id="activity_scan-culture-15">15</td>
+					<td id="activity_scan-history-15">15</td>
+					<td id="activity_scan-language-15">15</td>
+					<td id="activity_scan-technology-15">15</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-16">16</td>
+					<td id="activity_scan-culture-16">16</td>
+					<td id="activity_scan-history-16">16</td>
+					<td id="activity_scan-language-16">16</td>
+					<td id="activity_scan-technology-16">16</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-17">17</td>
+					<td id="activity_scan-culture-17">17</td>
+					<td id="activity_scan-history-17">17</td>
+					<td id="activity_scan-language-17">17</td>
+					<td id="activity_scan-technology-17">17</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-18">18</td>
+					<td id="activity_scan-culture-18">18</td>
+					<td id="activity_scan-history-18">18</td>
+					<td id="activity_scan-language-18">18</td>
+					<td id="activity_scan-technology-18">18</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-19">19</td>
+					<td id="activity_scan-culture-19">19</td>
+					<td id="activity_scan-history-19">19</td>
+					<td id="activity_scan-language-19">19</td>
+					<td id="activity_scan-technology-19">19</td>
+				</tr>
+				<tr>
+					<td class="empty">&nbsp;</td>
+					<td id="activity_scan-culture-20">20</td>
+					<td id="activity_scan-history-20">20</td>
+					<td id="activity_scan-language-20">20</td>
+					<td id="activity_scan-technology-20">20</td>
+				</tr>
+				<tr>
+					<td class="empty">&nbsp;</td>
+					<td class="empty">&nbsp;</td>
+					<td id="activity_scan-history-21">21</td>
+					<td id="activity_scan-language-21">21</td>
+					<td class="empty">&nbsp;</td>
+				</tr>
+			</table>
 		</div>
-
-		<div id="scan_data_panel">
-			<div class="object" id="scan_object1icon">
-				<div class="object1" id="scan_object1">Obelisk 1</div>
-			</div>
-			<div class="object" id="scan_object2icon">
-				<div class="object2" id="scan_object2">Obelisk 2</div>
-			</div>
-		</div>
-
-		<div class="ruin_obelisk_data_close">&nbsp;</div>
 	</div>
-	-->
+
 
 	<!-- Notice Panel -->
 
@@ -224,9 +366,6 @@
 				itemBand:''
 			}
 
-
-
-
 			window.settings={
 				'api':'https://api.canonn.technology'
 			}
@@ -245,6 +384,8 @@
 			window.ui = {
 				enableTesting: false
 			}
+
+			window.userScans = {}
 
 			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
 			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
@@ -596,6 +737,36 @@
 					}
 		        });
 
+		        //Bind our activity list control
+		        $('#activity_checklist_icon').on('click',function(e){
+		        	if($('#activity').hasClass('right')) {
+			        	showScanChecklist();
+					}else{
+						hideScanChecklist();
+					}
+		        });
+
+		        //Checklist
+		        $('#activity_selections td').on('click',function(e){
+		        	var clickedElement = $(e.target);
+		        	var id = clickedElement.attr('id') || '';
+		        	if(id.indexOf('activity_scan') > -1){
+		        		//Get the type and number
+		        		var idInfo = id.split('-');
+		        		var type = idInfo[1];
+		        		var num = idInfo[2];
+
+		        		if(! window.userScans[type]){
+		        			window.userScans[type] = {};
+		        		}
+
+		        		window.userScans[type][num] = 1;
+
+		        		clickedElement.addClass('selected');
+		        	}
+		        });
+
+
 
 				//Added to the table since the elements are dynamically added
 			  	$('#scan-list').on('click',function(e){
@@ -741,6 +912,17 @@
 				$('#info').removeClass('up');
 				//Change chevron
 				$('#info_bar .chevron').html('&#x25B4');
+	        }
+
+	        window.showScanChecklist = function(){
+	        	$('#activity').addClass('left');
+				$('#activity').removeClass('right');
+	        }
+
+
+	        window.hideScanChecklist = function(){
+	        	$('#activity').addClass('right');
+				$('#activity').removeClass('left');
 	        }
 
 	        function padNumber(number){
@@ -1091,8 +1273,5 @@
 			});
 
 	      </script>
-
-
-
 </body>
 </html>

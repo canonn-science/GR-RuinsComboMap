@@ -15,12 +15,12 @@ button {
 }
 
 #ruinslist{
-	height:100px
+  height:100px
 }
 
 .ruinname{
-	text-align:center;
-	border:1px solid blue;
+  text-align:center;
+  border:1px solid blue;
 }
 
 #map {
@@ -268,6 +268,18 @@ a.reddit{
 
 a.twitter{
   background-image:url(images/social/logo-twitter.png);
+}
+
+a.reddit{
+  background-image:url(images/social/logo-reddit.png);
+}
+
+a.youtube{
+  background-image:url(images/social/logo-youtube.png);
+}
+
+a.twitch{
+  background-image:url(images/social/logo-twitch.png);
 }
 
 .panel-section > div{
@@ -698,4 +710,90 @@ tr.collapsed .expand_status {
   background-image:url(images/loading.gif);
   background-position: 1em center;
   background-repeat:no-repeat;
+}
+
+/* Activity completion list */
+#activity_checklist_icon{
+  position:absolute;
+  right:0;
+  top:50px;
+  cursor:pointer;
+  width:32px;
+  height:32px;
+}
+
+#activity_checklist_icon:hover{
+  -webkit-filter: brightness(125%);
+  filter: brightness(125%);
+ }
+
+#activity_checklist_icon:active{
+  -webkit-filter: brightness(85%);
+  filter: brightness(85%);
+ }
+
+#activity{
+  width:100%;
+  position:absolute;
+  left:0;
+  top:82px;
+  right:0;
+  margin:0;
+  padding:0;
+  text-align: center;
+}
+
+
+#activity_list{
+  width:90vw;
+  height:90vh;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+div#activity.left {
+  position:absolute;
+  display:block;
+}
+
+div#activity.right {
+  position:absolute;
+  display:none;
+}
+
+
+#activity_selections{
+  width:70vw;
+}
+
+
+#activity_selections{
+  margin-left:auto;
+  margin-right:auto;
+  table-layout: fixed;
+  width:100%;
+  border-collapse: collapse;
+  empty-cells: hide;
+}
+
+#activity_selections th{
+  background-color: black;
+  color:white;
+  font-weight: bold;
+  text-align: center;
+}
+
+#activity_selections td{
+  padding:6pt;
+  text-align: center;
+}
+
+#activity_selections td:not(.empty){
+  background-color: #E0E0E0;
+  border:1px solid black;
+  cursor:pointer;
+}
+
+#activity_selections td.selected{
+  background-color: green;
 }
