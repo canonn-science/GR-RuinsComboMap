@@ -270,6 +270,18 @@ a.twitter{
   background-image:url(images/social/logo-twitter.png);
 }
 
+a.reddit{
+  background-image:url(images/social/logo-reddit.png);
+}
+
+a.youtube{
+  background-image:url(images/social/logo-youtube.png);
+}
+
+a.twitch{
+  background-image:url(images/social/logo-twitch.png);
+}
+
 .panel-section > div{
   padding:1em;
 }
