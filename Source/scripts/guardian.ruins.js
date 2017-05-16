@@ -129,7 +129,7 @@ my.getRuin = function (setOptions) {
 		this._prepSVG = function(){
 			var registerTouch = 0;
 			//Mouse wheel zoom
-			panZoomComp.parent().on('mousewheel.focal', function( e ) {
+			panZoomComp.parent().on('wheel.focal', function( e ) {
 				e.preventDefault();
 				var delta = e.delta || e.originalEvent.wheelDelta;
 				var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
