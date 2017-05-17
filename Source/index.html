@@ -546,10 +546,19 @@
 
 							//Now for those that are inactive... we disable.  Otherwise if there's a scan we add it
 							$.each(obeliskData,function(number,data){
+								//Broken?
+								if( scanData && scanData[number] ){
+									if(scanData[number].isBroken){
+										//Flag the obelisk as broken
+										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#FF0000').css('stroke','#FF0000');
+									}
+								}
+
+								//Have scan data as well?
 								if(0 === data){
+									//Disable this obelisk
 									window.ruins.disableObelisk(group,number);
 								}else{
-									//Have scan data as well?
 									if( scanData && scanData[number] ){
 										addScanListItem(group, number, scanData[number].items[0], scanData[number].items[1], scanData[number].scan);
 										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#00d5ff').css('stroke','#00d5ff');

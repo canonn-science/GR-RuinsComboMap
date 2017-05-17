@@ -366,23 +366,28 @@
        id="g30375"
        transform="translate(2102.2749,-2356.6028)">
       <circle
-         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#c80000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#00c800;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30182-1-9"
          cx="722.39093"
          cy="1962.2659"
          r="10" />
       <circle
-         style="display:inline;fill:#c80000;fill-opacity:1;stroke:none;stroke-width:0.4311451;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;fill:#00c800;fill-opacity:1;stroke:none;stroke-width:0.4311451;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30200-1-2"
          cx="733.64679"
          cy="1978.6826"
          r="3.0026414" />
       <path
-         style="display:inline;fill:none;stroke:#c80000;stroke-width:0.77735484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="display:inline;fill:none;stroke:#00c800;stroke-width:0.77735484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 727.76227,1970.3793 c 1.7975,2.5496 3.5924,5.1008 5.3881,7.6515"
          id="path30212-6-9"
          inkscape:connector-curvature="0" />
     </g>
+
+
+
+
+
     <g   id="g30866"
        transform="translate(1517.6844,-1472.5267)"
        style="display:inline;fill:#d10000;fill-opacity:1">
