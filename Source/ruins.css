@@ -420,6 +420,12 @@ a.twitch{
   padding:1em;
 }
 
+#scan_result.verified{
+  background-image: url(images/verified.png);
+  background-position: 10px center;
+  background-repeat: no-repeat;
+}
+
 
 
 #ruin_obelisk_data .obelisk div{

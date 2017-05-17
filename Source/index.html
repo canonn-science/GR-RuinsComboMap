@@ -199,7 +199,7 @@
 			</div>
 		</div>
 		<div id="scan_result_panel">
-			<div class="scan" id="scan_result">Scan</div>
+			<div class="scan" id="scan_result" title="Scan Results">Scan</div>
 			<div class="info">Combination not working for you?<BR>
 			<a href="" id="scan_result_link" target="_blank">Let us know about it</a></div>
 		</div>
@@ -514,7 +514,7 @@
 
 		  	}
 
-	      	function prepMapUI(){
+	      	function prepMapUI(completed){
 
 			  	window.ruins = Guardian.getRuin({
 			  		panzoom:$(".panzoom"),
@@ -540,6 +540,7 @@
 
 						//Disable obelisks that are "broken/inactive" and add scan list items
 						$.each(window.currentRuin.obelisks,function(group,obeliskData){
+
 							//Get the scan data for the given group
 							var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
 
@@ -643,7 +644,8 @@
 			  	});
 
 			  	//Get our site scans and store it
-			  	getSiteScans();
+			  	getSiteScans(completed);
+
 
 		        //Scan Data menu
 		        $('#ruin_obelisk_data_close').on('click',function(e){
@@ -898,7 +900,7 @@
 	        	var numDisplay = padNumber(number);
 
 	        	if(scanData){
-	        		showScanData(group.toUpperCase() + numDisplay,scanData.items[0],scanData.items[1],scanData.scan);
+	        		showScanData(group.toUpperCase() + numDisplay,scanData.items[0],scanData.items[1],scanData.scan, scanData.isVerified);
 	        	}else{
 	        		showNotice('No scans available for this obelisk',false,1000);
 	        	}
@@ -908,7 +910,7 @@
 				$('#ruin_obelisk_data').hide();
 			}
 
-	  		function showScanData(obelisk,object1,object2,data){
+	  		function showScanData(obelisk,object1,object2,data,verified){
 	  			//Display
 	  			var object1 = object1 || 'None';
 	  			var object2 = object2 || 'None';
@@ -921,6 +923,13 @@
 				$('#scan_object2icon').css('background-image','url("images/maps/ruin_' + object2.toLowerCase() + '.png")');
 
 				$('#scan_result').text(data);
+				if(verified){
+					$('#scan_result').attr('title','Verified').addClass('verified');
+				}else{
+					$('#scan_result').attr('title','Not verified').removeClass('verified');
+				}
+
+
 				$('#scan_result_link').attr('href','https://github.com/canonn-science/RuinsComboMap/issues/new?title=' + encodeURIComponent('Ruins Invalid Data Report - GS' + window.currentRuin.ruinId + ' - ' + obelisk));
 				$('#ruin_obelisk_data').show();
 	  		}
@@ -1003,7 +1012,7 @@
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
-		  	function getSiteScans(){
+		  	function getSiteScans(completed){
 		  		//Show status
         		showNotice('Getting Scan Listing',true);
 
@@ -1019,7 +1028,11 @@
 				})
 				.fail(function(d, textStatus, error){
 					showNotice("Getting Site Scans failed: " + error ,false);
+				}).always(function() {
+				    completed();
 				});
+
+
 
 		  	}
 
@@ -1280,15 +1293,17 @@
 			$( document ).ready(function() {
 				//Prep the UI's
 			  	prepSelectionUI();
-			  	prepMapUI();
+			  	prepMapUI(function whenReady(){
+			  		//Shared
+				  	$('#notice').on('click',function(e){
+				  		$('#notice').hide();
+				  	})
 
-			  	//Shared
-			  	$('#notice').on('click',function(e){
-			  		$('#notice').hide();
-			  	})
+				  	//Load system
+				  	getRuinList();
+			  	});
 
-			  	//Load system
-			  	getRuinList();
+
 
 
 		      });   //document ready
