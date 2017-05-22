@@ -172,6 +172,79 @@ button {
   background-image:url('images/zoom-reset.png');
 }
 
+#ruin-scan-filter{
+  display:inline-block;
+  position: relative;
+
+
+  padding:0em;
+  position-left: 75%;
+  min-width:15em;
+  margin-right:1em;
+
+  cursor: pointer;
+}
+
+
+
+#ruin-scan-filter label{
+  cursor: pointer;
+  width:100%;
+  width:23em;
+}
+
+#ruin-scan-selections{
+  display:none;
+  position:absolute;
+  background-color: #E0C6B0;
+  left:0;
+  top:3.5em;
+  width:25em;
+  border:2px solid black;
+  z-index: 1000;
+}
+
+#ruin-scan-selections button{
+  width:10em;
+  cursor: pointer;
+}
+
+#ruin-scan-selections button.apply_button{
+  float:right;
+}
+
+#ruin-scan-selections button.reset_button{
+  float:left;
+}
+
+#ruin-scan-selections table{
+  /*width:100%;*/
+  text-align: center;
+}
+
+#ruin-scan-selections th{
+  font-weight: bold;
+  background-color: #F7D4B6;
+}
+
+#ruin-scan-selections td{
+  font-weight: bold;
+  background-color: #FFF3D3;
+  width:2.5em;
+  height:2.5em;
+}
+
+#ruin-scan-selections td.selected{
+  background-color: black;
+  color:white;
+}
+
+
+
+#ruin-scan-selections td.no-scan{
+  background-color: #E0C6B0;
+}
+
 
 
 .cover {
@@ -504,6 +577,12 @@ a.twitch{
   margin-right:1em;
   background-color: #E0C6B0;
   font-weight:bold;
+  height:1.5em;
+}
+
+#systems label input{
+  margin:0;
+  padding:0;
 }
 
 /* system selection */
