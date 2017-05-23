@@ -984,6 +984,48 @@
 		        	return;
 		        });
 
+		        //Reset Filter button
+		        $('#ruin-scan-selections button.reset_button').on('click',function(e){
+		        	//Remove selections
+		        	$('#ruin-scan-selections td.scan-selection').removeClass('selected');
+		        });
+
+		        //Apply Filter button
+		        $('#ruin-scan-selections button.apply_button').on('click',function(e){
+		        	//Search for sites with the filter
+		        	var filter = {}
+		        	var filterCount = 0;
+
+		        	$('#ruin-scan-selections td.scan-selection.selected').each(function( index ) {
+		        		filterCount++;
+		        		var elem = $( this );
+		        		var filterInfo = elem.attr('id').split('-');
+		        		if(! (filterInfo[0] in filter)){
+		        			filter[filterInfo[0]]=[];
+		        		}
+		        		filter[filterInfo[0]].push(filterInfo[1])
+					});
+
+		        	if(filterCount > 0){
+		        		showNotice('Searching Filters',true);
+
+		        		$.post({
+						    url:"https://api.canonn.technology/api/v1/ruinsites/searchdata/",
+						    type:'POST',
+						    contentType:'application/json',
+						    data: JSON.stringify(filter)
+						}).done(function(results){
+							scanFilterResults(results);
+							//console.log(results);
+		        			hideNotice();
+						}).fail(function(d, textStatus, error){
+							showNotice("Filter Search failed: " + (error || textStatus) ,false);
+						});
+		        	}
+
+		        	//Close
+		        	$('#ruin-scan-selections').hide();
+		        });
 
 
 
@@ -1053,16 +1095,7 @@
 					//Show listing
 					showSystems();
 				});
-
-
-
-
-
-
-
 	      	}
-
-
 
 	      	function showMap(){
 	  			//Scroll up
@@ -1229,7 +1262,6 @@
 		  	}
 
 		  	function showSystemList(systemList){
-
 	        	//Clear everything
 	        	clearRuinList();
 
@@ -1359,6 +1391,31 @@
 
 			function showScanFilterOptions(e){
 				$('#ruin-scan-selections').toggle();
+			}
+
+			function scanFilterResults(filterResult){
+				var filterSystems = []
+				if('COMBINED' in filterResult){
+					filterSystems = filterResult['COMBINED'][0];
+				}
+
+				//Find the matching systems and build a list based on our results
+				var matchSystems = [];
+
+				if(filterSystems.length > 0){
+					$.each(filterSystems,function(index){
+						var ruinId = filterSystems[index].id;
+						var ruinLookup = window.ruinsIndex[ruinId];
+						var useSystem = jQuery.extend({}, window.systems[ruinLookup.systemId]);
+
+						//Yes.  Add it and all ruins
+						matchSystems[matchSystems.length] = useSystem;
+
+						//Todo.  Add check for existing system (since multiple results may be in the same system) and only add matching ruin info.
+					});
+				}
+
+				showSystemList(matchSystems);
 			}
 
 
