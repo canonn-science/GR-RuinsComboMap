@@ -31,8 +31,8 @@
 			</label>
 
 			<div id="ruin-scan-filter" class="ruin-scan-ui">
-				<label value="With Scans">
-					With Scans: Bio 1,2,3,4,5...
+				<label value="With Scans" class="scan-label">
+					With Scans:
 				</label>
 
 
@@ -995,6 +995,7 @@
 		        	//Search for sites with the filter
 		        	var filter = {}
 		        	var filterCount = 0;
+		        	var filterDisplay = '';
 
 		        	$('#ruin-scan-selections td.scan-selection.selected').each(function( index ) {
 		        		filterCount++;
@@ -1005,6 +1006,45 @@
 		        		}
 		        		filter[filterInfo[0]].push(filterInfo[1])
 					});
+
+					//Sort the filter list by name to build the display icon
+					scanKey = [];
+					for (k in filter) {
+					  if (filter.hasOwnProperty(k)) {
+					    scanKey.push(k);
+					  }
+					}
+
+					scanKey = scanKey.sort();
+					$.each(scanKey,function(index,item){
+						if(filterDisplay.length > 0){
+							filterDisplay += '; ';
+						}
+
+						filterDisplay += item.substring(0,3).toUpperCase();
+
+						var scanNumbers='';
+
+						$.each(filter[item],function(index,item){
+							if(scanNumbers.length > 0){
+								scanNumbers += ', ';
+							}
+
+							scanNumbers += item;
+						});
+
+						filterDisplay += ' ' + scanNumbers;
+					});
+
+					if(filterDisplay.length > 30){
+						filterDisplay = filterDisplay.substring(0,30) + '...';
+					}
+
+
+					//Update label
+					$('#ruin-scan-filter label.scan-label').text('With Scans: ' + filterDisplay);
+	        		return;
+
 
 		        	if(filterCount > 0){
 		        		showNotice('Searching Filters',true);
@@ -1388,7 +1428,7 @@
 				//Filter for scans
 				//
 
-				$('#ruin-scan-filter label').on('click',showScanFilterOptions).on('mouseover',showScanFilterOptions);
+				$('#ruin-scan-filter label.scan-label').on('click',showScanFilterOptions).on('mouseover',showScanFilterOptions);
 
 			}
 
