@@ -36,7 +36,7 @@
 				</label>
 
 
-				<div id="ruin-scan-selections">
+				<div id="ruin-scan-selections" class="noselect">
 					<table>
 						<tr>
 							<th colspan="10">Biology</th>
@@ -1016,11 +1016,13 @@
 						    data: JSON.stringify(filter)
 						}).done(function(results){
 							scanFilterResults(results);
-							//console.log(results);
 		        			hideNotice();
 						}).fail(function(d, textStatus, error){
 							showNotice("Filter Search failed: " + (error || textStatus) ,false);
 						});
+		        	}else{
+		        		//Show all items
+		        		filterResults('');
 		        	}
 
 		        	//Close
@@ -1317,7 +1319,8 @@
 		        			//Add the system mapping
 		        			window.ruinsIndex[ruin.ruinId] = {
 		        				systemId:system.systemId,
-		        				ruinType:ruin.ruinTypeName
+		        				ruinType:ruin.ruinTypeName,
+		        				ruin:ruin
 		        			}
 		        		});
 		        	});
@@ -1400,20 +1403,41 @@
 				}
 
 				//Find the matching systems and build a list based on our results
-				var matchSystems = [];
+
+				var foundSystems = [];
 
 				if(filterSystems.length > 0){
 					$.each(filterSystems,function(index){
-						var ruinId = filterSystems[index].id;
-						var ruinLookup = window.ruinsIndex[ruinId];
-						var useSystem = jQuery.extend({}, window.systems[ruinLookup.systemId]);
+						var useRuinId = filterSystems[index].id;
+						var ruinLookup = window.ruinsIndex[useRuinId];
+						var fullRuin = window.ruinsIndex[useRuinId].ruin;
+						var useSystem;
 
-						//Yes.  Add it and all ruins
-						matchSystems[matchSystems.length] = useSystem;
 
-						//Todo.  Add check for existing system (since multiple results may be in the same system) and only add matching ruin info.
+						//Already added?
+						if(ruinLookup.systemId in foundSystems){
+							useSystem = foundSystems[ruinLookup.systemId];
+						}else{
+							useSystem = jQuery.extend({}, window.systems[ruinLookup.systemId]);
+							useSystem.ruins = []; //empty ruins... will be populated by matching items
+							foundSystems[ruinLookup.systemId] = useSystem;
+						}
+
+						//Add the matching ruin
+						useSystem.ruins[useSystem.ruins.length]= jQuery.extend({}, fullRuin);
 					});
 				}
+
+				//Add the systems to the match as an ordered array
+				var matchSystems = [];
+
+				$.each(foundSystems,function(index,system){
+					if(system){
+						matchSystems[matchSystems.length]=system;
+					}
+
+				});
+
 
 				showSystemList(matchSystems);
 			}
