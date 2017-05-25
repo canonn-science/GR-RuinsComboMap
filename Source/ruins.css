@@ -186,12 +186,17 @@ button {
 }
 
 
+#ruin-scan-selections label{
+  background-color: transparent !important;
+}
 
-#ruin-scan-filter label{
+#ruin-scan-filter label.scan-label{
   cursor: pointer;
   width:100%;
   width:23em;
 }
+
+
 
 #ruin-scan-selections{
   display:none;

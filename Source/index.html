@@ -189,6 +189,15 @@
 
 						<tr>
 							<td colspan="10">
+								<label for="scan-filter-all">
+									Find any site with these scans <input type="checkbox" id="scan-filter-any">
+
+								</label>
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="10">
 								<button type="button" class="reset_button">Reset</button>
 								<button type="button" class="apply_button">Apply Filter</button>
 							</td>
@@ -1435,34 +1444,58 @@
 			}
 
 			function scanFilterResults(filterResult){
-				var filterSystems = []
-				if('COMBINED' in filterResult){
-					filterSystems = filterResult['COMBINED'][0];
+				var anyScans = ($('#scan-filter-any:checked').length > 0);
+				var filterSystems = [];
+
+				if(! anyScans){
+					if('COMBINED' in filterResult){
+						filterSystems = filterResult['COMBINED'][0];
+					}
+				}else{
+					//Get the different scans
+					for (k in filterResult) {
+					  if (filterResult.hasOwnProperty(k)) {
+					  	if('COMBINED' !== k){
+					  		//Enumerate the scans
+					  		$.each(filterResult[k], function(scanNumber,resultArray){
+					  			//Enumerate the systems
+					  			$.each(resultArray, function(index,result){
+					  				if(! (result.id in filterSystems)){
+					  					filterSystems[result.id]=result;
+					  				}
+						  		});
+
+					  		});
+					  	}
+					  }
+					}
 				}
 
-				//Find the matching systems and build a list based on our results
 
+				//Find the matching systems and build a list based on our results
 				var foundSystems = [];
 
 				if(filterSystems.length > 0){
-					$.each(filterSystems,function(index){
-						var useRuinId = filterSystems[index].id;
-						var ruinLookup = window.ruinsIndex[useRuinId];
-						var fullRuin = window.ruinsIndex[useRuinId].ruin;
-						var useSystem;
+					$.each(filterSystems,function(index,useRuin){
+						if(useRuin){
+							var useRuinId = useRuin.id;
+							var ruinLookup = window.ruinsIndex[useRuinId];
+							var fullRuin = window.ruinsIndex[useRuinId].ruin;
+							var useSystem;
 
 
-						//Already added?
-						if(ruinLookup.systemId in foundSystems){
-							useSystem = foundSystems[ruinLookup.systemId];
-						}else{
-							useSystem = jQuery.extend({}, window.systems[ruinLookup.systemId]);
-							useSystem.ruins = []; //empty ruins... will be populated by matching items
-							foundSystems[ruinLookup.systemId] = useSystem;
+							//Already added?
+							if(ruinLookup.systemId in foundSystems){
+								useSystem = foundSystems[ruinLookup.systemId];
+							}else{
+								useSystem = jQuery.extend({}, window.systems[ruinLookup.systemId]);
+								useSystem.ruins = []; //empty ruins... will be populated by matching items
+								foundSystems[ruinLookup.systemId] = useSystem;
+							}
+
+							//Add the matching ruin
+							useSystem.ruins[useSystem.ruins.length]= jQuery.extend({}, fullRuin);
 						}
-
-						//Add the matching ruin
-						useSystem.ruins[useSystem.ruins.length]= jQuery.extend({}, fullRuin);
 					});
 				}
 
