@@ -996,11 +996,89 @@
 		        $('#ruin-scan-selections button.reset_button').on('click',function(e){
 		        	//Remove selections
 		        	$('#ruin-scan-selections td.scan-selection').removeClass('selected');
+		        	//Uncheck
+		        	$('#scan-filter-any').prop('checked',false);
+
+		        	updateScanFilter();
 		        });
 
 		        //Apply Filter button
 		        $('#ruin-scan-selections button.apply_button').on('click',function(e){
-		        	//Search for sites with the filter
+		        	updateScanFilter();
+		        });
+
+
+
+				//Added to the table since the elements are dynamically added
+			  	$('#scan-list').on('click',function(e){
+					var clicked = $(e.target);
+			  		var row = $(clicked.closest('tr'));
+
+			  		if(row.hasClass('groupitem')){
+			  			//Display all ruins in the given system
+			  			if(row[0].id){
+			  				//Get the system ID
+			  				var idGroup = row[0].id.split('-');
+
+			  				if(2 === idGroup.length){
+				  				if(row.hasClass('expanded')){
+				  					//collapse
+									row.addClass('collapsed');
+									row.removeClass('expanded');
+									//Hide all items that are "children" of this
+			  						$('.obelisk-scans-' + idGroup[1]).hide();
+				  				}else{
+				  					//expand
+				  					row.addClass('expanded');
+				  					row.removeClass('collapsed');
+				  					//Show all items that are "children" of this
+			  						$('.obelisk-scans-' + idGroup[1]).show();
+				  				}
+			  				}
+			  			}
+
+			  		}else if(row.hasClass('obelisk-selection')){
+			  			//Display all ruins in the given system
+			  			if(row[0].id){
+			  				//Get the system ID
+			  				var obData = row[0].id.split('-');
+
+			  				if(3 === obData.length){
+								//Hide
+								hideInfoBar();
+
+								//Focus on the obelisk
+								window.ruins.focusOnObelisk(obData[1],obData[2]);
+			  				}
+			  			}
+			  		}
+
+
+			  	});
+
+				//Handle the zoom controls manually
+				$("#zoom-in").on('click', function(){
+					window.ruins.zoomIn();
+				});
+
+				$("#zoom-out").on('click', function(){
+					window.ruins.zoomOut();
+				});
+
+				$("#zoom-reset").on('click', function(){
+					window.ruins.zoomReset();
+				});
+
+				$("#return_to_systems").on('click', function(){
+					//Enable navigation back
+					$('#return_to_map').show();
+					//Show listing
+					showSystems();
+				});
+	      	}
+
+	      	function updateScanFilter(){
+	      		//Search for sites with the filter
 		        	var filter = {}
 		        	var filterCount = 0;
 		        	var filterDisplay = '';
@@ -1073,76 +1151,6 @@
 
 		        	//Close
 		        	$('#ruin-scan-selections').hide();
-		        });
-
-
-
-				//Added to the table since the elements are dynamically added
-			  	$('#scan-list').on('click',function(e){
-					var clicked = $(e.target);
-			  		var row = $(clicked.closest('tr'));
-
-			  		if(row.hasClass('groupitem')){
-			  			//Display all ruins in the given system
-			  			if(row[0].id){
-			  				//Get the system ID
-			  				var idGroup = row[0].id.split('-');
-
-			  				if(2 === idGroup.length){
-				  				if(row.hasClass('expanded')){
-				  					//collapse
-									row.addClass('collapsed');
-									row.removeClass('expanded');
-									//Hide all items that are "children" of this
-			  						$('.obelisk-scans-' + idGroup[1]).hide();
-				  				}else{
-				  					//expand
-				  					row.addClass('expanded');
-				  					row.removeClass('collapsed');
-				  					//Show all items that are "children" of this
-			  						$('.obelisk-scans-' + idGroup[1]).show();
-				  				}
-			  				}
-			  			}
-
-			  		}else if(row.hasClass('obelisk-selection')){
-			  			//Display all ruins in the given system
-			  			if(row[0].id){
-			  				//Get the system ID
-			  				var obData = row[0].id.split('-');
-
-			  				if(3 === obData.length){
-								//Hide
-								hideInfoBar();
-
-								//Focus on the obelisk
-								window.ruins.focusOnObelisk(obData[1],obData[2]);
-			  				}
-			  			}
-			  		}
-
-
-			  	});
-
-				//Handle the zoom controls manually
-				$("#zoom-in").on('click', function(){
-					window.ruins.zoomIn();
-				});
-
-				$("#zoom-out").on('click', function(){
-					window.ruins.zoomOut();
-				});
-
-				$("#zoom-reset").on('click', function(){
-					window.ruins.zoomReset();
-				});
-
-				$("#return_to_systems").on('click', function(){
-					//Enable navigation back
-					$('#return_to_map').show();
-					//Show listing
-					showSystems();
-				});
 	      	}
 
 	      	function showMap(){
