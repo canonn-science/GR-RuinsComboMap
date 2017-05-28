@@ -326,23 +326,25 @@
        id="g30375"
        transform="translate(3386.2749,-2154.6028)">
       <circle
-         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#c80000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#00c800;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30182-1-9"
          cx="722.39093"
          cy="1962.2659"
          r="10" />
       <circle
-         style="display:inline;fill:#c80000;fill-opacity:1;stroke:none;stroke-width:0.4311451;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;fill:#00c800;fill-opacity:1;stroke:none;stroke-width:0.4311451;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30200-1-2"
          cx="733.64679"
          cy="1978.6826"
          r="3.0026414" />
       <path
-         style="display:inline;fill:none;stroke:#c80000;stroke-width:0.77735484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="display:inline;fill:none;stroke:#00c800;stroke-width:0.77735484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 727.76227,1970.3793 c 1.7975,2.5496 3.5924,5.1008 5.3881,7.6515"
          id="path30212-6-9"
          inkscape:connector-curvature="0" />
     </g>
+
+
     <g
        style="display:inline"
        id="g30370"
@@ -4223,7 +4225,7 @@
        height="100%"
        width="100%"
        transform="matrix(-0.22495105,-0.97437006,0.97437006,-0.22495105,4543.9323,5639.6313)"
-       id="use535"
+       id="obelisk-gamma-e-7"
        xlink:href="#g30866"
        class="ruin-obelisk"
        y="0"
@@ -4235,7 +4237,7 @@
        y="0"
        xlink:href="#g30866"
        class="ruin-obelisk"
-       id="use537"
+       id="obelisk-gamma-e-5"
        transform="matrix(0.22495105,0.97437006,-0.97437006,0.22495105,2271.8652,-2254.3419)"
        width="100%"
        height="100%" />
@@ -4263,7 +4265,7 @@
        y="0"
        xlink:href="#g30866"
        class="ruin-obelisk"
-       id="use541"
+       id="obelisk-gamma-e-6"
        transform="matrix(-0.22495105,-0.97437006,0.97437006,-0.22495105,4535.7323,5591.8314)"
        width="100%"
        height="100%" />
@@ -4271,7 +4273,7 @@
        height="100%"
        width="100%"
        transform="matrix(0.22495105,0.97437006,-0.97437006,0.22495105,2263.6652,-2302.1419)"
-       id="use543"
+       id="obelisk-gamma-e-4"
        xlink:href="#g30866"
        class="ruin-obelisk"
        y="0"
@@ -4283,7 +4285,7 @@
        y="0"
        xlink:href="#g30866"
        class="ruin-obelisk"
-       id="use545"
+       id="obelisk-gamma-e-2"
        transform="matrix(0.22495105,0.97437006,-0.97437006,0.22495105,2307.4652,-2285.7419)"
        width="100%"
        height="100%" />
@@ -4291,7 +4293,7 @@
        height="100%"
        width="100%"
        transform="matrix(0.22495105,0.97437006,-0.97437006,0.22495105,2224.6652,-2312.3419)"
-       id="use547"
+       id="obelisk-gamma-e-8"
        xlink:href="#g30866"
        class="ruin-obelisk"
        y="0"
@@ -4303,7 +4305,7 @@
        y="0"
        xlink:href="#g30866"
        class="ruin-obelisk"
-       id="use549"
+       id="obelisk-gamma-e-10"
        transform="matrix(0.22495105,0.97437006,-0.97437006,0.22495105,2242.0652,-2231.9419)"
        width="100%"
        height="100%" />
@@ -4311,7 +4313,7 @@
        height="100%"
        width="100%"
        transform="matrix(-0.22495105,-0.97437006,0.97437006,-0.22495105,4500.7323,5623.6313)"
-       id="use551"
+       id="obelisk-gamma-e-9"
        xlink:href="#g30866"
        class="ruin-obelisk"
        y="0"
@@ -4323,7 +4325,7 @@
        y="0"
        xlink:href="#g30866"
        class="ruin-obelisk"
-       id="use553"
+       id="obelisk-gamma-e-1"
        transform="matrix(-0.22495105,-0.97437006,0.97437006,-0.22495105,4567.7322,5566.4313)"
        width="100%"
        height="100%" />
@@ -4331,7 +4333,7 @@
        height="100%"
        width="100%"
        transform="matrix(-0.22495105,-0.97437006,0.97437006,-0.22495105,4589.1323,5648.4313)"
-       id="use555"
+       id="obelisk-gamma-e-3"
        xlink:href="#g30866"
        class="ruin-obelisk"
        y="0"

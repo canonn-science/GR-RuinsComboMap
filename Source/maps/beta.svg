@@ -366,23 +366,28 @@
        id="g30375"
        transform="translate(2102.2749,-2356.6028)">
       <circle
-         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#c80000;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;opacity:1;fill:#ffffff;fill-opacity:0.78431373;stroke:#00c800;stroke-width:1;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30182-1-9"
          cx="722.39093"
          cy="1962.2659"
          r="10" />
       <circle
-         style="display:inline;fill:#c80000;fill-opacity:1;stroke:none;stroke-width:0.4311451;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         style="display:inline;fill:#00c800;fill-opacity:1;stroke:none;stroke-width:0.4311451;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
          id="circle30200-1-2"
          cx="733.64679"
          cy="1978.6826"
          r="3.0026414" />
       <path
-         style="display:inline;fill:none;stroke:#c80000;stroke-width:0.77735484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         style="display:inline;fill:none;stroke:#00c800;stroke-width:0.77735484px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 727.76227,1970.3793 c 1.7975,2.5496 3.5924,5.1008 5.3881,7.6515"
          id="path30212-6-9"
          inkscape:connector-curvature="0" />
     </g>
+
+
+
+
+
     <g   id="g30866"
        transform="translate(1517.6844,-1472.5267)"
        style="display:inline;fill:#d10000;fill-opacity:1">
@@ -4457,7 +4462,9 @@
        d="m 1932.5669,747.53237 c 13.1004,-27.33358 40.1671,-78.33355 56.5007,-105.19992 16.3336,-26.86637 21.9336,-29.5997 26.9332,-29.93264 4.9996,-0.33294 9.3996,1.73372 13.166,5.50016 3.7664,3.76644 6.8997,9.23306 21.0997,32.43303 14.1999,23.19997 39.4665,64.13316 53.2999,88.89977 13.8334,24.76661 16.2331,33.36544 14.8002,39.43286 -1.4328,6.06741 -6.6969,9.59897 -12.8325,11.56671 -6.1355,1.96774 -13.1317,2.36753 -39.9366,3.2677 -26.8049,0.90018 -73.3959,2.29991 -99.9296,2.63331 -26.5338,0.3334 -32.9993,-0.3998 -37.0672,-2.90052 -4.0678,-2.50071 -5.7343,-6.76676 -7.0009,-10.73341 -1.2666,-3.96665 -2.1333,-7.63347 10.9671,-34.96705 z"
        style="display:inline;fill:#ff6600;fill-opacity:0.01960784;stroke:#ff6600;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
   </g>
-  <g inkscape:groupmode="layer"
+
+
+<g inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="GrpH" class="ruin-group-h"
      style="display:inline"
@@ -4552,96 +4559,7 @@
        y="0"
        x="0"
        style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use31330"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-781.75315,1188.7419)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-800.35317,1218.3418)"
-       id="use13919"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use13921"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-817.75318,1250.9418)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-835.15319,1288.1418)"
-       id="use13923"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use13925"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-798.7532,1280.7418)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-765.55321,1279.5418)"
-       id="use13927"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use13929"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-725.95322,1279.5418)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-776.75322,1248.7418)"
-       id="use13931"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use13933"
-       transform="matrix(0.99939083,-0.0348995,0.0348995,0.99939083,-762.15321,1222.7418)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(-0.99939083,0.0348995,-0.0348995,-0.99939083,4854.5834,201.77649)"
-       id="use13935"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
+
     <use
        height="100%"
        width="100%"
@@ -4823,6 +4741,8 @@
        width="100%"
        height="100%" />
   </g>
+
+
   <g inkscape:groupmode="layer"
      id="ruin-number-h"
      inkscape:label="GrpH Numbering" class="ruin-group-h"
@@ -5592,96 +5512,7 @@
        transform="matrix(-0.0348995,0.99939083,-0.99939083,-0.0348995,1920.0555,-2439.0536)"
        width="100%"
        height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-591.84127,646.13471)"
-       id="use14055"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use14057"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-611.96492,674.72067)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-631.04724,706.36534)"
-       id="use14059"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use14061"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-650.37031,742.6037)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-613.63291,737.11886)"
-       id="use14063"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use14065"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-580.41563,737.65807)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-540.86989,739.73058)"
-       id="use14067"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use14069"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-589.98833,706.31412)"
-       width="100%"
-       height="100%" />
-    <use
-       height="100%"
-       width="100%"
-       transform="matrix(0.9998477,0.01745241,-0.01745241,0.9998477,-574.0476,681.11387)"
-       id="use14071"
-       xlink:href="#g30866" class="ruin-obelisk"
-       y="0"
-       x="0"
-       style="display:inline" />
-    <use
-       style="display:inline"
-       x="0"
-       y="0"
-       xlink:href="#g30866" class="ruin-obelisk"
-       id="use14073"
-       transform="matrix(-0.9998477,-0.01745241,0.01745241,-0.9998477,5088.4247,-44.49497)"
-       width="100%"
-       height="100%" />
+
     <use
        style="display:inline"
        x="0"
