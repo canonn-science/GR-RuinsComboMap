@@ -223,7 +223,6 @@ button {
 }
 
 #ruin-scan-selections table{
-  /*width:100%;*/
   text-align: center;
 }
 
@@ -426,19 +425,6 @@ a.twitch{
   font-weight: bold;
 }
 #scan-list tr.scanband {background: #CFD5FF}
-
-/*
-#scan-list tr {background: #FFF}
-#scan-list tr:nth-child(2n) {background: #F7D4B6}
-*/
-
-/*
-#scan-list tr.obelisk-group{
-  background-color:black;
-  color: #FFF;
-  font-weight: bold;
-}
-*/
 
 .hidden{
   display:none;
