@@ -1172,12 +1172,30 @@
 		        	$('#ruin-scan-selections').hide();
 	      	}
 
+	      	function flickerEDBearing(fadeCount){
+				fadeCount++;
+				if(fadeCount % 2){
+					$('#edbearing').fadeIn(200);
+				}else{
+					$('#edbearing').fadeOut(200);
+				}
+
+				if(fadeCount < 7){
+					setTimeout(function(){
+						flickerEDBearing(fadeCount);
+					}, 200);
+				}
+	      	}
+
 	      	function showMap(){
 	  			//Scroll up
 	  			$(window).scrollTop(0);
 
 				$('#systems').hide();
 				$('#map').show();
+
+				//Cycle the edbearing icon
+				flickerEDBearing(0);
 
 				//Change history state
 				if(window.currentRuin.ruinId){
