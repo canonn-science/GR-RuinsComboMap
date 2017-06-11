@@ -30,7 +30,7 @@ button {
  }
 
 #tooling{
-  width:50px;
+  width:100px;
   height:75vh;
   position:absolute;
   right:0;
@@ -50,6 +50,7 @@ button {
  }
 
  #mapcontrols div.button, #tooling div.button{
+  float:right;
   width:32px;
   height:32px;
   left:0;
@@ -58,6 +59,22 @@ button {
   margin-bottom:1em;
   cursor:pointer;
  }
+
+  #mapcontrols div.button.labeled, #tooling div.button.labeled{
+  background-position: right center;
+  background-size: 32px 32px;
+  background-repeat: no-repeat;
+  width:100px;
+  height:1em;
+  vertical-align: middle;
+  padding-top:1em;
+  padding-bottom: 1em;
+  padding-right:32px;
+  text-align: left;
+  font-size:1em;
+ }
+
+
 
 
  #mapcontrols div.button:hover, #tooling div.button:hover{

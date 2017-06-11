@@ -250,7 +250,8 @@
 			</div>
 
 			<div id="tooling" class="noselect">
-				<div id="edbearing" class="button first" title="View in ED Bearing">&nbsp;</div>
+
+				<div id="edbearing" class="button first labeled" title="View in ED Bearing">EDbearing</div>
 			</div>
 
 			<div id="info" class="down">
@@ -1175,15 +1176,15 @@
 	      	function flickerEDBearing(fadeCount){
 				fadeCount++;
 				if(fadeCount % 2){
-					$('#edbearing').fadeIn(200);
+					$('#edbearing').fadeIn(100);
 				}else{
-					$('#edbearing').fadeOut(200);
+					$('#edbearing').fadeOut(100);
 				}
 
 				if(fadeCount < 7){
 					setTimeout(function(){
 						flickerEDBearing(fadeCount);
-					}, 200);
+					}, 100);
 				}
 	      	}
 
