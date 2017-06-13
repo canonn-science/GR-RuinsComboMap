@@ -248,6 +248,10 @@
 				</div>
 			</div>
 
+			<div id="tooling" class="noselect">
+
+				<div id="edbearing" class="button first labeled" title="View in ED Bearing">EDbearing</div>
+			</div>
 
 			<div id="info" class="down">
 				<h2 id="info_bar">
@@ -1072,6 +1076,22 @@
 					//Show listing
 					showSystems();
 				});
+
+
+				$("#edbearing").on('click', function(){
+					var desc = window.currentRuin.ruinTypeName + ' Ruin at ' + [
+		  				window.currentRuin.systemName,
+		  				window.currentRuin.bodyName,
+		  				].join(' | ');
+	  				var lat=window.currentRuin.coordinates[0];
+	  				var lon=window.currentRuin.coordinates[1];
+
+					var bearingUrl='http://hotdoy.ca/ed/bearing/?lat=' + encodeURIComponent(lat) + '&lon=' + encodeURIComponent(lon) + '&title=' + encodeURIComponent(desc);
+
+					window.open(bearingUrl,'_blank');
+			});
+
+
 	      	}
 
 	      	function updateScanFilter(){
