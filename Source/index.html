@@ -1173,31 +1173,12 @@
 		        	$('#ruin-scan-selections').hide();
 	      	}
 
-	      	function flickerEDBearing(fadeCount){
-	      		return; //todo... consider removing
-				fadeCount++;
-				if(fadeCount % 2){
-					$('#edbearing').fadeIn(100);
-				}else{
-					$('#edbearing').fadeOut(100);
-				}
-
-				if(fadeCount < 7){
-					setTimeout(function(){
-						flickerEDBearing(fadeCount);
-					}, 100);
-				}
-	      	}
-
 	      	function showMap(){
 	  			//Scroll up
 	  			$(window).scrollTop(0);
 
 				$('#systems').hide();
 				$('#map').show();
-
-				//Cycle the edbearing icon
-				flickerEDBearing(0);
 
 				//Change history state
 				if(window.currentRuin.ruinId){
