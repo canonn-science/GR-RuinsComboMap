@@ -1,4 +1,4 @@
-***Please note:*** Tech 6 obelisks have been confirmed to be bugged by Frontier. Mission cannot be completed until Frontier rolls out a fix for that.
+***Please note:*** Tech 6 obelisks have been confirmed to be fixed in Patch 2.3.10
 
 ## Your CMDR Name:
 Example: CMDR ChangeMe
