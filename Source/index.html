@@ -247,9 +247,7 @@
 
 				<div id="edbearing" class="button first labeled" title="View Coordinates in ED Bearing"><span>EDbearing</span></div>
 
-				<!--
 				<div id="edsm" class="button labeled" title="View System in ED Star Map"><span>ED Star Map</span></div>
-				-->
 			</div>
 
 
@@ -1090,7 +1088,15 @@
 					var bearingUrl='http://hotdoy.ca/ed/bearing/?lat=' + encodeURIComponent(lat) + '&lon=' + encodeURIComponent(lon) + '&title=' + encodeURIComponent(desc);
 
 					window.open(bearingUrl,'_blank');
-			});
+				});
+
+				$("#edsm").on('click', function(){
+					var edsmLink = window.currentRuin.edsmBodyLink;
+					if(!edsmLink){
+						edsmLink = window.currentRuin.edsmSystemLink
+					}
+					window.open(edsmLink,'_blank');
+				});
 
 
 	      	}
