@@ -216,32 +216,62 @@ button {
   background-image:url('images/logo-edsm.png');
 }
 
-
-
-
 #ruin-scan-filter{
   display:inline-block;
-  position: relative;
-
-
+  position: absolute;
   padding:0em;
-  position-left: 75%;
-  min-width:15em;
-  margin-right:1em;
-
+  left: 1em;
   cursor: pointer;
+  width:50px;
 }
 
+#ruin-filter{
+  width:70vw;
+  font-size: 16pt;
+  padding:.5em;
+  color: white;
+  background-color: none;
+}
 
 #ruin-scan-selections label{
   background-color: transparent !important;
 }
 
-#ruin-scan-filter label.scan-label{
+.scan-label{
+  padding:1em;
+  background-color: #E0C6B0;
+  background-image:url(images/filter.png);
+  background-repeat: no-repeat;
+  background-position: center center;
   cursor: pointer;
-  width:100%;
-  width:23em;
+  width:2em;
+  height:2em;
 }
+
+.guide-label{
+  padding:1em;
+  background-color: #E0C6B0;
+  background-image:url(images/route.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  cursor: pointer;
+  width:2em;
+  height:2em;
+}
+
+.guide-label.toggled{
+  background-color: #CFD5FF;
+}
+
+
+.scan-label.toggled{
+  background-color: #CFD5FF;
+}
+
+.scan-label:hover{
+  background-color: #F7D4B6;
+}
+
 
 
 
@@ -250,7 +280,7 @@ button {
   position:absolute;
   background-color: #E0C6B0;
   left:0;
-  top:3.5em;
+  top:4.5em;
   width:25em;
   border:2px solid black;
   z-index: 1000;
@@ -283,6 +313,10 @@ button {
   background-color: #FFF3D3;
   width:2.5em;
   height:2.5em;
+}
+
+#ruin-scan-selections td label{
+  color: black;
 }
 
 #ruin-scan-selections td.selected{
@@ -609,18 +643,18 @@ a.twitch{
 }
 
 #systems label{
-  padding:1em;
   display: inline-block;
-  min-width:15em;
-  margin-right:1em;
-  background-color: #E0C6B0;
   font-weight:bold;
-  height:1.5em;
+  height:2em;
+  float:left;
+  color: white;
+  margin-bottom:1em;
+  margin-right:1em;
 }
 
 #systems label input{
-  margin:0;
-  padding:0;
+  color: black;
+  height: 1.9em;
 }
 
 /* system selection */

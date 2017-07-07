@@ -37,16 +37,20 @@
 
 			</div>
 
-			<label for="ruin-filter" value="Filter">
-				Filter Systems: <input type="text" name="ruin-filter" id="ruin-filter" autofocus >
+			<label value="Select Scans" title="Select Scans" class="scan-label">
+				&nbsp;
 			</label>
 
+			<label value="Guided" title="Guided" class="guide-label">
+				&nbsp;
+			</label>
+
+			<label for="ruin-filter" value="Filter">
+				<input type="text" name="ruin-filter" id="ruin-filter" placeholder="Search" autofocus >
+			</label>
+
+
 			<div id="ruin-scan-filter" class="ruin-scan-ui">
-				<label value="With Scans" class="scan-label">
-					With Scans:
-				</label>
-
-
 				<div id="ruin-scan-selections" class="noselect">
 					<table>
 						<tr>
@@ -222,6 +226,7 @@
 			</div>
 
 
+
 			<table id="ruin-list">
 				<tr>
 					<th width="20%">System/Body</th>
@@ -315,6 +320,11 @@
 										<a class="logo twitter" href="https://twitter.com/zebarmy/" target="new"></a>
 										<a class="logo reddit" href="https://www.reddit.com/user/Zebarmy/" target="new"></a>
 									</li>
+
+									<li>Taleden (Optimized/Guided Sites)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/53437-taleden" target="new"></a>
+										<a class="logo reddit" href="https://www.reddit.com/user/taleden/" target="new"></a>
+									</li>
 								</ul>
 							</p>
 						</div>
@@ -362,7 +372,7 @@
 
 						</div>
 						<div>
-							<p>Reddit Icon made by <a href="http://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a> and checklist Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
+							<p>Reddit Icon made by <a href="http://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a>, checklist Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>, route icon made by <a href="http://www.flaticon.com/authors/simpleicon" title="SimpleIcon">SimpleIcon</a> all licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
 
 						</div>
 
@@ -587,6 +597,20 @@
 				ruinBand:'',
 				itemBand:''
 			}
+
+			window.guidedSites = [
+				{id:11, scans:['C1',' C6','D1','G2',' G3','J1',' J5','M5',' M10',' M19',' M20','N5','O7',' O15',' O19','P7',' P9']},
+				{id:25, scans:['C10',' C20','E3','H5','I5','M2','N8','P2',' P23','U12',' U15',' U46']},
+				{id:89, scans:['A9','G13',' G18','K21',' K26','O3','T13',' T18','U4',' U21',' U36']},
+				{id:67, scans:['D6','E22','G4','L6','N2',' N24','T4',' T14']},
+				{id:35, scans:['C3',' C8','I6',' I10','M1',' M14',' M24','O12']},
+				{id:28, scans:['C17','H9','K4']},
+				{id:159, scans:['A6',' A14','B6','F19',' F21','I1','L4']},
+				{id:123, scans:['B16',' B24','C4',' C5','D12','E4','F7',' F9','G4','H4',' H5',' H32','I14','K7',' K9','L5','O3','R16']},
+				{id:131, scans:['A9','C2',' C15','D1','F6','H22',' H43','I7',' I16','R11']},
+				{id:132, scans:['R14',' R18']},
+				{id:119, scans:['C7','H2','I11','J4','O2']}
+			]
 
 			window.settings={
 				'api':'https://api.canonn.technology'
@@ -871,9 +895,16 @@
 						}
 					}
 
+					//Ignore if this the filter
+		        	if(clickedItem.hasClass('scan-label') ){
+		        		return;
+		        	}
+
 					if($('#notice').css('display') === 'flex' ){
 						hideNotice();
 					}
+
+
 
 					$('#ruin-scan-selections').hide();
 				})
@@ -1012,12 +1043,17 @@
 		        	$('#ruin-scan-selections td.scan-selection').removeClass('selected');
 		        	//Uncheck
 		        	$('#scan-filter-any').prop('checked',false);
+		        	//Clear toggled state
+		        	$('.scan-label').removeClass('toggled');
 
 		        	updateScanFilter();
 		        });
 
 		        //Apply Filter button
 		        $('#ruin-scan-selections button.apply_button').on('click',function(e){
+		        	//Reset text and guide
+		        	resetFilterUI();
+		        	$('.scan-label').addClass('toggled');
 		        	updateScanFilter();
 		        });
 
@@ -1115,6 +1151,15 @@
 
 	      	}
 
+	      	function resetFilterUI(){
+	      		//Reset existing options such as text
+	      		$('#ruin-filter').val('');
+
+	      		//Untoggle
+	      		$('.scan-label').removeClass('toggled');
+	      		$('.guide-label').removeClass('toggled');
+	      	}
+
 	      	function updateScanFilter(){
 	      		//Search for sites with the filter
 		        	var filter = {}
@@ -1163,10 +1208,6 @@
 					if(filterDisplay.length > 30){
 						filterDisplay = filterDisplay.substring(0,30) + '...';
 					}
-
-
-					//Update label
-					$('#ruin-scan-filter label.scan-label').text('With Scans: ' + filterDisplay);
 
 		        	if(filterCount > 0){
 		        		showNotice('Searching Filters',true);
@@ -1478,10 +1519,58 @@
 				);
 
 				//Filter for scans
-				//
+				$('label.scan-label').on('click',showScanFilterOptions);
 
-				$('#ruin-scan-filter label.scan-label').on('click',showScanFilterOptions).on('mouseover',showScanFilterOptions);
+				//Guided toggle
+				$('label.guide-label').on('click',toggleGuided);
+		
 
+			}
+
+			function toggleGuided(e){
+				var target = $(e.target);
+				if(target.hasClass('toggled')){
+					target.removeClass('toggled');
+					//Default list
+					updateScanFilter();
+				}else{
+					//Clear UI's
+					resetFilterUI();
+					//Now toggle
+					target.addClass('toggled');
+					//And run
+					doGuided()
+				}
+			}
+
+			function doGuided(){
+				//System reference
+				var lastSystem = -1;
+				var ruinSystem = null;
+				var ruinLookup = null;
+
+				//Clear items
+				clearRuinList();
+
+				//Add the systems and ruins from the optimized guided list
+				$.each(window.guidedSites, function(orderNum,guided){
+					//Get the ruin
+					var useRuinId = guided.id;
+					var ruinLookup = window.ruinsIndex[useRuinId];
+
+					//And the system
+					useSystem = window.systems[ruinLookup.systemId]
+
+					//Different system?
+					if(lastSystem !== ruinLookup.systemId){
+						//Yes
+						addSystemToList(useSystem);
+						lastSystem = ruinLookup.systemId
+					}
+
+					//Add the ruin
+					addRuinToList(useSystem, ruinLookup.ruin);
+		  		});
 			}
 
 			function showScanFilterOptions(e){
