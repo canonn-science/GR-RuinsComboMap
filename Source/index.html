@@ -243,6 +243,7 @@
 	    	</div>
 
 	    	<div class="parent">
+	    		<div class="betanotice">Beta site.  Sites and Scans are not the most up to date in this version</div>
 				<div class="panzoom noselect" id="ruin-map">
 					&nbsp;
 				</div>
@@ -266,6 +267,8 @@
 
 				<div id="edsm" class="button labeled" title="View System in ED Star Map"><span>ED Star Map</span></div>
 			</div>
+
+
 
 
 
@@ -599,17 +602,17 @@
 			}
 
 			window.guidedSites = [
-				{id:11, scans:['C1',' C6','D1','G2',' G3','J1',' J5','M5',' M10',' M19',' M20','N5','O7',' O15',' O19','P7',' P9']},
-				{id:25, scans:['C10',' C20','E3','H5','I5','M2','N8','P2',' P23','U12',' U15',' U46']},
-				{id:89, scans:['A9','G13',' G18','K21',' K26','O3','T13',' T18','U4',' U21',' U36']},
-				{id:67, scans:['D6','E22','G4','L6','N2',' N24','T4',' T14']},
-				{id:35, scans:['C3',' C8','I6',' I10','M1',' M14',' M24','O12']},
-				{id:28, scans:['C17','H9','K4']},
-				{id:159, scans:['A6',' A14','B6','F19',' F21','I1','L4']},
-				{id:123, scans:['B16',' B24','C4',' C5','D12','E4','F7',' F9','G4','H4',' H5',' H32','I14','K7',' K9','L5','O3','R16']},
-				{id:131, scans:['A9','C2',' C15','D1','F6','H22',' H43','I7',' I16','R11']},
-				{id:132, scans:['R14',' R18']},
-				{id:119, scans:['C7','H2','I11','J4','O2']}
+				{id:11, obelisks:['C1',' C6','D1','G2',' G3','J1',' J5','M5',' M10',' M19',' M20','N5','O7',' O15',' O19','P7',' P9']},
+				{id:25, obelisks:['C10',' C20','E3','H5','I5','M2','N8','P2',' P23','U12',' U15',' U46']},
+				{id:89, obelisks:['A9','G13',' G18','K21',' K26','O3','T13',' T18','U4',' U21',' U36']},
+				{id:67, obelisks:['D6','E22','G4','L6','N2',' N24','T4',' T14']},
+				{id:35, obelisks:['C3',' C8','I6',' I10','M1',' M14',' M24','O12']},
+				{id:28, obelisks:['C17','H9','K4']},
+				{id:159, obelisks:['A6',' A14','B6','F19',' F21','I1','L4']},
+				{id:123, obelisks:['B16',' B24','C4',' C5','D12','E4','F7',' F9','G4','H4',' H5',' H32','I14','K7',' K9','L5','O3','R16']},
+				{id:131, obelisks:['A9','C2',' C15','D1','F6','H22',' H43','I7',' I16','R11']},
+				{id:132, obelisks:['R14',' R18']},
+				{id:119, obelisks:['C7','H2','I11','J4','O2']}
 			]
 
 			window.settings={
@@ -617,8 +620,9 @@
 			}
 
 			//Beta api?  If the port is correct
-			if(window.location.href.indexOf('/beta/') > 0){
+			if((window.location.href.indexOf('/beta/') > 0) || window.location.href.indexOf(':8001') > 0){
 				window.settings.api = 'https://api.canonn.technology:8001';
+				$('body').addClass('beta');
 			}
 
 
