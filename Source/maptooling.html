@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>Guardian Ancient Ruins 2</title>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+	<link rel="stylesheet" href="ruins.css" />
+
+	<script src="scripts/jquery-3.1.1.min.js"></script>
+	<script src="scripts/jquery.panzoom.js"></script>
+</head>
+
+<body>
+
+    <section id="focal">
+
+		<div class="buttons">
+			<button class="zoom-in">Zoom In</button>
+			<button class="zoom-out">Zoom Out</button>
+			<input type="range" class="zoom-range">
+			<button class="reset">Reset</button>
+		</div>
+      <div class="parent">
+        <div class="panzoom" id="ruin-map">
+			Loading
+
+        </div>
+      </div>
+      <script>
+
+		$( document ).ready(function() {
+		  	window.ruins = function(){
+				this.options = {
+					panzoom:$(".panzoom"),
+					zoomIn: $(".zoom-in"),
+					zoomOut: $(".zoom-out"),
+					zoomRange: $(".zoom-range"),
+					reset: $(".reset")
+				}
+
+				this.panZoomComp = null;
+
+				this.itemInteractionSelect = function(e){
+					//alert('clicked/touched on ' + e.target.id);
+					var sect = $('#section_name').val();
+					var num = $('#section_number').val();
+
+					var newID = 'obelisk-gamma-' + sect + '-' + num;
+
+					window.ruins.testLog(e.target.id + '=' + newID);
+					$(e.target).css('opacity',.1);
+
+
+					num++;
+					$('#section_number').val(num);
+				}
+
+				this.prepSVG = function(){
+					var registerTouch = 0;
+					//Mouse wheel zoom
+					panZoomComp.parent().on('mousewheel.focal', function( e ) {
+						e.preventDefault();
+						var delta = e.delta || e.originalEvent.wheelDelta;
+						var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+						panZoomComp.panzoom('zoom', zoomOut, {
+						  increment: 0.1,
+						  animate: false,
+						  focal: e
+						});
+					});
+
+					//Mouse doublie click zoom
+					/*
+					panZoomComp.parent().on('dblclick', function( e ) {
+						e.preventDefault();
+						panZoomComp.panzoom('zoom', null, {
+						  increment: 10,
+						  animate: true,
+						  focal: e
+						});
+					});
+					*/
+
+					//Touch specific event handling
+		          	$('.ruin-obelisk').on('mousedown touchstart',function(e){
+		          		registerTouch = 1;
+		          	});
+		          	$('.ruin-obelisk').on('touchmove',function(e){
+		          		registerTouch = 0;
+		          	})
+		          	$('.ruin-obelisk').on('touchend',function(e){
+		          		if(registerTouch == 0){
+		          			e.preventDefault();
+		          			return;
+		          		}
+		          		registerTouch = 0;
+		          		itemInteractionSelect(e);
+		          	});
+
+		          	//Click handlers
+		          	$('.ruin-obelisk').on('click',function(e){
+		          		itemInteractionSelect(e);
+		          	});
+
+		          	//Ensure that non interactive items don't interefere
+		          	$('.ruin-inactive').css('pointer-events','none');
+
+		          	//Hide number
+		          	var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+				    $.each(alphabet, function(letter) {
+				        $('#ruin-number-' + alphabet[letter]).css('pointer-events','none');
+				    });
+
+				    //Disable input on path objects
+				    //$('path').css('pointer-events','none');
+
+
+		          	//Pointer to visualize that the item can be "clicked"
+		          	$('[id*="obelisk-"] use').css( 'cursor', 'pointer' );
+
+				    //Set the obelisks to handle clicks
+					$('[id*="obelisk-"] use').each(function(){
+						
+					    if($(this).attr("xlink:href").startsWith('#obelisk_')){
+							$(this).on('click',function(e){
+								//Get the parent element's letter designation
+								var parentGroup = $(e.target).closest('g').attr('id');
+								var parentLetter = parentGroup.split('-')[2];
+								var currentNumber = Number($('#section_number').val());
+
+								//Update and Increment
+								if(String($('#section_name').val()) != String(parentLetter)){
+									currentNumber = 1;
+								}
+
+
+
+								var obeliskState = $('[name=test-obelisk]:checked').val();
+								//TODO add on/off or broken
+								var newID = 'obelisk-' + obeliskState + '-' + parentLetter + '-' + currentNumber;
+
+								window.ruins.testLog(e.target.id + '=' + newID);
+								$(e.target).css('opacity',.1);
+
+
+
+								$('#section_name').val(parentLetter);
+								$('#section_number').val(currentNumber + 1);
+							});
+					    }
+					});
+
+					//Find numbering elements and disable them
+					$('[id^="group-"]').find('[id$="-numbers"]').css('pointer-events','none');
+					//Find boundary elements and disable them
+					$('[id^="group-"]').find('[id$="-boundary"]').css('pointer-events','none');
+					
+
+
+				}
+
+				this.setPanZoom = function(panZoomElement){
+					panZoomComp = panZoomElement.panzoom({
+						cursor: "-webkit-grab",
+						minScale: 1,
+						maxScale: 50,
+						increment: 1,
+						duration: 10,
+						$zoomIn: options.zoomIn,
+						$zoomOut: options.zoomOut,
+						$zoomRange: options.zoomRange,
+						$reset: options.reset,
+						$set: panZoomElement
+					});
+				}
+
+				this.changeRuinType = function(typeName,data){
+
+					$.get("maps/" + typeName + ".svg", function(data) {
+						//Empty and then set the data
+						$('#ruin-map').empty().append(data.documentElement);
+
+						setPanZoom(options.panzoom);
+						prepSVG();
+
+					});
+				}
+
+				this.testLog = function(data){
+		        	$('#templog').val($('#templog').val() + '\n' + data);
+		        }
+
+		  		return this;
+		  	}();
+
+
+	        window.ruins.changeRuinType('alpha');
+
+
+		    //Groups
+		    $('.test-letter-group').on('click',function(e){
+		    	var clickedElement = $(e.target);
+		    	var groupLetter = clickedElement.val();
+		    	//Show it
+		    	if(e.target.checked){
+		    		$('#group-'+groupLetter).show();		    		
+		    	}else{
+		    		$('#group-'+groupLetter).hide();
+
+		    	}
+		    });
+
+		    //Layers
+		    $('.test-layer').on('click',function(e){
+		    	var clickedElement = $(e.target);
+		    	var layerDesignation = clickedElement.val();
+		    	//Show it
+		    	if(e.target.checked){
+		    		$('#'+layerDesignation).show();
+		    	}else{
+		    		$('#'+layerDesignation).hide();
+
+		    	}
+		    });		    
+
+		    //Obelisk Types
+		    $('[name=test-obelisk]').on('click',function(e){
+		    	var selected = $('[name=test-obelisk]:checked').val();
+
+		    	//Reset the count
+	    		$('#section_number').val('1');
+
+		    	//Hide all
+		    	$('[id*="obelisk-on-"]').hide();
+		    	$('[id*="obelisk-off-"]').hide();
+		    	$('[id*="obelisk-broken-"]').hide();
+
+	          	var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
+			    $.each(alphabet, function(letter) {
+					$('#obelisk-' + selected + '-' + alphabet[letter]).show();
+			     });
+	    
+		    });
+
+		    
+
+	      });
+
+
+
+
+
+      </script>
+    </section>
+
+	<div id="mapcontrols" class="noselect" style="background-color: white; width:400px">
+
+		<label for="test-group-a"><input type="checkbox" class="test-letter-group" id="test-group-a" value="a" checked>a</label>&nbsp;&nbsp;
+		<label for="test-group-b"><input type="checkbox" class="test-letter-group" id="test-group-b" value="b" checked>b</label>&nbsp;&nbsp;
+		<label for="test-group-c"><input type="checkbox" class="test-letter-group" id="test-group-c" value="c" checked>c</label>&nbsp;&nbsp;
+		<label for="test-group-d"><input type="checkbox" class="test-letter-group" id="test-group-d" value="d" checked>d</label><BR/>
+		<label for="test-group-e"><input type="checkbox" class="test-letter-group" id="test-group-e" value="e" checked>e</label>&nbsp;&nbsp;
+		<label for="test-group-f"><input type="checkbox" class="test-letter-group" id="test-group-f" value="f" checked>f</label>&nbsp;&nbsp;
+		<label for="test-group-g"><input type="checkbox" class="test-letter-group" id="test-group-g" value="g" checked>g</label>&nbsp;&nbsp;
+		<label for="test-group-h"><input type="checkbox" class="test-letter-group" id="test-group-h" value="h" checked>h</label><BR/>
+		<label for="test-group-i"><input type="checkbox" class="test-letter-group" id="test-group-i" value="i" checked>i</label>&nbsp;&nbsp;
+		<label for="test-group-j"><input type="checkbox" class="test-letter-group" id="test-group-j" value="j" checked>j</label>&nbsp;&nbsp;
+		<label for="test-group-k"><input type="checkbox" class="test-letter-group" id="test-group-k" value="k" checked>k</label>&nbsp;&nbsp;
+		<label for="test-group-l"><input type="checkbox" class="test-letter-group" id="test-group-l" value="l" checked>l</label><BR/>
+		<label for="test-group-m"><input type="checkbox" class="test-letter-group" id="test-group-m" value="m" checked>m</label>&nbsp;&nbsp;
+		<label for="test-group-n"><input type="checkbox" class="test-letter-group" id="test-group-n" value="n" checked>n</label>&nbsp;&nbsp;
+		<label for="test-group-o"><input type="checkbox" class="test-letter-group" id="test-group-o" value="o" checked>o</label>&nbsp;&nbsp;
+		<label for="test-group-p"><input type="checkbox" class="test-letter-group" id="test-group-p" value="p" checked>p</label><BR/>
+		<label for="test-group-q"><input type="checkbox" class="test-letter-group" id="test-group-q" value="q" checked>q</label>&nbsp;&nbsp;
+		<label for="test-group-r"><input type="checkbox" class="test-letter-group" id="test-group-r" value="r" checked>r</label>&nbsp;&nbsp;
+		<label for="test-group-s"><input type="checkbox" class="test-letter-group" id="test-group-s" value="s" checked>s</label>&nbsp;&nbsp;
+		<label for="test-group-t"><input type="checkbox" class="test-letter-group" id="test-group-t" value="t" checked>t</label><BR/>
+		<label for="test-group-u"><input type="checkbox" class="test-letter-group" id="test-group-u" value="u" checked>u</label>&nbsp;&nbsp;
+		<label for="test-group-v"><input type="checkbox" class="test-letter-group" id="test-group-v" value="v" checked>v</label>&nbsp;&nbsp;
+		<label for="test-group-w"><input type="checkbox" class="test-letter-group" id="test-group-w" value="w" checked>w</label>&nbsp;&nbsp;
+		<label for="test-group-x"><input type="checkbox" class="test-letter-group" id="test-group-x" value="x" checked>x</label><BR/>
+		<label for="test-group-y"><input type="checkbox" class="test-letter-group" id="test-group-y" value="y" checked>y</label>&nbsp;&nbsp;
+		<label for="test-group-z"><input type="checkbox" class="test-letter-group" id="test-group-z" value="z" checked>z</label>&nbsp;&nbsp;
+
+		<HR>
+
+		<label for="test-artefacts"><input type="checkbox" class="test-layer" id="test-artefacts" value="artefacts" checked>Artefacts</label><BR/>
+		<label for="test-legend"><input type="checkbox" class="test-layer" id="test-legend" value="legend" checked>Legend</label><BR/>
+
+		<label for="test-obelisk"><input type="radio" name="test-obelisk" class="test-obelisk" id="test-obelisk-on" value="on" checked>On</label><BR/>
+		<label for="test-obelisk"><input type="radio" name="test-obelisk" id="test-obelisk-off" value="off" checked>Off</label><BR/>
+		<label for="test-obelisk"><input type="radio" name="test-obelisk" id="test-obelisk-broken" value="broken" checked>Broken</label><BR/>
+
+			
+
+
+
+	    <div>
+	    	<input type="text" id="section_name" value="a"></BR>
+	    	<input type="text" id="section_number" value="1"></BR>
+	    </div>
+
+
+	    <textarea id="templog" style="height:500px; width:100%"></textarea>
+	<div>
+
+
+
+
+
+</body>
+</html>
