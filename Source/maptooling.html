@@ -158,8 +158,6 @@
 					$('[id^="group-"]').find('[id$="-numbers"]').css('pointer-events','none');
 					//Find boundary elements and disable them
 					$('[id^="group-"]').find('[id$="-boundary"]').css('pointer-events','none');
-					
-
 
 				}
 
@@ -230,17 +228,15 @@
 		    //Obelisk Types
 		    $('[name=test-obelisk]').on('click',function(e){
 		    	var selected = $('[name=test-obelisk]:checked').val();
-
 		    	//Reset the count
 	    		$('#section_number').val('1');
 
-		    	//Hide all
-		    	$('[id*="obelisk-on-"]').hide();
-		    	$('[id*="obelisk-off-"]').hide();
-		    	$('[id*="obelisk-broken-"]').hide();
-
 	          	var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 			    $.each(alphabet, function(letter) {
+			    	$('#obelisk-on-' + alphabet[letter]).hide();
+			    	$('#obelisk-off-' + alphabet[letter]).hide();
+			    	$('#obelisk-broken-' + alphabet[letter]).hide();
+
 					$('#obelisk-' + selected + '-' + alphabet[letter]).show();
 			     });
 	    
@@ -250,6 +246,45 @@
 
 	      });
 
+		//test function to output possible missing items or mismatched
+		function _checkObeliskMappingMatches(){
+			$('use').each(function(index){
+			   var match = $(this); 
+				if(match.attr('xlink:href').startsWith('#obelisk_')){
+					var currentId = match.attr('id');
+					var idNum = 0;
+					if(currentId.startsWith('obelisk-')){
+						idNum = currentId.split('-')[3];
+					}
+					var obeliskType = match.attr('xlink:href');
+					var parentId = match.closest('g').attr('id');
+					var matchLetter = parentId.split('-')[2];
+					var newId = currentId;
+
+					if(idNum > 0){
+						newId = 'obelisk-';
+						if(obeliskType == '#obelisk_active'){
+							newId += 'on-';
+						}else if(obeliskType == '#obelisk_broken'){
+							newId += 'broken-';
+						}else{
+							newId += 'off-';
+						}
+						newId += matchLetter + '-';
+						newId += idNum;
+					}
+
+					if(currentId != newId || (currentId == newId && currentId.startsWith('use') )){
+						if(matchLetter){
+							console.log(matchLetter + '^' + obeliskType + '^' + currentId + '=' + newId);
+						}
+						
+					}
+					
+				}
+			});
+
+		}
 
 
 

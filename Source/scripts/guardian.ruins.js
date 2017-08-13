@@ -41,18 +41,10 @@ my.getRuin = function (setOptions) {
 			}
 
 			this.hideAllForType = function(){
-				/*
-				var groupList = typeData[ruinData.type];
-
-				$.each(groupList,function(designation,obelisks){
-					$('.ruin-group-' + designation.toLowerCase()).hide();
-				});
-				*/
-
 				//Loop through the alphabet until we can confirm that the api contains all scan groups
 				var alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
 			    $.each(alphabet, function(index,letter) {
-			        $('.ruin-group-' + letter).hide();
+			    	$('#group-'+letter).hide();
 			    });
 
 			}
@@ -60,12 +52,8 @@ my.getRuin = function (setOptions) {
 			this.showAll = function(){
 				//Show those that have been added
 				$.each( ruins.ruinData.groups , function( designation, value ) {
-				  $('.ruin-group-' + designation).show();
+					$('#group-'+designation).show();
 				});
-
-
-
-
 			}
 
 			return this;
@@ -82,7 +70,6 @@ my.getRuin = function (setOptions) {
 				if('obelisk' === clicked[0]){
 					options.onObeliskSelected(e,ruinData.type,clicked[2],clicked[3]);
 				}
-
 			}
 		}
 
@@ -97,7 +84,7 @@ my.getRuin = function (setOptions) {
 			var parentId = $(clicked).closest('g').attr('id');
 
 			//And the piece
-			var groupDesignation = parentId.split('-')[2];
+			var groupDesignation = parentId.split('-')[1];
 
 			//Fire
 			options.onNumberSelected(e,ruinData.type,groupDesignation,labelNum);
@@ -142,6 +129,9 @@ my.getRuin = function (setOptions) {
 
 
 			//Touch specific event handling
+			/*
+			TODO: Test and enable on mobile
+
 	      	$('.ruin-obelisk').on('mousedown touchstart',function(e){
 	      		registerTouch = 1;
 	      	});
@@ -156,38 +146,52 @@ my.getRuin = function (setOptions) {
 	      		registerTouch = 0;
 	      		__obeliskSelect(e);
 	      	});
+			*/
 
 	      	//Click handlers
-	      	$('.ruin-obelisk').on('click',function(e){
+	      	$('[id*="obelisk-on-"]').on('click',function(e){
 	      		__obeliskSelect(e);
-	      	});
+	      	}).css( 'cursor', 'pointer' );	      	
 
-
-	      	$('.ruin-number').on('mousedown touchstart',function(e){
+	      	//Number selection (add handler, cursor/pointer and class for checking elements)
+	      	$('[id^="group-"][id$="-numbers"] text tspan').on('mousedown touchstart',function(e){
 	      		registerTouch = 1;
-	      	});
-	      	$('.ruin-number').on('touchmove',function(e){
+	      	}).on('touchmove',function(e){
 	      		registerTouch = 0;
-	      	})
-	      	$('.ruin-number').on('touchend',function(e){
+	      	}).on('touchend',function(e){
 	      		if(registerTouch == 0){
 	      			e.preventDefault();
 	      			return;
 	      		}
 	      		registerTouch = 0;
 	      		__numberSelect(e);
-	      	});
-
-	      	$('.ruin-number').on('click',function(e){
+	      	}).on('click',function(e){
 	      		__numberSelect(e);
-	      	});
+	      	}).css( 'cursor', 'pointer' ).addClass('ruin-number')
 
-	      	//Pointer to visualize that the item can be "clicked"
-	      	$('.ruin-obelisk').css( 'cursor', 'pointer' );
-	      	$('.ruin-number').css( 'cursor', 'pointer' );
 
-	      	//Ensure that non interactive items don't interefere
-	      	$('.ruin-inactive').css('pointer-events','none');
+			
+	      	//Ensure that overlaid paths (cirles and pointers) don't interfere
+	      	$('g path[id*="circle"]').closest('g').css('pointer-events','none');
+
+	      	//Ensure that letters don't handle pointer events
+	      	//$('[id^="group-"][id$="-numbers"]').css('pointer-events','none');
+	      	
+			$('[id^="group-"][id$="-numbers"] text tspan').each(function( index ) {
+        		var elem = $( this );
+        		var display = elem.text().trim();
+        		if(display.match(/[a-z]+/i)){
+        			//This is one of the character overlays.  Disable it
+        			elem.css('pointer-events','none').css( 'cursor', 'auto' );
+        		}else if(display.match(/[0-9]+/)){
+        			var parentLetter = elem.closest('g').attr('id');
+        			parentLetter = parentLetter.split('-')[1];
+        			elem.attr('id','number-' + parentLetter + '-' + parseInt(display));
+        			console.log(elem.attr('id'));
+        		}
+			});
+	      	
+
 		}
 
 		this._setPanZoom = function(panZoomElement){
@@ -257,7 +261,7 @@ my.getRuin = function (setOptions) {
 		}
 
 		this.focusOnObelisk = function(group,number){
-			var matching = $('#obelisk-' + ruinData.type + '-' + group + '-' + number);
+			var matching = $('#obelisk-on-' + group + '-' + number);
 
 			if(matching.length > 0){
 				__doFocusOnElement(matching[0],group,number);
@@ -265,13 +269,33 @@ my.getRuin = function (setOptions) {
 
 		}
 
-		this.disableObelisk = function(group,number){
-			//Obelisk
-			$('#obelisk-' + ruinData.type + '-' + group + '-' + number).css('pointer-events','none').css('opacity',.5);
+		this.setObeliskState = function(group,number,state){
+			if(state == 'a'){
+				$('#obelisk-on-' + group + '-' + number).show();
+			}else{
+				$('#obelisk-on-' + group + '-' + number).hide();
+			}
+
+			if(state == 'i'){
+				$('#obelisk-off-' + group + '-' + number).show();
+			}else{
+				$('#obelisk-off-' + group + '-' + number).hide();
+			}
+
+			if(state == 'b'){
+				$('#obelisk-broken-' + group + '-' + number).show();
+			}else{
+				$('#obelisk-broken-' + group + '-' + number).hide();
+			}
 
 			//Disable the associated number
-			$('#ruin-number-' + group + ' .ruin-number-' + number).css('pointer-events','none').css('opacity',.5);
+			if(state != 'a'){
+				$('#number-' + group + '-' + number).css('pointer-events','none').css('opacity',.5);	
+			}
+			
+			
       	}
+
 
 		return this;
 	}();

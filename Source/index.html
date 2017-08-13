@@ -261,6 +261,8 @@
 
 				<div id="zoom-reset" class="button labeled" title="Reset Zoom"><span>Reset Zoom</span></div>
 
+				<div id="artefact-toggle" class="button labeled" title="Toggle Artefacts"><span>Toggle Artefacts</span></div>
+
 				<div id="test-groups" style="background-color: white; display:none"><span>Test Groups</span></div>
 
 				<div id="edbearing" class="button first labeled" title="View Coordinates in ED Bearing"><span>EDbearing</span></div>
@@ -632,7 +634,7 @@
 			}
 
 			window.ui = {
-				enableTesting: true
+				enableTesting: false
 			}
 
 			window.userScans = {}
@@ -771,23 +773,22 @@
 
 							//Now for those that are inactive... we disable.  Otherwise if there's a scan we add it
 							$.each(obeliskData,function(number,data){
+								//Default active
+								var obeliskState = 'a';
+
 								//Broken?
 								if( scanData && scanData[number] ){
 									if(scanData[number].isBroken){
-										//Flag the obelisk as broken
-										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#FF0000').css('stroke','#FF0000');
+										obeliskState = 'b';
 									}
+								}else if(0 === data){
+									obeliskState = 'i';
 								}
 
-								//Have scan data as well?
-								if(0 === data){
-									//Disable this obelisk
-									window.ruins.disableObelisk(group,number);
-								}else{
-									if( scanData && scanData[number] ){
-										addScanListItem(group, number, scanData[number].items[0], scanData[number].items[1], scanData[number].scan);
-										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#00d5ff').css('stroke','#00d5ff');
-									}
+								window.ruins.setObeliskState(group,number,obeliskState);
+
+								if( 'a' == obeliskState ){
+									addScanListItem(group, number, scanData[number].items[0], scanData[number].items[1], scanData[number].scan);
 								}
 						    });
 						})
@@ -886,8 +887,9 @@
 		        //Handle closing if clicked outside
 		        $(document).on('click',function(event) {
 		        	var clickedItem = $(event.target);
+		        	var clickedId = clickedItem.attr('id') || '';
 		        	//Ignore if this is a number or obelisk.  Those we expect to trigger this event or change the scan displayed
-		        	if(clickedItem.hasClass('ruin-number') || clickedItem.hasClass('ruin-obelisk') || clickedItem.parents('.ruin-scan-ui').length > 0 ){
+		        	if(clickedItem.hasClass('ruin-number') || clickedId.startsWith('obelisk-') || clickedItem.parents('.ruin-scan-ui').length > 0 ){
 		        		return;
 		        	}
 
@@ -905,7 +907,6 @@
 					if($('#notice').css('display') === 'flex' ){
 						hideNotice();
 					}
-
 
 
 					$('#ruin-scan-selections').hide();
@@ -1121,6 +1122,20 @@
 					window.ruins.zoomReset();
 				});
 
+				$("#artefact-toggle").on('click', function(){
+					if($('#artefact-toggle').hasClass('off')){
+						//Show the artefacts
+						$('#artefact-toggle').removeClass('off');
+						$('#artefacts').show();
+					}else{
+						//Hide the artefacts
+						$('#artefact-toggle').addClass('off');
+						$('#artefacts').hide();
+					}
+				});
+
+				
+
 				$("#return_to_systems").on('click', function(){
 					//Enable navigation back
 					$('#return_to_map').show();
@@ -1258,7 +1273,6 @@
 	        function onMapSelection(e,type,group,number){
 	        	//Get the scan details for the given obelisk set
 	        	var scanData = window.ruins.typeData[type][group][number];
-
 	        	var numDisplay = padNumber(number);
 
 	        	if(scanData){
@@ -1784,6 +1798,7 @@
 			$( document ).ready(function() {
 				//Prep the UI's
 			  	prepSelectionUI();
+
 			  	prepMapUI(function whenReady(){
 			  		//Shared
 				  	$('#notice').on('click',function(e){

@@ -230,6 +230,15 @@ button {
   background-image:url('images/zoom-reset.png');
 }
 
+#artefact-toggle{
+  background-image:url('images/artefact-toggle.png');
+}
+
+#artefact-toggle.off{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
 
 #edbearing{
   background-image:url('images/logo-edbearing.png');
