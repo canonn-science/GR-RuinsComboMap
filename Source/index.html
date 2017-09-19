@@ -691,7 +691,7 @@
 				    '<td class="indented">',
 				     	$('<div/>').text(ruinInfo.bodyName).html(),
 				    '</td>',
-					'<td>' + 'GS' + ruinInfo.ruinId + '</td>',
+					'<td>' + 'GR' + ruinInfo.ruinId + '</td>',
 				    '<td>' + ruinType + '</td>',
 				    '<td>' + $('<div/>').text(ruinInfo.coordinates.join(',')).html() + '</td>',
 				'</tr>'
@@ -1186,7 +1186,7 @@
 
 				//Change history state
 				if(window.currentRuin.ruinId){
-					window.history.pushState(null, "Ruin " + window.currentRuin.ruinId, "#GS" + window.currentRuin.ruinId);
+					window.history.pushState(null, "Ruin " + window.currentRuin.ruinId, "#GR" + window.currentRuin.ruinId);
 				}
 	      	}
 
@@ -1235,7 +1235,7 @@
 				}
 
 
-				$('#scan_result_link').attr('href','https://github.com/canonn-science/RuinsComboMap/issues/new?title=' + encodeURIComponent('Ruins Invalid Data Report - GS' + window.currentRuin.ruinId + ' - ' + obelisk));
+				$('#scan_result_link').attr('href','https://github.com/canonn-science/RuinsComboMap/issues/new?title=' + encodeURIComponent('Ruins Invalid Data Report - GR' + window.currentRuin.ruinId + ' - ' + obelisk));
 				$('#ruin_obelisk_data').show();
 	  		}
 
@@ -1591,9 +1591,9 @@
 								$.each(system.ruins,function(rindex,ruin){
 				        			//Add the system mapping
 				        			var addRuin = false;
-				        			var ruinIdLookup = 'GS' + ruin.ruinId;
+				        			var ruinIdLookup = 'GR' + ruin.ruinId;
 
-				        			//Matching GSID?
+				        			//Matching GRID?
 				        			if(compare(ruinIdLookup,inputVal)){
 				        				addRuin = true;
 				        			}
@@ -1663,7 +1663,8 @@
 			function processNavPath(){
 				//Check for navigation
 				var navData = String(window.location.hash || '').replace('#','').split('-');
-				var ruinId = String(navData[0] || '').replace('GS','');
+				var ruinId = String(navData[0] || '').replace('GR',''); //Handle either GS or GR
+				var ruinId = String(ruinId || '').replace('GS','');
 
 				window.nav.obelisk = String(navData[1] || '');
 
