@@ -821,3 +821,17 @@ tr.collapsed .expand_status {
   background-position: 1em center;
   background-repeat:no-repeat;
 }
+
+
+/* This is only for 3.0 launch, remove later and see the header of index.html */
+.temp-beyond-warning {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  background: #e3392d;
+  color: #fff;
+  padding: 5px;
+  text-decoration: none;
+  font-size: 12px;
+  border-radius: 2px;
+}
