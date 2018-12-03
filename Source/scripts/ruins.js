@@ -818,7 +818,7 @@
                 
                 $.post({
                     url: window.settings.graphql,
-                    data: JSON.stringify({ query: '{grsites {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }}' }),
+                    data: JSON.stringify({ query: '{grsites(limit: 1000) {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }}' }),
                     dataType: 'json',
                     headers: {
                         'Content-Type': 'application/json',
