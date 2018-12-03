@@ -10,7 +10,7 @@
 
 			window.settings={
                 'api': 'https://api.canonn.technology',
-                'graphql':'http://45.77.69.202:1337/graphql'
+                'graphql':'hhttps://api.canonn.fyi/graphql'
 			}
 
 			//Beta api?  If the port is correct
