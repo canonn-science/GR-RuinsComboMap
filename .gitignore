@@ -4,3 +4,4 @@ push2cann2.bat
 push2cann.script
 Source/maps/alpha/*.tiles
 mapping/Source/beta
+Web.config
