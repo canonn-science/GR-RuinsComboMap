@@ -5,3 +5,4 @@ push2cann.script
 Source/maps/alpha/*.tiles
 mapping/Source/beta
 Web.config
+.vs

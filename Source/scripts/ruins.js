@@ -10,7 +10,7 @@
 
 			window.settings={
                 'api': 'https://api.canonn.technology',
-                'graphql':'http://45.77.69.202:1337/graphql'
+                'graphql':'https://api.canonn.fyi/graphql'
 			}
 
 			//Beta api?  If the port is correct
@@ -818,7 +818,7 @@
                 
                 $.post({
                     url: window.settings.graphql,
-                    data: JSON.stringify({ query: '{grsites {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }}' }),
+                    data: JSON.stringify({ query: '{grsites(limit: 1000) {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }}' }),
                     dataType: 'json',
                     headers: {
                         'Content-Type': 'application/json',
