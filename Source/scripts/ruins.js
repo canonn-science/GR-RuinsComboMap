@@ -160,34 +160,34 @@
 						$.each(window.currentRuin.obelisks,function(group,obeliskData){
 
 							//Get the scan data for the given group
-							var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
+							//var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
 
 							//Now for those that are inactive... we disable.  Otherwise if there's a scan we add it
 							$.each(obeliskData,function(number,data){
-								//Broken?
-								if( scanData && scanData[number] ){
-									if(scanData[number].isBroken){
-										//Flag the obelisk as broken
-										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#FF0000').css('stroke','#FF0000');
-									}
-								}
-
 								//Have scan data as well?
-								if(0 === data){
-									//Disable this obelisk
-									window.ruins.disableObelisk(group,number);
-								}else{
-									if( scanData && scanData[number] ){
-										addScanListItem(group, number, scanData[number].items[0], scanData[number].items[1], scanData[number].scan);
-										$('#ruin-number-' + group + ' .ruin-number-' + number).css('fill','#00d5ff').css('stroke','#00d5ff');
-									}
+                                if (0 === data) {
+                                    //Disable this obelisk
+                                    window.ruins.disableObelisk(group, number);
+                                } else {
+                                    //Get the obelisk data
+                                    if (data.broken) {
+                                        //Flag the obelisk as broken
+                                        $('#ruin-number-' + group + ' .ruin-number-' + number).css('fill', '#FF0000').css('stroke', '#FF0000');
+                                    } else {
+                                        //Add the scan data
+                                        addScanListItem(group, number, data.primaryArtifact, data.secondaryArtifact, data.categoryName + ' ' + data.codexNumber);
+                                        $('#ruin-number-' + group + ' .ruin-number-' + number).css('fill', '#00d5ff').css('stroke', '#00d5ff');
+                                    }
+                                    
+
+                                    
 								}
 						    });
 						})
 
 						if($.isEmptyObject(window.currentRuin.obelisks)){
 							//Update notice
-							showNotice('No scan data currently available for this ruin',false);
+                            showNotice('No scan data currently available for this ruin',false);
 						}else{
 							//Hide notice
 			  				hideNotice();
@@ -269,7 +269,7 @@
 			  	});
 
 			  	//Get our site scans and store it
-			  	getSiteScans(completed);
+                completed();
 
 
 		        //Scan Data menu
@@ -633,12 +633,12 @@
 
 	        function onMapSelection(e,type,group,number){
 	        	//Get the scan details for the given obelisk set
-	        	var scanData = window.ruins.typeData[type][group][number];
+	        	var scanData = window.currentRuin.obelisks[group][number];
 
 	        	var numDisplay = padNumber(number);
 
 	        	if(scanData){
-	        		showScanData(group.toUpperCase() + numDisplay,scanData.items[0],scanData.items[1],scanData.scan, scanData.isVerified);
+                    showScanData(group.toUpperCase() + numDisplay, scanData.primaryArtifact, scanData.secondaryArtifact, scanData.categoryName + ' ' + scanData.codexNumber, scanData.verified);
 	        	}else{
 	        		showNotice('No scans available for this obelisk',false,1000);
 	        	}
@@ -716,34 +716,84 @@
 	        	}
 
 	        	var systemId = ruinSystem.systemId;
-	        	var type = ruinSystem.ruinType.toLowerCase();
+	        	var type = ruinSystem.ruinTypeName.toLowerCase();
 
 	        	//Start by loading the map type
-	        	showNotice('Getting Ruin Info',true);
+                showNotice('Getting Ruin Info', true);
 
-	        	var ruinRequest = window.settings.api + '/api/v1/maps/ruininfo/' + encodeURIComponent(parseInt(ruinId));
+                $.post({
+                    url: window.settings.graphql,
+                    data: JSON.stringify({ query: '{grsite (id: ' + parseInt(ruinId) + ') { siteID system{ systemName } body { bodyName } type { type } latitude longitude verified discoveredBy { cmdrName } activeGroups { activeGroup { groupName amount } } activeObelisks { activeObelisk { grObeliskGroup{ groupName } obeliskNumber broken verified grCodexData { grCodexCategory { categoryName } codexNumber grPrimaryArtifact { artifactName } grSecondaryArtifact { artifactName }} } } } }' }),
+                    dataType: 'json',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    }
+                }).done(function (response) {
+                    var obeliskData = {};
 
-				$.get(ruinRequest).done(function(ruinInfo) {
-						//Add obelisks if missing
-						ruinInfo.obelisks = ruinInfo.obelisks || {};
 
-						//Store ruin data in currentRuin;
-						window.currentRuin = ruinInfo;
+                    $.each(response.data.grsite.activeObelisks, function (index, data) {
+                        var groupName = data.activeObelisk.grObeliskGroup.groupName.toLowerCase();
+                        if (!obeliskData[groupName]) {
+                            obeliskData[groupName] = Array(100).fill(0);
+                        }
 
-			  			//Update map header info
-			  			$('#map_heading h1').text([
-			  				window.systems[systemId].systemName,
-			  				window.currentRuin.bodyName,
-			  				window.currentRuin.coordinates.join(', ')
-			  			].join(' | ') + ' (' + window.currentRuin.ruinTypeName + ')');
+                        var categoryName = '';
+                        var codexNumber = ''
+                        var primaryArt = '';
+                        var secondaryArt = '';
 
-						//And show
-						showNotice('Opening Ruin Map',true);
-						window.ruins.setRuinType(type);
-					})
-					.fail(function(d, textStatus, error){
-						showNotice("Getting Ruin Info failed: " + error ,false);
-					});
+                        if (data.activeObelisk.grCodexData) {
+                            categoryName = data.activeObelisk.grCodexData.grCodexCategory.categoryName;
+                            codexNumber = data.activeObelisk.grCodexData.codexNumber;
+
+                            if (data.activeObelisk.grCodexData.grPrimaryArtifact) {
+                                primaryArt = data.activeObelisk.grCodexData.grPrimaryArtifact.artifactName;
+                            }
+
+                            if (data.activeObelisk.grCodexData.grSecondaryArtifact) {
+                                secondaryArt = data.activeObelisk.grCodexData.grSecondaryArtifact.artifactName;
+                            }    
+                        }
+                        
+
+                        obeliskData[groupName][data.activeObelisk.obeliskNumber] = {
+                            active: 1,
+                            broken: data.activeObelisk.broken,
+                            categoryName: categoryName,
+                            codexNumber: codexNumber,
+                            verified: data.activeObelisk.isVerified || false,
+                            primaryArtifact: primaryArt,
+                            secondaryArtifact: secondaryArt
+                            
+                        }
+                        
+                    });
+
+                    //Add obelisks data
+                    ruinSystem.obelisks = obeliskData;
+
+                    //Store ruin data in currentRuin;
+                    window.currentRuin = ruinSystem;
+
+                    //Update map header info
+                    $('#map_heading h1').text([
+                        window.systems[systemId].systemName,
+                        window.currentRuin.bodyName,
+                        window.currentRuin.coordinates.join(', ')
+                    ].join(' | ') + ' (' + window.currentRuin.ruinTypeName + ')');
+
+                    //And show
+                    showNotice('Opening Ruin Map', true);
+                    window.ruins.setRuinType(type);                   
+
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    var errorDetails = JSON.parse(jqXHR.responseText);
+
+                    showNotice("Getting Ruin Info failed: " + errorDetails.errors[0].message, false);
+                });
+
 	        }
 
 		  	/* Selection Selection Selection Selection Selection Selection Selection */
@@ -756,12 +806,41 @@
 
         		var scanRequest = window.settings.api + "/api/v1/maps/scandata";
 
+
+                $.post({
+                    url: window.settings.graphql,
+                    data: JSON.stringify({ query: '{grsite (id: ' + parseInt(ruinId) + ') { siteID system{ systemName } body { bodyName } type { type } latitude longitude verified discoveredBy { cmdrName } activeGroups { activeGroup { groupName amount } } activeObelisks { activeObelisk { grObeliskGroup{ groupName } obeliskNumber broken verified grCodexData { grCodexCategory { categoryName } codexNumber } } } } }' }),
+                    dataType: 'json',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                    }
+                }).done(function (response) {
+                    hideNotice();
+
+                    //Add our data
+                    $.each(scanList, function (type, groups) {
+                        window.ruins.setType(type, groups);
+                    });                   
+                }).fail(function (jqXHR, textStatus, errorThrown) {
+                    var errorDetails = JSON.parse(jqXHR.responseText);
+
+                    showNotice("Getting Site Scans failed: " + errorDetails.errors[0].message, false);
+                }).always(function () {
+                    completed();
+                });
+
+
+                return;
+
+
+
 				$.get(scanRequest,{ format: "json"}).done(function(scanList) {
 		        	hideNotice();
 
 		        	//Add our data
 		        	$.each(scanList,function(type,groups){
-		        		window.ruins.addType(type,groups);
+                        window.ruins.setType(type,groups);
 		        	});
 				})
 				.fail(function(d, textStatus, error){
@@ -813,8 +892,6 @@
 
 	       		//Show status
         		showNotice('Getting Ruin List',true);
-
-                var systemList = + 'api/v1/maps/systemoverview';
                 
                 $.post({
                     url: window.settings.graphql,
@@ -855,6 +932,7 @@
                         //Ruins data
                         var ruinData = {
                             ruinId: data.siteID,
+                            systemId: systemData.systemId,
                             bodyName: data.body.bodyName.replace(systemData.systemName, ''),
                             ruinTypeName: data.type.type,
                             coordinates: [data.latitude, data.longitude],
@@ -866,6 +944,7 @@
 
                         //Add the ruin
                         systemData.ruins.push(ruinData);
+                        window.ruinsIndex[ruinData.ruinId] = ruinData;
 
                         //Update the system
                         window.systems[systemData.systemId] = systemData;
@@ -881,23 +960,13 @@
 
 
 
-                }).fail(function (jqXHR, textStatus, errorThrown) {
-                    showNotice("Getting Ruin List failed: " + error, false);
+                    }).fail(function (jqXHR, textStatus, errorThrown) {
+                        var errorDetails = JSON.parse(jqXHR.responseText);
+
+                        showNotice("Getting Ruin List failed: " + errorDetails.errors[0].message, false);
 
                 });
 
-
-
-
-
-                return;
-
-				$.get(systemList).done(function(systemList) {
- 
-				})
-				.fail(function(d, textStatus, error){
-                    showNotice("Getting Ruin List failed: " + error, false);
-				});
 	        }
 
 	        function prepSelectionUI(){
@@ -1122,8 +1191,8 @@
 				}
 			}
 
-			function showNotice(noticeText,loading,closeAfter){
-				if(loading){
+function showNotice(noticeText, loading, closeAfter) {
+				if(true==loading){
 					$('#notice').addClass('loading');
 				}else{
 					$('#notice').removeClass('loading');
@@ -1139,7 +1208,7 @@
 
 			function hideNotice(){
 				//Don't hide the notice if there's a delayed notice that will do so
-				$('#notice').fadeOut(200);
+                $('#notice').hide();
 			}
 
 
@@ -1180,5 +1249,6 @@
 		      });   //document ready
 
 			$(window).on('hashchange', function() {
+
 			  processNavPath();
 			});

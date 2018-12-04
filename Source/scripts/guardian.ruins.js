@@ -12,23 +12,11 @@ my.getRuin = function (setOptions) {
 	var newRuin = function(){
 		this.options = setOpt;
 		this.panZoomComp = null;
-		this.typeData = {
-			'none':{}
-		}
 		this.ruinData = {
 			type: 'none',
 			groups: {}
 		}
 		this.ruinType = 'none';
-
-		this.types = function(){
-
-			this.addType = function(typeName,groups){
-				typeData[typeName]=groups;
-			}
-
-			return this;
-		}();
 
 		this.groups = function(){
 
