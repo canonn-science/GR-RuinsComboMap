@@ -11,7 +11,8 @@ my.getRuin = function (setOptions) {
 
 	var newRuin = function(){
 		this.options = setOpt;
-		this.panZoomComp = null;
+        this.panZoomComp = null;
+        
 		this.ruinData = {
 			type: 'none',
 			groups: {}

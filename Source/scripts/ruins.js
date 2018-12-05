@@ -28,7 +28,10 @@
 				enableTesting: false
 			}
 
-			window.userScans = {}
+            window.userScans = {}
+            window.typeData = {
+                'none': {}
+            }
 
 			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
 			/* Util Util Util Util Util Util Util Util Util Util Util Util Util Util */
@@ -157,33 +160,30 @@
 						clearScanList();
 
 						//Disable obelisks that are "broken/inactive" and add scan list items
-						$.each(window.currentRuin.obelisks,function(group,obeliskData){
+                            $.each(window.currentRuin.obelisks, function (group, obeliskData) {
 
-							//Get the scan data for the given group
-							//var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
+                                //Get the scan data for the given group
+                                //var scanData = window.ruins.typeData[window.ruins.ruinData.type][group];
 
-							//Now for those that are inactive... we disable.  Otherwise if there's a scan we add it
-							$.each(obeliskData,function(number,data){
-								//Have scan data as well?
-                                if (0 === data) {
-                                    //Disable this obelisk
-                                    window.ruins.disableObelisk(group, number);
-                                } else {
-                                    //Get the obelisk data
-                                    if (data.broken) {
-                                        //Flag the obelisk as broken
-                                        $('#ruin-number-' + group + ' .ruin-number-' + number).css('fill', '#FF0000').css('stroke', '#FF0000');
-                                    } else {
+                                //Now for those that are inactive... we disable.  Otherwise if there's a scan we add it
+                                for (var o = 1; o < obeliskData.length; o++) {
+                                    data = obeliskData[o];
+                                    //Have scan data as well?
+                                    if (data.active == 1) {
                                         //Add the scan data
-                                        addScanListItem(group, number, data.primaryArtifact, data.secondaryArtifact, data.categoryName + ' ' + data.codexNumber);
-                                        $('#ruin-number-' + group + ' .ruin-number-' + number).css('fill', '#00d5ff').css('stroke', '#00d5ff');
+                                        addScanListItem(group, data.number, data.primaryArtifact, data.secondaryArtifact, data.categoryName + ' ' + data.codexNumber);
+                                        $('#ruin-number-' + group + ' .ruin-number-' + data.number).css('fill', '#00d5ff').css('stroke', '#00d5ff');
+                                    } else if (data.broken) {
+                                        //Flag the obelisk as broken
+                                        $('#ruin-number-' + group + ' .ruin-number-' + data.number).css('fill', '#FF0000').css('stroke', '#FF0000');
+                                        //Disable this obelisk
+                                        window.ruins.disableObelisk(group, data.number);
+                                    } else {
+                                        //Disable this obelisk
+                                        window.ruins.disableObelisk(group, data.number);
                                     }
-                                    
-
-                                    
-								}
-						    });
-						})
+                                };
+                            });
 
 						if($.isEmptyObject(window.currentRuin.obelisks)){
 							//Update notice
@@ -589,7 +589,7 @@
 
 		        	if(filterCount > 0){
 		        		showNotice('Searching Filters',true);
-
+                        //TODO: GraphQL equivalent for this
 		        		$.post({
 						    url:"https://api.canonn.technology/api/v1/ruinsites/searchdata/",
 						    type:'POST',
@@ -637,7 +637,7 @@
 
 	        	var numDisplay = padNumber(number);
 
-	        	if(scanData){
+	        	if(scanData.active){
                     showScanData(group.toUpperCase() + numDisplay, scanData.primaryArtifact, scanData.secondaryArtifact, scanData.categoryName + ' ' + scanData.codexNumber, scanData.verified);
 	        	}else{
 	        		showNotice('No scans available for this obelisk',false,1000);
@@ -732,13 +732,33 @@
                 }).done(function (response) {
                     var obeliskData = {};
 
+                    //Set obelisk data
+                    $.each(window.typeData[type], function (group) {
+                        if (!obeliskData[group]) {
+                            obeliskData[group] = [];
+                        }
+
+                        for (var o = 1; o < window.typeData[type][group].length; o++) {
+                            var isBroken = window.typeData[type][group][o].broken || false;
+
+                            //Preset the obelisk template info
+                            obeliskData[group][o] = {
+                                type: type,
+                                group: group,
+                                number: o,
+                                active: 0,
+                                broken: isBroken,
+                                categoryName: '',
+                                codexNumber: '',
+                                verified: false,
+                                primaryArtifact: '',
+                                secondaryArtifact: ''
+                            }
+                        }
+                    });
 
                     $.each(response.data.grsite.activeObelisks, function (index, data) {
                         var groupName = data.activeObelisk.grObeliskGroup.groupName.toLowerCase();
-                        if (!obeliskData[groupName]) {
-                            obeliskData[groupName] = Array(100).fill(0);
-                        }
-
                         var categoryName = '';
                         var codexNumber = ''
                         var primaryArt = '';
@@ -757,19 +777,19 @@
                             }    
                         }
                         
+                        var obeliskItem = obeliskData[groupName][data.activeObelisk.obeliskNumber];
 
-                        obeliskData[groupName][data.activeObelisk.obeliskNumber] = {
-                            active: 1,
-                            broken: data.activeObelisk.broken,
-                            categoryName: categoryName,
-                            codexNumber: codexNumber,
-                            verified: data.activeObelisk.isVerified || false,
-                            primaryArtifact: primaryArt,
-                            secondaryArtifact: secondaryArt
-                            
-                        }
-                        
+                        obeliskItem.active = 1;
+                        obeliskItem.categoryName = categoryName;
+                        obeliskItem.codexNumber = codexNumber;
+                        obeliskItem.verified = data.activeObelisk.isVerified || false;
+                        obeliskItem.primaryArtifact = primaryArt;
+                        obeliskItem.secondaryArtifact = secondaryArt;
+                                
+                        obeliskData[groupName][data.activeObelisk.obeliskNumber] = obeliskItem;
+                       
                     });
+
 
                     //Add obelisks data
                     ruinSystem.obelisks = obeliskData;
@@ -895,7 +915,7 @@
                 
                 $.post({
                     url: window.settings.graphql,
-                    data: JSON.stringify({ query: '{grsites(limit: 1000) {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }}' }),
+                    data: JSON.stringify({ query: '{grobelisks( limit: 1000 sort: "grType" ) { grType{ type } grObeliskGroup { groupName } obeliskNumber broken }  grsites(limit: 1000) {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }   }' }),
                     dataType: 'json',
                     headers: {
                         'Content-Type': 'application/json',
@@ -907,6 +927,49 @@
                     //Clear existing
                     window.systems = {};
                     window.ruinsIndex = {}
+
+                    var currentType = '';
+                    var typeObelisks = {}
+
+                    $.each(response.data.grobelisks, function (index, data) {
+                        var obeliskType = data.grType.type;
+                        var obeliskGroup = data.grObeliskGroup.groupName.toLowerCase();
+                        //var obeliskNumber = data.obeliskNumber;
+                        //data.broken
+
+                        //Change in type?  Let's store what we have
+                        if (currentType != '' && obeliskType != currentType) {
+                            //Add the type data
+                            window.typeData[currentType.toLowerCase()] = typeObelisks;
+
+                            //Reset
+                            typeObelisks = {}
+                        }
+
+                        //Add a group?
+                        if (!typeObelisks[obeliskGroup]) {
+                            //Yes. Set an empty array
+                            typeObelisks[obeliskGroup] = [];
+                        }
+
+                        //Add the obelisk data
+                        typeObelisks[obeliskGroup][data.obeliskNumber] = {
+                            type: obeliskType,
+                            group: obeliskGroup,
+                            number: data.obeliskNumber,
+                            broken: data.broken
+                        }
+
+                        currentType = obeliskType;
+
+                        
+                    });
+
+                    //Add the last type
+                    if (currentType != '') {
+                        //Add the type data
+                        window.typeData[currentType.toLowerCase()] = typeObelisks;
+                    }                    
 
                     $.each(response.data.grsites, function (index, data) {
                         var systemData = {}
