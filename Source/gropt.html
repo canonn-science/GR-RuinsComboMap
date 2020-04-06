@@ -4,13 +4,13 @@
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102148507-2"></script>
 	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-		gtag('config', 'UA-102148507-2');
+  	window.dataLayer = window.dataLayer || [];
+  	function gtag(){dataLayer.push(arguments);}
+  	gtag('js', new Date());
+  	gtag('config', 'UA-102148507-2');
 	</script>
 	<meta charset="utf-8" />
-	<title>(GS) Guardian Structures Site Coverage Optimizer</title>
+	<title>(GR) Guardian Ruins Site Coverage Optimizer</title>
 	<style type="text/css">
 .tar {
 	text-align: right;
@@ -224,23 +224,23 @@ var ONLY_VERIFIED = false;
 var TEST_PORTION = 1;
 var ALLOW_EXTRA_SITE = false;
 
-var gsdb = {};
+var grdb = {};
 var RESOURCES = [
-	{ url:'https://api.canonn.tech/gscodexdata?_limit=9999', parse:function(json) {
-		gsdb.codex = gsdb.codex || {};
-		gsdb.category = gsdb.category || {};
-		gsdb.artifact = gsdb.artifact || {};
+	{ url:'https://api.canonn.tech/grcodexdata?_limit=9999', parse:function(json) {
+		grdb.codex = grdb.codex || {};
+		grdb.category = grdb.category || {};
+		grdb.artifact = grdb.artifact || {};
 		var codex, category, artifact1, artifact2;
 		while (codex = json.pop()) {
-			category = codex.gsCodexCategory;
-			artifact1 = codex.gsPrimaryArtifact;
-			artifact2 = codex.gsSecondaryArtifact;
+			category = codex.grCodexCategory;
+			artifact1 = codex.grPrimaryArtifact;
+			artifact2 = codex.grSecondaryArtifact;
 			
-			gsdb.codex[codex.id] = codex;
-			gsdb.category[category.id] = codex.gsCodexCategory = (category = gsdb.category[category.id] || category);
-			gsdb.artifact[artifact1.id] = codex.gsPrimaryArtifact = (artifact1 = gsdb.artifact[artifact1.id] || artifact1);
+			grdb.codex[codex.id] = codex;
+			grdb.category[category.id] = codex.grCodexCategory = (category = grdb.category[category.id] || category);
+			grdb.artifact[artifact1.id] = codex.grPrimaryArtifact = (artifact1 = grdb.artifact[artifact1.id] || artifact1);
 			if (artifact2) {
-				gsdb.artifact[artifact2.id] = codex.gsSecondaryArtifact = (artifact2 = gsdb.artifact[artifact2.id] || artifact2);
+				grdb.artifact[artifact2.id] = codex.grSecondaryArtifact = (artifact2 = grdb.artifact[artifact2.id] || artifact2);
 			}
 			
 			codex._sites = [];
@@ -248,53 +248,53 @@ var RESOURCES = [
 				category._codexes = [];
 			category._codexes.push(codex);
 		}
-	//	console.log('got '+Object.keys(gsdb.codex).length+' codexes, '+Object.keys(gsdb.category).length+' categories, '+Object.keys(gsdb.artifact).length+' artifacts');
+	//	console.log('got '+Object.keys(grdb.codex).length+' codexes, '+Object.keys(grdb.category).length+' categories, '+Object.keys(grdb.artifact).length+' artifacts');
 	}},
-	{ url:'https://api.canonn.tech/gsobelisks?_limit=9999', parse:function(json) {
-		gsdb.obelisk = gsdb.obelisk || {};
-		gsdb.type = gsdb.type || {};
-		gsdb.group = gsdb.group || {};
-		gsdb.codex = gsdb.codex || {};
+	{ url:'https://api.canonn.tech/grobelisks?_limit=9999', parse:function(json) {
+		grdb.obelisk = grdb.obelisk || {};
+		grdb.type = grdb.type || {};
+		grdb.group = grdb.group || {};
+		grdb.codex = grdb.codex || {};
 		var obelisk, type, group, codex;
 		while (obelisk = json.pop()) {
-			type = obelisk.gsType;
-			group = obelisk.gsObeliskGroup;
-			codex = obelisk.gsCodexData;
+			type = obelisk.grType;
+			group = obelisk.grObeliskGroup;
+			codex = obelisk.grCodexData;
 			
-			gsdb.obelisk[obelisk.id] = obelisk;
-			gsdb.type[type.id] = obelisk.gsType = (type = gsdb.type[type.id] || type);
-			gsdb.group[group.id] = obelisk.gsObeliskGroup = (group = gsdb.group[group.id] || group);
+			grdb.obelisk[obelisk.id] = obelisk;
+			grdb.type[type.id] = obelisk.grType = (type = grdb.type[type.id] || type);
+			grdb.group[group.id] = obelisk.grObeliskGroup = (group = grdb.group[group.id] || group);
 			if (codex) {
-				gsdb.codex[codex.id] = obelisk.gsCodexData = (codex = gsdb.codex[codex.id] || codex);
+				grdb.codex[codex.id] = obelisk.grCodexData = (codex = grdb.codex[codex.id] || codex);
 			}
 			
 			obelisk._sites = [];
 		}
-	//	console.log('got '+Object.keys(gsdb.obelisk).length+' obelisks, '+Object.keys(gsdb.type).length+' types, '+Object.keys(gsdb.group).length+' groups, '+Object.keys(gsdb.codex).length+' codexes');
+	//	console.log('got '+Object.keys(grdb.obelisk).length+' obelisks, '+Object.keys(grdb.type).length+' types, '+Object.keys(grdb.group).length+' groups, '+Object.keys(grdb.codex).length+' codexes');
 	}},
-	{ url:'https://api.canonn.tech/gssites?_limit=9999', parse:function(json) {
-		gsdb.site = gsdb.site || {};
-		gsdb.system = gsdb.system || {};
-		gsdb.body = gsdb.body || {};
-		gsdb.type = gsdb.type || {};
+	{ url:'https://api.canonn.tech/grsites?_limit=9999', parse:function(json) {
+		grdb.site = grdb.site || {};
+		grdb.system = grdb.system || {};
+		grdb.body = grdb.body || {};
+		grdb.type = grdb.type || {};
 		var site, system, body, type;
 		while (site = json.pop()) {
 			system = site.system;
 			body = site.body;
 			type = site.type;
 			
-			gsdb.site[site.id] = site;
-			gsdb.system[system.id] = site.system = (system = gsdb.system[system.id] || system);
-			gsdb.body[body.id] = site.body = (body = gsdb.body[body.id] || body);
-			gsdb.type[type.id] = site.type = (type = gsdb.type[type.id] || type);
+			grdb.site[site.id] = site;
+			grdb.system[system.id] = site.system = (system = grdb.system[system.id] || system);
+			grdb.body[body.id] = site.body = (body = grdb.body[body.id] || body);
+			grdb.type[type.id] = site.type = (type = grdb.type[type.id] || type);
 			
 			site._obelisks = [];
 			site._codexes = [];
 			
 			var i = (site.activeObelisks || EMPTY_ARR).length;
 			while (i-- > 0) {
-				var obelisk = gsdb.obelisk[site.activeObelisks[i].activeObelisk];
-				var codex = (obelisk || EMPTY_OBJ).gsCodexData;
+				var obelisk = grdb.obelisk[site.activeObelisks[i].activeObelisk];
+				var codex = (obelisk || EMPTY_OBJ).grCodexData;
 				if (!obelisk) throw 'site #'+site.id+' obelisk #'+site.activeObelisks[i].activeObelisk+' invalid';
 				site._obelisks.push(obelisk);
 				obelisk._sites.push(site);
@@ -304,7 +304,7 @@ var RESOURCES = [
 				}
 			}
 		}
-	//	console.log('got '+Object.keys(gsdb.site).length+' sites, '+Object.keys(gsdb.system).length+' systems, '+Object.keys(gsdb.body).length+' bodies, '+Object.keys(gsdb.type).length+' types');
+	//	console.log('got '+Object.keys(grdb.site).length+' sites, '+Object.keys(grdb.system).length+' systems, '+Object.keys(grdb.body).length+' bodies, '+Object.keys(grdb.type).length+' types');
 	}},
 ]; // RESOURCES[]
 
@@ -345,28 +345,28 @@ function getNextResource() {
 
 var idcmp = function(obj1, obj2) { return (obj1.id - obj2.id); };
 var categorycmp = function(category1, category2) { return (category1.categoryName < category2.categoryName) ? -1 : ((category1.categoryName === category2.categoryName) ? 0 : 1); };
-var codexcmp = function(codex1, codex2) { return (codex1.gsCodexCategory !== codex2.gsCodexCategory) ? categorycmp(codex1.gsCodexCategory, codex2.gsCodexCategory) : (codex1.codexNumber - codex2.codexNumber); };
+var codexcmp = function(codex1, codex2) { return (codex1.grCodexCategory !== codex2.grCodexCategory) ? categorycmp(codex1.grCodexCategory, codex2.grCodexCategory) : (codex1.codexNumber - codex2.codexNumber); };
 var groupcmp = function(group1, group2) { return (group1.groupName < group2.groupName) ? -1 : ((group1.groupName === group2.groupName) ? 0 : 1); };
-var obeliskcmp = function(obelisk1, obelisk2) { return (obelisk1.gsObeliskGroup !== obelisk2.gsObeliskGroup) ? groupcmp(obelisk1.gsObeliskGroup, obelisk2.gsObeliskGroup) : (obelisk1.obeliskNumber - obelisk2.obeliskNumber); };
+var obeliskcmp = function(obelisk1, obelisk2) { return (obelisk1.grObeliskGroup !== obelisk2.grObeliskGroup) ? groupcmp(obelisk1.grObeliskGroup, obelisk2.grObeliskGroup) : (obelisk1.obeliskNumber - obelisk2.obeliskNumber); };
 
 
 function initUI() {
 	var categories = [];
-	for (var categoryId in gsdb.category) {
-		categories.push(gsdb.category[categoryId]);
+	for (var categoryId in grdb.category) {
+		categories.push(grdb.category[categoryId]);
 	}
 	categories.sort(categorycmp);
 	
 	var codexes = [];
-	for (var codexId in gsdb.codex) {
-		codexes.push(gsdb.codex[codexId]);
+	for (var codexId in grdb.codex) {
+		codexes.push(grdb.codex[codexId]);
 	}
 	codexes.sort(codexcmp);
 	
 	var sites = [];
-	for (var siteId in gsdb.site) {
-		sites.push(gsdb.site[siteId]);
-		gsdb.site[siteId]._obelisks.sort(obeliskcmp);
+	for (var siteId in grdb.site) {
+		sites.push(grdb.site[siteId]);
+		grdb.site[siteId]._obelisks.sort(obeliskcmp);
 	}
 	sites.sort(idcmp);
 	
@@ -540,7 +540,7 @@ function initUI() {
 		var codex = codexes[c];
 		td = document.createElement('TD');
 		td.id = 'td_codex_' + codex.id;
-		if (c+1 >= codexes.length || codexes[c+1].gsCodexCategory !== codex.gsCodexCategory)
+		if (c+1 >= codexes.length || codexes[c+1].grCodexCategory !== codex.grCodexCategory)
 			td.className = 'last_in_cat';
 		label = document.createElement('LABEL');
 		input = document.createElement('INPUT');
@@ -549,7 +549,7 @@ function initUI() {
 		input.type = 'checkbox';
 		label.appendChild(input);
 		abbr = document.createElement('ABBR');
-		abbr.title = codex.gsCodexCategory.categoryName + ' ' + codex.codexNumber;
+		abbr.title = codex.grCodexCategory.categoryName + ' ' + codex.codexNumber;
 	//	abbr.appendChild(document.createTextNode('\u25AA')); // 25A0-1 large, 25AA-B small, 25FE-F medium
 		label.appendChild(abbr);
 		td.appendChild(label);
@@ -577,19 +577,7 @@ function initUI() {
 		}
 	});
 	
-	var typeSymbol = { 
-		'Unknown':'?', 
-		'Lacrosse':'Lacrosse', 
-		'Crossroads':'Crossroads', 
-		'Fistbump':'Fistbump', 
-		'Hammerbot':'Hammerbot', 
-		'Bear':'Bear', 
-		'Bowl':'Bowl', 
-		'Turtle':'Turtle', 
-		'Robolobster':'Robolobster', 
-		'Squid':'Squid', 
-		'Stickyhand':'Stickyhand' 
-	};
+	var typeSymbol = { 'Unknown':'?', 'Alpha':'\u03B1', 'Beta':'\u03B2', 'Gamma':'\u03B3' };
 	for (var s = 0;  s < sites.length;  s++) {
 		var site = sites[s];
 		var dist = Math.pow( Math.pow(site.system.edsmCoordX,2) + Math.pow(site.system.edsmCoordY,2) + Math.pow(site.system.edsmCoordZ,2), 0.5);
@@ -604,7 +592,7 @@ function initUI() {
 		input.type = 'checkbox';
 		th.appendChild(input);
 		alink = document.createElement('A');
-		alink.href = 'https://ruins.canonn.tech/dev2/#GS' + site.id;
+		alink.href = 'https://ruins.canonn.tech/dev2/#GR' + site.id;
 		alink.appendChild(document.createTextNode('GR'+site.id));
 		th.appendChild(alink);
 		tr.appendChild(th);
@@ -633,20 +621,20 @@ function initUI() {
 		var codexdetail={}, codexverified={};
 		for (var o = 0;  o < site._obelisks.length;  o++) {
 			var obelisk = site._obelisks[o];
-			var codex = obelisk.gsCodexData;
+			var codex = obelisk.grCodexData;
 			if (!obelisk.broken && codex) {
-				codexdetail[codex.id] = (codexdetail[codex.id] || '') + ' ' + obelisk.gsObeliskGroup.groupName + obelisk.obeliskNumber + (obelisk.verified ? '' : '?');
+				codexdetail[codex.id] = (codexdetail[codex.id] || '') + ' ' + obelisk.grObeliskGroup.groupName + obelisk.obeliskNumber + (obelisk.verified ? '' : '?');
 				if (obelisk.verified)
 					codexverified[codex.id] = true;
 			}
 		}
 		for (var c = 0;  c < codexes.length;  c++) {
 			td = document.createElement('TD');
-			if (c+1 >= codexes.length || codexes[c+1].gsCodexCategory !== codexes[c].gsCodexCategory)
+			if (c+1 >= codexes.length || codexes[c+1].grCodexCategory !== codexes[c].grCodexCategory)
 				td.className = 'last_in_cat';
 			if (codexdetail[codexes[c].id]) {
 				abbr = document.createElement('ABBR');
-				abbr.title = codexes[c].gsCodexCategory.categoryName + ' ' + codexes[c].codexNumber + ':' + codexdetail[codexes[c].id];
+				abbr.title = codexes[c].grCodexCategory.categoryName + ' ' + codexes[c].codexNumber + ':' + codexdetail[codexes[c].id];
 				abbr.appendChild(document.createTextNode(codexverified[codexes[c].id] ? '\u2022' : '\u2218'));
 				td.appendChild(abbr);
 			}
@@ -704,11 +692,11 @@ function initUI() {
 function updateSiteCover() {
 	var allcodexes = document.getElementById('checkbox_codex_all').checked;
 	var sitelist=[], codexflag={}, codexneed={}, numneed=0;
-	for (var siteId in gsdb.site) {
+	for (var siteId in grdb.site) {
 		var tr = document.getElementById('tr_site_'+siteId);
 		if (document.getElementById('checkbox_site_'+siteId).checked) {
 			tr.className = 'selected';
-			var site = gsdb.site[siteId];
+			var site = grdb.site[siteId];
 			sitelist.push(site);
 			var c = site._codexes.length;
 			while (c-- > 0) {
@@ -742,7 +730,7 @@ function updateSiteCover() {
 			var siteobelisks = [];
 			for (var o = 0;  o < site._obelisks.length;  o++) {
 				var obelisk = site._obelisks[o];
-				var codex = obelisk.gsCodexData;
+				var codex = obelisk.grCodexData;
 				if (!obelisk.broken && codex && codexneed[codex.id]) {
 					codexneed[codex.id] = false;
 					siteobelisks.push(obelisk);
@@ -750,7 +738,7 @@ function updateSiteCover() {
 				}
 			}
 			
-			line = ('</li><li><a href="https://ruins.canonn.tech/dev2/#GS' + site.id + '">GS' + site.id + '</a>: '
+			line = ('</li><li><a href="https://ruins.canonn.tech/dev2/#GR' + site.id + '">GR' + site.id + '</a>: '
 					+ site.body.bodyName + ' @ '
 					+ site.latitude.toFixed(2) + ', '
 					+ site.longitude.toFixed(2) + ' ('
@@ -766,18 +754,18 @@ function updateSiteCover() {
 			siteobelisks.sort(obeliskcmp);
 			for (var o = 0;  o < siteobelisks.length;  o++) {
 				var obelisk = siteobelisks[o];
-				var codex = obelisk.gsCodexData;
-				if (o && obelisk.gsObeliskGroup !== siteobelisks[o-1].gsObeliskGroup) {
+				var codex = obelisk.grCodexData;
+				if (o && obelisk.grObeliskGroup !== siteobelisks[o-1].grObeliskGroup) {
 					line += '</li><li>';
 				} else if (o > 0) {
 					line += ' ';
 				}
-				line += obelisk.gsObeliskGroup.groupName + obelisk.obeliskNumber + '(';
-				if (codex.gsPrimaryArtifact)
-					line += codex.gsPrimaryArtifact.artifactName.substring(0,2);
-				if (codex.gsSecondaryArtifact)
-					line += (codex.gsPrimaryArtifact ? '+' : '') + codex.gsSecondaryArtifact.artifactName.substring(0,2);
-				line += ':' + codex.gsCodexCategory.categoryName.substring(0,1) + codex.codexNumber + (obelisk.verified ? '' : '?') + ')';
+				line += obelisk.grObeliskGroup.groupName + obelisk.obeliskNumber + '(';
+				if (codex.grPrimaryArtifact)
+					line += codex.grPrimaryArtifact.artifactName.substring(0,2);
+				if (codex.grSecondaryArtifact)
+					line += (codex.grPrimaryArtifact ? '+' : '') + codex.grSecondaryArtifact.artifactName.substring(0,2);
+				line += ':' + codex.grCodexCategory.categoryName.substring(0,1) + codex.codexNumber + (obelisk.verified ? '' : '?') + ')';
 			}
 			line += '</li></ul>';
 			textd += line;
@@ -793,7 +781,7 @@ function updateSiteCover() {
 		divexportd.innerHTML = '';
 	}
 	var any = false;
-	for (var codexId in gsdb.codex) {
+	for (var codexId in grdb.codex) {
 		var td = document.getElementById('td_codex_'+codexId);
 		var selected = document.getElementById('checkbox_codex_'+codexId).checked;
 		td.classList.toggle('covered', !!codexflag[codexId]);
@@ -810,13 +798,13 @@ function optimizeSiteCoverage() {
 	var allcodexes = document.getElementById('checkbox_codex_all').checked;
 	var farsystems = document.getElementById('checkbox_opt_farsystems').checked;
 	var typeCodexes = {}, numtypes = 0;
-	for (var codexId in gsdb.codex) {
-		var codex = gsdb.codex[codexId];
-		codex._cat1mask = (codex.gsCodexCategory.id != 1) ? 0 : (1 << codex.codexNumber);
-		codex._cat2mask = (codex.gsCodexCategory.id != 2) ? 0 : (1 << codex.codexNumber);
-		codex._cat3mask = (codex.gsCodexCategory.id != 3) ? 0 : (1 << codex.codexNumber);
-		codex._cat4mask = (codex.gsCodexCategory.id != 4) ? 0 : (1 << codex.codexNumber);
-		codex._cat5mask = (codex.gsCodexCategory.id != 5) ? 0 : (1 << codex.codexNumber);
+	for (var codexId in grdb.codex) {
+		var codex = grdb.codex[codexId];
+		codex._cat1mask = (codex.grCodexCategory.id != 1) ? 0 : (1 << codex.codexNumber);
+		codex._cat2mask = (codex.grCodexCategory.id != 2) ? 0 : (1 << codex.codexNumber);
+		codex._cat3mask = (codex.grCodexCategory.id != 3) ? 0 : (1 << codex.codexNumber);
+		codex._cat4mask = (codex.grCodexCategory.id != 4) ? 0 : (1 << codex.codexNumber);
+		codex._cat5mask = (codex.grCodexCategory.id != 5) ? 0 : (1 << codex.codexNumber);
 		
 		if (codex._sites.length > 0) {
 			codex._sites.sort(function (site1,site2) { return site1._codexes.length - site2._codexes.length; });
@@ -837,10 +825,10 @@ function optimizeSiteCoverage() {
 					if (!codex._typeSites[majorityTypeId]) {
 						majorityTypeId = typeId;
 					} else if (codex._typeSites[majorityTypeId].length < codex._typeSites[typeId].length) {
-						console.log('WARNING: ignoring codex #'+codexId+' ('+codex.gsCodexCategory.categoryName+' '+codex.codexNumber+') at ruin type '+gsdb.type[majorityTypeId].type);
+						console.log('WARNING: ignoring codex #'+codexId+' ('+codex.grCodexCategory.categoryName+' '+codex.codexNumber+') at ruin type '+grdb.type[majorityTypeId].type);
 						majorityTypeId = typeId;
 					} else {
-						console.log('WARNING: ignoring codex #'+codexId+' ('+codex.gsCodexCategory.categoryName+' '+codex.codexNumber+') at ruin type '+gsdb.type[typeId].type);
+						console.log('WARNING: ignoring codex #'+codexId+' ('+codex.grCodexCategory.categoryName+' '+codex.codexNumber+') at ruin type '+grdb.type[typeId].type);
 					}
 				}
 				
@@ -854,8 +842,8 @@ function optimizeSiteCoverage() {
 	}
 	
 	var typeSolutions = {}, sitelist = [];
-	for (var siteId in gsdb.site) {
-		var site = gsdb.site[siteId];
+	for (var siteId in grdb.site) {
+		var site = grdb.site[siteId];
 		site._cat1mask = site._cat2mask = site._cat3mask = site._cat4mask = site._cat5mask = 0;
 		if (farsystems || getSysDist(site.system) < FAR_SITE_DIST) {
 			if (site._codexes.length > 0) {
@@ -905,7 +893,7 @@ function optimizeSiteCoverage() {
 	console.log("best solution with "+solutions[0].numsites+" sites on "+solutions[0].numbodies+" bodies in "+solutions[0].numsystems+" systems, ~"+solutions[0].distLS.toFixed(2)+" LS cruise, ~"+solutions[0].distLY.toFixed(2)+" LY jump");
 	//console.log('solutions evaluated after '+((new Date()).getTime()-t0)+'ms');
 	
-	for (var siteId in gsdb.site)
+	for (var siteId in grdb.site)
 		document.getElementById('checkbox_site_'+siteId).checked = false;
 	var s = solutions[0].sitelist.length;
 	while (s-- > 0)
