@@ -104,7 +104,7 @@ function addSystemToList(systemInfo) {
 
 	var row = $('#ruin-list').append([
 		'<tr class="ruin_list_system ' + window.ruinsUI.systemBand + '" id="system-' + systemId + '">',
-		'<td colspan="4" class="ruin_list_system_name"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(systemInfo.systemName).html() + '</td>',
+		'<td colspan="5" class="ruin_list_system_name"><div class="expand_status" alt="expand-collapse icon"/>' + $('<div/>').text(systemInfo.systemName).html() + '</td>',
 		'</tr>'
 	].join(''));
 }
@@ -114,6 +114,7 @@ function addRuinToList(systemInfo, ruinInfo) {
 	var systemId = $('<div/>').text(systemInfo.systemId).html();
 	var ruinId = $('<div/>').text(ruinInfo.ruinId).html();
 	var ruinType = $('<div/>').text(ruinInfo.ruinTypeName).html();
+	var frontierID = $('<div/>').text(ruinInfo.frontierID).html();
 
 	if (window.ruinsUI.ruinBand == '') {
 		window.ruinsUI.ruinBand = 'ruinband'
@@ -129,6 +130,7 @@ function addRuinToList(systemInfo, ruinInfo) {
 		'</td>',
 		'<td>' + 'GR' + ruinInfo.ruinId + '</td>',
 		'<td>' + ruinType + '</td>',
+		'<td>' + frontierID + '</td>',
 		'<td>' + $('<div/>').text(ruinInfo.coordinates.join(',')).html() + '</td>',
 		'</tr>'
 	].join(''));
@@ -915,7 +917,7 @@ function getRuinList() {
 
 	$.post({
 		url: window.settings.graphql,
-		data: JSON.stringify({ query: '{grobelisks( limit: 1000 sort: "grType" ) { grType{ type } grObeliskGroup { groupName } obeliskNumber broken }  grsites(limit: 1000) {siteID latitude longitude system{id systemName edsmID} body{bodyName edsmID} type{ type }  }   }' }),
+		data: JSON.stringify({ query: '{grobelisks( limit: 1000 sort: "grType" ) { grType{ type } grObeliskGroup { groupName } obeliskNumber broken }  grsites(limit: 1000) {siteID latitude longitude frontierID system{id systemName edsmID} body{bodyName edsmID} type{ type }  }   }' }),
 		dataType: 'json',
 		headers: {
 			'Content-Type': 'application/json',
@@ -998,6 +1000,7 @@ function getRuinList() {
 				systemId: systemData.systemId,
 				bodyName: data.body.bodyName.replace(systemData.systemName, ''),
 				ruinTypeName: data.type.type,
+				frontierID: data.frontierID,
 				coordinates: [data.latitude, data.longitude],
 				edsmBodyLink: ''
 			}
