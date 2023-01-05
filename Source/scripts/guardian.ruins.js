@@ -47,9 +47,11 @@ my.getRuin = function (setOptions) {
 			}
 
 			this.showAll = function(){
-				//Show those that have been added
+				//Show those that have been added and have some active obelisks
 				$.each( ruins.ruinData.groups , function( designation, value ) {
-				  $('.ruin-group-' + designation).show();
+					if (value.some(_ => _.active)) {
+						$('.ruin-group-' + designation).show();
+					}
 				});
 
 
