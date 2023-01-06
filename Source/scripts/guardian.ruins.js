@@ -46,10 +46,10 @@ my.getRuin = function (setOptions) {
 
 			}
 
-			this.showAll = function(){
+			this.showAll = function(showEmptyGroups = false){
 				//Show those that have been added and have some active obelisks
 				$.each( ruins.ruinData.groups , function( designation, value ) {
-					if (value.some(_ => _.active)) {
+					if (showEmptyGroups || value.some(_ => _.active)) {
 						$('.ruin-group-' + designation).show();
 					}
 				});

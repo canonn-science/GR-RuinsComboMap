@@ -213,6 +213,12 @@ button {
   background-image: url('images/zoom-reset.png');
 }
 
+#hide-empty-groups {
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
 
 #edbearing {
   background-image: url('images/logo-edbearing.png');

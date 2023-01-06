@@ -511,6 +511,11 @@ function prepMapUI(completed) {
 		showSystems();
 	});
 
+	$("#check-only-show").change(function () {
+		// hide all groups, then re-show including groups without active obelisks or not
+		window.ruins.hideAllForType();
+		window.ruins.showAll(!this.checked);
+	});
 
 	$("#edbearing").on('click', function () {
 		var desc = window.currentRuin.ruinTypeName + ' Ruin at ' + [
