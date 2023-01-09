@@ -805,11 +805,16 @@ function ruinSelected(ruinId) {
 		window.currentRuin = ruinSystem;
 
 		//Update map header info
+		var ruinType = window.currentRuin.ruinTypeName;
+		if (window.currentRuin.frontierID > 0) {
+			// if known, show the Ruins # in the header too
+			ruinType += `, Ruins #${window.currentRuin.frontierID}`
+		}
 		$('#map_heading h1').text([
 			window.systems[systemId].systemName,
 			window.currentRuin.bodyName,
 			window.currentRuin.coordinates.join(', ')
-		].join(' | ') + ' (' + window.currentRuin.ruinTypeName + ')');
+		].join(' | ') + ' (' + ruinType + ')');
 
 		//And show
 		showNotice('Opening Ruin Map', true);
