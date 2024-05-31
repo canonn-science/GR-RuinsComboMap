@@ -598,7 +598,7 @@ function updateScanFilter() {
 		showNotice('Searching Filters', true);
 		//TODO: GraphQL equivalent for this
 		$.post({
-			url: "https://api.canonn.technology/api/v1/ruinsites/searchdata/",
+			url: "https://ruins.canonn.tech/api/v1/ruinsites/searchdata/",
 			type: 'POST',
 			contentType: 'application/json',
 			data: JSON.stringify(filter)
@@ -728,10 +728,8 @@ function ruinSelected(ruinId) {
 	//Start by loading the map type
 	showNotice('Getting Ruin Info', true);
 
-	$.post({
-		url: window.settings.graphql,
-		data: JSON.stringify({ query: '{grsite (id: ' + parseInt(ruinId) + ') { siteID system{ systemName } body { bodyName } type { type } latitude longitude verified discoveredBy { cmdrName } activeGroups { activeGroup { groupName amount } } activeObelisks { activeObelisk { grObeliskGroup{ groupName } obeliskNumber broken verified grCodexData { grCodexCategory { categoryName } codexNumber grPrimaryArtifact { artifactName } grSecondaryArtifact { artifactName }} } } } }' }),
-		dataType: 'json',
+	$.get({
+		url: '/data/siteids/' + parseInt(ruinId) + '.json',
 		headers: {
 			'Content-Type': 'application/json',
 			'Accept': 'application/json',
@@ -925,10 +923,10 @@ function getRuinList() {
 	//Show status
 	showNotice('Getting Ruin List', true);
 
-	$.post({
-		url: window.settings.graphql,
-		data: JSON.stringify({ query: '{grobelisks( limit: 1000 sort: "grType" ) { grType{ type } grObeliskGroup { groupName } obeliskNumber broken }  grsites(limit: 1000) {siteID latitude longitude frontierID system{id systemName edsmID} body{bodyName edsmID} type{ type }  }   }' }),
-		dataType: 'json',
+	$.get({
+		url: '/data/getRuinList.json',
+		//data: JSON.stringify({ query: '{grobelisks( limit: 1000 sort: "grType" ) { grType{ type } grObeliskGroup { groupName } obeliskNumber broken }  grsites(limit: 1000) {siteID latitude longitude frontierID system{id systemName edsmID} body{bodyName edsmID} type{ type }  }   }' }),
+		//dataType: 'json',
 		headers: {
 			'Content-Type': 'application/json',
 			'Accept': 'application/json',

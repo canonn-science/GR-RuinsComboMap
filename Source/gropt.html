@@ -1,1102 +1,1131 @@
 <!doctype html>
 <html>
+
 <head>
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-102148507-2"></script>
 	<script>
-  	window.dataLayer = window.dataLayer || [];
-  	function gtag(){dataLayer.push(arguments);}
-  	gtag('js', new Date());
-  	gtag('config', 'UA-102148507-2');
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+		gtag('config', 'UA-102148507-2');
 	</script>
 	<meta charset="utf-8" />
 	<title>(GR) Guardian Ruins Site Coverage Optimizer</title>
 	<style type="text/css">
-.tar {
-	text-align: right;
-}
+		.tar {
+			text-align: right;
+		}
 
-HTML, BODY {
-	font-family: Tahoma, Geneva, Arial, Verdana, sans-serif;
-	font-size: 100%;
-}
+		HTML,
+		BODY {
+			font-family: Tahoma, Geneva, Arial, Verdana, sans-serif;
+			font-size: 100%;
+		}
 
-A {
-	text-decoration: none;
-	color: #00c;
-}
-A:hover {
-	text-decoration: underline;
-}
+		A {
+			text-decoration: none;
+			color: #00c;
+		}
 
-UL {
-	margin: 0;
-	padding: 0;
-	padding-left: 2em;
-}
+		A:hover {
+			text-decoration: underline;
+		}
 
-LI {
-	margin: 0;
-	padding: 0;
-	margin-left: -0.75em;
-}
+		UL {
+			margin: 0;
+			padding: 0;
+			padding-left: 2em;
+		}
 
-FORM {
-	margin: 0;
-	padding: 0;
-}
+		LI {
+			margin: 0;
+			padding: 0;
+			margin-left: -0.75em;
+		}
 
-SPAN#span_controls {
-	font-size: 0.8em;
-	font-weight: bold;
-}
-SPAN#span_progress {
-	display: inline-block;
-	vertical-align: bottom;
-	height: 1em;
-	width: 0;
-	background-color: blue;
-}
+		FORM {
+			margin: 0;
+			padding: 0;
+		}
 
-TABLE {
-	border-collapse: collapse;
-	border-spacing: 0;
-	font-size: 0.8em;
-	overflow: hidden;
-}
+		SPAN#span_controls {
+			font-size: 0.8em;
+			font-weight: bold;
+		}
 
-TBODY TR.selected {
-	background-color: #dfd;
-}
-TBODY TR:hover {
-	background-color: #ffd;
-}
-TBODY TR.selected:hover {
-	background-color: #efd;
-}
+		SPAN#span_progress {
+			display: inline-block;
+			vertical-align: bottom;
+			height: 1em;
+			width: 0;
+			background-color: blue;
+		}
 
-TH {
-	border: 1px solid black;
-	padding: 0 0.5em;
-	white-space: nowrap;
-}
-THEAD TH {
-	background-color: #eee;
-}
-TH.info {
-	border: none;
-	background: none;
-	padding: 0;
-	text-align: left;
-}
-TBODY TH {
-	font-weight: normal;
-	text-align: left;
-}
+		TABLE {
+			border-collapse: collapse;
+			border-spacing: 0;
+			font-size: 0.8em;
+			overflow: hidden;
+		}
 
-TD {
-	position: relative;
-	padding: 0;
-}
-TD.last_in_cat {
-	border-right: 1px solid black;
-}
-TR:last-child TD {
-	border-bottom: 1px solid black;
-}
-THEAD TD {
-	width: 1%;
-	text-align: center;
-}
+		TBODY TR.selected {
+			background-color: #dfd;
+		}
 
-TD::after {
-	display: none;
-	content: '';
-	position: absolute;
-	left: 0;
-	top: -10000px;
-	height: 20000px;
-	right: 0;
-}
-TD:hover::after {
-	display: block;
-	z-index: -1;
-	background-color: #ffc;
-	opacity: 0.5;
-}
-THEAD TD.selected::after {
-	display: block;
-	z-index: -2;
-	background-color: #fdd;
-}
-THEAD TD.covered::after {
-	display: block;
-	z-index: -2;
-	background-color: #dfd;
-}
+		TBODY TR:hover {
+			background-color: #ffd;
+		}
 
-BUTTON {
-	padding: 0 0.5em;
-}
+		TBODY TR.selected:hover {
+			background-color: #efd;
+		}
 
-INPUT {
-	margin: 0;
-	padding: 0;
-	vertical-align: bottom;
-}
-INPUT.text_opt {
-	width: 3em;
-	font-size: 0.8em;
-	vertical-align: baseline;
-}
-INPUT.checkbox_opt {
-	vertical-align: baseline;
-}
-THEAD INPUT.checkbox_codex {
-	display: none;
-}
-THEAD TD ABBR::after {
-	content: '\25AB';
-}
-THEAD TD INPUT.checkbox_codex:checked + ABBR::after {
-	content: '\25AA';
-}
+		TH {
+			border: 1px solid black;
+			padding: 0 0.5em;
+			white-space: nowrap;
+		}
 
-TD ABBR {
-	display: inline-block;
-	width: 100%;
-	text-decoration: none;
-	text-align: center;
-	cursor: pointer;
-}
-LABEL {
-	padding: 0 1px;
-}
+		THEAD TH {
+			background-color: #eee;
+		}
 
-DIV#div_layer {
-	display: none;
-	position: fixed;
-	z-index: 10;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	background-color: rgba(128, 128, 128, 0.66);
-	padding: 4em;
-}
+		TH.info {
+			border: none;
+			background: none;
+			padding: 0;
+			text-align: left;
+		}
 
-DIV#div_box {
-	max-width: 100%;
-	max-height: 100%;
-	box-shadow: 0 0 2em 2em rgba(0,0,0,0.5);
-	border: 2px solid black;
-	background-color: white;
-	display: flex;
-	flex-direction: column;
-}
+		TBODY TH {
+			font-weight: normal;
+			text-align: left;
+		}
 
-DIV#div_wrapper {
-	flex: 0 1 auto;
-	padding: 0.5em;
-	overflow: auto;
-}
+		TD {
+			position: relative;
+			padding: 0;
+		}
 
-DIV#div_export,
-DIV#div_export_detail {
-	display: none;
-	white-space: pre;
-	font-family: Courier, "Times New Roman", serif;
-	font-size: 0.8em;
-}
+		TD.last_in_cat {
+			border-right: 1px solid black;
+		}
 
-DIV#div_layer BUTTON {
-	flex: 0 0 auto;
-	margin: 0.5em;
-}
+		TR:last-child TD {
+			border-bottom: 1px solid black;
+		}
+
+		THEAD TD {
+			width: 1%;
+			text-align: center;
+		}
+
+		TD::after {
+			display: none;
+			content: '';
+			position: absolute;
+			left: 0;
+			top: -10000px;
+			height: 20000px;
+			right: 0;
+		}
+
+		TD:hover::after {
+			display: block;
+			z-index: -1;
+			background-color: #ffc;
+			opacity: 0.5;
+		}
+
+		THEAD TD.selected::after {
+			display: block;
+			z-index: -2;
+			background-color: #fdd;
+		}
+
+		THEAD TD.covered::after {
+			display: block;
+			z-index: -2;
+			background-color: #dfd;
+		}
+
+		BUTTON {
+			padding: 0 0.5em;
+		}
+
+		INPUT {
+			margin: 0;
+			padding: 0;
+			vertical-align: bottom;
+		}
+
+		INPUT.text_opt {
+			width: 3em;
+			font-size: 0.8em;
+			vertical-align: baseline;
+		}
+
+		INPUT.checkbox_opt {
+			vertical-align: baseline;
+		}
+
+		THEAD INPUT.checkbox_codex {
+			display: none;
+		}
+
+		THEAD TD ABBR::after {
+			content: '\25AB';
+		}
+
+		THEAD TD INPUT.checkbox_codex:checked+ABBR::after {
+			content: '\25AA';
+		}
+
+		TD ABBR {
+			display: inline-block;
+			width: 100%;
+			text-decoration: none;
+			text-align: center;
+			cursor: pointer;
+		}
+
+		LABEL {
+			padding: 0 1px;
+		}
+
+		DIV#div_layer {
+			display: none;
+			position: fixed;
+			z-index: 10;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: rgba(128, 128, 128, 0.66);
+			padding: 4em;
+		}
+
+		DIV#div_box {
+			max-width: 100%;
+			max-height: 100%;
+			box-shadow: 0 0 2em 2em rgba(0, 0, 0, 0.5);
+			border: 2px solid black;
+			background-color: white;
+			display: flex;
+			flex-direction: column;
+		}
+
+		DIV#div_wrapper {
+			flex: 0 1 auto;
+			padding: 0.5em;
+			overflow: auto;
+		}
+
+		DIV#div_export,
+		DIV#div_export_detail {
+			display: none;
+			white-space: pre;
+			font-family: Courier, "Times New Roman", serif;
+			font-size: 0.8em;
+		}
+
+		DIV#div_layer BUTTON {
+			flex: 0 0 auto;
+			margin: 0.5em;
+		}
 	</style>
 	<script type="text/javascript">
-var EMPTY_ARR = [];
-var EMPTY_OBJ = {};
-var SYSTEM_MEENE = { 'id':-1, 'edsmCoordX':118.78125, 'edsmCoordY':-56.4375, 'edsmCoordZ':-97.1875 };
-var FAR_SITE_DIST = 2000;
+		var EMPTY_ARR = [];
+		var EMPTY_OBJ = {};
+		var SYSTEM_MEENE = { 'id': -1, 'edsmCoordX': 118.78125, 'edsmCoordY': -56.4375, 'edsmCoordZ': -97.1875 };
+		var FAR_SITE_DIST = 2000;
 
-var ONLY_VERIFIED = false;
-var TEST_PORTION = 1;
-var ALLOW_EXTRA_SITE = false;
+		var ONLY_VERIFIED = false;
+		var TEST_PORTION = 1;
+		var ALLOW_EXTRA_SITE = false;
 
-var grdb = {};
-var RESOURCES = [
-	{ url:'https://api.canonn.tech/grcodexdata?_limit=9999', parse:function(json) {
-		grdb.codex = grdb.codex || {};
-		grdb.category = grdb.category || {};
-		grdb.artifact = grdb.artifact || {};
-		var codex, category, artifact1, artifact2;
-		while (codex = json.pop()) {
-			category = codex.grCodexCategory;
-			artifact1 = codex.grPrimaryArtifact;
-			artifact2 = codex.grSecondaryArtifact;
-			
-			grdb.codex[codex.id] = codex;
-			grdb.category[category.id] = codex.grCodexCategory = (category = grdb.category[category.id] || category);
-			grdb.artifact[artifact1.id] = codex.grPrimaryArtifact = (artifact1 = grdb.artifact[artifact1.id] || artifact1);
-			if (artifact2) {
-				grdb.artifact[artifact2.id] = codex.grSecondaryArtifact = (artifact2 = grdb.artifact[artifact2.id] || artifact2);
-			}
-			
-			codex._sites = [];
-			if (!category._codexes)
-				category._codexes = [];
-			category._codexes.push(codex);
-		}
-	//	console.log('got '+Object.keys(grdb.codex).length+' codexes, '+Object.keys(grdb.category).length+' categories, '+Object.keys(grdb.artifact).length+' artifacts');
-	}},
-	{ url:'https://api.canonn.tech/grobelisks?_limit=9999', parse:function(json) {
-		grdb.obelisk = grdb.obelisk || {};
-		grdb.type = grdb.type || {};
-		grdb.group = grdb.group || {};
-		grdb.codex = grdb.codex || {};
-		var obelisk, type, group, codex;
-		while (obelisk = json.pop()) {
-			type = obelisk.grType;
-			group = obelisk.grObeliskGroup;
-			codex = obelisk.grCodexData;
-			
-			grdb.obelisk[obelisk.id] = obelisk;
-			grdb.type[type.id] = obelisk.grType = (type = grdb.type[type.id] || type);
-			grdb.group[group.id] = obelisk.grObeliskGroup = (group = grdb.group[group.id] || group);
-			if (codex) {
-				grdb.codex[codex.id] = obelisk.grCodexData = (codex = grdb.codex[codex.id] || codex);
-			}
-			
-			obelisk._sites = [];
-		}
-	//	console.log('got '+Object.keys(grdb.obelisk).length+' obelisks, '+Object.keys(grdb.type).length+' types, '+Object.keys(grdb.group).length+' groups, '+Object.keys(grdb.codex).length+' codexes');
-	}},
-	{ url:'https://api.canonn.tech/grsites?_limit=9999', parse:function(json) {
-		grdb.site = grdb.site || {};
-		grdb.system = grdb.system || {};
-		grdb.body = grdb.body || {};
-		grdb.type = grdb.type || {};
-		var site, system, body, type;
-		while (site = json.pop()) {
-			system = site.system;
-			body = site.body;
-			type = site.type;
-			
-			grdb.site[site.id] = site;
-			grdb.system[system.id] = site.system = (system = grdb.system[system.id] || system);
-			grdb.body[body.id] = site.body = (body = grdb.body[body.id] || body);
-			grdb.type[type.id] = site.type = (type = grdb.type[type.id] || type);
-			
-			site._obelisks = [];
-			site._codexes = [];
-			
-			var i = (site.activeObelisks || EMPTY_ARR).length;
-			while (i-- > 0) {
-				var obelisk = grdb.obelisk[site.activeObelisks[i].activeObelisk];
-				var codex = (obelisk || EMPTY_OBJ).grCodexData;
-				if (!obelisk) throw 'site #'+site.id+' obelisk #'+site.activeObelisks[i].activeObelisk+' invalid';
-				site._obelisks.push(obelisk);
-				obelisk._sites.push(site);
-				if (!obelisk.broken && codex && codex._sites[codex._sites.length - 1] !== site) {
-					site._codexes.push(codex);
-					codex._sites.push(site);
+		var grdb = {};
+		var RESOURCES = [
+			{
+				url: '/data/grcodexdata.json', parse: function (json) {
+					grdb.codex = grdb.codex || {};
+					grdb.category = grdb.category || {};
+					grdb.artifact = grdb.artifact || {};
+					var codex, category, artifact1, artifact2;
+					while (codex = json.pop()) {
+						category = codex.grCodexCategory;
+						artifact1 = codex.grPrimaryArtifact;
+						artifact2 = codex.grSecondaryArtifact;
+
+						grdb.codex[codex.id] = codex;
+						grdb.category[category.id] = codex.grCodexCategory = (category = grdb.category[category.id] || category);
+						grdb.artifact[artifact1.id] = codex.grPrimaryArtifact = (artifact1 = grdb.artifact[artifact1.id] || artifact1);
+						if (artifact2) {
+							grdb.artifact[artifact2.id] = codex.grSecondaryArtifact = (artifact2 = grdb.artifact[artifact2.id] || artifact2);
+						}
+
+						codex._sites = [];
+						if (!category._codexes)
+							category._codexes = [];
+						category._codexes.push(codex);
+					}
+					//	console.log('got '+Object.keys(grdb.codex).length+' codexes, '+Object.keys(grdb.category).length+' categories, '+Object.keys(grdb.artifact).length+' artifacts');
 				}
-			}
-		}
-	//	console.log('got '+Object.keys(grdb.site).length+' sites, '+Object.keys(grdb.system).length+' systems, '+Object.keys(grdb.body).length+' bodies, '+Object.keys(grdb.type).length+' types');
-	}},
-]; // RESOURCES[]
+			},
+			{
+				url: '/data/grobelisks.json', parse: function (json) {
+					grdb.obelisk = grdb.obelisk || {};
+					grdb.type = grdb.type || {};
+					grdb.group = grdb.group || {};
+					grdb.codex = grdb.codex || {};
+					var obelisk, type, group, codex;
+					while (obelisk = json.pop()) {
+						type = obelisk.grType;
+						group = obelisk.grObeliskGroup;
+						codex = obelisk.grCodexData;
 
+						grdb.obelisk[obelisk.id] = obelisk;
+						grdb.type[type.id] = obelisk.grType = (type = grdb.type[type.id] || type);
+						grdb.group[group.id] = obelisk.grObeliskGroup = (group = grdb.group[group.id] || group);
+						if (codex) {
+							grdb.codex[codex.id] = obelisk.grCodexData = (codex = grdb.codex[codex.id] || codex);
+						}
 
-function onDOMContentLoaded(e) {
-	var div = document.createElement('DIV');
-	div.id = 'div_loading';
-	div.innerText = 'loading';
-	document.body.appendChild(div);
-	getNextResource();
-} // onDOMContentLoaded()
-
-
-function getNextResource() {
-	if (RESOURCES.length > 0) {
-		var url = RESOURCES[0].url;
-		var parse = RESOURCES[0].parse;
-		var request = new XMLHttpRequest();
-		request.onreadystatechange = function() {
-			if (request.readyState == 4) {
-				if (request.status == 200) {
-					parse(JSON.parse(request.responseText));
-				} else {
-					console.log('error HTTP '+request.status);
+						obelisk._sites = [];
+					}
+					//	console.log('got '+Object.keys(grdb.obelisk).length+' obelisks, '+Object.keys(grdb.type).length+' types, '+Object.keys(grdb.group).length+' groups, '+Object.keys(grdb.codex).length+' codexes');
 				}
-				document.getElementById('div_loading').innerText += '.';
-				RESOURCES.shift();
-				getNextResource();
-			}
-		};
-		request.open('GET', url, true);
-		request.send();
-		return;
-	}
-	initUI();
-} // getNextResource()
+			},
+			{
+				url: '/data/grsites.json', parse: function (json) {
+					grdb.site = grdb.site || {};
+					grdb.system = grdb.system || {};
+					grdb.body = grdb.body || {};
+					grdb.type = grdb.type || {};
+					var site, system, body, type;
+					while (site = json.pop()) {
+						system = site.system;
+						body = site.body;
+						type = site.type;
+
+						grdb.site[site.id] = site;
+						grdb.system[system.id] = site.system = (system = grdb.system[system.id] || system);
+						grdb.body[body.id] = site.body = (body = grdb.body[body.id] || body);
+						grdb.type[type.id] = site.type = (type = grdb.type[type.id] || type);
+
+						site._obelisks = [];
+						site._codexes = [];
+
+						var i = (site.activeObelisks || EMPTY_ARR).length;
+						while (i-- > 0) {
+							var obelisk = grdb.obelisk[site.activeObelisks[i].activeObelisk];
+							var codex = (obelisk || EMPTY_OBJ).grCodexData;
+							if (!obelisk) throw 'site #' + site.id + ' obelisk #' + site.activeObelisks[i].activeObelisk + ' invalid';
+							site._obelisks.push(obelisk);
+							obelisk._sites.push(site);
+							if (!obelisk.broken && codex && codex._sites[codex._sites.length - 1] !== site) {
+								site._codexes.push(codex);
+								codex._sites.push(site);
+							}
+						}
+					}
+					//	console.log('got '+Object.keys(grdb.site).length+' sites, '+Object.keys(grdb.system).length+' systems, '+Object.keys(grdb.body).length+' bodies, '+Object.keys(grdb.type).length+' types');
+				}
+			},
+		]; // RESOURCES[]
 
 
-var idcmp = function(obj1, obj2) { return (obj1.id - obj2.id); };
-var categorycmp = function(category1, category2) { return (category1.categoryName < category2.categoryName) ? -1 : ((category1.categoryName === category2.categoryName) ? 0 : 1); };
-var codexcmp = function(codex1, codex2) { return (codex1.grCodexCategory !== codex2.grCodexCategory) ? categorycmp(codex1.grCodexCategory, codex2.grCodexCategory) : (codex1.codexNumber - codex2.codexNumber); };
-var groupcmp = function(group1, group2) { return (group1.groupName < group2.groupName) ? -1 : ((group1.groupName === group2.groupName) ? 0 : 1); };
-var obeliskcmp = function(obelisk1, obelisk2) { return (obelisk1.grObeliskGroup !== obelisk2.grObeliskGroup) ? groupcmp(obelisk1.grObeliskGroup, obelisk2.grObeliskGroup) : (obelisk1.obeliskNumber - obelisk2.obeliskNumber); };
+		function onDOMContentLoaded(e) {
+			var div = document.createElement('DIV');
+			div.id = 'div_loading';
+			div.innerText = 'loading';
+			document.body.appendChild(div);
+			getNextResource();
+		} // onDOMContentLoaded()
 
 
-function initUI() {
-	var categories = [];
-	for (var categoryId in grdb.category) {
-		categories.push(grdb.category[categoryId]);
-	}
-	categories.sort(categorycmp);
-	
-	var codexes = [];
-	for (var codexId in grdb.codex) {
-		codexes.push(grdb.codex[codexId]);
-	}
-	codexes.sort(codexcmp);
-	
-	var sites = [];
-	for (var siteId in grdb.site) {
-		sites.push(grdb.site[siteId]);
-		grdb.site[siteId]._obelisks.sort(obeliskcmp);
-	}
-	sites.sort(idcmp);
-	
-	
-	var form, table, thead, tbody, tr, th, td, button, label, input, abbr, div, span, alink;
-	form = document.createElement('FORM');
-	span = document.createElement('SPAN');
-	span.id = 'span_controls';
-	button = document.createElement('BUTTON');
-	button.innerText = 'Reset';
-	button.addEventListener('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		document.forms[0].reset();
-		updateSiteCover();
-	});
-	span.appendChild(button);
-	button = document.createElement('BUTTON');
-	button.innerText = 'Optimize';
-	button.addEventListener('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		setTimeout(optimizeSiteCoverage, 1);
-	});
-	span.appendChild(button);
-	button = document.createElement('BUTTON');
-	button.innerText = 'Export';
-	button.addEventListener('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		document.getElementById('div_layer').style.display = 'block';
-		document.getElementById('div_export').style.display = 'block';
-		document.getElementById('div_export_detail').style.display = 'none';
-		if (document.selection) {
-			var range = document.body.createTextRange();
-			range.moveToElementText(document.getElementById('div_export'));
-			range.select();
-		} else if (window.getSelection) {
-			var range = document.createRange();
-			range.selectNode(document.getElementById('div_export'));
-			window.getSelection().removeAllRanges();
-			window.getSelection().addRange(range);
-		}
-	});
-	span.appendChild(button);
-	button = document.createElement('BUTTON');
-	button.innerText = '(detailed)';
-	button.addEventListener('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		document.getElementById('div_layer').style.display = 'block';
-		document.getElementById('div_export').style.display = 'none';
-		document.getElementById('div_export_detail').style.display = 'block';
-		if (document.selection) {
-			var range = document.body.createTextRange();
-			range.moveToElementText(document.getElementById('div_export_detail'));
-			range.select();
-		} else if (window.getSelection) {
-			var range = document.createRange();
-			range.selectNode(document.getElementById('div_export_detail'));
-			window.getSelection().removeAllRanges();
-			window.getSelection().addRange(range);
-		}
-	});
-	span.appendChild(button);
-	abbr = document.createElement('ABBR');
-	abbr.title = 'Optimize route assuming equivalent time to jump X lightyears, cruise Y lightseconds or land at Z sites';
-	abbr.appendChild(document.createTextNode('Opt:'));
-	span.appendChild(document.createTextNode(' '));
-	span.appendChild(abbr);
-	span.appendChild(document.createTextNode(' '));
-	input = document.createElement('INPUT');
-	input.id = 'text_opt_ly';
-	input.className = 'text_opt';
-	input.type = 'text';
-	input.defaultValue = input.value = '45';
-	span.appendChild(input);
-	span.appendChild(document.createTextNode(' LY = '));
-	input = document.createElement('INPUT');
-	input.id = 'text_opt_ls';
-	input.className = 'text_opt';
-	input.type = 'text';
-	input.defaultValue = input.value = '10000';
-	span.appendChild(input);
-	span.appendChild(document.createTextNode(' LS = '));
-	input = document.createElement('INPUT');
-	input.id = 'text_opt_site';
-	input.className = 'text_opt';
-	input.type = 'text';
-	input.defaultValue = input.value = '0.5';
-	span.appendChild(input);
-	span.appendChild(document.createTextNode(' landings; '));
-	label = document.createElement('LABEL');
-	input = document.createElement('INPUT');
-	input.id = 'checkbox_opt_farsystems';
-	input.className = 'checkbox_opt';
-	input.type = 'checkbox';
-	input.checked = false;
-	label.appendChild(input);
-	label.appendChild(document.createTextNode('consider far systems'));
-	span.appendChild(label);
-	form.appendChild(span);
-	
-	table = document.createElement('TABLE');
-	thead = document.createElement('THEAD');
-	
-	thead.addEventListener('click', function(e) {
-		for (var tgt = e.target;  tgt && tgt.tagName !== 'TD';  tgt = tgt.parentNode)
-			;
-		tgt = tgt && tgt.getElementsByTagName('INPUT')[0];
-		if (!tgt)
-			return;
-		if (tgt.id.substring(0,15) === 'checkbox_codex_') {
-			if (tgt !== e.target) {
-				tgt.checked = !tgt.checked;
-				e.preventDefault();
+		function getNextResource() {
+			if (RESOURCES.length > 0) {
+				var url = RESOURCES[0].url;
+				var parse = RESOURCES[0].parse;
+				var request = new XMLHttpRequest();
+				request.onreadystatechange = function () {
+					if (request.readyState == 4) {
+						if (request.status == 200) {
+							parse(JSON.parse(request.responseText));
+						} else {
+							console.log('error HTTP ' + request.status);
+						}
+						document.getElementById('div_loading').innerText += '.';
+						RESOURCES.shift();
+						getNextResource();
+					}
+				};
+				request.open('GET', url, true);
+				request.send();
+				return;
 			}
-			e.stopPropagation();
-			updateSiteCover();
-		}
-	});
-	
-	tr = document.createElement('TR');
-	th = document.createElement('TH');
-	th.className = 'info';
-	th.colSpan = 7;
-	input = document.createElement('INPUT');
-	input.id = 'checkbox_codex_all';
-	input.className = 'checkbox_codex';
-	input.type = 'checkbox';
-	input.checked = true;
-	th.appendChild(input);
-	span = document.createElement('SPAN');
-	span.id = 'span_progress';
-	th.appendChild(span);
-	span = document.createElement('SPAN');
-	span.id = 'span_info';
-	th.appendChild(span);
-	tr.appendChild(th);
-	for (var c = 0;  c < categories.length;  c++) {
-		th = document.createElement('TH');
-		th.appendChild(document.createTextNode(categories[c].categoryName));
-		th.colSpan = categories[c]._codexes.length;
-		tr.appendChild(th);
-	}
-	thead.appendChild(tr);
-	
-	tr = document.createElement('TR');
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('GR#'));
-	tr.appendChild(th);
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('System'));
-	tr.appendChild(th);
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('Dist.'));
-	tr.appendChild(th);
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('Body'));
-	tr.appendChild(th);
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('Lat.'));
-	tr.appendChild(th);
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('Long.'));
-	tr.appendChild(th);
-	th = document.createElement('TH');
-	th.appendChild(document.createTextNode('T'));
-	tr.appendChild(th);
-	for (var c = 0;  c < codexes.length;  c++) {
-		var codex = codexes[c];
-		td = document.createElement('TD');
-		td.id = 'td_codex_' + codex.id;
-		if (c+1 >= codexes.length || codexes[c+1].grCodexCategory !== codex.grCodexCategory)
-			td.className = 'last_in_cat';
-		label = document.createElement('LABEL');
-		input = document.createElement('INPUT');
-		input.id = 'checkbox_codex_' + codex.id;
-		input.className = 'checkbox_codex';
-		input.type = 'checkbox';
-		label.appendChild(input);
-		abbr = document.createElement('ABBR');
-		abbr.title = codex.grCodexCategory.categoryName + ' ' + codex.codexNumber;
-	//	abbr.appendChild(document.createTextNode('\u25AA')); // 25A0-1 large, 25AA-B small, 25FE-F medium
-		label.appendChild(abbr);
-		td.appendChild(label);
-		tr.appendChild(td);
-	}
-	thead.appendChild(tr);
-	
-	table.appendChild(thead);
-	tbody = document.createElement('TBODY');
-	tbody.addEventListener('click', function(e) {
-		if (e.target.tagName === 'A')
-			return;
-		for (var tgt = e.target;  tgt && tgt.tagName !== 'TR';  tgt = tgt.parentNode)
-			;
-		tgt = tgt && tgt.getElementsByTagName('INPUT')[0];
-		if (!tgt)
-			return;
-		if (tgt.id.substring(0,14) === 'checkbox_site_') {
-			if (tgt !== e.target) {
-				tgt.checked = !tgt.checked;
-				e.preventDefault();
+			initUI();
+		} // getNextResource()
+
+
+		var idcmp = function (obj1, obj2) { return (obj1.id - obj2.id); };
+		var categorycmp = function (category1, category2) { return (category1.categoryName < category2.categoryName) ? -1 : ((category1.categoryName === category2.categoryName) ? 0 : 1); };
+		var codexcmp = function (codex1, codex2) { return (codex1.grCodexCategory !== codex2.grCodexCategory) ? categorycmp(codex1.grCodexCategory, codex2.grCodexCategory) : (codex1.codexNumber - codex2.codexNumber); };
+		var groupcmp = function (group1, group2) { return (group1.groupName < group2.groupName) ? -1 : ((group1.groupName === group2.groupName) ? 0 : 1); };
+		var obeliskcmp = function (obelisk1, obelisk2) { return (obelisk1.grObeliskGroup !== obelisk2.grObeliskGroup) ? groupcmp(obelisk1.grObeliskGroup, obelisk2.grObeliskGroup) : (obelisk1.obeliskNumber - obelisk2.obeliskNumber); };
+
+
+		function initUI() {
+			var categories = [];
+			for (var categoryId in grdb.category) {
+				categories.push(grdb.category[categoryId]);
 			}
-			e.stopPropagation();
-			updateSiteCover();
-		}
-	});
-	
-	var typeSymbol = { 'Unknown':'?', 'Alpha':'\u03B1', 'Beta':'\u03B2', 'Gamma':'\u03B3' };
-	for (var s = 0;  s < sites.length;  s++) {
-		var site = sites[s];
-		var dist = Math.pow( Math.pow(site.system.edsmCoordX,2) + Math.pow(site.system.edsmCoordY,2) + Math.pow(site.system.edsmCoordZ,2), 0.5);
-		
-		tr = document.createElement('TR');
-		tr.id = 'tr_site_' + site.id;
-		
-		th = document.createElement('TH');
-		input = document.createElement('INPUT');
-		input.id = 'checkbox_site_' + site.id;
-		input.className = 'checkbox_site';
-		input.type = 'checkbox';
-		th.appendChild(input);
-		alink = document.createElement('A');
-		alink.href = 'https://ruins.canonn.tech/dev2/#GR' + site.id;
-		alink.appendChild(document.createTextNode('GR'+site.id));
-		th.appendChild(alink);
-		tr.appendChild(th);
-		th = document.createElement('TH');
-		th.appendChild(document.createTextNode(site.system.systemName));
-		tr.appendChild(th);
-		th = document.createElement('TH');
-		th.className = 'tar';
-		th.appendChild(document.createTextNode(dist.toFixed(0)));
-		tr.appendChild(th);
-		th = document.createElement('TH');
-		th.appendChild(document.createTextNode(site.body.bodyName.replace(site.system.systemName, '').trim()));
-		tr.appendChild(th);
-		th = document.createElement('TH');
-		th.className = 'tar';
-		th.appendChild(document.createTextNode(site.latitude.toFixed(2)));
-		tr.appendChild(th);
-		th = document.createElement('TH');
-		th.className = 'tar';
-		th.appendChild(document.createTextNode(site.longitude.toFixed(2)));
-		tr.appendChild(th);
-		th = document.createElement('TH');
-		th.appendChild(document.createTextNode(typeSymbol[site.type.type] || '?'));
-		tr.appendChild(th);
-		
-		var codexdetail={}, codexverified={};
-		for (var o = 0;  o < site._obelisks.length;  o++) {
-			var obelisk = site._obelisks[o];
-			var codex = obelisk.grCodexData;
-			if (!obelisk.broken && codex) {
-				codexdetail[codex.id] = (codexdetail[codex.id] || '') + ' ' + obelisk.grObeliskGroup.groupName + obelisk.obeliskNumber + (obelisk.verified ? '' : '?');
-				if (obelisk.verified)
-					codexverified[codex.id] = true;
+			categories.sort(categorycmp);
+
+			var codexes = [];
+			for (var codexId in grdb.codex) {
+				codexes.push(grdb.codex[codexId]);
 			}
-		}
-		for (var c = 0;  c < codexes.length;  c++) {
-			td = document.createElement('TD');
-			if (c+1 >= codexes.length || codexes[c+1].grCodexCategory !== codexes[c].grCodexCategory)
-				td.className = 'last_in_cat';
-			if (codexdetail[codexes[c].id]) {
-				abbr = document.createElement('ABBR');
-				abbr.title = codexes[c].grCodexCategory.categoryName + ' ' + codexes[c].codexNumber + ':' + codexdetail[codexes[c].id];
-				abbr.appendChild(document.createTextNode(codexverified[codexes[c].id] ? '\u2022' : '\u2218'));
-				td.appendChild(abbr);
+			codexes.sort(codexcmp);
+
+			var sites = [];
+			for (var siteId in grdb.site) {
+				sites.push(grdb.site[siteId]);
+				grdb.site[siteId]._obelisks.sort(obeliskcmp);
 			}
-			tr.appendChild(td);
-		}
-		
-		tbody.appendChild(tr);
-	}
-	table.appendChild(tbody);
-	form.appendChild(table);
-	
-	document.body.removeChild(document.getElementById('div_loading'));
-	document.body.appendChild(form);
-	
-	
-	var divL = document.createElement('DIV');
-	divL.id = 'div_layer';
-	divL.addEventListener('wheel', function(e) { if (e.target === e.currentTarget) { e.preventDefault(); e.stopPropagation(); return false; } });
-	var divB = document.createElement('DIV');
-	divB.id = 'div_box';
-	var divW = document.createElement('DIV');
-	divW.id = 'div_wrapper';
-	var divE = document.createElement('DIV');
-	divE.id = 'div_export';
-	divW.appendChild(divE);
-	var divEd = document.createElement('DIV');
-	divEd.id = 'div_export_detail';
-	divW.appendChild(divEd);
-	button = document.createElement('BUTTON');
-	button.innerText = 'Close';
-	button.addEventListener('click', function(e) {
-		e.preventDefault();
-		e.stopPropagation();
-		document.getElementById('div_layer').style.display = 'none';
-	});
-	divB.appendChild(divW);
-	divB.appendChild(document.createElement('BR'));
-	divB.appendChild(button);
-	divL.appendChild(divB);
-	document.body.appendChild(divL);
-	
-	document.addEventListener('keydown', function(e) {
-		if ((e.key == 'Escape') || ((e.keyCode || e.which) == 27)) {
-			var layer = document.getElementById('div_layer');
-			if (layer.style.display != 'none') {
+			sites.sort(idcmp);
+
+
+			var form, table, thead, tbody, tr, th, td, button, label, input, abbr, div, span, alink;
+			form = document.createElement('FORM');
+			span = document.createElement('SPAN');
+			span.id = 'span_controls';
+			button = document.createElement('BUTTON');
+			button.innerText = 'Reset';
+			button.addEventListener('click', function (e) {
 				e.preventDefault();
 				e.stopPropagation();
-				layer.style.display = 'none';
+				document.forms[0].reset();
+				updateSiteCover();
+			});
+			span.appendChild(button);
+			button = document.createElement('BUTTON');
+			button.innerText = 'Optimize';
+			button.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				setTimeout(optimizeSiteCoverage, 1);
+			});
+			span.appendChild(button);
+			button = document.createElement('BUTTON');
+			button.innerText = 'Export';
+			button.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				document.getElementById('div_layer').style.display = 'block';
+				document.getElementById('div_export').style.display = 'block';
+				document.getElementById('div_export_detail').style.display = 'none';
+				if (document.selection) {
+					var range = document.body.createTextRange();
+					range.moveToElementText(document.getElementById('div_export'));
+					range.select();
+				} else if (window.getSelection) {
+					var range = document.createRange();
+					range.selectNode(document.getElementById('div_export'));
+					window.getSelection().removeAllRanges();
+					window.getSelection().addRange(range);
+				}
+			});
+			span.appendChild(button);
+			button = document.createElement('BUTTON');
+			button.innerText = '(detailed)';
+			button.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				document.getElementById('div_layer').style.display = 'block';
+				document.getElementById('div_export').style.display = 'none';
+				document.getElementById('div_export_detail').style.display = 'block';
+				if (document.selection) {
+					var range = document.body.createTextRange();
+					range.moveToElementText(document.getElementById('div_export_detail'));
+					range.select();
+				} else if (window.getSelection) {
+					var range = document.createRange();
+					range.selectNode(document.getElementById('div_export_detail'));
+					window.getSelection().removeAllRanges();
+					window.getSelection().addRange(range);
+				}
+			});
+			span.appendChild(button);
+			abbr = document.createElement('ABBR');
+			abbr.title = 'Optimize route assuming equivalent time to jump X lightyears, cruise Y lightseconds or land at Z sites';
+			abbr.appendChild(document.createTextNode('Opt:'));
+			span.appendChild(document.createTextNode(' '));
+			span.appendChild(abbr);
+			span.appendChild(document.createTextNode(' '));
+			input = document.createElement('INPUT');
+			input.id = 'text_opt_ly';
+			input.className = 'text_opt';
+			input.type = 'text';
+			input.defaultValue = input.value = '45';
+			span.appendChild(input);
+			span.appendChild(document.createTextNode(' LY = '));
+			input = document.createElement('INPUT');
+			input.id = 'text_opt_ls';
+			input.className = 'text_opt';
+			input.type = 'text';
+			input.defaultValue = input.value = '10000';
+			span.appendChild(input);
+			span.appendChild(document.createTextNode(' LS = '));
+			input = document.createElement('INPUT');
+			input.id = 'text_opt_site';
+			input.className = 'text_opt';
+			input.type = 'text';
+			input.defaultValue = input.value = '0.5';
+			span.appendChild(input);
+			span.appendChild(document.createTextNode(' landings; '));
+			label = document.createElement('LABEL');
+			input = document.createElement('INPUT');
+			input.id = 'checkbox_opt_farsystems';
+			input.className = 'checkbox_opt';
+			input.type = 'checkbox';
+			input.checked = false;
+			label.appendChild(input);
+			label.appendChild(document.createTextNode('consider far systems'));
+			span.appendChild(label);
+			form.appendChild(span);
+
+			table = document.createElement('TABLE');
+			thead = document.createElement('THEAD');
+
+			thead.addEventListener('click', function (e) {
+				for (var tgt = e.target; tgt && tgt.tagName !== 'TD'; tgt = tgt.parentNode)
+					;
+				tgt = tgt && tgt.getElementsByTagName('INPUT')[0];
+				if (!tgt)
+					return;
+				if (tgt.id.substring(0, 15) === 'checkbox_codex_') {
+					if (tgt !== e.target) {
+						tgt.checked = !tgt.checked;
+						e.preventDefault();
+					}
+					e.stopPropagation();
+					updateSiteCover();
+				}
+			});
+
+			tr = document.createElement('TR');
+			th = document.createElement('TH');
+			th.className = 'info';
+			th.colSpan = 7;
+			input = document.createElement('INPUT');
+			input.id = 'checkbox_codex_all';
+			input.className = 'checkbox_codex';
+			input.type = 'checkbox';
+			input.checked = true;
+			th.appendChild(input);
+			span = document.createElement('SPAN');
+			span.id = 'span_progress';
+			th.appendChild(span);
+			span = document.createElement('SPAN');
+			span.id = 'span_info';
+			th.appendChild(span);
+			tr.appendChild(th);
+			for (var c = 0; c < categories.length; c++) {
+				th = document.createElement('TH');
+				th.appendChild(document.createTextNode(categories[c].categoryName));
+				th.colSpan = categories[c]._codexes.length;
+				tr.appendChild(th);
 			}
-		}
-	});
-} // initUI()
+			thead.appendChild(tr);
+
+			tr = document.createElement('TR');
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('GR#'));
+			tr.appendChild(th);
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('System'));
+			tr.appendChild(th);
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('Dist.'));
+			tr.appendChild(th);
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('Body'));
+			tr.appendChild(th);
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('Lat.'));
+			tr.appendChild(th);
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('Long.'));
+			tr.appendChild(th);
+			th = document.createElement('TH');
+			th.appendChild(document.createTextNode('T'));
+			tr.appendChild(th);
+			for (var c = 0; c < codexes.length; c++) {
+				var codex = codexes[c];
+				td = document.createElement('TD');
+				td.id = 'td_codex_' + codex.id;
+				if (c + 1 >= codexes.length || codexes[c + 1].grCodexCategory !== codex.grCodexCategory)
+					td.className = 'last_in_cat';
+				label = document.createElement('LABEL');
+				input = document.createElement('INPUT');
+				input.id = 'checkbox_codex_' + codex.id;
+				input.className = 'checkbox_codex';
+				input.type = 'checkbox';
+				label.appendChild(input);
+				abbr = document.createElement('ABBR');
+				abbr.title = codex.grCodexCategory.categoryName + ' ' + codex.codexNumber;
+				//	abbr.appendChild(document.createTextNode('\u25AA')); // 25A0-1 large, 25AA-B small, 25FE-F medium
+				label.appendChild(abbr);
+				td.appendChild(label);
+				tr.appendChild(td);
+			}
+			thead.appendChild(tr);
+
+			table.appendChild(thead);
+			tbody = document.createElement('TBODY');
+			tbody.addEventListener('click', function (e) {
+				if (e.target.tagName === 'A')
+					return;
+				for (var tgt = e.target; tgt && tgt.tagName !== 'TR'; tgt = tgt.parentNode)
+					;
+				tgt = tgt && tgt.getElementsByTagName('INPUT')[0];
+				if (!tgt)
+					return;
+				if (tgt.id.substring(0, 14) === 'checkbox_site_') {
+					if (tgt !== e.target) {
+						tgt.checked = !tgt.checked;
+						e.preventDefault();
+					}
+					e.stopPropagation();
+					updateSiteCover();
+				}
+			});
+
+			var typeSymbol = { 'Unknown': '?', 'Alpha': '\u03B1', 'Beta': '\u03B2', 'Gamma': '\u03B3' };
+			for (var s = 0; s < sites.length; s++) {
+				var site = sites[s];
+				var dist = Math.pow(Math.pow(site.system.edsmCoordX, 2) + Math.pow(site.system.edsmCoordY, 2) + Math.pow(site.system.edsmCoordZ, 2), 0.5);
+
+				tr = document.createElement('TR');
+				tr.id = 'tr_site_' + site.id;
+
+				th = document.createElement('TH');
+				input = document.createElement('INPUT');
+				input.id = 'checkbox_site_' + site.id;
+				input.className = 'checkbox_site';
+				input.type = 'checkbox';
+				th.appendChild(input);
+				alink = document.createElement('A');
+				alink.href = 'https://ruins.canonn.tech/dev2/#GR' + site.id;
+				alink.appendChild(document.createTextNode('GR' + site.id));
+				th.appendChild(alink);
+				tr.appendChild(th);
+				th = document.createElement('TH');
+				th.appendChild(document.createTextNode(site.system.systemName));
+				tr.appendChild(th);
+				th = document.createElement('TH');
+				th.className = 'tar';
+				th.appendChild(document.createTextNode(dist.toFixed(0)));
+				tr.appendChild(th);
+				th = document.createElement('TH');
+				th.appendChild(document.createTextNode(site.body.bodyName.replace(site.system.systemName, '').trim()));
+				tr.appendChild(th);
+				th = document.createElement('TH');
+				th.className = 'tar';
+				th.appendChild(document.createTextNode(site.latitude.toFixed(2)));
+				tr.appendChild(th);
+				th = document.createElement('TH');
+				th.className = 'tar';
+				th.appendChild(document.createTextNode(site.longitude.toFixed(2)));
+				tr.appendChild(th);
+				th = document.createElement('TH');
+				th.appendChild(document.createTextNode(typeSymbol[site.type.type] || '?'));
+				tr.appendChild(th);
+
+				var codexdetail = {}, codexverified = {};
+				for (var o = 0; o < site._obelisks.length; o++) {
+					var obelisk = site._obelisks[o];
+					var codex = obelisk.grCodexData;
+					if (!obelisk.broken && codex) {
+						codexdetail[codex.id] = (codexdetail[codex.id] || '') + ' ' + obelisk.grObeliskGroup.groupName + obelisk.obeliskNumber + (obelisk.verified ? '' : '?');
+						if (obelisk.verified)
+							codexverified[codex.id] = true;
+					}
+				}
+				for (var c = 0; c < codexes.length; c++) {
+					td = document.createElement('TD');
+					if (c + 1 >= codexes.length || codexes[c + 1].grCodexCategory !== codexes[c].grCodexCategory)
+						td.className = 'last_in_cat';
+					if (codexdetail[codexes[c].id]) {
+						abbr = document.createElement('ABBR');
+						abbr.title = codexes[c].grCodexCategory.categoryName + ' ' + codexes[c].codexNumber + ':' + codexdetail[codexes[c].id];
+						abbr.appendChild(document.createTextNode(codexverified[codexes[c].id] ? '\u2022' : '\u2218'));
+						td.appendChild(abbr);
+					}
+					tr.appendChild(td);
+				}
+
+				tbody.appendChild(tr);
+			}
+			table.appendChild(tbody);
+			form.appendChild(table);
+
+			document.body.removeChild(document.getElementById('div_loading'));
+			document.body.appendChild(form);
 
 
-function updateSiteCover() {
-	var allcodexes = document.getElementById('checkbox_codex_all').checked;
-	var sitelist=[], codexflag={}, codexneed={}, numneed=0;
-	for (var siteId in grdb.site) {
-		var tr = document.getElementById('tr_site_'+siteId);
-		if (document.getElementById('checkbox_site_'+siteId).checked) {
-			tr.className = 'selected';
-			var site = grdb.site[siteId];
-			sitelist.push(site);
-			var c = site._codexes.length;
-			while (c-- > 0) {
-				var codexId = site._codexes[c].id;
-				codexflag[codexId] = true;
-				if (allcodexes || document.getElementById('checkbox_codex_' + codexId).checked) {
-					if (!codexneed[codexId]) {
-						codexneed[codexId] = true;
-						numneed++;
+			var divL = document.createElement('DIV');
+			divL.id = 'div_layer';
+			divL.addEventListener('wheel', function (e) { if (e.target === e.currentTarget) { e.preventDefault(); e.stopPropagation(); return false; } });
+			var divB = document.createElement('DIV');
+			divB.id = 'div_box';
+			var divW = document.createElement('DIV');
+			divW.id = 'div_wrapper';
+			var divE = document.createElement('DIV');
+			divE.id = 'div_export';
+			divW.appendChild(divE);
+			var divEd = document.createElement('DIV');
+			divEd.id = 'div_export_detail';
+			divW.appendChild(divEd);
+			button = document.createElement('BUTTON');
+			button.innerText = 'Close';
+			button.addEventListener('click', function (e) {
+				e.preventDefault();
+				e.stopPropagation();
+				document.getElementById('div_layer').style.display = 'none';
+			});
+			divB.appendChild(divW);
+			divB.appendChild(document.createElement('BR'));
+			divB.appendChild(button);
+			divL.appendChild(divB);
+			document.body.appendChild(divL);
+
+			document.addEventListener('keydown', function (e) {
+				if ((e.key == 'Escape') || ((e.keyCode || e.which) == 27)) {
+					var layer = document.getElementById('div_layer');
+					if (layer.style.display != 'none') {
+						e.preventDefault();
+						e.stopPropagation();
+						layer.style.display = 'none';
+					}
+				}
+			});
+		} // initUI()
+
+
+		function updateSiteCover() {
+			var allcodexes = document.getElementById('checkbox_codex_all').checked;
+			var sitelist = [], codexflag = {}, codexneed = {}, numneed = 0;
+			for (var siteId in grdb.site) {
+				var tr = document.getElementById('tr_site_' + siteId);
+				if (document.getElementById('checkbox_site_' + siteId).checked) {
+					tr.className = 'selected';
+					var site = grdb.site[siteId];
+					sitelist.push(site);
+					var c = site._codexes.length;
+					while (c-- > 0) {
+						var codexId = site._codexes[c].id;
+						codexflag[codexId] = true;
+						if (allcodexes || document.getElementById('checkbox_codex_' + codexId).checked) {
+							if (!codexneed[codexId]) {
+								codexneed[codexId] = true;
+								numneed++;
+							}
+						}
+					}
+				} else {
+					tr.className = '';
+				}
+			}
+			var soln = { 'sitelist': sitelist };
+			analyzeSolution(soln);
+
+			var line = sitelist.length + ' sites on ' + soln.numbodies + ' bodies in ' + soln.numsystems + ' systems; ~' + soln.distLY.toFixed(0) + ' LY, ~' + soln.distLS.toFixed(0) + ' LS';
+			var span = document.getElementById('span_info');
+			var divexport = document.getElementById('div_export');
+			var divexportd = document.getElementById('div_export_detail');
+			var numscanned = 0;
+			if (sitelist.length > 0) {
+				span.innerText = line;
+				var text = line + '<ul><li>Begin: Meene / Felice Dock';
+				var textd = text;
+				for (var s = 0; s < sitelist.length; s++) {
+					var site = sitelist[s];
+					var siteobelisks = [];
+					for (var o = 0; o < site._obelisks.length; o++) {
+						var obelisk = site._obelisks[o];
+						var codex = obelisk.grCodexData;
+						if (!obelisk.broken && codex && codexneed[codex.id]) {
+							codexneed[codex.id] = false;
+							siteobelisks.push(obelisk);
+							numscanned++;
+						}
+					}
+
+					line = ('</li><li><a href="https://ruins.canonn.tech/dev2/#GR' + site.id + '">GR' + site.id + '</a>: '
+						+ site.body.bodyName + ' @ '
+						+ site.latitude.toFixed(2) + ', '
+						+ site.longitude.toFixed(2) + ' ('
+						+ site.type.type + '); '
+						+ getSysDist(s ? sitelist[s - 1].system : SYSTEM_MEENE, site.system).toFixed(0) + ' LY, '
+						+ site.body.distanceToArrival + ' LS, '
+						+ numscanned + '/' + numneed
+					);
+					text += line;
+					textd += line;
+
+					line = '<ul><li>';
+					siteobelisks.sort(obeliskcmp);
+					for (var o = 0; o < siteobelisks.length; o++) {
+						var obelisk = siteobelisks[o];
+						var codex = obelisk.grCodexData;
+						if (o && obelisk.grObeliskGroup !== siteobelisks[o - 1].grObeliskGroup) {
+							line += '</li><li>';
+						} else if (o > 0) {
+							line += ' ';
+						}
+						line += obelisk.grObeliskGroup.groupName + obelisk.obeliskNumber + '(';
+						if (codex.grPrimaryArtifact)
+							line += codex.grPrimaryArtifact.artifactName.substring(0, 2);
+						if (codex.grSecondaryArtifact)
+							line += (codex.grPrimaryArtifact ? '+' : '') + codex.grSecondaryArtifact.artifactName.substring(0, 2);
+						line += ':' + codex.grCodexCategory.categoryName.substring(0, 1) + codex.codexNumber + (obelisk.verified ? '' : '?') + ')';
+					}
+					line += '</li></ul>';
+					textd += line;
+				}
+				line = '</li><li>Return: Meene / Felice Dock; ' + getSysDist(sitelist[sitelist.length - 1].system, SYSTEM_MEENE).toFixed(0) + ' LY</li></ul>';
+				text += line;
+				textd += line;
+				divexport.innerHTML = text;
+				divexportd.innerHTML = textd;
+			} else {
+				span.innerText = '';
+				divexport.innerHTML = '';
+				divexportd.innerHTML = '';
+			}
+			var any = false;
+			for (var codexId in grdb.codex) {
+				var td = document.getElementById('td_codex_' + codexId);
+				var selected = document.getElementById('checkbox_codex_' + codexId).checked;
+				td.classList.toggle('covered', !!codexflag[codexId]);
+				td.classList.toggle('selected', !!selected);
+				any = any || selected;
+			}
+			document.getElementById('checkbox_codex_all').checked = !any;
+		} // updateSiteCover()
+
+
+		function optimizeSiteCoverage() {
+			var t0 = (new Date()).getTime();
+
+			var allcodexes = document.getElementById('checkbox_codex_all').checked;
+			var farsystems = document.getElementById('checkbox_opt_farsystems').checked;
+			var typeCodexes = {}, numtypes = 0;
+			for (var codexId in grdb.codex) {
+				var codex = grdb.codex[codexId];
+				codex._cat1mask = (codex.grCodexCategory.id != 1) ? 0 : (1 << codex.codexNumber);
+				codex._cat2mask = (codex.grCodexCategory.id != 2) ? 0 : (1 << codex.codexNumber);
+				codex._cat3mask = (codex.grCodexCategory.id != 3) ? 0 : (1 << codex.codexNumber);
+				codex._cat4mask = (codex.grCodexCategory.id != 4) ? 0 : (1 << codex.codexNumber);
+				codex._cat5mask = (codex.grCodexCategory.id != 5) ? 0 : (1 << codex.codexNumber);
+
+				if (codex._sites.length > 0) {
+					codex._sites.sort(function (site1, site2) { return site1._codexes.length - site2._codexes.length; });
+
+					if (allcodexes || document.getElementById('checkbox_codex_' + codexId).checked) {
+						codex._typeSites = {};
+						for (var s = 0; s < codex._sites.length; s++) {
+							if (farsystems || getSysDist(codex._sites[s].system) < FAR_SITE_DIST) {
+								var typeId = codex._sites[s].type.id;
+								if (!codex._typeSites[typeId])
+									codex._typeSites[typeId] = [];
+								codex._typeSites[typeId].push(codex._sites[s]);
+							}
+						}
+
+						var majorityTypeId = -1;
+						for (var typeId in codex._typeSites) {
+							if (!codex._typeSites[majorityTypeId]) {
+								majorityTypeId = typeId;
+							} else if (codex._typeSites[majorityTypeId].length < codex._typeSites[typeId].length) {
+								console.log('WARNING: ignoring codex #' + codexId + ' (' + codex.grCodexCategory.categoryName + ' ' + codex.codexNumber + ') at ruin type ' + grdb.type[majorityTypeId].type);
+								majorityTypeId = typeId;
+							} else {
+								console.log('WARNING: ignoring codex #' + codexId + ' (' + codex.grCodexCategory.categoryName + ' ' + codex.codexNumber + ') at ruin type ' + grdb.type[typeId].type);
+							}
+						}
+
+						if (!typeCodexes[majorityTypeId]) {
+							typeCodexes[majorityTypeId] = [];
+							numtypes++;
+						}
+						typeCodexes[majorityTypeId].push(codex);
 					}
 				}
 			}
-		} else {
-			tr.className = '';
-		}
-	}
-	var soln = { 'sitelist':sitelist };
-	analyzeSolution(soln);
-	
-	var line = sitelist.length+' sites on '+soln.numbodies+' bodies in '+soln.numsystems+' systems; ~'+soln.distLY.toFixed(0)+' LY, ~'+soln.distLS.toFixed(0)+' LS';
-	var span = document.getElementById('span_info');
-	var divexport = document.getElementById('div_export');
-	var divexportd = document.getElementById('div_export_detail');
-	var numscanned = 0;
-	if (sitelist.length > 0) {
-		span.innerText = line;
-		var text = line + '<ul><li>Begin: Meene / Felice Dock';
-		var textd = text;
-		for (var s = 0;  s < sitelist.length;  s++) {
-			var site = sitelist[s];
-			var siteobelisks = [];
-			for (var o = 0;  o < site._obelisks.length;  o++) {
-				var obelisk = site._obelisks[o];
-				var codex = obelisk.grCodexData;
-				if (!obelisk.broken && codex && codexneed[codex.id]) {
-					codexneed[codex.id] = false;
-					siteobelisks.push(obelisk);
-					numscanned++;
+
+			var typeSolutions = {}, sitelist = [];
+			for (var siteId in grdb.site) {
+				var site = grdb.site[siteId];
+				site._cat1mask = site._cat2mask = site._cat3mask = site._cat4mask = site._cat5mask = 0;
+				if (farsystems || getSysDist(site.system) < FAR_SITE_DIST) {
+					if (site._codexes.length > 0) {
+						site._codexes.sort(function (codex1, codex2) { return codex1._sites.length - codex2._sites.length; });
+
+						var c = site._codexes.length;
+						while (c-- > 0) {
+							site._cat1mask |= site._codexes[c]._cat1mask;
+							site._cat2mask |= site._codexes[c]._cat2mask;
+							site._cat3mask |= site._codexes[c]._cat3mask;
+							site._cat4mask |= site._codexes[c]._cat4mask;
+							site._cat5mask |= site._codexes[c]._cat5mask;
+						}
+					}
+
+					var typeId = site.type.id;
+					if (!typeSolutions[typeId]) {
+						typeSolutions[typeId] = [];
+						typeSolutions[typeId].push([[]]);
+						if (ALLOW_EXTRA_SITE)
+							typeSolutions[typeId].push([[]]);
+					}
+					typeSolutions[typeId][0][0].push(site);
+					if (ALLOW_EXTRA_SITE)
+						typeSolutions[typeId][1][0].push(site);
+					sitelist.push(site);
 				}
 			}
-			
-			line = ('</li><li><a href="https://ruins.canonn.tech/dev2/#GR' + site.id + '">GR' + site.id + '</a>: '
-					+ site.body.bodyName + ' @ '
-					+ site.latitude.toFixed(2) + ', '
-					+ site.longitude.toFixed(2) + ' ('
-					+ site.type.type + '); '
-					+ getSysDist(s ? sitelist[s-1].system : SYSTEM_MEENE, site.system).toFixed(0) + ' LY, '
-					+ site.body.distanceToArrival + ' LS, '
-					+ numscanned + '/' + numneed
-			);
-			text += line;
-			textd += line;
-			
-			line = '<ul><li>';
-			siteobelisks.sort(obeliskcmp);
-			for (var o = 0;  o < siteobelisks.length;  o++) {
-				var obelisk = siteobelisks[o];
-				var codex = obelisk.grCodexData;
-				if (o && obelisk.grObeliskGroup !== siteobelisks[o-1].grObeliskGroup) {
-					line += '</li><li>';
-				} else if (o > 0) {
-					line += ' ';
-				}
-				line += obelisk.grObeliskGroup.groupName + obelisk.obeliskNumber + '(';
-				if (codex.grPrimaryArtifact)
-					line += codex.grPrimaryArtifact.artifactName.substring(0,2);
-				if (codex.grSecondaryArtifact)
-					line += (codex.grPrimaryArtifact ? '+' : '') + codex.grSecondaryArtifact.artifactName.substring(0,2);
-				line += ':' + codex.grCodexCategory.categoryName.substring(0,1) + codex.codexNumber + (obelisk.verified ? '' : '?') + ')';
+
+			var types = [];
+			for (var typeId in typeCodexes) {
+				types.push(typeId);
+				typeCodexes[typeId].sort(function (codex1, codex2) { return codex2._typeSites[typeId].length - codex1._typeSites[typeId].length; });
+				optimizeSiteCoverageRecurse(typeId, typeSolutions[typeId], typeCodexes[typeId], typeCodexes[typeId].length - 1, [], 0, 0, 0, 0, 0);
+				//console.log('type '+typeId+' has '+typeSolutions[typeId][0].length+' subsolutions');
 			}
-			line += '</li></ul>';
-			textd += line;
-		}
-		line = '</li><li>Return: Meene / Felice Dock; ' + getSysDist(sitelist[sitelist.length - 1].system, SYSTEM_MEENE).toFixed(0) + ' LY</li></ul>';
-		text += line;
-		textd += line;
-		divexport.innerHTML = text;
-		divexportd.innerHTML = textd;
-	} else {
-		span.innerText = '';
-		divexport.innerHTML = '';
-		divexportd.innerHTML = '';
-	}
-	var any = false;
-	for (var codexId in grdb.codex) {
-		var td = document.getElementById('td_codex_'+codexId);
-		var selected = document.getElementById('checkbox_codex_'+codexId).checked;
-		td.classList.toggle('covered', !!codexflag[codexId]);
-		td.classList.toggle('selected', !!selected);
-		any = any || selected;
-	}
-	document.getElementById('checkbox_codex_all').checked = !any;
-} // updateSiteCover()
+			var solutions = [];
+			optimizeSiteCoverageCombine(solutions, typeSolutions, types, types.length - 1, [], ALLOW_EXTRA_SITE ? 1 : 0);
+			//console.log('solutions combined after '+((new Date()).getTime()-t0)+'ms');
+
+			//	var progress = document.getElementById('span_progress');
+			//		progress.style.width = (100.0 * types.length / numtypes).toFixed(0) + '%';
+			//	progress.style.width = '0';
+
+			scoreSolutions(solutions);
+			solutions.sort(function (soln1, soln2) { return soln1.score - soln2.score; });
+			console.log("best solution with " + solutions[0].numsites + " sites on " + solutions[0].numbodies + " bodies in " + solutions[0].numsystems + " systems, ~" + solutions[0].distLS.toFixed(2) + " LS cruise, ~" + solutions[0].distLY.toFixed(2) + " LY jump");
+			//console.log('solutions evaluated after '+((new Date()).getTime()-t0)+'ms');
+
+			for (var siteId in grdb.site)
+				document.getElementById('checkbox_site_' + siteId).checked = false;
+			var s = solutions[0].sitelist.length;
+			while (s-- > 0)
+				document.getElementById('checkbox_site_' + solutions[0].sitelist[s].id).checked = true;
+			updateSiteCover();
+
+			var t1 = (new Date()).getTime();
+			console.log(solutions.length + ' solutions with ' + solutions[0].numsites + ' sites; ' + (t1 - t0) + 'ms elapsed');
+		} // optimizeSiteCoverage()
 
 
-function optimizeSiteCoverage() {
-	var t0 = (new Date()).getTime();
-	
-	var allcodexes = document.getElementById('checkbox_codex_all').checked;
-	var farsystems = document.getElementById('checkbox_opt_farsystems').checked;
-	var typeCodexes = {}, numtypes = 0;
-	for (var codexId in grdb.codex) {
-		var codex = grdb.codex[codexId];
-		codex._cat1mask = (codex.grCodexCategory.id != 1) ? 0 : (1 << codex.codexNumber);
-		codex._cat2mask = (codex.grCodexCategory.id != 2) ? 0 : (1 << codex.codexNumber);
-		codex._cat3mask = (codex.grCodexCategory.id != 3) ? 0 : (1 << codex.codexNumber);
-		codex._cat4mask = (codex.grCodexCategory.id != 4) ? 0 : (1 << codex.codexNumber);
-		codex._cat5mask = (codex.grCodexCategory.id != 5) ? 0 : (1 << codex.codexNumber);
-		
-		if (codex._sites.length > 0) {
-			codex._sites.sort(function (site1,site2) { return site1._codexes.length - site2._codexes.length; });
-			
-			if (allcodexes || document.getElementById('checkbox_codex_' + codexId).checked) {
-				codex._typeSites = {};
-				for (var s = 0;  s < codex._sites.length;  s++) {
-					if (farsystems || getSysDist(codex._sites[s].system) < FAR_SITE_DIST) {
-						var typeId = codex._sites[s].type.id;
-						if (!codex._typeSites[typeId])
-							codex._typeSites[typeId] = [];
-						codex._typeSites[typeId].push(codex._sites[s]);
+		function optimizeSiteCoverageRecurse(typeId, solutions, codexes, next, sitelist, cat1mask, cat2mask, cat3mask, cat4mask, cat5mask) {
+			var codex;
+			while ((codex = codexes[next]) && ((cat1mask & codex._cat1mask) || (cat2mask & codex._cat2mask) || (cat3mask & codex._cat3mask) || (cat4mask & codex._cat4mask) || (cat5mask & codex._cat5mask)))
+				next--;
+			if (next < 0) {
+				if (sitelist.length < solutions[0][0].length) {
+					if (ALLOW_EXTRA_SITE)
+						solutions[1] = solutions[0];
+					solutions[0] = [sitelist.slice()];
+				} else if (sitelist.length <= solutions[0][0].length) {
+					solutions[0].push(sitelist.slice());
+				} else if (ALLOW_EXTRA_SITE && sitelist.length < solutions[1][0].length) {
+					solutions[1] = [sitelist.slice()];
+				} else if (ALLOW_EXTRA_SITE && sitelist.length <= solutions[1][0].length) {
+					solutions[1].push(sitelist.slice());
+				}
+			} else if (sitelist.length < solutions[ALLOW_EXTRA_SITE ? 1 : 0][0].length) {
+				var sites = codex._typeSites[typeId];
+				var s = sites.length;
+				while (s-- > 0) {
+					var site = sites[s];
+					sitelist.push(site);
+					optimizeSiteCoverageRecurse(
+						typeId, solutions, codexes, next - 1, sitelist,
+						cat1mask | site._cat1mask,
+						cat2mask | site._cat2mask,
+						cat3mask | site._cat3mask,
+						cat4mask | site._cat4mask,
+						cat5mask | site._cat5mask
+					);
+					sitelist.pop();
+				}
+			}
+		} // optimizeSiteCoverageRecurse()
+
+
+		function optimizeSiteCoverageCombine(solutions, typeSolutions, types, next, sitelist, extra) {
+			if (next < 0) {
+				var siteflag = {}, bodyflag = {}, systemflag = {};
+				var numsites = 0, numbodies = 0, numsystems = 0;
+				var uniquesites = [];
+				var s = sitelist.length;
+				while (s-- > 0) {
+					var siteId = sitelist[s].id;
+					if (!siteflag[siteId]) {
+						siteflag[siteId] = true;
+						numsites++;
+						uniquesites.push(sitelist[s]);
+						var bodyId = sitelist[s].body.id;
+						if (!bodyflag[bodyId]) {
+							bodyflag[bodyId] = true;
+							numbodies++;
+							var systemId = sitelist[s].system.id;
+							if (!systemflag[systemId]) {
+								systemflag[systemId] = true;
+								numsystems++;
+							}
+						}
 					}
 				}
-				
-				var majorityTypeId = -1;
-				for (var typeId in codex._typeSites) {
-					if (!codex._typeSites[majorityTypeId]) {
-						majorityTypeId = typeId;
-					} else if (codex._typeSites[majorityTypeId].length < codex._typeSites[typeId].length) {
-						console.log('WARNING: ignoring codex #'+codexId+' ('+codex.grCodexCategory.categoryName+' '+codex.codexNumber+') at ruin type '+grdb.type[majorityTypeId].type);
-						majorityTypeId = typeId;
-					} else {
-						console.log('WARNING: ignoring codex #'+codexId+' ('+codex.grCodexCategory.categoryName+' '+codex.codexNumber+') at ruin type '+grdb.type[typeId].type);
+				if (false && solutions.length > 0) { // TODO: maybe LS matters more than numbodies/systems?
+					if (numbodies > solutions[0].numbodies) {
+						return;
+					} else if (numbodies < solutions[0].numbodies) {
+						solutions.length = 0;
+					} else if (numsystems > solutions[0].numsystems) {
+						return;
+					} else if (numsystems < solutions[0].numsystems) {
+						solutions.length = 0;
 					}
 				}
-				
-				if (!typeCodexes[majorityTypeId]) {
-					typeCodexes[majorityTypeId] = [];
-					numtypes++;
+				solutions.push({
+					'numsites': numsites,
+					'numbodies': numbodies,
+					'numsystems': numsystems,
+					'sitelist': uniquesites
+				});
+			} else {
+				var nextsolutions = typeSolutions[types[next]][0];
+				var s = nextsolutions.length;
+				while (s-- > 0) {
+					optimizeSiteCoverageCombine(solutions, typeSolutions, types, next - 1, sitelist.concat(nextsolutions[s]), extra);
 				}
-				typeCodexes[majorityTypeId].push(codex);
-			}
-		}
-	}
-	
-	var typeSolutions = {}, sitelist = [];
-	for (var siteId in grdb.site) {
-		var site = grdb.site[siteId];
-		site._cat1mask = site._cat2mask = site._cat3mask = site._cat4mask = site._cat5mask = 0;
-		if (farsystems || getSysDist(site.system) < FAR_SITE_DIST) {
-			if (site._codexes.length > 0) {
-				site._codexes.sort(function (codex1,codex2) { return codex1._sites.length - codex2._sites.length; });
-				
-				var c = site._codexes.length;
-				while (c-- > 0) {
-					site._cat1mask |= site._codexes[c]._cat1mask;
-					site._cat2mask |= site._codexes[c]._cat2mask;
-					site._cat3mask |= site._codexes[c]._cat3mask;
-					site._cat4mask |= site._codexes[c]._cat4mask;
-					site._cat5mask |= site._codexes[c]._cat5mask;
-				}
-			}
-			
-			var typeId = site.type.id;
-			if (!typeSolutions[typeId]) {
-				typeSolutions[typeId] = [];
-				typeSolutions[typeId].push([[]]);
-				if (ALLOW_EXTRA_SITE)
-					typeSolutions[typeId].push([[]]);
-			}
-			typeSolutions[typeId][0][0].push(site);
-			if (ALLOW_EXTRA_SITE)
-				typeSolutions[typeId][1][0].push(site);
-			sitelist.push(site);
-		}
-	}
-	
-	var types = [];
-	for (var typeId in typeCodexes) {
-		types.push(typeId);
-		typeCodexes[typeId].sort(function(codex1,codex2) { return codex2._typeSites[typeId].length - codex1._typeSites[typeId].length; });
-		optimizeSiteCoverageRecurse(typeId, typeSolutions[typeId], typeCodexes[typeId], typeCodexes[typeId].length - 1, [], 0, 0, 0, 0, 0);
-		//console.log('type '+typeId+' has '+typeSolutions[typeId][0].length+' subsolutions');
-	}
-	var solutions = [];
-	optimizeSiteCoverageCombine(solutions, typeSolutions, types, types.length - 1, [], ALLOW_EXTRA_SITE ? 1 : 0);
-	//console.log('solutions combined after '+((new Date()).getTime()-t0)+'ms');
-	
-//	var progress = document.getElementById('span_progress');
-//		progress.style.width = (100.0 * types.length / numtypes).toFixed(0) + '%';
-//	progress.style.width = '0';
-	
-	scoreSolutions(solutions);
-	solutions.sort(function(soln1, soln2) { return soln1.score - soln2.score; });
-	console.log("best solution with "+solutions[0].numsites+" sites on "+solutions[0].numbodies+" bodies in "+solutions[0].numsystems+" systems, ~"+solutions[0].distLS.toFixed(2)+" LS cruise, ~"+solutions[0].distLY.toFixed(2)+" LY jump");
-	//console.log('solutions evaluated after '+((new Date()).getTime()-t0)+'ms');
-	
-	for (var siteId in grdb.site)
-		document.getElementById('checkbox_site_'+siteId).checked = false;
-	var s = solutions[0].sitelist.length;
-	while (s-- > 0)
-		document.getElementById('checkbox_site_'+solutions[0].sitelist[s].id).checked = true;
-	updateSiteCover();
-	
-	var t1 = (new Date()).getTime();
-	console.log(solutions.length+' solutions with '+solutions[0].numsites+' sites; '+(t1-t0)+'ms elapsed');
-} // optimizeSiteCoverage()
-
-
-function optimizeSiteCoverageRecurse(typeId, solutions, codexes, next, sitelist, cat1mask, cat2mask, cat3mask, cat4mask, cat5mask) {
-	var codex;
-	while ((codex = codexes[next]) && ((cat1mask & codex._cat1mask) || (cat2mask & codex._cat2mask) || (cat3mask & codex._cat3mask) || (cat4mask & codex._cat4mask) || (cat5mask & codex._cat5mask)))
-		next--;
-	if (next < 0) {
-		if (sitelist.length < solutions[0][0].length) {
-			if (ALLOW_EXTRA_SITE)
-				solutions[1] = solutions[0];
-			solutions[0] = [ sitelist.slice() ];
-		} else if (sitelist.length <= solutions[0][0].length) {
-			solutions[0].push( sitelist.slice() );
-		} else if (ALLOW_EXTRA_SITE && sitelist.length < solutions[1][0].length) {
-			solutions[1] = [ sitelist.slice() ];
-		} else if (ALLOW_EXTRA_SITE && sitelist.length <= solutions[1][0].length) {
-			solutions[1].push( sitelist.slice() );
-		}
-	} else if (sitelist.length < solutions[ALLOW_EXTRA_SITE ? 1 : 0][0].length) {
-		var sites = codex._typeSites[typeId];
-		var s = sites.length;
-		while (s-- > 0) {
-			var site = sites[s];
-			sitelist.push(site);
-			optimizeSiteCoverageRecurse(
-					typeId, solutions, codexes, next - 1, sitelist,
-					cat1mask | site._cat1mask,
-					cat2mask | site._cat2mask,
-					cat3mask | site._cat3mask,
-					cat4mask | site._cat4mask,
-					cat5mask | site._cat5mask
-			);
-			sitelist.pop();
-		}
-	}
-} // optimizeSiteCoverageRecurse()
-
-
-function optimizeSiteCoverageCombine(solutions, typeSolutions, types, next, sitelist, extra) {
-	if (next < 0) {
-		var siteflag={}, bodyflag={}, systemflag={};
-		var numsites=0, numbodies=0, numsystems=0;
-		var uniquesites=[];
-		var s = sitelist.length;
-		while (s-- > 0) {
-			var siteId = sitelist[s].id;
-			if (!siteflag[siteId]) {
-				siteflag[siteId] = true;
-				numsites++;
-				uniquesites.push(sitelist[s]);
-				var bodyId = sitelist[s].body.id;
-				if (!bodyflag[bodyId]) {
-					bodyflag[bodyId] = true;
-					numbodies++;
-					var systemId = sitelist[s].system.id;
-					if (!systemflag[systemId]) {
-						systemflag[systemId] = true;
-						numsystems++;
+				if (extra > 0) {
+					nextsolutions = typeSolutions[types[next]][1];
+					s = nextsolutions.length;
+					while (s-- > 0) {
+						optimizeSiteCoverageCombine(solutions, typeSolutions, types, next - 1, sitelist.concat(nextsolutions[s]), extra - 1);
 					}
 				}
 			}
-		}
-		if (false && solutions.length > 0) { // TODO: maybe LS matters more than numbodies/systems?
-			if (numbodies > solutions[0].numbodies) {
-				return;
-			} else if (numbodies < solutions[0].numbodies) {
-				solutions.length = 0;
-			} else if (numsystems > solutions[0].numsystems) {
-				return;
-			} else if (numsystems < solutions[0].numsystems) {
-				solutions.length = 0;
+		} // optimizeSiteCoverageCombine()
+
+
+		function getSysDist(sys1, sys2) {
+			return Math.pow((
+				Math.pow(sys1.edsmCoordX - (sys2 ? sys2.edsmCoordX : 0), 2) +
+				Math.pow(sys1.edsmCoordY - (sys2 ? sys2.edsmCoordY : 0), 2) +
+				Math.pow(sys1.edsmCoordZ - (sys2 ? sys2.edsmCoordZ : 0), 2)
+			), 0.5);
+		} // getSysDist()
+
+
+		function analyzeSolution(soln) {
+			soln.numsites = 0;
+			soln.numbodies = 0;
+			soln.numsystems = 0;
+			var bodyflag = {}, systemflag = {}, systems = [SYSTEM_MEENE];
+			var distLS = 0;
+			var midX = SYSTEM_MEENE.edsmCoordX;
+			var midY = SYSTEM_MEENE.edsmCoordY;
+			var midZ = SYSTEM_MEENE.edsmCoordZ;
+			for (var s = 0; s < soln.sitelist.length; s++) {
+				soln.numsites++;
+				var site = soln.sitelist[s];
+				if (!bodyflag[site.body.id]) {
+					soln.numbodies++;
+					bodyflag[site.body.id] = true;
+					distLS += site.body.distanceToArrival;
+					if (!systemflag[site.system.id]) {
+						soln.numsystems++;
+						systemflag[site.system.id] = true;
+						systems.push(site.system);
+						midX += site.system.edsmCoordX;
+						midY += site.system.edsmCoordY;
+						midZ += site.system.edsmCoordZ;
+					}
+				}
 			}
-		}
-		solutions.push({
-				'numsites':numsites,
-				'numbodies':numbodies,
-				'numsystems':numsystems,
-				'sitelist':uniquesites
-		});
-	} else {
-		var nextsolutions = typeSolutions[types[next]][0];
-		var s = nextsolutions.length;
-		while (s-- > 0) {
-			optimizeSiteCoverageCombine(solutions, typeSolutions, types, next - 1, sitelist.concat(nextsolutions[s]), extra);
-		}
-		if (extra > 0) {
-			nextsolutions = typeSolutions[types[next]][1];
-			s = nextsolutions.length;
-			while (s-- > 0) {
-				optimizeSiteCoverageCombine(solutions, typeSolutions, types, next - 1, sitelist.concat(nextsolutions[s]), extra - 1);
+			midX /= systems.length;
+			midY /= systems.length;
+			midZ /= systems.length;
+			systems.sort(function (system1, system2) { return getSysDist(system1, SYSTEM_MEENE) - getSysDist(system2, SYSTEM_MEENE); });
+			systems.push(SYSTEM_MEENE);
+			var imp = 0;
+			for (var i = 0, stop = false; i < 10 && !stop; i++) {
+				stop = true;
+				var s = systems.length - 2;
+				while (s-- > 1) {
+					var swap = (
+						(getSysDist(systems[s - 1], systems[s]) + getSysDist(systems[s + 1], systems[s + 2])) -
+						(getSysDist(systems[s - 1], systems[s + 1]) + getSysDist(systems[s], systems[s + 2]))
+					);
+					if (swap > 0) {
+						imp += swap;
+						stop = false;
+						var system = systems[s];
+						systems[s] = systems[s + 1];
+						systems[s + 1] = system;
+					}
+				}
 			}
-		}
-	}
-} // optimizeSiteCoverageCombine()
+			soln.sitelist.sort(function (site1, site2) {
+				return (site1.body === site2.body) ? (site1.id - site2.id) : (
+					(site1.system === site2.system) ? (site1.body.distanceToArrival - site2.body.distanceToArrival) : (
+						systems.indexOf(site1.system) - systems.indexOf(site2.system)
+					)
+				);
+			});
 
-
-function getSysDist(sys1, sys2) {
-	return Math.pow( (
-		Math.pow(sys1.edsmCoordX - (sys2 ? sys2.edsmCoordX : 0), 2) +
-		Math.pow(sys1.edsmCoordY - (sys2 ? sys2.edsmCoordY : 0), 2) +
-		Math.pow(sys1.edsmCoordZ - (sys2 ? sys2.edsmCoordZ : 0), 2)
-	), 0.5);
-} // getSysDist()
-
-
-function analyzeSolution(soln) {
-	soln.numsites = 0;
-	soln.numbodies = 0;
-	soln.numsystems = 0;
-	var bodyflag = {}, systemflag = {}, systems = [SYSTEM_MEENE];
-	var distLS = 0;
-	var midX = SYSTEM_MEENE.edsmCoordX;
-	var midY = SYSTEM_MEENE.edsmCoordY;
-	var midZ = SYSTEM_MEENE.edsmCoordZ;
-	for (var s = 0;  s < soln.sitelist.length;  s++) {
-		soln.numsites++;
-		var site = soln.sitelist[s];
-		if (!bodyflag[site.body.id]) {
-			soln.numbodies++;
-			bodyflag[site.body.id] = true;
-			distLS += site.body.distanceToArrival;
-			if (!systemflag[site.system.id]) {
-				soln.numsystems++;
-				systemflag[site.system.id] = true;
-				systems.push(site.system);
-				midX += site.system.edsmCoordX;
-				midY += site.system.edsmCoordY;
-				midZ += site.system.edsmCoordZ;
-			}
-		}
-	}
-	midX /= systems.length;
-	midY /= systems.length;
-	midZ /= systems.length;
-	systems.sort(function(system1,system2) { return getSysDist(system1,SYSTEM_MEENE) - getSysDist(system2,SYSTEM_MEENE); });
-	systems.push(SYSTEM_MEENE);
-	var imp = 0;
-	for (var i = 0, stop = false;  i < 10 && !stop;  i++) {
-		stop = true;
-		var s = systems.length - 2;
-		while (s-- > 1) {
-			var swap = (
-				(getSysDist(systems[s-1],systems[s]) + getSysDist(systems[s+1],systems[s+2])) -
-				(getSysDist(systems[s-1],systems[s+1]) + getSysDist(systems[s],systems[s+2]))
-			);
-			if (swap > 0) {
-				imp += swap;
-				stop = false;
+			var distLY = 0, distLYsol = 0, distLYmid = 0;
+			for (var s = 0; s < systems.length; s++) {
 				var system = systems[s];
-				systems[s] = systems[s+1];
-				systems[s+1] = system;
+				distLY += (s ? getSysDist(systems[s - 1], system) : 0);
+				distLYsol += Math.pow(Math.pow(system.edsmCoordX, 2) + Math.pow(system.edsmCoordY, 2) + Math.pow(system.edsmCoordZ, 2), 0.5);
+				distLYmid += Math.pow(Math.pow(system.edsmCoordX - midX, 2) + Math.pow(system.edsmCoordY - midY, 2) + Math.pow(system.edsmCoordZ - midZ, 2), 0.5);
 			}
-		}
-	}
-	soln.sitelist.sort(function(site1,site2) {
-		return (site1.body === site2.body) ? (site1.id - site2.id) : (
-			(site1.system === site2.system) ? (site1.body.distanceToArrival - site2.body.distanceToArrival) : (
-				systems.indexOf(site1.system) - systems.indexOf(site2.system)
-			)
-		);
-	});
-	
-	var distLY = 0, distLYsol = 0, distLYmid = 0;
-	for (var s = 0;  s < systems.length;  s++) {
-		var system = systems[s];
-		distLY    += (s ? getSysDist(systems[s-1], system) : 0);
-		distLYsol += Math.pow( Math.pow(system.edsmCoordX     ,2) + Math.pow(system.edsmCoordY     ,2) + Math.pow(system.edsmCoordZ     ,2), 0.5);
-		distLYmid += Math.pow( Math.pow(system.edsmCoordX-midX,2) + Math.pow(system.edsmCoordY-midY,2) + Math.pow(system.edsmCoordZ-midZ,2), 0.5);
-	}
-	distLYsol /= systems.length;
-	distLYmid /= systems.length;
-	
-	soln.distLS = distLS;
-	soln.distLY = distLY;
-	soln.distLYsol = distLYsol;
-	soln.distLYmid = distLYmid;
-} // analyzeSolution()
+			distLYsol /= systems.length;
+			distLYmid /= systems.length;
+
+			soln.distLS = distLS;
+			soln.distLY = distLY;
+			soln.distLYsol = distLYsol;
+			soln.distLYmid = distLYmid;
+		} // analyzeSolution()
 
 
-function scoreSolutions(solns) {
-	var weightLY = 1 / Math.pow(Math.pow(parseFloat(document.getElementById('text_opt_ly').value),2) - 10*10, 0.5); // penalize 'jump range' assuming 10 LY off course per jump; longer per-jump ranges are thus more efficient
-	var weightLS = 1 / parseFloat(document.getElementById('text_opt_ls').value); // TODO: sqrt or other modifier for LS weighting? 10k LS isn't actually 10x longer than 1k LS
-	var weightSites = 1 / parseFloat(document.getElementById('text_opt_site').value);
-	var i = solns.length;
-	while (i-- > 0) {
-		analyzeSolution(solns[i]);
-		solns[i].score = (solns[i].distLY * weightLY) + (solns[i].distLS * weightLS) + (solns[i].numsites * weightSites);
-	}
-}; // scoreSolutions()
+		function scoreSolutions(solns) {
+			var weightLY = 1 / Math.pow(Math.pow(parseFloat(document.getElementById('text_opt_ly').value), 2) - 10 * 10, 0.5); // penalize 'jump range' assuming 10 LY off course per jump; longer per-jump ranges are thus more efficient
+			var weightLS = 1 / parseFloat(document.getElementById('text_opt_ls').value); // TODO: sqrt or other modifier for LS weighting? 10k LS isn't actually 10x longer than 1k LS
+			var weightSites = 1 / parseFloat(document.getElementById('text_opt_site').value);
+			var i = solns.length;
+			while (i-- > 0) {
+				analyzeSolution(solns[i]);
+				solns[i].score = (solns[i].distLY * weightLY) + (solns[i].distLS * weightLS) + (solns[i].numsites * weightSites);
+			}
+		}; // scoreSolutions()
 
 
-window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
+		window.addEventListener('DOMContentLoaded', onDOMContentLoaded);
 	</script>
 </head>
+
 <body>
 </body>
+
 </html>
