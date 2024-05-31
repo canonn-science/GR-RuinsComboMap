@@ -1,0 +1,588 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Guardian Ancient Ruins</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    <link rel="stylesheet" href="ruins.css" />
+
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/jquery.panzoom.js"></script>
+    <script src="scripts/guardian.ruins.js"></script>
+    <script src="scripts/ruins.js"></script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-102148507-2', 'auto');
+        ga('send', 'pageview');
+    </script>
+</head>
+
+<body>
+	<div id="main">
+		<section id="systems">
+			<div id="system_heading">
+				<h1>Guardian Ancient Ruins</h1>
+				<div id="return_to_map">
+					<div>Return to Map</div>
+				</div>
+			</div>
+
+			<label for="ruin-filter" value="Filter">
+				Filter Systems: <input type="text" name="ruin-filter" id="ruin-filter" autofocus >
+			</label>
+
+			<!-- <div id="ruin-scan-filter" class="ruin-scan-ui">
+				<label value="With Scans" class="scan-label">
+					With Scans:
+				</label>
+
+
+				<div id="ruin-scan-selections" class="noselect">
+					<table>
+						<tr>
+							<th colspan="10">Biology</th>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="biology-1">01</td>
+							<td class="scan-selection" id="biology-2">02</td>
+							<td class="scan-selection" id="biology-3">03</td>
+							<td class="scan-selection" id="biology-4">04</td>
+							<td class="scan-selection" id="biology-5">05</td>
+							<td class="scan-selection" id="biology-6">06</td>
+							<td class="scan-selection" id="biology-7">07</td>
+							<td class="scan-selection" id="biology-8">08</td>
+							<td class="scan-selection" id="biology-9">09</td>
+							<td class="scan-selection" id="biology-10">10</td>
+						</tr>
+
+						<tr>
+							<td class="scan-selection" id="biology-11">11</td>
+							<td class="scan-selection" id="biology-12">12</td>
+							<td class="scan-selection" id="biology-13">13</td>
+							<td class="scan-selection" id="biology-14">14</td>
+							<td class="scan-selection" id="biology-15">15</td>
+							<td class="scan-selection" id="biology-16">16</td>
+							<td class="scan-selection" id="biology-17">17</td>
+							<td class="scan-selection" id="biology-18">18</td>
+							<td class="scan-selection" id="biology-19">19</td>
+							<td class="no-scan">&nbsp;</td>
+						</tr>
+						<tr>
+							<th colspan="10">History</th>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="history-1">01</td>
+							<td class="scan-selection" id="history-2">02</td>
+							<td class="scan-selection" id="history-3">03</td>
+							<td class="scan-selection" id="history-4">04</td>
+							<td class="scan-selection" id="history-5">05</td>
+							<td class="scan-selection" id="history-6">06</td>
+							<td class="scan-selection" id="history-7">07</td>
+							<td class="scan-selection" id="history-8">08</td>
+							<td class="scan-selection" id="history-9">09</td>
+							<td class="scan-selection" id="history-10">10</td>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="history-11">11</td>
+							<td class="scan-selection" id="history-12">12</td>
+							<td class="scan-selection" id="history-13">13</td>
+							<td class="scan-selection" id="history-14">14</td>
+							<td class="scan-selection" id="history-15">15</td>
+							<td class="scan-selection" id="history-16">16</td>
+							<td class="scan-selection" id="history-17">17</td>
+							<td class="scan-selection" id="history-18">18</td>
+							<td class="scan-selection" id="history-19">19</td>
+							<td class="scan-selection" id="history-20">20</td>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="history-21">21</td>
+							<td class="no-scan" colspan="9">&nbsp;</td>
+						</tr>
+
+						<tr>
+							<th colspan="10">Language</th>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="language-1">01</td>
+							<td class="scan-selection" id="language-2">02</td>
+							<td class="scan-selection" id="language-3">03</td>
+							<td class="scan-selection" id="language-4">04</td>
+							<td class="scan-selection" id="language-5">05</td>
+							<td class="scan-selection" id="language-6">06</td>
+							<td class="scan-selection" id="language-7">07</td>
+							<td class="scan-selection" id="language-8">08</td>
+							<td class="scan-selection" id="language-9">09</td>
+							<td class="scan-selection" id="language-10">10</td>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="language-11">11</td>
+							<td class="scan-selection" id="language-12">12</td>
+							<td class="scan-selection" id="language-13">13</td>
+							<td class="scan-selection" id="language-14">14</td>
+							<td class="scan-selection" id="language-15">15</td>
+							<td class="scan-selection" id="language-16">16</td>
+							<td class="scan-selection" id="language-17">17</td>
+							<td class="scan-selection" id="language-18">18</td>
+							<td class="scan-selection" id="language-19">19</td>
+							<td class="scan-selection" id="language-20">20</td>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="language-21">21</td>
+							<td class="no-scan" colspan="9">&nbsp;</td>
+						</tr>
+
+						<tr>
+							<th colspan="10">Culture</th>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="culture-1">01</td>
+							<td class="scan-selection" id="culture-2">02</td>
+							<td class="scan-selection" id="culture-3">03</td>
+							<td class="scan-selection" id="culture-4">04</td>
+							<td class="scan-selection" id="culture-5">05</td>
+							<td class="scan-selection" id="culture-6">06</td>
+							<td class="scan-selection" id="culture-7">07</td>
+							<td class="scan-selection" id="culture-8">08</td>
+							<td class="scan-selection" id="culture-9">09</td>
+							<td class="scan-selection" id="culture-10">10</td>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="culture-11">11</td>
+							<td class="scan-selection" id="culture-12">12</td>
+							<td class="scan-selection" id="culture-13">13</td>
+							<td class="scan-selection" id="culture-14">14</td>
+							<td class="scan-selection" id="culture-15">15</td>
+							<td class="scan-selection" id="culture-16">16</td>
+							<td class="scan-selection" id="culture-17">17</td>
+							<td class="scan-selection" id="culture-18">18</td>
+							<td class="scan-selection" id="culture-19">19</td>
+							<td class="scan-selection" id="culture-20">20</td>
+						</tr>
+
+
+						<tr>
+							<th colspan="10">Technology</th>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="technology-1">01</td>
+							<td class="scan-selection" id="technology-2">02</td>
+							<td class="scan-selection" id="technology-3">03</td>
+							<td class="scan-selection" id="technology-4">04</td>
+							<td class="scan-selection" id="technology-5">05</td>
+							<td class="scan-selection" id="technology-6">06</td>
+							<td class="scan-selection" id="technology-7">07</td>
+							<td class="scan-selection" id="technology-8">08</td>
+							<td class="scan-selection" id="technology-9">09</td>
+							<td class="scan-selection" id="technology-10">10</td>
+						</tr>
+						<tr>
+							<td class="scan-selection" id="technology-11">11</td>
+							<td class="scan-selection" id="technology-12">12</td>
+							<td class="scan-selection" id="technology-13">13</td>
+							<td class="scan-selection" id="technology-14">14</td>
+							<td class="scan-selection" id="technology-15">15</td>
+							<td class="scan-selection" id="technology-16">16</td>
+							<td class="scan-selection" id="technology-17">17</td>
+							<td class="scan-selection" id="technology-18">18</td>
+							<td class="scan-selection" id="technology-19">19</td>
+							<td class="scan-selection" id="technology-20">20</td>
+						</tr>
+
+						<tr>
+							<td colspan="10">
+								<label for="scan-filter-any">
+									Sites with any of the selected scans <input type="checkbox" id="scan-filter-any">
+								</label>
+							</td>
+						</tr>
+
+						<tr>
+							<td colspan="10">
+								<button type="button" class="reset_button">Reset</button>
+								<button type="button" class="apply_button">Apply Filter</button>
+							</td>
+						</tr>
+
+					</table>
+
+
+				</div>
+
+
+			</div> -->
+
+
+			<table id="ruin-list">
+				<tr>
+					<th width="20%">System/Body</th>
+					<th>Ruin</th>
+					<th>Type</th>
+					<th>Ruin #</th>
+					<th>Coordinates</th>
+				</tr>
+			</table>
+		</section>
+
+	    <section id="map" style="display:none">
+	    	<div id="map_heading">
+	    		<h1>System | Body | Coords (Type)</h1>
+	    	</div>
+
+	    	<div class="parent">
+				<div class="panzoom noselect" id="ruin-map">
+					&nbsp;
+				</div>
+				<span id="hide-empty-groups" class="noselect">
+					<input id="check-only-show" type="checkbox" checked /><label for="check-only-show">Hide groups without active obelisks</label>
+				</span>
+			</div>
+
+
+			<div id="mapcontrols" class="noselect">
+				<div id="return_to_systems">
+					<div>Select Ruin</div>
+				</div>
+
+				<div id="zoom-in" class="button first labeled" title="Zoom In"><span>Zoom In</span></div>
+
+				<div id="zoom-out" class="button labeled" title="Zoom Out"><span>Zoom Out</span></div>
+
+				<div id="zoom-reset" class="button labeled" title="Reset Zoom"><span>Reset Zoom</span></div>
+
+				<div id="test-groups" style="background-color: white; display:none"><span>Test Groups</span></div>
+
+				<div id="edbearing" class="button first labeled" title="View Coordinates in ED Bearing"><span>EDbearing</span></div>
+
+				<div id="edsm" class="button labeled" title="View System in ED Star Map"><span>ED Star Map</span></div>
+			</div>
+
+
+
+			<div id="info" class="down">
+				<h2 id="info_bar">
+					<span class="chevron">&#x25B4</span> Information <span class="chevron">&#x25B4</span>
+				</h2>
+				<div class="panel">
+					<div class="panel-section">
+						<h3>Scans</h3>
+						<table id="scan-list">
+							<tr>
+								<th>Group/Obelisk</th>
+								<th>Item 1</th>
+								<th>Item 2</th>
+								<th>Result</th>
+							</tr>
+						</table>
+					</div>
+
+					<div class="panel-section">
+						<h3>Contact information</h3>
+
+						<div>
+							<p>You can easily contact the Canonn R&amp;D team on the Canonn Science <a href="http://canonn.science/codex/resource/discord/" target="new">Discord chat</a>. We are happy to help you with any questions regarding this application. Ask for one of the R&amp;D team members.</p>
+
+							<p>If you need technical help with this application, find a bug or have a feature request, feel free to create an issue on our <a href="https://github.com/canonn-science/RuinsComboMap/issues" target="new">GitHub</a> page.</p>
+
+							<p>
+							The team members are (in alphabetical order):
+								<ul>
+									<li>AdmlAdama (Development Interactive Maps)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/149570-AdmlAdama" target="new"></a>
+										<a class="logo github" href="https://github.com/CmdrAdama" target="new"></a>
+									</li>
+									<li>DMehaffy (Infrastructure &amp; Hosting)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/89809-DMehaffy" target="new"></a>
+										<a class="logo github" href="https://github.com/derrickmehaffy" target="new"></a>
+										<a class="logo reddit" href="https://www.reddit.com/user/dmehaffy/" target="new"></a>
+									</li>
+									<li>Nopileos (Development API Front and Backend)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/19716-Phoenix" target="new"></a>
+										<a class="logo github" href="https://github.com/sgingter" target="new"></a>
+										<a class="logo twitter" href="https://twitter.com/phoenixhawk/" target="new"></a>
+									</li>
+									<li>Noshei (Science &amp; Data)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/73548-Noshei" target="new"></a>
+									</li>
+									<li>Zebarmy (Science &amp; Data)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/18113-Zebarmy" target="new"></a>
+										<a class="logo github" href="https://github.com/zebarmy" target="new"></a>
+										<a class="logo twitter" href="https://twitter.com/zebarmy/" target="new"></a>
+										<a class="logo reddit" href="https://www.reddit.com/user/Zebarmy/" target="new"></a>
+									</li>
+								</ul>
+							</p>
+						</div>
+					</div>
+
+					<div class="panel-section">
+						<h3>Support</h3>
+
+						<div>
+							<p>Want to help support Canonn and sites like this?  Please consider donating. </p>
+
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+							    <div class="paypal-donations">
+							        <input type="hidden" name="cmd" value="_donations">
+							        <input type="hidden" name="bn" value="TipsandTricks_SP">
+							        <input type="hidden" name="business" value="CmdrLadyOutspan@Gmail.com">
+							        <input type="hidden" name="item_name" value="Canonn Online">
+							        <input type="hidden" name="item_number" value="”Costs”">
+							        <input type="hidden" name="rm" value="0">
+							        <input type="hidden" name="currency_code" value="GBP">
+							        <input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donate_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online.">
+							        <img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							    </div>
+							</form>
+
+							<p><a href="http://canonn.science/codex/donate/" target="_blank">You can read more about what this is used for here</a></p>
+						</div>
+
+					</div>
+
+					<div class="panel-section">
+						<h3>Thanks</h3>
+
+						<div>
+							<p>We would like to say thank you to masCh who created the <a href="http://nusantara.com.my/EliteDangerous/ruins1.html" target="_blank">first guardian ruins map</a> for the great work and inspiration for this one.</p>
+							<p>
+								<ul>
+									<li>masCh (Developer of the original Guardian Ruins Map)
+										<a class="logo elite" href="https://forums.frontier.co.uk/member.php/101551-masCh" target="new"></a>
+									</li>
+								</ul>
+							</p>
+
+
+
+						</div>
+						<div>
+							<p>Reddit Icon made by <a href="http://www.flaticon.com/authors/plainicon" title="Plainicon">Plainicon</a> and checklist Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0</a></p>
+
+						</div>
+
+					</div>
+
+
+
+
+
+				</div>
+
+			</div>
+
+
+	    </section>
+
+	<!-- Pop up -->
+	<div id="ruin_obelisk_data" style="display:none">
+		<div class="obelisk">
+			<div>
+				Scan Results for <span id="scan_obelisk">Obelisk</span>
+			</div>
+		</div>
+
+		<div id="scan_data_panel">
+			<div class="object" id="scan_object1icon">
+				<div class="object1" id="scan_object1">Obelisk 1</div>
+			</div>
+			<div class="object" id="scan_object2icon">
+				<div class="object2" id="scan_object2">Obelisk 2</div>
+			</div>
+		</div>
+		<div id="scan_result_panel">
+			<div class="scan" id="scan_result" title="Scan Results">Scan</div>
+			<div class="info">Combination not working for you?<BR>
+			<a href="" id="scan_result_link" target="_blank">Let us know about it</a></div>
+		</div>
+
+		<div id="ruin_obelisk_data_close">&nbsp;</div>
+	</div>
+
+	<!-- User scan UI (disabled) -->
+	<img id="activity_checklist_icon" src="images/checklist.png" style="display:none">
+	<div id="activity" class="hidden">
+		<div id="activity_list">
+			<table id="activity_selections">
+				<tr>
+					<th>Bio</th>
+					<th>Cult</th>
+					<th>Hist</th>
+					<th>Lang</th>
+					<th>Tech</th>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-1">1</td>
+					<td id="activity_scan-culture-1">1</td>
+					<td id="activity_scan-history-1">1</td>
+					<td id="activity_scan-language-1">1</td>
+					<td id="activity_scan-technology-1">1</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-2">2</td>
+					<td id="activity_scan-culture-2">2</td>
+					<td id="activity_scan-history-2">2</td>
+					<td id="activity_scan-language-2">2</td>
+					<td id="activity_scan-technology-2">2</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-3">3</td>
+					<td id="activity_scan-culture-3">3</td>
+					<td id="activity_scan-history-3">3</td>
+					<td id="activity_scan-language-3">3</td>
+					<td id="activity_scan-technology-3">3</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-4">4</td>
+					<td id="activity_scan-culture-4">4</td>
+					<td id="activity_scan-history-4">4</td>
+					<td id="activity_scan-language-4">4</td>
+					<td id="activity_scan-technology-4">4</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-5">5</td>
+					<td id="activity_scan-culture-5">5</td>
+					<td id="activity_scan-history-5">5</td>
+					<td id="activity_scan-language-5">5</td>
+					<td id="activity_scan-technology-5">5</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-6">6</td>
+					<td id="activity_scan-culture-6">6</td>
+					<td id="activity_scan-history-6">6</td>
+					<td id="activity_scan-language-6">6</td>
+					<td id="activity_scan-technology-6">6</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-7">7</td>
+					<td id="activity_scan-culture-7">7</td>
+					<td id="activity_scan-history-7">7</td>
+					<td id="activity_scan-language-7">7</td>
+					<td id="activity_scan-technology-7">7</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-8">8</td>
+					<td id="activity_scan-culture-8">8</td>
+					<td id="activity_scan-history-8">8</td>
+					<td id="activity_scan-language-8">8</td>
+					<td id="activity_scan-technology-8">8</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-9">9</td>
+					<td id="activity_scan-culture-9">9</td>
+					<td id="activity_scan-history-9">9</td>
+					<td id="activity_scan-language-9">9</td>
+					<td id="activity_scan-technology-9">9</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-10">10</td>
+					<td id="activity_scan-culture-10">10</td>
+					<td id="activity_scan-history-10">10</td>
+					<td id="activity_scan-language-10">10</td>
+					<td id="activity_scan-technology-10">10</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-11">11</td>
+					<td id="activity_scan-culture-11">11</td>
+					<td id="activity_scan-history-11">11</td>
+					<td id="activity_scan-language-11">11</td>
+					<td id="activity_scan-technology-11">11</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-12">12</td>
+					<td id="activity_scan-culture-12">12</td>
+					<td id="activity_scan-history-12">12</td>
+					<td id="activity_scan-language-12">12</td>
+					<td id="activity_scan-technology-12">12</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-13">13</td>
+					<td id="activity_scan-culture-13">13</td>
+					<td id="activity_scan-history-13">13</td>
+					<td id="activity_scan-language-13">13</td>
+					<td id="activity_scan-technology-13">13</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-14">14</td>
+					<td id="activity_scan-culture-14">14</td>
+					<td id="activity_scan-history-14">14</td>
+					<td id="activity_scan-language-14">14</td>
+					<td id="activity_scan-technology-14">14</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-15">15</td>
+					<td id="activity_scan-culture-15">15</td>
+					<td id="activity_scan-history-15">15</td>
+					<td id="activity_scan-language-15">15</td>
+					<td id="activity_scan-technology-15">15</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-16">16</td>
+					<td id="activity_scan-culture-16">16</td>
+					<td id="activity_scan-history-16">16</td>
+					<td id="activity_scan-language-16">16</td>
+					<td id="activity_scan-technology-16">16</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-17">17</td>
+					<td id="activity_scan-culture-17">17</td>
+					<td id="activity_scan-history-17">17</td>
+					<td id="activity_scan-language-17">17</td>
+					<td id="activity_scan-technology-17">17</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-18">18</td>
+					<td id="activity_scan-culture-18">18</td>
+					<td id="activity_scan-history-18">18</td>
+					<td id="activity_scan-language-18">18</td>
+					<td id="activity_scan-technology-18">18</td>
+				</tr>
+				<tr>
+					<td id="activity_scan-biology-19">19</td>
+					<td id="activity_scan-culture-19">19</td>
+					<td id="activity_scan-history-19">19</td>
+					<td id="activity_scan-language-19">19</td>
+					<td id="activity_scan-technology-19">19</td>
+				</tr>
+				<tr>
+					<td class="empty">&nbsp;</td>
+					<td id="activity_scan-culture-20">20</td>
+					<td id="activity_scan-history-20">20</td>
+					<td id="activity_scan-language-20">20</td>
+					<td id="activity_scan-technology-20">20</td>
+				</tr>
+				<tr>
+					<td class="empty">&nbsp;</td>
+					<td class="empty">&nbsp;</td>
+					<td id="activity_scan-history-21">21</td>
+					<td id="activity_scan-language-21">21</td>
+					<td class="empty">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+
+	<!-- Notice Panel -->
+
+	<div id="notice" style="display:none">
+		Notice Panel
+	</div>
+
+
+	</div>
+
+	      <script>
+
+
+	      </script>
+</body>
+</html>
