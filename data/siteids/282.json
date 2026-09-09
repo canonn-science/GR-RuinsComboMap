@@ -1,0 +1,486 @@
+{
+    "data": {
+        "grsite": {
+            "siteID": 282,
+            "system": {
+                "systemName": "COL 173 SECTOR CH-L D8-14"
+            },
+            "body": {
+                "bodyName": "COL 173 SECTOR CH-L D8-14 D 3"
+            },
+            "type": {
+                "type": "Alpha"
+            },
+            "latitude": 36.6482,
+            "longitude": 3.4573,
+            "verified": true,
+            "discoveredBy": {
+                "cmdrName": "Ancla"
+            },
+            "activeGroups": [
+                {
+                    "activeGroup": {
+                        "groupName": "A",
+                        "amount": 20
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "B",
+                        "amount": 21
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "C",
+                        "amount": 14
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "D",
+                        "amount": 14
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "E",
+                        "amount": 10
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "G",
+                        "amount": 4
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "H",
+                        "amount": 9
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "I",
+                        "amount": 20
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "J",
+                        "amount": 8
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "L",
+                        "amount": 10
+                    }
+                },
+                {
+                    "activeGroup": {
+                        "groupName": "P",
+                        "amount": 13
+                    }
+                }
+            ],
+            "activeObelisks": [
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "A"
+                        },
+                        "obeliskNumber": 5,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Biology"
+                            },
+                            "codexNumber": 1,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Urn"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Relic"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "A"
+                        },
+                        "obeliskNumber": 14,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "History"
+                            },
+                            "codexNumber": 2,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Casket"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Casket"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "A"
+                        },
+                        "obeliskNumber": 20,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Technology"
+                            },
+                            "codexNumber": 4,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Orb"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Urn"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "B"
+                        },
+                        "obeliskNumber": 6,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Culture"
+                            },
+                            "codexNumber": 1,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Totem"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Relic"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "B"
+                        },
+                        "obeliskNumber": 9,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Culture"
+                            },
+                            "codexNumber": 4,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Totem"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Urn"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "C"
+                        },
+                        "obeliskNumber": 4,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Culture"
+                            },
+                            "codexNumber": 3,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Totem"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Casket"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "C"
+                        },
+                        "obeliskNumber": 13,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Culture"
+                            },
+                            "codexNumber": 1,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Totem"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Relic"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "D"
+                        },
+                        "obeliskNumber": 4,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Technology"
+                            },
+                            "codexNumber": 3,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Orb"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Casket"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "D"
+                        },
+                        "obeliskNumber": 13,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Technology"
+                            },
+                            "codexNumber": 6,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Orb"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Totem"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "E"
+                        },
+                        "obeliskNumber": 4,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "History"
+                            },
+                            "codexNumber": 7,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Casket"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Relic"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "G"
+                        },
+                        "obeliskNumber": 2,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "History"
+                            },
+                            "codexNumber": 3,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Casket"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Urn"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "H"
+                        },
+                        "obeliskNumber": 4,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "History"
+                            },
+                            "codexNumber": 2,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Casket"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Casket"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "I"
+                        },
+                        "obeliskNumber": 1,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Biology"
+                            },
+                            "codexNumber": 1,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Urn"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Relic"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "I"
+                        },
+                        "obeliskNumber": 7,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Biology"
+                            },
+                            "codexNumber": 3,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Urn"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Casket"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "J"
+                        },
+                        "obeliskNumber": 3,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "History"
+                            },
+                            "codexNumber": 3,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Casket"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Urn"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "L"
+                        },
+                        "obeliskNumber": 4,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "History"
+                            },
+                            "codexNumber": 7,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Casket"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Relic"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "P"
+                        },
+                        "obeliskNumber": 1,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Technology"
+                            },
+                            "codexNumber": 6,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Orb"
+                            },
+                            "grSecondaryArtifact": {
+                                "artifactName": "Totem"
+                            }
+                        }
+                    }
+                },
+                {
+                    "activeObelisk": {
+                        "grObeliskGroup": {
+                            "groupName": "P"
+                        },
+                        "obeliskNumber": 13,
+                        "broken": false,
+                        "verified": true,
+                        "grCodexData": {
+                            "grCodexCategory": {
+                                "categoryName": "Technology"
+                            },
+                            "codexNumber": 1,
+                            "grPrimaryArtifact": {
+                                "artifactName": "Orb"
+                            },
+                            "grSecondaryArtifact": null
+                        }
+                    }
+                }
+            ]
+        }
+    }
+}
