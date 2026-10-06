@@ -20552,6 +20552,114 @@
         "type": {
           "type": "Gamma"
         }
+      },
+      {
+        "siteID": 612,
+        "latitude": "-30.0055",
+        "longitude": "-136.3554",
+        "frontierID": 1,
+        "system": {
+          "id": 13553943715074,
+          "systemName": "Pueloe RA-A c49",
+          "edsmID": 102461931
+        },
+        "body": {
+          "bodyName": "Pueloe RA-A c49 C 1",
+          "edsmID": 655971651
+        },
+        "type": {
+          "type": "Alpha"
+        }
+      },
+      {
+        "siteID": 613,
+        "latitude": "-36.1356",
+        "longitude": "49.1864",
+        "frontierID": 2,
+        "system": {
+          "id": 13553943715074,
+          "systemName": "Pueloe RA-A c49",
+          "edsmID": 102461931
+        },
+        "body": {
+          "bodyName": "Pueloe RA-A c49 C 1",
+          "edsmID": 655971651
+        },
+        "type": {
+          "type": "Beta"
+        }
+      },
+      {
+        "siteID": 614,
+        "latitude": "-20.0128",
+        "longitude": "150.7267",
+        "frontierID": 1,
+        "system": {
+          "id": 13553943715074,
+          "systemName": "Pueloe RA-A c49",
+          "edsmID": 102461931
+        },
+        "body": {
+          "bodyName": "Pueloe RA-A c49 C 2",
+          "edsmID": 655971644
+        },
+        "type": {
+          "type": "Beta"
+        }
+      },
+      {
+        "siteID": 615,
+        "latitude": "-35.5363",
+        "longitude": "117.4791",
+        "frontierID": 2,
+        "system": {
+          "id": 13553943715074,
+          "systemName": "Pueloe RA-A c49",
+          "edsmID": 102461931
+        },
+        "body": {
+          "bodyName": "Pueloe RA-A c49 C 2",
+          "edsmID": 655971644
+        },
+        "type": {
+          "type": "Gamma"
+        }
+      },
+      {
+        "siteID": 616,
+        "latitude": "33.4768",
+        "longitude": "-63.6162",
+        "frontierID": 1,
+        "system": {
+          "id": 13553943715074,
+          "systemName": "Pueloe RA-A c49",
+          "edsmID": 102461931
+        },
+        "body": {
+          "bodyName": "Pueloe RA-A c49 C 3",
+          "edsmID": 655971685
+        },
+        "type": {
+          "type": "Gamma"
+        }
+      },
+      {
+        "siteID": 617,
+        "latitude": "36.5535",
+        "longitude": "132.7973",
+        "frontierID": 2,
+        "system": {
+          "id": 13553943715074,
+          "systemName": "Pueloe RA-A c49",
+          "edsmID": 102461931
+        },
+        "body": {
+          "bodyName": "Pueloe RA-A c49 C 3",
+          "edsmID": 655971685
+        },
+        "type": {
+          "type": "Gamma"
+        }
       }
     ]
   }
