@@ -1178,7 +1178,7 @@ function scanFilterResults(filterResult) {
 
 
 function filterResults(inputVal) {
-	inputVal = inputVal.toUpperCase();
+	// inputVal = inputVal.toUpperCase();
 
 	//Change?
 	if (window.nav.filter !== inputVal || window.nav.filter == '') {
