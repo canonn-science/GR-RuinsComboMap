@@ -131,7 +131,7 @@ function addRuinToList(systemInfo, ruinInfo) {
 		'<td>' + 'GR' + ruinInfo.ruinId + '</td>',
 		'<td>' + ruinType + '</td>',
 		'<td>' + frontierID + '</td>',
-		'<td>' + $('<div/>').text(ruinInfo.coordinates.join(',')).html() + '</td>',
+		'<td>' + $('<div/>').text(ruinInfo.coordinates.join(', ')).html() + '</td>',
 		'</tr>'
 	].join(''));
 
@@ -1178,7 +1178,7 @@ function scanFilterResults(filterResult) {
 
 
 function filterResults(inputVal) {
-	inputVal = inputVal.toUpperCase();
+	// inputVal = inputVal.toUpperCase();
 
 	//Change?
 	if (window.nav.filter !== inputVal || window.nav.filter == '') {

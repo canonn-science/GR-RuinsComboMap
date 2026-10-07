@@ -5,7 +5,6 @@ body {
   font-family: Arial, Lucida Sans Unicode;
 }
 
-
 button {
   text-align: center;
   background-color: #FF904F;
@@ -28,7 +27,6 @@ button {
   padding: 0;
   margin: 0;
 }
-
 
 #mapcontrols {
   width: 50px;
@@ -84,8 +82,6 @@ button {
   -webkit-transition: opacity .2s ease-in;
 }
 
-
-
 #mapcontrols div.button:hover {
   -webkit-filter: brightness(125%);
   filter: brightness(125%);
@@ -107,7 +103,6 @@ button {
   bottom: 0;
 }
 
-
 #mapoptions {
   width: 100px;
   height: 300px;
@@ -127,7 +122,6 @@ button {
   margin-bottom: 1em;
   cursor: pointer;
 }
-
 
 #mapoptions div.button:hover {
   -webkit-filter: brightness(125%);
@@ -149,8 +143,6 @@ button {
   left: 0;
   bottom: 0;
 }
-
-
 
 #return_to_systems {
   padding: .5em;
@@ -179,22 +171,19 @@ button {
 }
 
 .noselect {
-  -webkit-touch-callout: none;
   /* iOS Safari */
-  -webkit-user-select: none;
+  -webkit-touch-callout: none;
   /* Safari */
-  -khtml-user-select: none;
+  -webkit-user-select: none;
   /* Konqueror HTML */
-  -moz-user-select: none;
+  -khtml-user-select: none;
   /* Firefox */
-  -ms-user-select: none;
+  -moz-user-select: none;
   /* Internet Explorer/Edge */
+  -ms-user-select: none;
+  /* Non-prefixed version, currently supported by Chrome and Opera */
   user-select: none;
-  /* Non-prefixed version, currently
-                                  supported by Chrome and Opera */
 }
-
-
 
 #ruin-select {
   background-image: url('images/system-list.png');
@@ -228,22 +217,15 @@ button {
   background-image: url('images/logo-edsm.png');
 }
 
-
-
-
 #ruin-scan-filter {
   display: inline-block;
   position: relative;
-
-
   padding: 0em;
   position-left: 75%;
   min-width: 15em;
   margin-right: 1em;
-
   cursor: pointer;
 }
-
 
 #ruin-scan-selections label {
   background-color: transparent !important;
@@ -254,8 +236,6 @@ button {
   width: 100%;
   width: 23em;
 }
-
-
 
 #ruin-scan-selections {
   display: none;
@@ -302,13 +282,9 @@ button {
   color: white;
 }
 
-
-
 #ruin-scan-selections td.no-scan {
   background-color: #E0C6B0;
 }
-
-
 
 .cover {
   position: absolute;
@@ -335,7 +311,6 @@ div.panzoom svg {
   width: 100%;
 }
 
-
 #info {
   width: 100%;
   height: 100vh;
@@ -356,7 +331,6 @@ div.panzoom svg {
   height: 100vh;
 }
 
-
 #info h2 {
   text-align: center;
   height: 4vh;
@@ -368,11 +342,10 @@ div.panzoom svg {
   padding: 0;
 }
 
-
 .panel {
   margin: 0;
   padding: 1em;
-  height: 100%;
+  height: 90%;
   overflow-y: auto;
   text-align: left;
 }
@@ -404,10 +377,6 @@ a.reddit {
 
 a.twitter {
   background-image: url(images/social/logo-twitter.png);
-}
-
-a.reddit {
-  background-image: url(images/social/logo-reddit.png);
 }
 
 a.youtube {
@@ -473,7 +442,6 @@ a.twitch {
   font-weight: bold;
 }
 
-
 #scan-list tr.obelisk-selection {
   display: none;
 }
@@ -506,10 +474,8 @@ a.twitch {
   -webkit-box-shadow: 10px 10px 19px 1px rgba(0, 0, 0, 0.9);
   -moz-box-shadow: 10px 10px 19px 1px rgba(0, 0, 0, 0.9);
   box-shadow: 10px 10px 19px 1px rgba(0, 0, 0, 0.9);
-
   border: 1px solid #FFCAAB;
   background-color: #FFFFFF;
-
 }
 
 #ruin_obelisk_data .obelisk {
@@ -540,7 +506,6 @@ a.twitch {
   font-weight: bold;
 }
 
-
 #scan_result {
   color: #000000;
   font-weight: bold;
@@ -549,8 +514,6 @@ a.twitch {
   padding: 1em;
 }
 
-
-
 #ruin_obelisk_data .obelisk div {
   width: 100%;
   line-height: 1.5;
@@ -558,7 +521,6 @@ a.twitch {
   margin: auto;
   text-align: center;
 }
-
 
 #ruin_obelisk_data_close {
   background-image: url('images/close.png');
@@ -569,7 +531,6 @@ a.twitch {
   right: 0;
   cursor: pointer
 }
-
 
 #ruin_obelisk_data_close:hover {
   -webkit-filter: brightness(125%);
@@ -591,9 +552,6 @@ a.twitch {
   font-size: 125%;
 }
 
-
-
-
 #scan_data_panel div {
   float: left;
   vertical-align: top;
@@ -606,10 +564,8 @@ a.twitch {
   margin: 1em;
   padding: 0;
   border: 1px solid #FFCAAB;
-
   background-repeat: no-repeat;
   background-position: center top;
-
 }
 
 #ruin_obelisk_data .object div {
@@ -635,7 +591,6 @@ a.twitch {
   border-collapse: collapse;
   border: 2px solid #E0C6B0;
 }
-
 
 #ruin-list th {
   text-align: left;
@@ -671,7 +626,6 @@ a.twitch {
 #ruin-list tr.ruinband {
   background: #CFD5FF
 }
-
 
 #ruin-list .ruin_list_system img {
   height: 16px;
@@ -788,7 +742,6 @@ tr.collapsed .expand_status {
   margin-bottom: 1em;
 }
 
-
 #systems {
   width: auto;
   margin: 0;
@@ -831,7 +784,6 @@ tr.collapsed .expand_status {
   overflow-y: auto;
   background-color: #FCF3EB;
   border: 1px solid #CBAE95;
-
   margin: auto;
   padding: .5em;
   padding-left: 3em;
@@ -843,10 +795,8 @@ tr.collapsed .expand_status {
   -webkit-box-shadow: 10px 10px 19px 1px rgba(0, 0, 0, 0.41);
   -moz-box-shadow: 10px 10px 19px 1px rgba(0, 0, 0, 0.41);
   box-shadow: 10px 10px 19px 1px rgba(0, 0, 0, 0.41);
-
   cursor: pointer;
 }
-
 
 #notice.loading {
   background-image: url(images/loading.gif);
