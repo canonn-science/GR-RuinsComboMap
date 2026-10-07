@@ -131,7 +131,7 @@ function addRuinToList(systemInfo, ruinInfo) {
 		'<td>' + 'GR' + ruinInfo.ruinId + '</td>',
 		'<td>' + ruinType + '</td>',
 		'<td>' + frontierID + '</td>',
-		'<td>' + $('<div/>').text(ruinInfo.coordinates.join(',')).html() + '</td>',
+		'<td>' + $('<div/>').text(ruinInfo.coordinates.join(', ')).html() + '</td>',
 		'</tr>'
 	].join(''));
 
